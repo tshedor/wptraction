@@ -1,0 +1,18 @@
+.home h1, .home h2, .home h3, .home h4 {
+	text-align:center;
+}
+.home-cta {
+	line-height:1.6;
+	h2 {
+		color:black;
+		@include fs-xxxlg;
+		margin:60px 0px;
+	}
+	h3 {
+		color:black;
+		text-align:left;
+		line-height:1;
+		margin-bottom:30px;
+		font-size:emCalc($size-value * 1.4);
+	}
+}

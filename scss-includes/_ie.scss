@@ -1,0 +1,30 @@
+/*********** IE ************/
+
+.ie {
+	.ie-warning {
+		overflow:hidden;
+		display:block;
+	}
+	&.ie6 {
+		display:none;
+		.ie6-warning {
+			display:block;
+		}
+	}
+	&.ie7 {
+		display:none;
+		.ie6-warning {
+			display:block;
+		}
+	}
+	&.ie8 {
+
+
+	}
+	&.ie9 {
+		.gradient {
+			filter:none;
+		}
+
+	}
+}

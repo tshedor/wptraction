@@ -1,0 +1,7 @@
+.row {
+	max-width:62.5em;
+}
+body, p, h1, h2, h3, h4 {
+	@include med;
+	-webkit-font-smoothing:subpixel-antialiased;
+}

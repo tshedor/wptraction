@@ -1,0 +1,46 @@
+.tsao .label { font-family: Helvetica,'Helvetica Neue',Arial,sans-serif; color: #444; font-size: 14px; }
+.tsao .desc { display: block; -moz-display: inline-block; zoom: 1; color: #8F8F8F; font-size: 12px; }
+.tsao .option { margin: 20px 0px; *zoom: 1; }
+.tsao .option.half { float:left; width:45%; margin-right:2%; }
+.tsao .option.third { float:left; width:28%; margin-right:2%;height:37px; }
+.tsao .option:before, .tsao .option:after { display: table; content: ""; line-height: 0; }
+.tsao .cell.aux { display: inline-block; -moz-display: -inline-stack; margin-left: 40px; }
+.tsao textarea { width: 100%; }
+.tsao img { max-width: 100%; }
+.tsao #poststuff .option img { max-width: 100%; height: auto; zoom: 1; }
+.tsao .option.checkbox { background: none; }
+.tsao .option.checkbox .desc { margin-bottom:15px; }
+.tsao .clearfix { *zoom: 1; }
+.tsao .postbox { width:100%; max-width:800px; }
+.tsao .clearfix:before, .tsao .clearfix:after { display: table; content: ""; line-height: 0; }
+.tsao .clearfix:after { clear: both; }
+.tsao .socialbox { display: inline-block; -moz-display: -inline-stack; margin-right: 12px; }
+.tsao textarea { height: auto; width: 80%; }
+.tsao input[type="checkbox"], .tsao input[type="radio"] { padding: 0; margin: 0; vertical-align: auto; }
+.tsao .radio, .tsao .checkbox { min-height: 33px; padding-left: 20px; }
+.tsao .radio input[type="radio"], .tsao .checkbox input[type="checkbox"] { float: left; margin-left: -20px; }
+.tsao input:focus:invalid, .tsao textarea:focus:invalid, .tsao select:focus:invalid { color: #b94a48; border-color: #ee5f5b; }
+.tsao input:focus:invalid:focus, .tsao textarea:focus:invalid:focus, .tsao select:focus:invalid:focus { border-color: #e9322d; -webkit-box-shadow: 0 0 6px #f8b9b7; -moz-box-shadow: 0 0 6px #f8b9b7; box-shadow: 0 0 6px #f8b9b7; }
+.tsao td.label { width: 35%; }
+.tsao input[type="text"] { width: 80%; }
+.tsao input[type="number"] { width: 11%; }
+.tsao .wp-editor-area, .tsao #content_ifr { height: 200px!important; }
+.tsao .mceToolbar.mceLeft.mceFirst.mceLast { height: 30px; }
+.tsao .custom_media_url { margin-top:10px;}
+.tsao .third input[type="text"] { width:95%; }
+
+.ts-shortcode-options { margin:0 auto; }
+.ts-shortcode-options tr td { font-weight:bold; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; padding:12px 0px; font-size:13px; width:80%; }
+.ts-shortcode-options tr td:first-child { width:20%; }
+.ts-shortcode-options tr input[type="text"], .ts-shortcode-options .button, .ts-shortcode-options select, .ts-shortcode-options textarea { font-weight:normal; width:70%; }
+.ts-shortcode-options .button { width:auto; }
+.ts-shortcode-options tr td span { display:block; font-style:italic; font-weight:normal; }
+
+.tsao .list-icons { height:30px; overflow-y:hidden; width:220px; display:inline-block; position:absolute; display:none; }
+.tsao .list-icons li { width:180px; margin:0px 7px; float:left; padding:3px;}
+.tsao .list-icons.active { height:300px; width:600px; overflow-y:scroll; top:46px; padding:8px; left:8px; background:white; display:block; box-shadow:0px 0px 3px 0px #ccc;}
+.tsao .list-icons li:hover { background:#BEDAF7; cursor:pointer; }
+
+.tsao .list-icon-wrapper { font-size:18px; }
+.tsao .preview-icons { text-transform:capitalize; box-shadow:1px 1px 2px 0px #ccc; padding:6px; width:180px; background:white;  }
+.tsao .preview-icons:hover { cursor:pointer; }
