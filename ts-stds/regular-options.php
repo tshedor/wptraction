@@ -113,7 +113,7 @@ array(
 	'id'	=> 'share_icon_style',
 	'std'	=> 'plain',
 	'class' => 'clear',
-	'type'	=> 'radio',,
+	'type'	=> 'radio',
 	'options' => array(
 		array(
 			'label' => 'Plain',
@@ -211,7 +211,6 @@ array(
 	'desc'	=>	'',
 	'id'	=>	'separate',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'separate'
 ),
 array(
@@ -227,7 +226,6 @@ array(
 	'desc'	=>	'The URL to your logo',
 	'id'	=>	'logo',
 	'std'	=>	'http://example.com/logo.png',
-	'class'	=>	'',
 	'type'	=>	'media'
 ),
 array(
@@ -235,7 +233,6 @@ array(
 	'desc'	=>	'The URL to your favicon, like http://example.com/favicon.ico. Should be 32x32.',
 	'id'	=>	'favicon',
 	'std'	=>	'http://timshedor.com/favicon.ico',
-	'class'	=>	'',
 	'type'	=>	'media'
 ),
 array(
@@ -243,7 +240,6 @@ array(
 	'desc'	=>	'Show a splash page instead of the actual site unless you\'re logged in',
 	'id'	=>	'maintenance_mode',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'checkbox'
 ),
 array(
@@ -251,7 +247,6 @@ array(
 	'desc'	=>	'Have dates appear anywhere arcross the site',
 	'id'	=>	'show_dates',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
 ),
@@ -260,7 +255,6 @@ array(
 	'desc'	=>	'In case you don\'t want to use a plugin like Get the Image or similar',
 	'id'	=>	'get_first_image',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
 ),
@@ -269,7 +263,6 @@ array(
 	'desc'	=>	'',
 	'id'	=>	'breadcrumbs_archive',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'checkbox'
 ),
 array(
@@ -277,7 +270,6 @@ array(
 	'desc'	=>	'',
 	'id'	=>	'breadcrumbs_single',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'checkbox'
 ),
 array(
@@ -285,7 +277,6 @@ array(
 	'desc'	=>	'',
 	'id'	=>	'show_related_on_single',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
 ),
@@ -294,7 +285,6 @@ array(
 	'desc'	=>	'',
 	'id'	=>	'comments_on_pages',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'checkbox'
 ),
 array(
@@ -302,7 +292,6 @@ array(
 	'desc'	=>	'Paste the code from Google Analytics or a similar analytics service here if you don\'t use a plugin',
 	'id'	=>	'analytics_code',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'textareacode'
 ),
 array(
@@ -310,7 +299,6 @@ array(
 	'desc'	=>	'Override styles with your own code',
 	'id'	=>	'custom_css',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'textareacode'
 ),
 array(
@@ -318,7 +306,6 @@ array(
 	'desc'	=>	'',
 	'id'	=>	'endarray',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'endarray'
 ),
 );
