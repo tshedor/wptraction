@@ -4,3 +4,5 @@ style.scss
 index.lock
 *.scssc
 .sass-cache
+lib/scss-includes/
+lib/style.scss
