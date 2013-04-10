@@ -16,7 +16,7 @@ function ts_add_admin() {
 function ts_admin() {
 	global $themename, $options, $icons;
 	if ( isset($_POST['update_themeoptions']) && $_POST['update_themeoptions'] == 'true' ) { ts_add_admin(); }
-	if('reset' == $_REQUEST['action']) {
+	if(isset($_REQUEST['action']) && 'reset' == $_REQUEST['action']) {
 		$admin_options = array();
 		foreach ($options as $value) {
 			if(isset($value['def']))

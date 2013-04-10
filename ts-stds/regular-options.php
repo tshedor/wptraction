@@ -3,11 +3,9 @@ $social = array(
 array(
 	'name'	=>	'Social',
 	'desc'	=>	'',
-	'type'	=>	'separate',
 	'id'	=>	'separate',
 	'std'	=>	'',
-	'class'	=>	'',
-	'required' => false
+	'type'	=>	'separate'
 ),
 array(
 	'name'	=>	'Twitter',
@@ -15,8 +13,7 @@ array(
 	'id'	=>	'twitter_profile',
 	'std'	=>	'tshedor',
 	'class'	=>	'third',
-	'type'	=>	'text',
-	'required' => false
+	'type'	=>	'text'
 ),
 array(
 	'name'	=>	'Facebook Profile',
@@ -24,8 +21,7 @@ array(
 	'id'	=>	'facebook_profile',
 	'std'	=>	'http://facebook.com/tshedor',
 	'class'	=>	'third',
-	'type'	=>	'text',
-	'required' => false
+	'type'	=>	'text'
 ),
 array(
 	'name'	=>	'Pinterest Profile',
@@ -33,8 +29,7 @@ array(
 	'id'	=>	'pinterest_profile',
 	'std'	=>	'http://pinterest.com/tshedor',
 	'class'	=>	'third',
-	'type'	=>	'text',
-	'required' => false
+	'type'	=>	'text'
 ),
 array(
 	'name'	=>	'Instagram Profile',
@@ -42,8 +37,7 @@ array(
 	'id'	=>	'instagram_profile',
 	'std'	=>	'http://instagram.com/tshedor',
 	'class'	=>	'third',
-	'type'	=>	'text',
-	'required' => false
+	'type'	=>	'text'
 ),
 array(
 	'name'	=>	'Flickr Profile',
@@ -51,8 +45,7 @@ array(
 	'id'	=>	'flickr_profile',
 	'std'	=>	'http://www.flickr.com/photos/tshedor/',
 	'class'	=>	'third',
-	'type'	=>	'text',
-	'required' => false
+	'type'	=>	'text'
 ),
 array(
 	'name'	=>	'LinkedIn Profile',
@@ -60,8 +53,7 @@ array(
 	'id'	=>	'linkedin_profile',
 	'std'	=>	'http://www.linkedin.com/profile/view?id=76301105&trk=hb_tab_pro_top',
 	'class'	=>	'third',
-	'type'	=>	'text',
-	'required' => false
+	'type'	=>	'text'
 ),
 array(
 	'name'	=>	'Google+ Profile',
@@ -69,8 +61,7 @@ array(
 	'id'	=>	'googleplus_profile',
 	'std'	=>	'https://plus.google.com/u/0/115986805136940069805/posts',
 	'class'	=>	'half',
-	'type'	=>	'text',
-	'required' => false
+	'type'	=>	'text'
 ),
 array(
 	'name'	=>	'Github Profile',
@@ -78,8 +69,7 @@ array(
 	'id'	=>	'github_profile',
 	'std'	=>	'http://github.com/tshedor',
 	'class'	=>	'half',
-	'type'	=>	'text',
-	'required' => false
+	'type'	=>	'text'
 ),
 array(
 	'name'	=>	'Show RSS in header',
@@ -89,7 +79,6 @@ array(
 	'class'	=>	'third',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
-	'required' => false
 ),
 array(
 	'name'	=>	'Show Email in header',
@@ -99,7 +88,6 @@ array(
 	'class'	=>	'third',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
-	'required' => false
 ),
 array(
 	'name'	=>	'Show RSS on Archive pages',
@@ -109,7 +97,6 @@ array(
 	'class'	=>	'third',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
-	'required' => false
 ),
 array(
 	'name'	=>	'Show social buttons on posts',
@@ -119,7 +106,6 @@ array(
 	'class'	=>	'third',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
-	'required' => false
 ),
 array(
 	'name'	=> 'Share icon style',
@@ -127,8 +113,7 @@ array(
 	'id'	=> 'share_icon_style',
 	'std'	=> 'plain',
 	'class' => 'clear',
-	'type'	=> 'radio',
-	'required' => false,
+	'type'	=> 'radio',,
 	'options' => array(
 		array(
 			'label' => 'Plain',
@@ -152,7 +137,6 @@ array(
 	'class'	=>	'',
 	'type'	=>	'socialcheckbox',
 	'def'	=>	true,
-	'required' => false
 ),
 array(
 	'name'	=>	'FB Like button',
@@ -162,86 +146,63 @@ array(
 	'class'	=>	'',
 	'type'	=>	'socialcheckbox',
 	'def'	=>	true,
-	'required' => false
 ),
 array(
 	'name'	=>	'Twitter',
 	'desc'	=>	'twitter-2',
 	'id'	=>	'twitter',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'socialcheckbox',
 	'def'	=>	true,
-	'required' => false
 ),
 array(
 	'name'	=>	'Pinterest',
 	'desc'	=>	'pinterest-2',
 	'id'	=>	'pinterest',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'socialcheckbox',
-	'def'	=>	false,
-	'required' => false
 ),
 array(
 	'name'	=>	'Google+',
 	'desc'	=>	'googleplus-2',
 	'id'	=>	'googleplus',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'socialcheckbox',
-	'def'	=>	false,
-	'required' => false
 ),
 array(
 	'name'	=>	'StumbleUpon',
 	'desc'	=>	'stumbleupon-2',
 	'id'	=>	'stumbleupon',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'socialcheckbox',
-	'def'	=>	false,
-	'required' => false
 ),
 array(
 	'name'	=>	'Reddit',
 	'desc'	=>	'reddit',
 	'id'	=>	'reddit',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'socialcheckbox',
-	'def'	=>	false,
-	'required' => false
 ),
 array(
 	'name'	=>	'LinkedIn',
 	'desc'	=>	'linkedin-2',
 	'id'	=>	'linkedin',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'socialcheckbox',
-	'def'	=>	false,
-	'required' => false
 ),
 array(
 	'name'	=>	'Print',
 	'desc'	=>	'print',
 	'id'	=>	'show_print',
 	'std'	=>	'',
-	'class'	=>	'',
 	'type'	=>	'socialcheckbox',
-	'def'	=>	false,
-	'required' => false
 ),
 array(
 	'name'	=>	'End array',
 	'desc'	=>	'',
 	'id'	=>	'endarray',
 	'std'	=>	'',
-	'class'	=>	'',
-	'type'	=>	'endarray',
-	'required' => false
+	'type'	=>	'endarray'
 ),
 );
 $sitewide = array(
@@ -251,8 +212,7 @@ array(
 	'id'	=>	'separate',
 	'std'	=>	'',
 	'class'	=>	'',
-	'type'	=>	'separate',
-	'required' => false
+	'type'	=>	'separate'
 ),
 array(
 	'name'	=>	'Icons',
@@ -260,8 +220,7 @@ array(
 	'id'	=>	'home_icon_1',
 	'std'	=>	'http://example.com/logo.png',
 	'class'	=>	'clear',
-	'type'	=>	'icons',
-	'required' => false
+	'type'	=>	'icons'
 ),
 array(
 	'name'	=>	'Logo URL',
@@ -269,8 +228,7 @@ array(
 	'id'	=>	'logo',
 	'std'	=>	'http://example.com/logo.png',
 	'class'	=>	'',
-	'type'	=>	'media',
-	'required' => false
+	'type'	=>	'media'
 ),
 array(
 	'name'	=>	'Favicon URL',
@@ -278,8 +236,7 @@ array(
 	'id'	=>	'favicon',
 	'std'	=>	'http://timshedor.com/favicon.ico',
 	'class'	=>	'',
-	'type'	=>	'media',
-	'required' => false
+	'type'	=>	'media'
 ),
 array(
 	'name'	=>	'Maintenance Mode Active',
@@ -287,8 +244,7 @@ array(
 	'id'	=>	'maintenance_mode',
 	'std'	=>	'',
 	'class'	=>	'',
-	'type'	=>	'checkbox',
-	'required' => false
+	'type'	=>	'checkbox'
 ),
 array(
 	'name'	=>	'Show dates',
@@ -298,7 +254,6 @@ array(
 	'class'	=>	'',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
-	'required' => false
 ),
 array(
 	'name'	=>	'Get first post image and set it as the featured image',
@@ -308,7 +263,6 @@ array(
 	'class'	=>	'',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
-	'required' => false
 ),
 array(
 	'name'	=>	'Show breadcrumbs on archive pages',
@@ -316,8 +270,7 @@ array(
 	'id'	=>	'breadcrumbs_archive',
 	'std'	=>	'',
 	'class'	=>	'',
-	'type'	=>	'checkbox',
-	'required' => false
+	'type'	=>	'checkbox'
 ),
 array(
 	'name'	=>	'Show breadcrumbs on single pages',
@@ -325,8 +278,7 @@ array(
 	'id'	=>	'breadcrumbs_single',
 	'std'	=>	'',
 	'class'	=>	'',
-	'type'	=>	'checkbox',
-	'required' => false
+	'type'	=>	'checkbox'
 ),
 array(
 	'name'	=>	'Show related posts at the bottom of posts',
@@ -336,7 +288,6 @@ array(
 	'class'	=>	'',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
-	'required' => false
 ),
 array(
 	'name'	=>	'Show comments on pages',
@@ -344,8 +295,7 @@ array(
 	'id'	=>	'comments_on_pages',
 	'std'	=>	'',
 	'class'	=>	'',
-	'type'	=>	'checkbox',
-	'required' => false
+	'type'	=>	'checkbox'
 ),
 array(
 	'name'	=>	'Analytics Code',
@@ -353,8 +303,7 @@ array(
 	'id'	=>	'analytics_code',
 	'std'	=>	'',
 	'class'	=>	'',
-	'type'	=>	'textareacode',
-	'required' => false
+	'type'	=>	'textareacode'
 ),
 array(
 	'name'	=>	'Custom CSS',
@@ -362,8 +311,7 @@ array(
 	'id'	=>	'custom_css',
 	'std'	=>	'',
 	'class'	=>	'',
-	'type'	=>	'textareacode',
-	'required' => false
+	'type'	=>	'textareacode'
 ),
 array(
 	'name'	=>	'End array',
@@ -371,8 +319,7 @@ array(
 	'id'	=>	'endarray',
 	'std'	=>	'',
 	'class'	=>	'',
-	'type'	=>	'endarray',
-	'required' => false
+	'type'	=>	'endarray'
 ),
 );
 $options = array_merge($social,$sitewide);

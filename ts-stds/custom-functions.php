@@ -290,7 +290,10 @@ class adminfield
 	public function __construct($meta,$value) {
 		$this->meta = $meta;
 		$this->value = $value;
-		$this->initial = '<div class="option '.$this->value['type'].' '.$this->value['class'].'">
+		$this->initial = '<div class="option '.$this->value['type'].' ';
+		if(isset($this->value['class']))
+			$this->initial .= $this->value['class'];
+		$this->initial .= '">
 			<div class="label">'.$this->value['name'].'<span class="desc">'.$this->value['desc'].'</span></div>
 			<div class="cell">';
 		$this->finish = '</div></div>';
@@ -301,7 +304,7 @@ class adminfield
 		if ($this->meta != "")
 			$html .= stripslashes($this->meta);
 		$html .= '" placeholder="'.stripslashes($this->value['std']).'" ';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
@@ -313,7 +316,7 @@ class adminfield
 		if ($this->meta != "")
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
@@ -325,7 +328,7 @@ class adminfield
 		if ($this->meta != "")
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
@@ -337,7 +340,7 @@ class adminfield
 		if ($this->meta != "")
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
@@ -349,7 +352,7 @@ class adminfield
 		if ($this->meta != "")
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
@@ -361,7 +364,7 @@ class adminfield
 		if ($this->meta != "")
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
@@ -373,7 +376,7 @@ class adminfield
 		if ($this->meta != "")
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
@@ -385,7 +388,7 @@ class adminfield
 		if ($this->meta != "")
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
@@ -397,7 +400,7 @@ class adminfield
 		if ($this->meta != "")
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
@@ -411,7 +414,7 @@ class adminfield
 		else
 			$html .= $this->value['std'];
 		$html .= '"';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= ' required';
 		$html .= ' />';
 		$html .= $this->finish;
@@ -420,7 +423,7 @@ class adminfield
 	public function textarea(){
 		$html = $this->initial;
 		$html .= '<textarea name="'.$this->value['id'].'" type="'.$this->value['type'].'" cols="18" rows="5"';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= ' required ';
 		if ($this->meta == "")
 			$html .= 'placeholder="'.stripslashes($this->value['std']).'"';
@@ -434,7 +437,7 @@ class adminfield
 	public function textareacode(){
 		$html = $this->initial;
 		$html .= '<textarea name="'.$this->value['id'].'" type="'.$this->value['type'].'" cols="18" rows="5"';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= ' required';
 		$html .= '>';
 			if ($this->meta != "")
@@ -458,7 +461,7 @@ class adminfield
 	public function pages(){
 		$html = $this->initial;
 		$html .= '<select name="'.$this->value['id'].'"';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= ' required ';
 		$html .= '>
 			<option value="">Select One</option>';
@@ -476,7 +479,7 @@ class adminfield
 	public function posts(){
 		$html = $this->initial;
 		$html .= '<select name="'.$this->value['id'].'"';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= ' required ';
 		$html .= '>
 			<option value="">Select One</option>';
@@ -495,7 +498,7 @@ class adminfield
 	public function categories(){
 		$html = $this->initial;
 		$html .= '<select name="'.$this->value['id'].'"';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= ' required ';
 		$html .= '>
 			<option value="">Select One</option>';
@@ -562,7 +565,7 @@ class adminfield
 		if($this->meta)
 			$html .= $this->meta;
 		$html .='" placeholder="'.$this->value['std'].'"';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= ' required ';
 		$html .= ' />';
 		$html .= $this->finish;
@@ -592,7 +595,7 @@ class adminfield
 			$html .= 'Select One';
 		$html .= ' <i class="icon-angle-down"></i></div>';
 		$html .= '<ul class="list-icons" data-name="'.$this->meta.'"';
-		if($this->value['required'])
+		if(isset($this->value['required'])
 			$html .= ' required ';
 		$html .= '>';
 			foreach ($icons as $icon) {
