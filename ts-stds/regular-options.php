@@ -9,6 +9,9 @@ function arrayKey($array, $arrayValue) {
    return false;
 }
 
+//$archiveBreadcrumbsKey = arrayKey($options,'breadcrumbs_archive');
+//$options[$archiveBreadcrumbsKey]['def'] = true;
+
 $social = array(
 array(
 	'name'	=>	'Social',
