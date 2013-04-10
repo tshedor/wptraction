@@ -1,4 +1,6 @@
 scss-includes/
+scss-includes/*
+scss-includes/*.scss
 fonts/
 style.scss
 index.lock
