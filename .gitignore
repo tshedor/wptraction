@@ -1,0 +1,6 @@
+scss-includes/
+fonts/
+style.scss
+index.lock
+*.scssc
+.sass-cache
