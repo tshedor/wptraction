@@ -290,7 +290,11 @@ class adminfield
 	public function __construct($meta,$value) {
 		$this->meta = $meta;
 		$this->value = $value;
-		$this->initial = '<div class="option '.$this->value['class'].'">
+		$this->initial = '<div class="option '.$this->value['type'].' ';
+		if($this->value['class'])
+			$this->initial .= $this->value['class'];
+
+		$this->initial .= '">
 			<div class="label">'.$this->value['name'].'<span class="desc">'.$this->value['desc'].'</span></div>
 			<div class="cell">';
 		$this->finish = '</div></div>';

@@ -5,6 +5,26 @@ add_post_type_support( 'page', 'excerpt' );
 add_theme_support( 'automatic-feed-links' );
 if ( ! isset( $content_width ) ) $content_width = 1000;
 
+function ts_initialize_options(){
+	global $options;
+	$a = get_option('ts_admin_options');
+	if($a){
+		if(!$a['has_saved']){
+			$admin_options = array();
+			foreach ($options as $value) {
+				if($value['def'])
+					$admin_options[$value['id']] = $value['def'];
+				elseif($value['std'])
+					$admin_options[$value['id']] = $value['std'];
+				else
+					$admin_options[$value['id']] = false;
+			}
+			update_option('ts_admin_options', $admin_options);
+		}
+	}
+}
+add_action('after_setup_theme', 'ts_initialize_options');
+
 function admin_meta_scripts(){
 	if(function_exists( 'wp_enqueue_media' )){
 		wp_enqueue_media();
