@@ -1,6 +1,6 @@
-/******** GLOBAL ************/
-
 /********* GENERAL ***********/
+
+@import "lib/fonts/CharlieGordon/style.css";
 
 h1, h2, h3, h4, h5, h6, h7, h8 {
 	@include dom;
@@ -25,6 +25,10 @@ h4 {
 a h1, a h2, a h3, a h4, a h5, a h6 {
 	@include std-hover($linkColor);
 }
+
+ul {
+	padding-left:17px;
+}
 body {
 	@include body;
 	@include color-scheme;
@@ -32,9 +36,6 @@ body {
 }
 .row {
 	max-width:72em
-}
-.sticky {
-	position:fixed;
 }
 .clear, .clearfix {
 	@include pie-clearfix;
@@ -79,6 +80,21 @@ a {
 	}
 	text-decoration:none!important;
 }
+
+i {
+	@include inline-block;
+}
+::selection, ::-moz-selection {
+	@include text-shadow(0px);
+}
+
+hr {
+	border-color:$dark_gray;
+	border-bottom:0px;
+}
+
+/* HELPER CLASSES */
+
 .centered {
 	text-align:center;
 }
@@ -114,27 +130,26 @@ a {
 .hidden {
 	display:none;
 }
-.footer, footer {
-	padding:15px 0px;
-	h2 {
-		color:$subColor;
-		text-transform:lowercase;
-	}
-	.menu ul {
-		li {
-			a {
-				color:$domColor;
-				@include hover($linkColor);
-				padding:0px 15px;
-			}
-		}
-	}
-}
-hr {
-	border-color:$dark_gray;
-	border-bottom:0px;
+
+/***** WORDPRESS ****/
+
+.sticky {
+	position:fixed;
 }
 
+.wp-caption, .gallery-caption {
+	background:#eee;
+	padding:8px;
+	margin-bottom:30px;
+	img {
+		border:2px solid #fff;
+	}
+	.wp-caption-text {
+		text-align:center;
+		font-style:italic;
+		margin-bottom:0px;
+	}
+}
 .sidebar {
 	.widget {
 		margin:45px 0px;
@@ -162,285 +177,14 @@ hr {
 	margin:45px 0px;
 }
 
-button, .button, input[type="submit"] {
-	@include box-shadow(none);
-	border:0px;
-	background:$domColor;
-	color:white;
-	@include fs-xlg;
-	font-family:$sans;
-	font-weight:100;
-	@include border-radius(6px);
-	@include single-transition(all, 0.2s, linear);
-	padding:4px 14px;
-	&:hover {
-		cursor:pointer;
-		background:darken($domColor,12%);
-	}
-	&:active {
-		background:darken($domColor,18%);
-	}
-}
-/******** ALERTS AND WARNINGS ********/
-
-.notice {
-	display:none;
-	@include fs-medium;
-}
-.alert {
-	background:#B64040;
-	padding:6px;
-	@include border-radius(4px);
-	@include box-shadow(1px 2px 2px 1px #5a2a2a);
-	strong {
-		color:#000;
-	}
-	a {
-		color:$lightest_gray;
-		@include hover($linkColor)
-	}
-	.close {
-		color:white;
-		@include text-shadow(none);
-		@include opacity(0.9);
-		top:-4px;
-		position:relative;
-	}
-	&.alert-error {
-		background:#B64040;
-	}
-}
-.warning {
-	.alert {
-		background:#F1E234!important;
-		a {
-			color:$linkColor;
-			@include hover($subColor)
-		}
-	}
-}
-i {
-	@include inline-block;
-}
-::selection, ::-moz-selection {
-	@include text-shadow(0px);
-}
-.menu {
-	ul {
-		@include no-list;
-		li {
-			@include inline-block;
-			a {
-				display:block;
-				@include sub;
-				padding:0px 15px;
-			}
-			&:first-child a {
-				padding-left:0px!important;
-			}
-		}
-	}
-}
-.breadcrumbs {
-	margin-top:20px;
-	@include fs-medium;
-	background:inherit;
-	border:0px;
-	padding-left:0px;
-	a {
-		color:lighten($gray,12%);
-		@include hover($linkColor);
-	}
-}
-.social {
-	@include fs-lg;
-	position:absolute;
-	right:0px;
-	i {
-		@include inline-block;
-		padding:0px 2px;
-	}
-	a {
-		@include color-scheme;
-	}
-}
-.social-single {
-	@include color-scheme;
-	@include fs-medium;
-	@include no-list;
-	text-align:center;
-	font-family:$sans;
-	font-weight:300;
-	i {
-		@include fs-xlg;
-	}
-	li {
-		@include inline-block;
-		padding:0px 10px;
-	}
-	a {
-		@include color-scheme;
-		@include hover($linkColor);
-	}
-}
-.extra-margin {
-	margin:30px 0px;
-}
-img.alignleft {
-	float:left;
-	margin-right:10px;
-}
-img.alignright {
-	float:right;
-	margin-left:10px;
-}
-
-/* BUTTONS */
-
-.button {
-	&:hover {
-		background-color:inherit;
-		@include box-shadow(inset 0px -12px 22px 0px rgba(0, 0, 0, 0.24))
-	}
-	&:active {
-		background-color:inherit;
-		@include box-shadow(inset 0px -12px 22px 0px rgba(0, 0, 0, 0.24), inset 0 1px 2px rgba(0, 0, 0, 0.3));
-	}
-}
-.page-navigation, .wp-pagenavi {
-	text-align:center;
-	margin:15px 0px;
-	@include fs-xlg;
-	color:$subColor;
-	.prev, .next, .first, .last, .pages {
-		@include fs-xsmall;
-		text-transform: uppercase;
-		margin:0px 6px;
-	}
-	a {
-		color:desaturate($domColor, 50%);
-		@include hover($subColor);
-		border:0px;
-	}
-	span {
-		border:0px;
-	}
-}
-#creditsDisplay {
-	background-color: #ffffff;
-	@include filter-gradient(#ffffff, #f0f0f0, vertical);
-	$experimental-support-for-svg: true;
-	@include background-image(linear-gradient(top, #ffffff 0%,#f0f0f0 100%));
-	@include border-radius(2px);
-	position:absolute;
-	right:0px;
-	top:-52px;
-	z-index:9999;
-	width:240px;
-	height:auto;
-	text-align:center;
-	border:1px solid #e8e8e8;
-	padding:2px;
-	display:none;
-}
-#footerCredits {
-	position:relative;
-}
-ul {
-	padding-left:17px;
-}
-.ts-maintenance-mode {
-	position:absolute;
-	left:0;
-	right:0;
-	top:0;
-	bottom:0;
-	background:$domColor;
-	padding:25% 0px;
-	width:100%;
-	margin:0 auto;
-	text-align:center;
-	min-height:100%;
-	color:white;
-	@include cond;
-	@include fs-giant;
-	background-color: $domColor;
-	@include filter-gradient(lighten($domColor,16%), $domColor, horizontal);
-	$experimental-support-for-svg: true;
-	@include background-image(radial-gradient(center, ellipse cover, lighten($domColor,16%) 0%,$domColor 100%));
-	.coming-soon {
-		margin:0;
-		@include fs-xlg;
-	}
-}
-.search-form {
-	input[type="text"] {
-		max-width:180px;
-		@include box-shadow(none);
-		border:0px;
-		font-style:italic;
-		float:left;
-		margin-right:-2px;
-		@include border-left-radius(5px);
-	}
-	button {
-		@include fs;
-		margin-top:0px;
-		@include border-radius(0px);
-		@include border-right-radius(5px);
-	}
-}
-.link-list {
-	@include no-list;
-	li {
-		@include inline-block;
-		a {
-			display:block;
-			padding:4px 8px;
-		}
-	}
-}
-.wp-caption, .gallery-caption {
-	background:#eee;
-	padding:8px;
-	margin-bottom:30px;
-	img {
-		border:2px solid #fff;
-	}
-	.wp-caption-text {
-		text-align:center;
-		font-style:italic;
-		margin-bottom:0px;
-	}
-}
-.meta {
-	@include no-list;
-	text-align:center;
-	i {
-		color:$gray;
-		margin-right:4px;
-	}
-	a {
-		color:$domColor;
-		@include hover($linkColor);
-	}
-	li {
-		@include inline-block;
-		margin:4px;
-		&:after {
-			content:'\2f';
-			padding:0px 4px;
-		}
-		&:last-child:after {
-			content:'\A0';
-		}
-	}
-}
 .post {
 	.entry {
 		margin-bottom:30px;
 	}
 }
+
+/* COMMENTS */
+
 .comment-list {
 	@include no-list;
 }
@@ -557,5 +301,272 @@ ul {
 	margin-bottom:0px!important;
 	input {
 		@include border-radius(4px);
+	}
+}
+
+
+/******** UI ********/
+
+.notice {
+	display:none;
+	@include fs-medium;
+}
+.alert {
+	background:#B64040;
+	padding:6px;
+	@include border-radius(4px);
+	@include box-shadow(1px 2px 2px 1px #5a2a2a);
+	strong {
+		color:#000;
+	}
+	a {
+		color:$lightest_gray;
+		@include hover($linkColor)
+	}
+	.close {
+		color:white;
+		@include text-shadow(none);
+		@include opacity(0.9);
+		top:-4px;
+		position:relative;
+	}
+	&.alert-error {
+		background:#B64040;
+	}
+}
+.warning {
+	.alert {
+		background:#F1E234!important;
+		a {
+			color:$linkColor;
+			@include hover($subColor)
+		}
+	}
+}
+
+.social {
+	@include fs-lg;
+	position:absolute;
+	right:0px;
+	i {
+		@include inline-block;
+		padding:0px 2px;
+	}
+	a {
+		@include color-scheme;
+	}
+}
+.social-single {
+	@include color-scheme;
+	@include fs-medium;
+	@include no-list;
+	text-align:center;
+	font-family:$sans;
+	font-weight:300;
+	i {
+		@include fs-xlg;
+	}
+	li {
+		@include inline-block;
+		padding:0px 10px;
+	}
+	a {
+		@include color-scheme;
+		@include hover($linkColor);
+	}
+}
+.extra-margin {
+	margin:30px 0px;
+}
+img.alignleft {
+	float:left;
+	margin-right:10px;
+}
+img.alignright {
+	float:right;
+	margin-left:10px;
+}
+
+/* BUTTONS */
+
+button, .button, input[type="submit"] {
+	@include box-shadow(none);
+	border:0px;
+	background:$domColor;
+	color:white;
+	@include fs-xlg;
+	font-family:$sans;
+	font-weight:100;
+	@include border-radius(6px);
+	@include single-transition(all, 0.2s, linear);
+	padding:4px 14px;
+	&:hover {
+		cursor:pointer;
+		background:darken($domColor,12%);
+		background-color:inherit;
+		@include box-shadow(inset 0px -12px 22px 0px rgba(0, 0, 0, 0.24))
+	}
+	&:active {
+		background:darken($domColor,18%);
+		@include box-shadow(inset 0px -12px 22px 0px rgba(0, 0, 0, 0.24), inset 0 1px 2px rgba(0, 0, 0, 0.3));
+	}
+}
+
+/* NAVIGATION */
+.page-navigation, .wp-pagenavi {
+	text-align:center;
+	margin:15px 0px;
+	@include fs-xlg;
+	color:$subColor;
+	.prev, .next, .first, .last, .pages {
+		@include fs-xsmall;
+		text-transform: uppercase;
+		margin:0px 6px;
+	}
+	a {
+		color:desaturate($domColor, 50%);
+		@include hover($subColor);
+		border:0px;
+	}
+	span {
+		border:0px;
+	}
+}
+
+.menu {
+	ul {
+		@include no-list;
+		li {
+			@include inline-block;
+			a {
+				display:block;
+				@include sub;
+				padding:0px 15px;
+			}
+			&:first-child a {
+				padding-left:0px!important;
+			}
+		}
+	}
+}
+.breadcrumbs {
+	margin-top:20px;
+	@include fs-medium;
+	background:inherit;
+	border:0px;
+	padding-left:0px;
+	a {
+		color:lighten($gray,12%);
+		@include hover($linkColor);
+	}
+}
+.footer, footer {
+	padding:15px 0px;
+	h2 {
+		color:$subColor;
+		text-transform:lowercase;
+	}
+	.menu ul {
+		li {
+			a {
+				color:$domColor;
+				@include hover($linkColor);
+				padding:0px 15px;
+			}
+		}
+	}
+}
+.link-list {
+	@include no-list;
+	li {
+		@include inline-block;
+		a {
+			display:block;
+			padding:4px 8px;
+		}
+	}
+}
+#creditsDisplay {
+	background-color: #ffffff;
+	@include filter-gradient(#ffffff, #f0f0f0, vertical);
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient(top, #ffffff 0%,#f0f0f0 100%));
+	@include border-radius(2px);
+	position:absolute;
+	right:0px;
+	top:-52px;
+	z-index:9999;
+	width:240px;
+	height:auto;
+	text-align:center;
+	border:1px solid #e8e8e8;
+	padding:2px;
+	display:none;
+}
+#footerCredits {
+	position:relative;
+}
+.ts-maintenance-mode {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background:$domColor;
+	padding:25% 0px;
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+	min-height:100%;
+	color:white;
+	@include cond;
+	@include fs-giant;
+	background-color: $domColor;
+	@include filter-gradient(lighten($domColor,16%), $domColor, horizontal);
+	$experimental-support-for-svg: true;
+	@include background-image(radial-gradient(center, ellipse cover, lighten($domColor,16%) 0%,$domColor 100%));
+	.coming-soon {
+		margin:0;
+		@include fs-xlg;
+	}
+}
+.search-form {
+	input[type="text"] {
+		max-width:180px;
+		@include box-shadow(none);
+		border:0px;
+		font-style:italic;
+		float:left;
+		margin-right:-2px;
+		@include border-left-radius(5px);
+	}
+	button {
+		@include fs;
+		margin-top:0px;
+		@include border-radius(0px);
+		@include border-right-radius(5px);
+	}
+}
+.meta {
+	@include no-list;
+	text-align:center;
+	i {
+		color:$gray;
+		margin-right:4px;
+	}
+	a {
+		color:$domColor;
+		@include hover($linkColor);
+	}
+	li {
+		@include inline-block;
+		margin:4px;
+		&:after {
+			content:'\2f';
+			padding:0px 4px;
+		}
+		&:last-child:after {
+			content:'\A0';
+		}
 	}
 }

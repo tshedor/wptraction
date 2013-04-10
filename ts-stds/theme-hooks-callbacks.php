@@ -21,7 +21,7 @@ function ts_initialize_options(){
 		}
 	}
 }
-add_action('after_setup_theme', 'ts_initialize_options');
+add_action('switch_theme', 'ts_initialize_options');
 
 function admin_meta_scripts(){
 	if(function_exists( 'wp_enqueue_media' )){

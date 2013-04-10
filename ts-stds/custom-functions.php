@@ -33,7 +33,7 @@ function isnt_blank($var){
 //http://codex.wordpress.org/Function_Reference/the_post_thumbnail
 function my_post_image_html( $html, $post_id, $post_image_id ) {
   $html = '<a href="'.get_permalink( $post_id ).'" title="'.esc_attr(get_post_field('post_title', $post_id)).'">'.$html.'</a>';
-  return $html;
+  echo $html;
 }
 add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
 
@@ -307,7 +307,7 @@ class adminfield
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function number() {
 		$html = $this->initial;
@@ -319,7 +319,7 @@ class adminfield
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function date() {
 		$html = $this->initial;
@@ -331,7 +331,7 @@ class adminfield
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function week() {
 		$html = $this->initial;
@@ -343,7 +343,7 @@ class adminfield
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function month() {
 		$html = $this->initial;
@@ -355,7 +355,7 @@ class adminfield
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function datetime() {
 		$html = $this->initial;
@@ -367,7 +367,7 @@ class adminfield
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function url() {
 		$html = $this->initial;
@@ -379,7 +379,7 @@ class adminfield
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function tel() {
 		$html = $this->initial;
@@ -391,7 +391,7 @@ class adminfield
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function range() {
 		$html = $this->initial;
@@ -403,7 +403,7 @@ class adminfield
 			$html .= 'required';
 		$html .= ' />';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function color() {
 		$html = $this->initial;
@@ -417,7 +417,7 @@ class adminfield
 			$html .= ' required';
 		$html .= ' />';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function textarea(){
 		$html = $this->initial;
@@ -431,7 +431,7 @@ class adminfield
 			$html .= stripslashes($this->meta);
 		$html .= '</textarea>';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function textareacode(){
 		$html = $this->initial;
@@ -445,17 +445,16 @@ class adminfield
 				$html .= stripslashes($this->value['std']);
 			$html .= '</textarea>';
 			$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function tinymce(){
-		$html = $this->initial;
+		echo $this->initial;
 			if ($this->meta != "")
 				$val = stripslashes($this->meta);
 			else
 				$val = stripslashes($this->value['std']);
 		wp_editor( $val, $this->value['id'], array( 'textarea_name' => $this->value['id'], 'media_buttons' => true, 'textarea_rows' => 12, 'tinymce' => array( 'theme_advanced_buttons1' => 'formatselect,forecolor,|,bold,italic,underline,|,bullist,numlist,blockquote,|,justifyleft,justifycenter,justifyright,justifyfull,|,link,unlink,|,spellchecker,wp_adv' ) ) );
-		$html .= $this->finish;
-		return $html;
+		echo $this->finish;
 	}
 	public function pages(){
 		$html = $this->initial;
@@ -473,7 +472,7 @@ class adminfield
 			}
 		$html .= '</select>';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function posts(){
 		$html = $this->initial;
@@ -492,7 +491,7 @@ class adminfield
 			}
 		$html .= '</select>';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function categories(){
 		$html = $this->initial;
@@ -510,7 +509,7 @@ class adminfield
 			}
 		$html .= '</select>';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function checkbox(){
 		if(isset($this->value['class']))
@@ -527,7 +526,7 @@ class adminfield
 			</label>
 		</div>
 		</div>';
-		return $html;
+		echo $html;
 	}
 	public function socialcheckbox(){
 		if(isset($this->value['class']))
@@ -545,7 +544,7 @@ class adminfield
 				</label>
 			</div>
 		</div>';
-		return $html;
+		echo $html;
 	}
 	public function radio(){
 		$html = $this->initial;
@@ -559,7 +558,7 @@ class adminfield
 			$html .= '/>&nbsp;&nbsp;'.$opt['label'].'</label>&nbsp;&nbsp;';
 		}
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function media(){
 		$html = $this->initial;
@@ -576,7 +575,7 @@ class adminfield
 			$html .= ' required ';
 		$html .= ' />';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function map(){
 		$html = '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=places,geometry"></script>';
@@ -589,7 +588,7 @@ class adminfield
 		$html .= '});</script><input type="hidden" name="'.$this->value['id'].'" id="'.$this->value['id'].'" value="'.$this->meta.'" />
 			<div id="residence_map" style="width:500px; height:200px;"></div>';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function icons(){
 		$icons = array('quote','cabinet','microphone','checkmark','cancel','location','megaphone','comments','paper-plane','thumbs-up','thumbs-down','user','users','instagram','help','plus','minus','cancel','folder-open','map','spinner','search','reorder','youtube','wordpress','download','tag','tags','pencil','film','pictures','picture','phone','mobile','star','star-2','star-3','export','random','print','repeat','warning','clock','code','home','paperclip','link','earth','calendar','heart-empty','heart','cog','mail','user-add','sound','pencil-2','asterisk','info','megaphoneright','users-2','file','circleinfo','vote','vote-2','lamp','shield','tie','intersection','desklamp','captainamerica','walle','monstersinc','wheelchair','braces','volumefull','volumehalf','volumemute2','bluetooth','record','pocket','podcast','paw','bubbles');
@@ -615,18 +614,18 @@ class adminfield
 		$html .= '<input class="hidden-icons" type="hidden" name="'.$this->value['id'].'" value="'.$this->meta.'" />';
 		$html .= '</div>';
 		$html .= $this->finish;
-		return $html;
+		echo $html;
 	}
 	public function separate(){
 		$html = '<div class="postbox clearfix clear">
 			<h3 class="hndle">'.$this->value['name'].'</h3>
 			<div class="inside">';
-		return $html;
+		echo $html;
 	}
 	public function endarray(){
 		$html = '</div>
 		</div>';
-		return $html;
+		echo $html;
 	}
 }
 

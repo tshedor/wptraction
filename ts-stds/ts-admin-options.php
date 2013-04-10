@@ -38,7 +38,7 @@ echo '<div class="wrap tsao clear clearfix" id="poststuff">
 		$meta = $globalMeta[$value['id']];
 		$fieldType = $value['type'];
 		$newField = new adminfield($meta,$value);
-		echo $newField->$fieldType();
+		$newField->$fieldType();
 	}
 		echo '
 </div>

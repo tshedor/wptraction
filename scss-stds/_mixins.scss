@@ -1,6 +1,10 @@
 $em-base: 16px !default;
 $size-value: 15px;
 
+$sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif: Georgia, serif;
+$script:Brush Script MT, Trebuchet MS, 'Helvetica Neue', Helvetica, Arial, script;
+
 @mixin color-scheme($text_color:#3d3d3d,$scheme:$scheme){
 
 	@if ($scheme == 'light') {
