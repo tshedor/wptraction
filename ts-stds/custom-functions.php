@@ -30,7 +30,6 @@ function isnt_blank($var){
 		return false;
 	}
 }
-
 //http://codex.wordpress.org/Function_Reference/the_post_thumbnail
 function my_post_image_html( $html, $post_id, $post_image_id ) {
   $html = '<a href="'.get_permalink( $post_id ).'" title="'.esc_attr(get_post_field('post_title', $post_id)).'">'.$html.'</a>';

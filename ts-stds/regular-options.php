@@ -1,4 +1,14 @@
 <?php
+
+//http://stackoverflow.com/questions/8102221/php-multidimensional-array-searching-find-key-by-specific-value
+function arrayKey($array, $arrayValue) {
+   foreach($array as $key => $item) {
+      if($item['id'] === $arrayValue)
+         return $key;
+   }
+   return false;
+}
+
 $social = array(
 array(
 	'name'	=>	'Social',
@@ -212,14 +222,6 @@ array(
 	'id'	=>	'separate',
 	'std'	=>	'',
 	'type'	=>	'separate'
-),
-array(
-	'name'	=>	'Icons',
-	'desc'	=>	'Pick an icon',
-	'id'	=>	'home_icon_1',
-	'std'	=>	'http://example.com/logo.png',
-	'class'	=>	'clear',
-	'type'	=>	'icons'
 ),
 array(
 	'name'	=>	'Logo URL',

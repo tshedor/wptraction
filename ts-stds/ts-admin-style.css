@@ -17,8 +17,8 @@
 .tsao .socialbox { display: inline-block; -moz-display: -inline-stack; margin-right: 12px; }
 .tsao textarea { height: auto; width: 80%; }
 .tsao input[type="checkbox"], .tsao input[type="radio"] { padding: 0; margin: 0; vertical-align: auto; }
-.tsao .radio, .tsao .checkbox { min-height: 33px; padding-left: 20px; }
-.tsao .radio input[type="radio"], .tsao .checkbox input[type="checkbox"] { float: left; margin-left: -20px; }
+.tsao .checkbox { min-height: 33px; padding-left: 20px; }
+.tsao .checkbox input[type="checkbox"] { float: left; margin-left: -20px; }
 .tsao input:focus:invalid, .tsao textarea:focus:invalid, .tsao select:focus:invalid { color: #b94a48; border-color: #ee5f5b; }
 .tsao input:focus:invalid:focus, .tsao textarea:focus:invalid:focus, .tsao select:focus:invalid:focus { border-color: #e9322d; -webkit-box-shadow: 0 0 6px #f8b9b7; -moz-box-shadow: 0 0 6px #f8b9b7; box-shadow: 0 0 6px #f8b9b7; }
 .tsao td.label { width: 35%; }
