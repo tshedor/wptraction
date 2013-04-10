@@ -3,6 +3,7 @@ fonts/
 style.scss
 index.lock
 *.scssc
+*.scss
 .sass-cache
 lib/scss-includes/
 lib/style.scss
