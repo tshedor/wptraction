@@ -1,10 +1,4 @@
-scss-includes/**/*
-scss-includes/
-scss-includes
-fonts/
 style.scss
-index.lock
+editor-style.scss
 *.scssc
 .sass-cache
-lib/scss-includes/
-lib/style.scss
