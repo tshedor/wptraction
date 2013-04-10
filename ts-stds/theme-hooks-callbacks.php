@@ -9,13 +9,11 @@ function ts_initialize_options(){
 	global $options;
 	$a = get_option('ts_admin_options');
 	if($a){
-		if(!$a['has_saved']){
+		if(isset($a['has_saved'])){
 			$admin_options = array();
 			foreach ($options as $value) {
-				if($value['def'])
+				if(isset($value['def']))
 					$admin_options[$value['id']] = $value['def'];
-				elseif($value['std'])
-					$admin_options[$value['id']] = $value['std'];
 				else
 					$admin_options[$value['id']] = false;
 			}

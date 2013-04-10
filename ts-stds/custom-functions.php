@@ -290,11 +290,7 @@ class adminfield
 	public function __construct($meta,$value) {
 		$this->meta = $meta;
 		$this->value = $value;
-		$this->initial = '<div class="option '.$this->value['type'].' ';
-		if($this->value['class'])
-			$this->initial .= $this->value['class'];
-
-		$this->initial .= '">
+		$this->initial = '<div class="option '.$this->value['type'].' '.$this->value['class'].'">
 			<div class="label">'.$this->value['name'].'<span class="desc">'.$this->value['desc'].'</span></div>
 			<div class="cell">';
 		$this->finish = '</div></div>';
@@ -624,7 +620,6 @@ class adminfield
 	}
 }
 
-include_once(get_template_directory().'/lib/ts-stds/custom-functions.php');
 include_once(get_template_directory().'/lib/ts-stds/theme-hooks-callbacks.php');
 include_once(get_template_directory().'/lib/ts-stds/widgets.php');
 include_once(get_template_directory().'/lib/ts-stds/shortcodes.php');
