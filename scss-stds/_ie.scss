@@ -1,30 +1,36 @@
 /*********** IE ************/
-
+.ie-warning {
+	display:none;
+}
+.ie, .ie.ie6, .ie.ie7, .ie.ie8, .ie.ie9 {
+	display:none;
+}
 .ie {
+	display:block;
 	.ie-warning {
 		overflow:hidden;
 		display:block;
 	}
 	&.ie6 {
-		display:none;
+		display:block;
 		.ie6-warning {
 			display:block;
 		}
 	}
 	&.ie7 {
-		display:none;
+		display:block;
 		.ie6-warning {
 			display:block;
 		}
 	}
 	&.ie8 {
-
-
+		.gradient {
+			filter:none;
+		}
 	}
 	&.ie9 {
 		.gradient {
 			filter:none;
 		}
-
 	}
 }

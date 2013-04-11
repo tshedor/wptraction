@@ -4,7 +4,12 @@ $a = get_option('ts_admin_options');
 add_filter( 'wp_footer' , 'custom_footer' );
 function custom_footer() {
 	global $a;
-	echo '<script type="text/javascript">(function(){$(function(){$("#searchIcon").click(function(){$("#searchInput").focus();$("#searchForm").toggleClass("active");return!1});typeof superfish!="undefined"&&superfish!==null&&$(".sf-menu").superfish();$("#activateMobile").click(function(){return $("#mobileMenu").slideToggle()});$("#creditsDisplay, #mobileMenu").hide();$("#footerCredits").click(function(){$("#creditsDisplay").fadeToggle();return!1});if(typeof bxSlider!="undefined"&&bxSlider!==null)return $(".bxslider").bxSlider({controls:!1,auto:!0,infiniteLoop:!0})})}).call(this);</script>
+	echo '<script type="text/javascript" src="'.get_template_directory_uri().'/lib/plugins.min.js"></script><script type="text/javascript">(function(){$(function(){$("#searchIcon").click(function(){$("#searchInput").focus();$("#searchForm").toggleClass("active");return!1});typeof superfish!="undefined"&&superfish!==null&&$(".sf-menu").superfish();$("#activateMobile").click(function(){return $("#mobileMenu").slideToggle()});$("#creditsDisplay, #mobileMenu").hide();$("#footerCredits").click(function(){$("#creditsDisplay").fadeToggle();return!1});typeof bxSlider!="undefined"&&bxSlider!==null&&$(".bxslider").bxSlider({controls:!1,auto:!0,infiniteLoop:!0});';
+		if($a['slimbox_gallery'])
+			echo '$(\'.gallery .gallery-item .gallery-icon a[href*=".jpg"], .gallery .gallery-item .gallery-icon a[href*=".png"], .gallery .gallery-item .gallery-icon a[href*=".jpeg"]\').attr("rel","lightbox").slimbox();';
+		if($a['slimbox_single'])
+			echo '$(\'a[href*=".png"], a[href*=".jpg"], a[href*=".jpeg"]\').attr("rel", "lightbox").slimbox();';
+	echo '})}).call(this)</script>
 	<div class="notice ie-warning">
 	<div class="row ie6-warning warning">
 		<div class="large-12 columns">
@@ -61,9 +66,9 @@ function custom_head() {
 	echo '<meta name="copyright" content="'.date('Y').' '.get_bloginfo('name').'"><link type="text/plain" rel="author" href="'.get_template_directory_uri().'/humans.txt" />';
 	echo '<meta http-equiv="Content-Type" content="'.get_bloginfo('html_type').'; charset='.get_bloginfo('charset').'" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="'.get_bloginfo('description').'" /><meta name="robots" content="index,follow" />
 
-	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="'.get_bloginfo('rss2_url').'" /><link rel="alternate" type="text/xml" title="RSS .92" href="'.get_bloginfo('rss_url').'" /><link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="'.get_bloginfo('atom_url').'" />';
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="'.get_bloginfo('rss2_url').'" /><link rel="alternate" type="text/xml" title="RSS .92" href="'.get_bloginfo('rss_url').'" /><link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="'.get_bloginfo('atom_url').'" /><link rel="pingback" href="'.get_bloginfo('pingback_url').'" />';
 	if($a['favicon'] != ''){
-		echo '<link rel="pingback" href="'.get_bloginfo('pingback_url').'" /><link rel="icon" type="image/x-icon" href="'.$a['favicon'].'" />';
+		echo '<link rel="icon" type="image/x-icon" href="'.$a['favicon'].'" />';
 	}
 
 	echo '<link href="'.get_bloginfo('stylesheet_url').'" rel="stylesheet" type="text/css" />

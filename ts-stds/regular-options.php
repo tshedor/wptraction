@@ -283,7 +283,7 @@ array(
 	'id'	=>	'show_related_on_single',
 	'std'	=>	'',
 	'type'	=>	'checkbox',
-	'def'	=>	true,
+	'def'	=>	true
 ),
 array(
 	'name'	=>	'Show comments on pages',
@@ -291,6 +291,41 @@ array(
 	'id'	=>	'comments_on_pages',
 	'std'	=>	'',
 	'type'	=>	'checkbox'
+),
+array(
+	'name'	=>	'Use Slimbox lightbox for single images',
+	'desc'	=>	'In case you don\'t use a plugin like NextGEN',
+	'id'	=>	'slimbox_single',
+	'std'	=>	'',
+	'class'	=>	'half',
+	'type'	=>	'checkbox',
+	'def'	=>	true
+),
+array(
+	'name'	=>	'Use Slimbox lightbox for galleries',
+	'desc'	=>	'In case you don\'t use a plugin like NextGEN',
+	'id'	=>	'slimbox_gallery',
+	'std'	=>	'',
+	'class'	=>	'half',
+	'type'	=>	'checkbox',
+	'def'	=>	true
+),
+array(
+	'name'	=>	'Author credit in footer',
+	'desc'	=>	'Please leave this credit in the footer',
+	'id'	=>	'footer_credit',
+	'std'	=>	'',
+	'class'	=>	'clear',
+	'type'	=>	'checkbox',
+	'def'	=>	true
+),
+array(
+	'name'	=>	'Copyright Text',
+	'desc'	=>	'Defaults to &copy; Copyright {SITE NAME} {CURRENT YEAR}',
+	'id'	=>	'copyright_text',
+	'std'	=>	'',
+	'class'	=>	'clear',
+	'type'	=>	'text'
 ),
 array(
 	'name'	=>	'Analytics Code',
