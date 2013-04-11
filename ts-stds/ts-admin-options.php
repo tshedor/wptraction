@@ -25,10 +25,9 @@ function ts_admin() {
 				$admin_options[$value['id']] = false;
 		}
 		update_option('ts_admin_options', $admin_options);
-	}
-	if(isset($_GET['reset']))
 		echo '<div id="message" class="updated" style="width:800px; margin-left:0px; padding-right:0px;margin-top:20px"><p><strong>Settings reset.</strong></p></div>';
-echo '<div class="wrap tsao clear clearfix" id="poststuff">
+	}
+	echo '<div class="wrap tsao clear clearfix" id="poststuff">
 		<h2>'.$themename.' settings</h2>
 		<form method="post">
 		<input type="hidden" name="update_themeoptions" value="true" />';
@@ -48,7 +47,16 @@ echo '<div class="wrap tsao clear clearfix" id="poststuff">
 </p>
 </form>
 <form method="post">
-	<p class="submit"> 	<input name="save" type="submit" class="button button-primary" value="Reset" />
+<script type="text/javascript">
+function reallyreset(){
+var agree=confirm("Are you sure you want to reset all options?");
+if (agree)
+	return true ;
+else
+	return false ;
+}
+</script>
+	<p class="submit"> 	<input name="save" type="submit" class="button button-primary" value="Reset" onclick="return reallyreset()" />
 <input type="hidden" name="action" value="reset" /></form> </p>
 ';
 }

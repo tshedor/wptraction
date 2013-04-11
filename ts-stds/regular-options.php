@@ -116,7 +116,7 @@ array(
 	'desc'	=>	'',
 	'id'	=>	'show_social',
 	'std'	=>	'',
-	'class'	=>	'third',
+	'class'	=>	'half',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
 ),
@@ -125,7 +125,7 @@ array(
 	'desc'	=> '',
 	'id'	=> 'share_icon_style',
 	'std'	=> 'plain',
-	'class' => 'clear',
+	'class' => 'half',
 	'type'	=> 'radio',
 	'options' => array(
 		array(
@@ -268,6 +268,7 @@ array(
 	'desc'	=>	'',
 	'id'	=>	'breadcrumbs_archive',
 	'std'	=>	'',
+	'class'	=>	'half',
 	'type'	=>	'checkbox'
 ),
 array(
@@ -275,6 +276,7 @@ array(
 	'desc'	=>	'',
 	'id'	=>	'breadcrumbs_single',
 	'std'	=>	'',
+	'class'	=>	'half',
 	'type'	=>	'checkbox'
 ),
 array(
@@ -282,6 +284,7 @@ array(
 	'desc'	=>	'',
 	'id'	=>	'show_related_on_single',
 	'std'	=>	'',
+	'class'	=>	'half',
 	'type'	=>	'checkbox',
 	'def'	=>	true
 ),
@@ -290,6 +293,7 @@ array(
 	'desc'	=>	'',
 	'id'	=>	'comments_on_pages',
 	'std'	=>	'',
+	'class'	=>	'half',
 	'type'	=>	'checkbox'
 ),
 array(
@@ -315,7 +319,7 @@ array(
 	'desc'	=>	'Please leave this credit in the footer',
 	'id'	=>	'footer_credit',
 	'std'	=>	'',
-	'class'	=>	'clear',
+	'class'	=>	'half',
 	'type'	=>	'checkbox',
 	'def'	=>	true
 ),
@@ -323,6 +327,14 @@ array(
 	'name'	=>	'Copyright Text',
 	'desc'	=>	'Defaults to &copy; Copyright {SITE NAME} {CURRENT YEAR}',
 	'id'	=>	'copyright_text',
+	'std'	=>	'',
+	'class'	=>	'half',
+	'type'	=>	'text'
+),
+array(
+	'name'	=>	'Default Contact Form Email',
+	'desc'	=>	'Defaults to the admin email (under Settings > General)',
+	'id'	=>	'contact_form_email',
 	'std'	=>	'',
 	'class'	=>	'clear',
 	'type'	=>	'text'

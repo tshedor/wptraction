@@ -4,7 +4,7 @@ $a = get_option('ts_admin_options');
 add_filter( 'wp_footer' , 'custom_footer' );
 function custom_footer() {
 	global $a;
-	echo '<script type="text/javascript" src="'.get_template_directory_uri().'/lib/plugins.min.js"></script><script type="text/javascript">(function(){$(function(){$("#searchIcon").click(function(){$("#searchInput").focus();$("#searchForm").toggleClass("active");return!1});typeof superfish!="undefined"&&superfish!==null&&$(".sf-menu").superfish();$("#activateMobile").click(function(){return $("#mobileMenu").slideToggle()});$("#creditsDisplay, #mobileMenu").hide();$("#footerCredits").click(function(){$("#creditsDisplay").fadeToggle();return!1});typeof bxSlider!="undefined"&&bxSlider!==null&&$(".bxslider").bxSlider({controls:!1,auto:!0,infiniteLoop:!0});';
+	echo '<script type="text/javascript" src="'.get_template_directory_uri().'/lib/plugins.min.js"></script><script type="text/javascript">(function(){$(function(){$("#searchIcon").click(function(){$("#searchInput").focus();$("#searchForm").toggleClass("active");return!1});$(".sf-menu").superfish();$("#activateMobile").click(function(){return $("#mobileMenu").slideToggle()});$("#creditsDisplay, #mobileMenu").hide();$("#footerCredits").click(function(){$("#creditsDisplay").fadeToggle();return!1});$(".bxslider").bxSlider({controls:!1,auto:!0,infiniteLoop:!0});';
 		if($a['slimbox_gallery'])
 			echo '$(\'.gallery .gallery-item .gallery-icon a[href*=".jpg"], .gallery .gallery-item .gallery-icon a[href*=".png"], .gallery .gallery-item .gallery-icon a[href*=".jpeg"]\').attr("rel","lightbox").slimbox();';
 		if($a['slimbox_single'])
@@ -81,8 +81,20 @@ function custom_head() {
 }
 
 function get_copyright(){
-	echo '<div class="copyright">
-		<div id="creditsDisplay"><div><a href="'.get_template_directory_uri().'/humans.txt" title="Credits">Credits</a></div><div>Code and Design by <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a></div></div>
-		&copy; Copyright <a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">'.get_bloginfo('name').'</a> '.date('Y').' | <a href="#" title="Tim Shedor" class="cred" id="footerCredits"><i class="icon-asterisk"></i></a>
-	</div>';
+	global $a;
+	echo '<div class="copyright">';
+	if(isnt_blank($a['copyright_text'])){
+		$copytext = $a['copyright_text'];
+		$copytext = str_replace('{SITE NAME}', get_bloginfo('name'), $copytext);
+		$copytext = str_replace('{CURRENT YEAR}', date('Y'), $copytext);
+		echo $copytext;
+	} else {
+		echo '&copy; Copyright <a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">'.get_bloginfo('name').'</a> '.date('Y');
+	}
+	if($a['footer_credit']){
+		echo '| Code and Design by <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a>';
+	} else {
+		echo '| <div id="creditsDisplay"><div><a href="'.get_template_directory_uri().'/humans.txt" title="Credits">Credits</a></div><div>Code and Design by <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a></div></div> <a href="#" title="Tim Shedor" class="cred" id="footerCredits"><i class="icon-asterisk"></i></a>';
+	}
+	echo '</div>';
 }

@@ -197,6 +197,29 @@ function ts_related($post_count = 5){
 		}
 	}
 }
+function ts_contact($email = NULL){
+	global $a;
+	if(!isset($email)){
+		if(!$email){
+			if(isnt_blank($a['contact_form_email']))
+				$email = $a['contact_form_email'];
+			else
+				$email = get_option('admin_email');
+		}
+	}
+	$contact_form = '<form method="post" class="ts-contact">
+		<input type="text" placeholder="Name" name="ts_name"/>
+		<input type="text" placeholder="Email" name="ts_email"/>
+		<textarea placeholder="Your message" name="ts_message"></textarea>
+		<input type="hidden" name="ts_contact"/>
+		<input type="submit" class="button" value="Contact" />
+	</form>';
+	if(isset($_POST['ts_contact'])){
+		wp_mail($email, 'Contact Form from '.$_POST['ts_name'], esc_attr(strip_tags($_POST['ts_message'])));
+		echo '<div class="notice success">Thank you for your message</div>';
+	}
+	echo $contact_form;
+}
 function ts_pagination(){
 	if(function_exists('wp_pagenavi'))
 		wp_pagenavi();

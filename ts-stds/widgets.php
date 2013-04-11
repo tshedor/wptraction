@@ -323,3 +323,57 @@ class TS_Popular extends WP_Widget {
 
 }
 add_action( 'widgets_init', create_function( '', 'register_widget( "ts_popular" );' ) );
+class TS_Contact extends WP_Widget {
+
+	public function __construct() {
+		parent::__construct(
+	 		'ts_contact',
+			'TS Contact',
+			array( 'description' => __( 'Display a contact form', 'text_domain' ), )
+		);
+	}
+	public function widget( $args, $instance ) {
+		extract( $args );
+		$title = apply_filters( 'widget_title', $instance['title'] );
+		$email_please = $instance['contact_email'];
+		if(!isnt_blank($email_please))
+			$email_please = null;
+
+		echo $before_widget;
+		if (!empty($title))
+			echo $before_title . $title . $after_title;
+		ts_contact($email_please);
+		echo $after_widget;
+	}
+
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['contact_email'] = strip_tags( $new_instance['contact_email'] );
+
+		return $instance;
+	}
+
+	public function form( $instance ) {
+		if(isset($instance[ 'title' ]))
+			$title = $instance[ 'title' ];
+		else
+			$title = __( 'Contact', 'text_domain' );
+		if(isset($instance['contact_email']))
+			$contact_email = $instance['contact_email'];
+		else
+			$contact_email = __('name@example.com', 'text_domain');
+		?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'contact_email' ); ?>">Send to Email:</label>
+			<input id="<?php echo $this->get_field_id( 'contact_email' ); ?>" name="<?php echo $this->get_field_name( 'contact_email' ); ?>" type="text" value="<?php echo esc_attr( $contact_email ); ?>" placeholder="name@example.com" class="widefat" />
+		</p>
+		<?php
+	}
+
+}
+add_action( 'widgets_init', create_function( '', 'register_widget( "ts_contact" );' ) );
