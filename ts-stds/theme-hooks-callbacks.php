@@ -9,7 +9,7 @@ function ts_initialize_options(){
 	global $options;
 	$a = get_option('ts_admin_options');
 	if($a){
-		if(isset($a['has_saved'])){
+		if(!isset($a['has_saved'])){
 			$admin_options = array();
 			foreach ($options as $value) {
 				if(isset($value['def']))
@@ -19,6 +19,8 @@ function ts_initialize_options(){
 			}
 			update_option('ts_admin_options', $admin_options);
 		}
+	} else {
+		return;
 	}
 }
 add_action('switch_theme', 'ts_initialize_options');
@@ -35,8 +37,9 @@ function admin_meta_scripts(){
 function custom_admin_swag(){
 	wp_register_script('ts-meta', get_template_directory_uri().'/lib/ts-stds/ts-meta.js', array('jquery','media-upload','thickbox'));
 	wp_register_script('jquery-validate', get_template_directory_uri().'/lib/ts-stds/libs/jquery.validate.js', array('jquery'));
+	wp_register_script('parsely', get_template_directory_uri().'/lib/ts-stds/libs/parsley.min.js', array('jquery'));
 	wp_enqueue_script('ts-meta');
-	wp_enqueue_script('jquery-validate');
+	wp_enqueue_script('parsely');
 	wp_register_style('ts-admin-style', get_template_directory_uri().'/lib/ts-stds/ts-admin-style.css');
 	wp_register_style('ts-admin-icons', get_template_directory_uri().'/lib/fonts/CharlieGordon/style.css');
 	wp_enqueue_style('ts-admin-style');

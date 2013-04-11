@@ -197,29 +197,6 @@ function ts_related($post_count = 5){
 		}
 	}
 }
-function ts_contact($email = NULL){
-	global $a;
-	if(!isset($email)){
-		if(!$email){
-			if(isnt_blank($a['contact_form_email']))
-				$email = $a['contact_form_email'];
-			else
-				$email = get_option('admin_email');
-		}
-	}
-	$contact_form = '<form method="post" class="ts-contact">
-		<input type="text" placeholder="Name" name="ts_name"/>
-		<input type="text" placeholder="Email" name="ts_email"/>
-		<textarea placeholder="Your message" name="ts_message"></textarea>
-		<input type="hidden" name="ts_contact"/>
-		<input type="submit" class="button" value="Contact" />
-	</form>';
-	if(isset($_POST['ts_contact'])){
-		wp_mail($email, 'Contact Form from '.$_POST['ts_name'], esc_attr(strip_tags($_POST['ts_message'])));
-		echo '<div class="notice success">Thank you for your message</div>';
-	}
-	echo $contact_form;
-}
 function ts_pagination(){
 	if(function_exists('wp_pagenavi'))
 		wp_pagenavi();
@@ -327,8 +304,26 @@ class adminfield
 			$html .= stripslashes($this->meta);
 		$html .= '" placeholder="'.stripslashes($this->value['std']).'" ';
 		if(isset($this->value['required']))
-			$html .= 'required';
+			$html .= 'required data-required="true"';
 		$html .= ' />';
+		$html .= $this->finish;
+		echo $html;
+	}
+	public function repeatable() {
+		$html = $this->initial;
+		$html .= '<a class="repeatable-add button" href="#">+</a>
+		<ul id="'.$field['id'].'-repeatable" class="custom_repeatable">';
+		$i = 0;
+		if($this->meta) {
+			foreach($this->meta as $row) {
+				$html .= '<li><span class="sort hndle">|||</span>
+				<input type="text" name="'.$this->value['id'].'['.$i.']" id="'.$this->field['id'].'" value="'.stripslashes($row).'" /><a class="repeatable-remove button" href="#">-</a></li>';
+				$i++;
+			}
+		} else {
+			$html .= '<li><span class="sort hndle">|||</span>
+			<input type="text" name="'.$this->value['id'].'['.$i.']" id="'.$this->field['id'].'" value="'.stripslashes($row).'" /><a class="repeatable-remove button" href="#">-</a></li>';
+		}
 		$html .= $this->finish;
 		echo $html;
 	}
@@ -339,7 +334,7 @@ class adminfield
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
 		if(isset($this->value['required']))
-			$html .= 'required';
+			$html .= 'required data-required="true"';
 		$html .= ' />';
 		$html .= $this->finish;
 		echo $html;
@@ -351,7 +346,7 @@ class adminfield
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
 		if(isset($this->value['required']))
-			$html .= 'required';
+			$html .= 'required data-required="true"';
 		$html .= ' />';
 		$html .= $this->finish;
 		echo $html;
@@ -363,7 +358,7 @@ class adminfield
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
 		if(isset($this->value['required']))
-			$html .= 'required';
+			$html .= 'required data-required="true"';
 		$html .= ' />';
 		$html .= $this->finish;
 		echo $html;
@@ -375,7 +370,7 @@ class adminfield
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
 		if(isset($this->value['required']))
-			$html .= 'required';
+			$html .= 'required data-required="true"';
 		$html .= ' />';
 		$html .= $this->finish;
 		echo $html;
@@ -387,7 +382,7 @@ class adminfield
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
 		if(isset($this->value['required']))
-			$html .= 'required';
+			$html .= 'required data-required="true"';
 		$html .= ' />';
 		$html .= $this->finish;
 		echo $html;
@@ -399,7 +394,7 @@ class adminfield
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
 		if(isset($this->value['required']))
-			$html .= 'required';
+			$html .= 'required data-required="true"';
 		$html .= ' />';
 		$html .= $this->finish;
 		echo $html;
@@ -411,7 +406,43 @@ class adminfield
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
 		if(isset($this->value['required']))
-			$html .= 'required';
+			$html .= 'required data-required="true"';
+		$html .= ' />';
+		$html .= $this->finish;
+		echo $html;
+	}
+	public function email() {
+		$html = $this->initial;
+		$html .= '<input name="'.$this->value['id'].'" type="email" data-type="email" value="';
+		if ($this->meta != "")
+			$html .= $this->meta;
+		$html .= '" placeholder="'.$this->value['std'].'" ';
+		if(isset($this->value['required']))
+			$html .= 'required data-required="true"';
+		$html .= ' />';
+		$html .= $this->finish;
+		echo $html;
+	}
+	public function password() {
+		$html = $this->initial;
+		$html .= '<input name="'.$this->value['id'].'" type="password" value="';
+		if ($this->meta != "")
+			$html .= $this->meta;
+		$html .= '" placeholder="'.$this->value['std'].'" ';
+		if(isset($this->value['required']))
+			$html .= 'required data-required="true"';
+		$html .= ' />';
+		$html .= $this->finish;
+		echo $html;
+	}
+	public function hidden() {
+		$html = $this->initial;
+		$html .= '<input name="'.$this->value['id'].'" type="hidden" value="';
+		if ($this->meta != "")
+			$html .= $this->meta;
+		$html .= '" placeholder="'.$this->value['std'].'" ';
+		if(isset($this->value['required']))
+			$html .= 'required data-required="true"';
 		$html .= ' />';
 		$html .= $this->finish;
 		echo $html;
@@ -423,7 +454,7 @@ class adminfield
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
 		if(isset($this->value['required']))
-			$html .= 'required';
+			$html .= 'required data-required="true"';
 		$html .= ' />';
 		$html .= $this->finish;
 		echo $html;

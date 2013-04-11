@@ -198,3 +198,32 @@ function tab_shortcode( $atts, $content = null ) {
 	return $tab;
 }
 add_shortcode( 'tab', 'tab_shortcode' );
+
+function contact_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+		'email' =>	'',
+		'label'	=>	'Get in touch',
+	), $atts ) );
+	$a = get_option('ts_admin_options');
+	$contactme = '';
+	if(isnt_blank($email)){
+		if(isnt_blank($a['contact_form_email']))
+			$email = $a['contact_form_email'];
+		else
+			$email = get_option('admin_email');
+	}
+	if(isset($_POST['ts_contact_shortcode'])){
+		wp_mail($email, 'Contact Form from '.$_POST['ts_name'], esc_attr(strip_tags($_POST['ts_message'])));
+		$contactme .= '<div class="notice success">Thank you for your message</div>';
+	}
+	$contactme .= '<h3>'.$label.'</h3>';
+	$contactme .= '<form method="post" class="ts-contact">
+		<input type="text" placeholder="Name" name="ts_name"/>
+		<input type="text" placeholder="Email" name="ts_email"/>
+		<textarea placeholder="Your message" name="ts_message"></textarea>
+		<input type="hidden" name="ts_contact_shortcode"/>
+		<input type="submit" class="button" value="Contact" />
+	</form>';
+	return $contactme;
+}
+add_shortcode( 'contact', 'contact_shortcode' );

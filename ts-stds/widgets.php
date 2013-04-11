@@ -336,13 +336,30 @@ class TS_Contact extends WP_Widget {
 		extract( $args );
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$email_please = $instance['contact_email'];
-		if(!isnt_blank($email_please))
-			$email_please = null;
-
+		$a = get_option('ts_admin_options');
+		if(!isset($email_please)){
+			if(!$email_please){
+				if(isnt_blank($a['contact_form_email']))
+					$email_please = $a['contact_form_email'];
+				else
+					$email_please = get_option('admin_email');
+			}
+		}
+		$contact_form = '<form method="post" class="ts-contact">
+			<input type="text" placeholder="Name" name="ts_name"/>
+			<input type="text" placeholder="Email" name="ts_email"/>
+			<textarea placeholder="Your message" name="ts_message"></textarea>
+			<input type="hidden" name="ts_contact"/>
+			<input type="submit" class="button" value="Contact" />
+		</form>';
 		echo $before_widget;
 		if (!empty($title))
 			echo $before_title . $title . $after_title;
-		ts_contact($email_please);
+		if(isset($_POST['ts_contact'])){
+			wp_mail($email, 'Contact Form from '.$_POST['ts_name'], esc_attr(strip_tags($_POST['ts_message'])));
+			echo '<div class="notice success">Thank you for your message</div>';
+		}
+		echo $contact_form;
 		echo $after_widget;
 	}
 

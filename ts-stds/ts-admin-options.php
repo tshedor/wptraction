@@ -29,7 +29,7 @@ function ts_admin() {
 	}
 	echo '<div class="wrap tsao clear clearfix" id="poststuff">
 		<h2>'.$themename.' settings</h2>
-		<form method="post">
+		<form method="post" novalidate data-validate="parsley">
 		<input type="hidden" name="update_themeoptions" value="true" />';
 	$globalMeta = get_option('ts_admin_options');
 
@@ -56,7 +56,7 @@ else
 	return false ;
 }
 </script>
-	<p class="submit"> 	<input name="save" type="submit" class="button button-primary" value="Reset" onclick="return reallyreset()" />
+	<p class="submit"> 	<input name="save" type="reset" class="button button-primary" value="Reset" onclick="return reallyreset()" />
 <input type="hidden" name="action" value="reset" /></form> </p>
 ';
 }

@@ -528,6 +528,18 @@ button, .button, input[type="submit"] {
 		@include fs-xlg;
 	}
 }
+.ts-contact {
+	max-width:460px;
+	input, textarea {
+		@include border-radius(5px);
+	}
+	textarea {
+		min-height:85px;
+	}
+	.button, button {
+		@include border-radius(3px);
+	}
+}
 .search-form {
 	input[type="text"] {
 		max-width:180px;
