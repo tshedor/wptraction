@@ -402,7 +402,6 @@ button, .button, input[type="submit"] {
 	&:hover {
 		cursor:pointer;
 		background:darken($domColor,12%);
-		background-color:inherit;
 		@include box-shadow(inset 0px -12px 22px 0px rgba(0, 0, 0, 0.24))
 	}
 	&:active {
