@@ -141,7 +141,7 @@ function social_header(){
 	$social = array('twitter', 'facebook', 'pinterest', 'instagram', 'flickr', 'googleplus', 'github', 'linkedin', 'feed', 'mail');
 	foreach($social as $sicon) :
 		$op = $a[$sicon.'_profile'];
-		if(isset($op) && $op != ''){
+		if(isnt_blank($op)){
 			if($sicon == 'twitter')
 				$op = 'http://twitter.com/'.$op;
 			if($a['share_icon_style'] == 'round')

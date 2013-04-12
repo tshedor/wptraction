@@ -92,9 +92,9 @@ function get_copyright(){
 		echo '&copy; Copyright <a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">'.get_bloginfo('name').'</a> '.date('Y');
 	}
 	if($a['footer_credit']){
-		echo '| Code and Design by <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a>';
+		echo ' | Code and Design by <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a>';
 	} else {
-		echo '| <div id="creditsDisplay"><div><a href="'.get_template_directory_uri().'/humans.txt" title="Credits">Credits</a></div><div>Code and Design by <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a></div></div> <a href="#" title="Tim Shedor" class="cred" id="footerCredits"><i class="icon-asterisk"></i></a>';
+		echo ' | <div id="creditsDisplay"><div><a href="'.get_template_directory_uri().'/humans.txt" title="Credits">Credits</a></div><div>Code and Design by <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a></div></div> <a href="#" title="Tim Shedor" class="cred" id="footerCredits"><i class="icon-asterisk"></i></a>';
 	}
 	echo '</div>';
 }

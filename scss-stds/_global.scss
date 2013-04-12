@@ -548,6 +548,7 @@ button, .button, input[type="submit"] {
 		font-style:italic;
 		float:left;
 		margin-right:-2px;
+		padding:7px;
 		@include border-left-radius(5px);
 	}
 	button {
@@ -555,6 +556,7 @@ button, .button, input[type="submit"] {
 		margin-top:0px;
 		@include border-radius(0px);
 		@include border-right-radius(5px);
+		padding:7px 9px;
 	}
 }
 .meta {
