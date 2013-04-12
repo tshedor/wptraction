@@ -17,6 +17,8 @@ function ts_initialize_options(){
 				$admin_options[$value['id']] = false;
 		} elseif(!$a[$value['id']]){
 			$admin_options[$value['id']] = false;
+		} else {
+			$admin_options[$value['id']] = $a[$value['id']];
 		}
 	}
 	update_option('ts_admin_options', $admin_options);
