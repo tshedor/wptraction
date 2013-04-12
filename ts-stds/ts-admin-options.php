@@ -46,7 +46,6 @@ function ts_admin() {
 	<input type="hidden" name="action" value="save" />
 </p>
 </form>
-<form method="post">
 <script type="text/javascript">
 function reallyreset(){
 var agree=confirm("Are you sure you want to reset all options?");
@@ -56,7 +55,8 @@ else
 	return false ;
 }
 </script>
-	<p class="submit"> 	<input name="save" type="reset" class="button button-primary" value="Reset" onclick="return reallyreset()" />
+<form method="post">
+	<p class="submit"> 	<input name="save" type="submit" class="button button-primary" value="Reset" onclick="return reallyreset()" />
 <input type="hidden" name="action" value="reset" /></form> </p>
 ';
 }

@@ -8,29 +8,16 @@ if ( ! isset( $content_width ) ) $content_width = 1000;
 function ts_initialize_options(){
 	global $options;
 	$a = get_option('ts_admin_options');
-	if($a){
-		if(isset($a['has_saved'])){
-			$admin_options = array();
-			foreach ($options as $value) {
-				if(!isset($value['id'])){
-					if(isset($value['def']))
-						$admin_options[$value['id']] = $value['def'];
-					else
-						$admin_options[$value['id']] = false;
-				}
-			}
-			update_option('ts_admin_options', $admin_options);
-		}
-	} else {
-		$admin_options = array();
-		foreach ($options as $value) {
+	$admin_options = array();
+	foreach ($options as $value) {
+		if(!isset($a[$value['id']])){
 			if(isset($value['def']))
 				$admin_options[$value['id']] = $value['def'];
 			else
 				$admin_options[$value['id']] = false;
 		}
-		update_option('ts_admin_options', $admin_options);
 	}
+	update_option('ts_admin_options', $admin_options);
 }
 add_action('switch_theme', 'ts_initialize_options');
 
