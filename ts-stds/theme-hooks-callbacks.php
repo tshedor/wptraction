@@ -11,7 +11,7 @@ function ts_initialize_options(){
 	$admin_options = array();
 	if($a){
 		foreach ($options as $value) {
-			if(!isset($a[value['id']])){
+			if(!isset($a[$value['id']])){
 				if(isset($value['def']))
 					$admin_options[$value['id']] = $value['def'];
 				else
