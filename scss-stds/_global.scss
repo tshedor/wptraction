@@ -159,6 +159,12 @@ hr {
 			li {
 				border-bottom:1px solid $light-gray;
 				padding:12px 0px;
+				&:before {
+					content: '\bb';
+					@include fs-small;
+					color: $gray;
+					margin-right: 10px;
+				}
 			}
 		}
 		&:first-child {
@@ -178,8 +184,22 @@ hr {
 }
 
 .post {
+	ul {
+		list-style:disc;
+	}
+	ol {
+		list-style:decimal;
+	}
 	.entry {
 		margin-bottom:30px;
+	}
+}
+.entry {
+	ul {
+		list-style:disc;
+	}
+	ol {
+		list-style:decimal;
 	}
 }
 
