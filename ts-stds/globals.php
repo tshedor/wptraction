@@ -1,6 +1,5 @@
 <?php
 $a = get_option('ts_admin_options');
-
 add_filter( 'wp_footer' , 'custom_footer' );
 function custom_footer() {
 	global $a;
