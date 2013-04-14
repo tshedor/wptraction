@@ -1,4 +1,4 @@
-.tsao .label { font-family: Helvetica,'Helvetica Neue',Arial,sans-serif; color: #444; font-size: 14px; }
+.tsao .label { font-family: Helvetica,'Helvetica Neue',Arial,sans-serif; color: #444; font-size: 14px; min-height:18px; }
 .tsao .desc { display: block; -moz-display: inline-block; zoom: 1; color: #8F8F8F; font-size: 12px; }
 .tsao .option { margin: 20px 0px; *zoom: 1; }
 .tsao .option.half { float:left; width:45%; margin-right:2%; }
