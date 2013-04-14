@@ -2,6 +2,5 @@ style.scss
 editor-style.scss
 scss-includes/
 .git
-.gitignore
 *.scssc
 .sass-cache
