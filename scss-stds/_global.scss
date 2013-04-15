@@ -330,17 +330,26 @@ hr {
 .notice {
 	@include fs-medium;
 }
-.alert {
-	background:#B64040;
-	padding:6px;
-	@include border-radius(4px);
-	@include box-shadow(1px 2px 2px 1px #5a2a2a);
-	strong {
-		color:#000;
+.notice, .alert {
+	background:$domColor;
+	padding:10px;
+	color:white;
+	@include border-radius(3px);
+	@include box-shadow(0px 2px 8px -3px $gray);
+	&.success {
+		background:#4AC089;
+	}
+	&.info {
+		background:#4487CE;
+	}
+	&.error {
+		background:#B64040;
+	}
+	&.no-shadow{
+		@include box-shadow(none);
 	}
 	a {
 		color:$lightest_gray;
-		@include hover($linkColor)
 	}
 	.close {
 		color:white;
@@ -349,17 +358,15 @@ hr {
 		top:-4px;
 		position:relative;
 	}
-	&.alert-error {
-		background:#B64040;
-	}
 }
-.warning {
-	.alert {
-		background:#F1E234!important;
-		a {
-			color:$linkColor;
-			@include hover($subColor)
-		}
+.search {
+	h1 span {
+		text-transform:uppercase;
+		@include fs-tiny;
+		@include inline-block;
+		background:$domColor;
+		color:white;
+		padding:6px;
 	}
 }
 

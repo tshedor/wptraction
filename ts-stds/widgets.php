@@ -431,9 +431,7 @@ class TS_Mailchimp extends WP_Widget {
 			$api = new MCAPI($mc_api_key);
 			$retval = $api->listSubscribe( $mc_list_id, $_POST['email'], $merges, 'html', $double_optin, false, true, $send_welcome );
 			if ($api->errorCode){
-				echo "Something broke. Please pardon the mess.\n";
-				echo "\tCode=".$api->errorCode."\n";
-				echo "\tMsg=".$api->errorMessage."\n";
+				echo '<div class="notice error">'.$api->errorMessage.'\n</div>';
 			} else {
 				echo '<div class="notice success">';
 				if($double_optin)
