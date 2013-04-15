@@ -343,8 +343,16 @@ array(
 	'name'	=>	'Analytics Code',
 	'desc'	=>	'Paste the code from Google Analytics or a similar analytics service here if you don\'t use a plugin',
 	'id'	=>	'analytics_code',
-	'std'	=>	'',
+	'std'	=>	'two-thirds',
 	'type'	=>	'textareacode'
+),
+array(
+	'name'	=>	'Do not track logged in users',
+	'desc'	=>	'',
+	'id'	=>	'do_not_track_users',
+	'std'	=>	'third',
+	'type'	=>	'checkbox',
+	'def'	=>	true
 ),
 array(
 	'name'	=>	'Custom CSS',

@@ -2,8 +2,9 @@
 .tsao .desc { display: block; -moz-display: inline-block; zoom: 1; color: #8F8F8F; font-size: 12px; }
 .tsao .option { margin: 20px 0px; *zoom: 1; }
 .tsao .option.half { float:left; width:45%; margin-right:2%; }
-.tsao .option.third { float:left; width:28%; margin-right:2%;height:37px; }
-.tsao .option.fourth { float:left; width:22%; margin-right:2%;height:37px; }
+.tsao .option.third { float:left; width:28%; margin-right:2% }
+.tsao .option.two-thirds { float:left; width:62%; margin-right:2%; }
+.tsao .option.fourth { float:left; width:22%; margin-right:2%; }
 .tsao .option:before, .tsao .option:after { display: table; content: ""; line-height: 0; }
 .tsao .cell.aux { display: inline-block; -moz-display: -inline-stack; margin-left: 40px; }
 .tsao textarea { width: 100%; }

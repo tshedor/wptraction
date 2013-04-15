@@ -74,7 +74,10 @@ function custom_head() {
 	echo '<link href="'.get_bloginfo('stylesheet_url').'" rel="stylesheet" type="text/css" />
 	<style type="text/css">'.stripslashes($a['custom_css']).'</style>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>';
-	if(!is_user_logged_in()){
+	if($a['do_not_track_users']){
+		if(!is_user_logged_in())
+			echo stripslashes($a['analytics_code']);
+	} else {
 		echo stripslashes($a['analytics_code']);
 	}
 	if($a['maintenance_mode'] && !is_user_logged_in()) echo '<style type="text/css">div,hide-for-small,.home .header {display:none!important; }</style><article class="ts-maintenance-mode gradient">'.get_bloginfo('name').'<p class="coming-soon">Coming Soon</p></article>';
