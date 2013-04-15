@@ -343,7 +343,8 @@ array(
 	'name'	=>	'Analytics Code',
 	'desc'	=>	'Paste the code from Google Analytics or a similar analytics service here if you don\'t use a plugin',
 	'id'	=>	'analytics_code',
-	'std'	=>	'two-thirds',
+	'std'	=>	'',
+	'class'	=>	'two-thirds',
 	'type'	=>	'textareacode'
 ),
 array(

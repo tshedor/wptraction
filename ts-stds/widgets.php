@@ -337,6 +337,7 @@ class TS_Contact extends WP_Widget {
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$email_please = $instance['contact_email'];
 		$a = get_option('ts_admin_options');
+		$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 		if(!isset($email_please)){
 			if(!$email_please){
 				if(isnt_blank($a['contact_form_email']))
@@ -394,3 +395,136 @@ class TS_Contact extends WP_Widget {
 
 }
 add_action( 'widgets_init', create_function( '', 'register_widget( "ts_contact" );' ) );
+class TS_Mailchimp extends WP_Widget {
+
+	public function __construct() {
+		parent::__construct(
+	 		'ts_mailchimp',
+			'TS Mailchimp',
+			array( 'description' => __( 'Display a Mailchimp subscribe form', 'text_domain' ), )
+		);
+	}
+	public function widget( $args, $instance ) {
+		extract( $args );
+		include_once(get_template_directory().'/lib/ts-stds/libs/mailchimp/MCAPI.class.php');
+		$title = apply_filters( 'widget_title', $instance['title'] );
+		$mc_api_key = $instance['mc_api_key'];
+		$mc_list_id = $instance['mc_list_id'];
+		if($instance['double_optin'])
+			$double_optin = true;
+		else
+			$double_optin = false;
+		if($instance['send_welcome'])
+			$send_welcome = true;
+		else
+			$send_welcome = false;
+		$get_name = $instance['get_name'];
+		$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+		echo $before_widget;
+		if (!empty($title))
+			echo $before_title . $title . $after_title;
+		if(isset($_POST['ts_mailchimp'])){
+			$merges = array();
+			if($get_name)
+				$merges = array('FNAME' => $_POST['fname'], 'LNAME'=>$_POST['lname'],);
+			$api = new MCAPI($mc_api_key);
+			$retval = $api->listSubscribe( $mc_list_id, $_POST['email'], $merges, 'html', $double_optin, false, true, $send_welcome );
+			if ($api->errorCode){
+				echo "Something broke. Please pardon the mess.\n";
+				echo "\tCode=".$api->errorCode."\n";
+				echo "\tMsg=".$api->errorMessage."\n";
+			} else {
+				echo '<div class="notice success">';
+				if($double_optin)
+					echo 'Success. Look for the confirmation message in your inbox.';
+				else
+					echo 'Success. Stay tuned.';
+				echo '</div>';
+			}
+		} else {
+			echo '<form method="post" class="ts-contact ts-mailchimp">
+			<input type="text" name="email" placeholder="Email" />';
+			if($get_name)
+				echo '<input type="text" name="fname" placeholder="First Name" />
+				<input type="text" name="lname" placeholder="Last Name" />';
+			echo '<input type="hidden" name="ts_mailchimp" />
+			<input type="submit" class="button" value="Subscribe" />
+			</form>';
+		}
+		echo $after_widget;
+	}
+
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['mc_api_key'] = strip_tags( $new_instance['mc_api_key'] );
+		$instance['mc_list_id'] = strip_tags( $new_instance['mc_list_id'] );
+		$instance['double_optin'] = strip_tags( $new_instance['double_optin'] );
+		$instance['send_welcome'] = strip_tags( $new_instance['send_welcome'] );
+		$instance['get_name'] = strip_tags( $new_instance['get_name'] );
+
+		return $instance;
+	}
+
+	public function form( $instance ) {
+		if(isset($instance[ 'title' ]))
+			$title = $instance[ 'title' ];
+		else
+			$title = __( 'Subscribe', 'text_domain' );
+		if(isset($instance['mc_api_key']))
+			$mc_api_key = $instance['mc_api_key'];
+		else
+			$mc_api_key = __('YOUR API KEY', 'text_domain');
+		if(isset($instance['mc_list_id']))
+			$mc_list_id = $instance['mc_list_id'];
+		else
+			$mc_list_id = __('9o416378mh', 'text_domain');
+		if(isset($instance['double_optin']))
+			$double_optin = $instance['double_optin'];
+		else
+			$double_optin = __( 'on', 'text_domain' );
+		if(isset($instance['send_welcome']))
+			$send_welcome = $instance['send_welcome'];
+		else
+			$send_welcome = false;
+		if(isset($instance['get_name']))
+			$get_name = $instance['get_name'];
+		else
+			$get_name = false;
+		?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'mc_api_key' ); ?>">API Key:<br /><a href="http://admin.mailchimp.com/account/api" target="_blank">Get an API Key</a></label>
+			<input id="<?php echo $this->get_field_id( 'mc_api_key' ); ?>" name="<?php echo $this->get_field_name( 'mc_api_key' ); ?>" type="text" value="<?php echo esc_attr( $mc_api_key ); ?>" placeholder="YOUR API KEY" class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'mc_list_id' ); ?>">List ID:<br />Login to MC account, go to List, then List Tools, and look for the List ID entry</label>
+			<input id="<?php echo $this->get_field_id( 'mc_list_id' ); ?>" name="<?php echo $this->get_field_name( 'mc_list_id' ); ?>" type="text" value="<?php echo esc_attr( $mc_list_id ); ?>" placeholder="9o416378mh" class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'double_optin' ); ?>">
+				<input id="<?php echo $this->get_field_id( 'double_optin' ); ?>" name="<?php echo $this->get_field_name( 'double_optin' ); ?>" type="checkbox" <?php if($double_optin) { echo ' checked '; } ?> />
+				Send a confirmation email
+			</label>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'send_welcome' ); ?>">
+				<input id="<?php echo $this->get_field_id( 'send_welcome' ); ?>" name="<?php echo $this->get_field_name( 'send_welcome' ); ?>" type="checkbox" <?php if($send_welcome) { echo ' checked '; } ?> />
+				Send welcome email (no effect if confirmation email is checked)
+			</label>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'get_name' ); ?>">
+				<input id="<?php echo $this->get_field_id( 'get_name' ); ?>" name="<?php echo $this->get_field_name( 'get_name' ); ?>" type="checkbox" <?php if($get_name) { echo ' checked '; } ?> />
+				Get first and last name
+			</label>
+		</p>
+		<?php
+	}
+
+}
+add_action( 'widgets_init', create_function( '', 'register_widget( "ts_mailchimp" );' ) );
