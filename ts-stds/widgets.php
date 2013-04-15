@@ -477,7 +477,7 @@ class TS_Mailchimp extends WP_Widget {
 		if(isset($instance['mc_list_id']))
 			$mc_list_id = $instance['mc_list_id'];
 		else
-			$mc_list_id = __('9o416378mh', 'text_domain');
+			$mc_list_id = false;
 		if(isset($instance['double_optin']))
 			$double_optin = $instance['double_optin'];
 		else
@@ -496,13 +496,29 @@ class TS_Mailchimp extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'mc_api_key' ); ?>">API Key:<br /><a href="http://admin.mailchimp.com/account/api" target="_blank">Get an API Key</a></label>
+			<label for="<?php echo $this->get_field_id( 'mc_api_key' ); ?>">API Key <a href="http://admin.mailchimp.com/account/api" target="_blank">Get an API Key</a>:</label>
 			<input id="<?php echo $this->get_field_id( 'mc_api_key' ); ?>" name="<?php echo $this->get_field_name( 'mc_api_key' ); ?>" type="text" value="<?php echo esc_attr( $mc_api_key ); ?>" placeholder="YOUR API KEY" class="widefat" />
 		</p>
+		<?php if($mc_api_key != 'YOUR API KEY'){ ?>
+
 		<p>
-			<label for="<?php echo $this->get_field_id( 'mc_list_id' ); ?>">List ID:<br />Login to MC account, go to List, then List Tools, and look for the List ID entry</label>
-			<input id="<?php echo $this->get_field_id( 'mc_list_id' ); ?>" name="<?php echo $this->get_field_name( 'mc_list_id' ); ?>" type="text" value="<?php echo esc_attr( $mc_list_id ); ?>" placeholder="9o416378mh" class="widefat" />
-		</p>
+			<label for="<?php echo $this->get_field_id( 'mc_list_id' ); ?>">Your lists (please add API key, save and reload):</label>
+			<?php
+			include_once(get_template_directory().'/lib/ts-stds/libs/mailchimp/MCAPI.class.php');
+			$api = new MCAPI($mc_api_key);
+			$getlists = $api->lists();
+			if ($api->errorCode){
+				echo 'No lists available';
+			} else { ?>
+			<select id="<?php echo $this->get_field_id( 'mc_list_id' ); ?>" name="<?php echo $this->get_field_name( 'mc_list_id' ); ?>" placeholder="YOUR API KEY" class="widefat">
+				<option>Select One</option>
+				<?php foreach ($getlists['data'] as $list) {
+					echo '<option value="'.$list['id'].'" ',$mc_list_id == $list['id'] ? 'selected' : '','>'.$list['name'].'</option>';
+				} ?>
+			</select>
+			<?php }
+		echo '</p>';
+		} ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'double_optin' ); ?>">
 				<input id="<?php echo $this->get_field_id( 'double_optin' ); ?>" name="<?php echo $this->get_field_name( 'double_optin' ); ?>" type="checkbox" <?php if($double_optin) { echo ' checked '; } ?> />
