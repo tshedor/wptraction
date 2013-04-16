@@ -603,13 +603,20 @@ class adminfield
 	public function radio(){
 		$html = $this->initial;
 		foreach ($this->value['options'] as $opt) {
+			if(isset($opt['image']))
+				$html .= '<div class="radio-image">';
 			$html .= '<label>';
+			if(isset($opt['image']))
+				$html .= '<img src="'.$opt['image'].'" />';
 			$html .= '<input name="'.$this->value['id'].'" type="radio" value="'.$opt['value'].'"';
 			if(!$this->meta && $opt['value'] == $this->value['std'])
 				$html .= 'checked="checked"';
 			if($this->meta == $opt['value'])
 				$html .= 'checked="checked"';
-			$html .= '/>&nbsp;&nbsp;'.$opt['label'].'</label>&nbsp;&nbsp;';
+			$html .= '/>';
+			$html .= '&nbsp;&nbsp;'.$opt['label'].'</label>&nbsp;&nbsp;';
+			if(isset($opt['image']))
+				$html .='</div>';
 		}
 		$html .= $this->finish;
 		echo $html;
@@ -688,6 +695,7 @@ include_once(get_template_directory().'/lib/ts-stds/widgets.php');
 include_once(get_template_directory().'/lib/ts-stds/shortcodes.php');
 include_once(get_template_directory().'/lib/ts-stds/globals.php');
 include_once(get_template_directory().'/lib/ts-stds/resume-pt.php');
+include_once(get_template_directory().'/lib/ts-stds/post-meta/layout.php');
 if(is_user_logged_in()){
 	include_once(get_template_directory().'/lib/ts-stds/tinymce/functions.php');
 	include_once(get_template_directory().'/lib/ts-stds/ts-admin-options.php');

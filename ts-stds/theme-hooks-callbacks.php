@@ -80,7 +80,7 @@ add_action( 'wp_before_admin_bar_render', 'ts_add_option_bar' );
 
 function custom_search_template(){
 	return '<form method="get" class="search-form" action="'.get_bloginfo('url').'/">
-		<input type="text" size="16" placeholder="Search..." id="searchInput" name="s" id="s" />
+		<input type="text" size="16" placeholder="Search" id="searchInput" onfocus="this.value=(this.value==\'Search\') ? \'\' : this.value;" onblur="this.value=(this.value==\'\') ? \'Search\' : this.value;" name="s" id="s" />
 		<input type="hidden" size="16" id="searchsubmit"  value="Search" />
 		<button type="submit" value="Search"><i class="icon-search"></i></button>
 	</form>';

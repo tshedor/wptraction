@@ -12,6 +12,8 @@
 .tsao #poststuff .option img { max-width: 100%; height: auto; zoom: 1; }
 .tsao .option.checkbox { background: none; }
 .tsao .option.checkbox .desc { margin-bottom:15px; }
+.tsao .option.radio img { max-width:150px; display:block; margin-bottom:4px; }
+.tsao .option.radio .radio-image { display:inline-block; -moz-display:-inline-stack; text-align:center; margin-right:20px; }
 .tsao .clearfix { *zoom: 1; }
 .tsao .postbox { width:100%; max-width:800px; }
 .tsao .clearfix:before, .tsao .clearfix:after { display: table; content: ""; line-height: 0; }
