@@ -99,13 +99,11 @@ window.onload = function() {
 			'icon-star' : '&#xe044;',
 			'icon-star-2' : '&#xe042;',
 			'icon-star-3' : '&#xe041;',
-			'icon-envelope' : '&#xe014;',
 			'icon-pencil-2' : '&#xe03d;',
 			'icon-calendar-2' : '&#xe04b;',
 			'icon-film' : '&#xe051;',
 			'icon-phone' : '&#xe043;',
 			'icon-code' : '&#xe049;',
-			'icon-mail' : '&#xe003;',
 			'icon-googleplus' : '&#xe00d;',
 			'icon-googleplus-2' : '&#xe06f;',
 			'icon-googleplus-3' : '&#xf086;',
@@ -141,7 +139,10 @@ window.onload = function() {
 			'icon-pinterest-3' : '&#xe02a;',
 			'icon-stumbleupon' : '&#xe02b;',
 			'icon-stumbleupon-2' : '&#xe033;',
-			'icon-stumbleupon-3' : '&#xe02c;'
+			'icon-stumbleupon-3' : '&#xe02c;',
+			'icon-email' : '&#xe014;',
+			'icon-email-2' : '&#xe003;',
+			'icon-email-3' : '&#xe015;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
