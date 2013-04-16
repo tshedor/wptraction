@@ -136,7 +136,7 @@ function social_single($showNames = true){
 }
 function social_header(){
 	global $a;
-	$social = array('twitter', 'facebook', 'pinterest', 'instagram', 'flickr', 'googleplus', 'github', 'linkedin', 'feed', 'mail');
+	$social = array('twitter', 'facebook', 'pinterest', 'instagram', 'flickr', 'googleplus', 'github', 'linkedin', 'feed', 'email');
 	foreach($social as $sicon) :
 		$op = $a[$sicon.'_profile'];
 		if(isnt_blank($op)){
@@ -148,7 +148,7 @@ function social_header(){
 				$sicon = $sicon.'-3';
 			if($sicon == 'feed')
 				$op = get_bloginfo('rss2_url');
-			if($sicon == 'mail')
+			if($sicon == 'email')
 				$op = 'mailto:'.get_bloginfo('admin_email');
 			echo '<a href="'.$op.'" title="'.ucfirst($sicon).'"><i class="icon-'.$sicon.'"></i></a>';
 		}

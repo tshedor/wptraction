@@ -96,7 +96,7 @@ array(
 array(
 	'name'	=>	'Show Email in header',
 	'desc'	=>	'Uses the email set in General settings',
-	'id'	=>	'mail_profile',
+	'id'	=>	'email_profile',
 	'std'	=>	'',
 	'class'	=>	'third',
 	'type'	=>	'checkbox',
