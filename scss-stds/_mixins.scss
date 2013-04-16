@@ -1,5 +1,6 @@
 $em-base: 16px !default;
 $size-value: 15px;
+$scheme: 'light' !default;
 
 $sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $serif: Georgia, serif;
@@ -39,6 +40,42 @@ $script:Brush Script MT, Trebuchet MS, 'Helvetica Neue', Helvetica, Arial, scrip
 @mixin auto-img {
 	width:100%;
 	height:auto;
+}
+@mixin lifted-shadow($direction:both,$deg:5deg) {
+	//@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+	position:relative;
+	&:before, &:after {
+		content:'';
+		z-index:-2;
+		position:absolute;
+		bottom:12px;
+		left:5px;
+		width:40%;
+		height:20%;
+		@include box-shadow(0px 17px 8px #979797);
+		@include transform(rotate(- $deg));
+	}
+	@if($direction == 'both') {
+		&:after {
+			right:10px;
+			left:auto;
+			@include transform(rotate($deg));
+			visibility:visible!important;
+			height:20%!important;
+		}
+	}
+	@if($direction == 'left') {
+		&:after {
+			@include box-shadow(none);
+			visibility:hidden;
+		}
+	}
+	@if($direction == 'right') {
+		&:before {
+			@include box-shadow(none);
+			visibility:visible;
+		}
+	}
 }
 @mixin left-shadow {
 	@include box-shadow(-5px 8px 18px 8px #dbdcdd);

@@ -501,13 +501,43 @@ button, .button, input[type="submit"] {
 		}
 	}
 }
-.link-list {
+.link-list, .header ul {
 	@include no-list;
 	li {
 		@include inline-block;
 		a {
 			display:block;
 			padding:4px 8px;
+		}
+	}
+}
+
+.mobile-menu {
+	display:none;
+	i {
+		@include fs-xlg;
+		position:relative;
+		top:-10px;
+		color:$domColor;
+	}
+	ul {
+		padding-left:0px!important;
+		margin-left:0px!important;
+		background:white;
+		top:-12px;
+		position:relative;
+		li {
+			display:inline;
+			float:none;
+			background:white;
+			a {
+				display:block;
+				background:white;
+				color:$domColor;
+				@include cond;
+				padding:12px 8px;
+				border-bottom:1px solid $dark_gray;
+			}
 		}
 	}
 }
