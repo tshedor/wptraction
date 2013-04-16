@@ -143,6 +143,13 @@ array(
 	)
 ),
 array(
+	'name'	=>	'Clear',
+	'desc'	=>	'',
+	'id'	=>	'clear',
+	'std'	=>	'<div class="clear"></div>',
+	'type'	=>	'customnotice'
+),
+array(
 	'name'	=>	'Facebook',
 	'desc'	=>	'facebook-2',
 	'id'	=>	'facebook',
@@ -241,7 +248,7 @@ array(
 	'type'	=>	'media'
 ),
 array(
-	'name'	=>	'Maintenance Mode Active',
+	'name'	=>	'Landing/Coming Soon/Splash Page Active',
 	'desc'	=>	'Show a splash page instead of the actual site unless you\'re logged in',
 	'id'	=>	'maintenance_mode',
 	'std'	=>	'',
@@ -351,7 +358,7 @@ array(
 	'name'	=>	'Do not track logged in users',
 	'desc'	=>	'',
 	'id'	=>	'do_not_track_users',
-	'std'	=>	'third',
+	'class'	=>	'third',
 	'type'	=>	'checkbox',
 	'def'	=>	true
 ),
@@ -360,6 +367,7 @@ array(
 	'desc'	=>	'Override styles with your own code',
 	'id'	=>	'custom_css',
 	'std'	=>	'',
+	'class'	=>	'clear',
 	'type'	=>	'textareacode'
 ),
 array(

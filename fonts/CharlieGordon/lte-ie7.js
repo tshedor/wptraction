@@ -53,13 +53,11 @@ window.onload = function() {
 			'icon-user' : '&#xe012;',
 			'icon-users-2' : '&#xe013;',
 			'icon-user-add' : '&#xe011;',
-			'icon-thumbs-down' : '&#xe010;',
 			'icon-share' : '&#xf29d;',
 			'icon-export' : '&#xf16b;',
 			'icon-clock' : '&#xe047;',
 			'icon-help' : '&#xe057;',
 			'icon-warning' : '&#xe046;',
-			'icon-download' : '&#xe000;',
 			'icon-sound' : '&#xe04f;',
 			'icon-menu' : '&#xe01f;',
 			'icon-heart' : '&#xf074;',
@@ -142,7 +140,9 @@ window.onload = function() {
 			'icon-stumbleupon-3' : '&#xe02c;',
 			'icon-email' : '&#xe014;',
 			'icon-email-2' : '&#xe003;',
-			'icon-email-3' : '&#xe015;'
+			'icon-email-3' : '&#xe015;',
+			'icon-thumbs-up' : '&#xe000;',
+			'icon-thumbs-down' : '&#xe010;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;

@@ -42,7 +42,7 @@ function ts_admin() {
 		echo '
 </div>
 <p class="submit">
-	<input name="save" type="submit" class="button button-primary" value="Save changes" />
+	<input name="save" type="submit" class="button button-primary button-large" value="Save changes" />
 	<input type="hidden" name="action" value="save" />
 </p>
 </form>
@@ -56,7 +56,7 @@ else
 }
 </script>
 <form method="post">
-	<p class="submit"> 	<input name="save" type="submit" class="button button-primary" value="Reset" onclick="return reallyreset()" />
+	<p class="submit"> 	<input name="save" type="submit" class="button" value="Reset" onclick="return reallyreset()" />
 <input type="hidden" name="action" value="reset" /></form> </p>
 ';
 }

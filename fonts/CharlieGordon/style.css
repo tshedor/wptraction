@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-android, .icon-shield, .icon-vote, .icon-users, .icon-file, .icon-circleinfo, .icon-asterisk, .icon-tie, .icon-intersection, .icon-uniF480, .icon-tags, .icon-wheelchair, .icon-uniF000, .icon-shopping, .icon-scales, .icon-uniF014, .icon-error, .icon-html, .icon-braces, .icon-presentation, .icon-volumemute2, .icon-volumehalf, .icon-volumefull, .icon-bluetooth, .icon-instagram, .icon-record, .icon-podcast, .icon-paw, .icon-quote, .icon-quote-2, .icon-cabinet, .icon-microphone, .icon-picture, .icon-pictures, .icon-checkmark, .icon-cancel, .icon-location, .icon-vote-2, .icon-megaphone, .icon-lamp, .icon-chat, .icon-info, .icon-paper-plane, .icon-paperclip, .icon-user, .icon-users-2, .icon-user-add, .icon-thumbs-down, .icon-share, .icon-export, .icon-clock, .icon-help, .icon-warning, .icon-download, .icon-sound, .icon-menu, .icon-heart, .icon-cog, .icon-home, .icon-tag, .icon-repeat, .icon-print, .icon-chevron-left, .icon-chevron-right, .icon-resize-full, .icon-resize-small, .icon-plus, .icon-minus, .icon-random, .icon-cogs, .icon-comments, .icon-heart-empty, .icon-reorder, .icon-comments-alt, .icon-mobile, .icon-angle-left, .icon-angle-right, .icon-angle-up, .icon-angle-down, .icon-pencil, .icon-folder-open, .icon-calendar, .icon-map, .icon-quotes-left, .icon-zoom-out, .icon-zoom-in, .icon-search, .icon-spinner, .icon-earth, .icon-link, .icon-star, .icon-star-2, .icon-star-3, .icon-pencil-2, .icon-calendar-2, .icon-film, .icon-phone, .icon-code, .icon-googleplus, .icon-googleplus-2, .icon-googleplus-3, .icon-facebook, .icon-facebook-2, .icon-facebook-3, .icon-twitter, .icon-twitter-2, .icon-twitter-3, .icon-feed, .icon-feed-2, .icon-feed-3, .icon-vimeo, .icon-youtube, .icon-vimeo-2, .icon-vimeo2, .icon-flickr, .icon-flickr-2, .icon-flickr-3, .icon-dribbble, .icon-dribbble-2, .icon-dribbble-3, .icon-github, .icon-github-2, .icon-github-3, .icon-skype, .icon-reddit, .icon-linkedin, .icon-linkedin-2, .icon-linkedin-3, .icon-pinterest, .icon-pinterest-2, .icon-pinterest-3, .icon-stumbleupon, .icon-stumbleupon-2, .icon-stumbleupon-3, .icon-email, .icon-email-2, .icon-email-3 {
+.icon-android, .icon-shield, .icon-vote, .icon-users, .icon-file, .icon-circleinfo, .icon-asterisk, .icon-tie, .icon-intersection, .icon-uniF480, .icon-tags, .icon-wheelchair, .icon-uniF000, .icon-shopping, .icon-scales, .icon-uniF014, .icon-error, .icon-html, .icon-braces, .icon-presentation, .icon-volumemute2, .icon-volumehalf, .icon-volumefull, .icon-bluetooth, .icon-instagram, .icon-record, .icon-podcast, .icon-paw, .icon-quote, .icon-quote-2, .icon-cabinet, .icon-microphone, .icon-picture, .icon-pictures, .icon-checkmark, .icon-cancel, .icon-location, .icon-vote-2, .icon-megaphone, .icon-lamp, .icon-chat, .icon-info, .icon-paper-plane, .icon-paperclip, .icon-user, .icon-users-2, .icon-user-add, .icon-share, .icon-export, .icon-clock, .icon-help, .icon-warning, .icon-sound, .icon-menu, .icon-heart, .icon-cog, .icon-home, .icon-tag, .icon-repeat, .icon-print, .icon-chevron-left, .icon-chevron-right, .icon-resize-full, .icon-resize-small, .icon-plus, .icon-minus, .icon-random, .icon-cogs, .icon-comments, .icon-heart-empty, .icon-reorder, .icon-comments-alt, .icon-mobile, .icon-angle-left, .icon-angle-right, .icon-angle-up, .icon-angle-down, .icon-pencil, .icon-folder-open, .icon-calendar, .icon-map, .icon-quotes-left, .icon-zoom-out, .icon-zoom-in, .icon-search, .icon-spinner, .icon-earth, .icon-link, .icon-star, .icon-star-2, .icon-star-3, .icon-pencil-2, .icon-calendar-2, .icon-film, .icon-phone, .icon-code, .icon-googleplus, .icon-googleplus-2, .icon-googleplus-3, .icon-facebook, .icon-facebook-2, .icon-facebook-3, .icon-twitter, .icon-twitter-2, .icon-twitter-3, .icon-feed, .icon-feed-2, .icon-feed-3, .icon-vimeo, .icon-youtube, .icon-vimeo-2, .icon-vimeo2, .icon-flickr, .icon-flickr-2, .icon-flickr-3, .icon-dribbble, .icon-dribbble-2, .icon-dribbble-3, .icon-github, .icon-github-2, .icon-github-3, .icon-skype, .icon-reddit, .icon-linkedin, .icon-linkedin-2, .icon-linkedin-3, .icon-pinterest, .icon-pinterest-2, .icon-pinterest-3, .icon-stumbleupon, .icon-stumbleupon-2, .icon-stumbleupon-3, .icon-email, .icon-email-2, .icon-email-3, .icon-thumbs-up, .icon-thumbs-down {
 	font-family: 'CharlieGordon';
 	speak: none;
 	font-style: normal;
@@ -178,9 +178,6 @@ you can use the generic selector below, but it's slower:
 .icon-user-add:before {
 	content: "\e011";
 }
-.icon-thumbs-down:before {
-	content: "\e010";
-}
 .icon-share:before {
 	content: "\f29d";
 }
@@ -195,9 +192,6 @@ you can use the generic selector below, but it's slower:
 }
 .icon-warning:before {
 	content: "\e046";
-}
-.icon-download:before {
-	content: "\e000";
 }
 .icon-sound:before {
 	content: "\e04f";
@@ -447,4 +441,10 @@ you can use the generic selector below, but it's slower:
 }
 .icon-email-3:before {
 	content: "\e015";
+}
+.icon-thumbs-up:before {
+	content: "\e000";
+}
+.icon-thumbs-down:before {
+	content: "\e010";
 }
