@@ -46,9 +46,8 @@ function get_image_id($image_url) {
 }
 function get_image($size = 'medium',$class = '',$attr = NULL, $id = NULL){
 	global $post, $a;
-	if($id == NULL){
+	if($id == NULL)
 		$id = $post->ID;
-	}
 	if(function_exists('get_the_image')){
 		get_the_image(array('image_scan' => true, 'post_id' => $id, 'size' => $size, 'image_class' => $class, $attr));
 	} elseif(has_post_thumbnail($id)) {
@@ -132,9 +131,8 @@ function social_single($showNames = true){
 			}
 		}
 	}
-	if($a['show_print']){
+	if($a['show_print'])
 		echo '<li class="social-list-item"><a href="'.get_permalink().'?print='.get_the_ID().'" title="Print '.get_the_title().'"><i class="icon-print"></i>',$showNames ? ' print' : '','</a></li>';
-	}
 }
 function social_header(){
 	global $a;
@@ -681,6 +679,10 @@ class adminfield
 		$html = '<div class="postbox clearfix clear">
 			<h3 class="hndle">'.$this->value['name'].'</h3>
 			<div class="inside">';
+		echo $html;
+	}
+	public function customnotice(){
+		$html = $this->value['std'];
 		echo $html;
 	}
 	public function endarray(){
