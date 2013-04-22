@@ -4,7 +4,7 @@ $a = get_option('ts_admin_options');
 add_filter( 'wp_footer' , 'custom_footer' );
 function custom_footer() {
 	global $a;
-	echo '<script type="text/javascript" src="'.get_template_directory_uri().'/lib/plugins.min.js"></script><script type="text/javascript">(function(){$(function(){$("#searchIcon").click(function(){$("#searchInput").focus();$("#searchForm").toggleClass("active");return!1});$(".sf-menu").superfish();$("#activateMobile").click(function(){return $("#mobileMenu").slideToggle()});$("#creditsDisplay, #mobileMenu").hide();$("#footerCredits").click(function(){$("#creditsDisplay").fadeToggle();return!1});$(".bxslider").bxSlider({controls:!1,auto:!0,infiniteLoop:!0});';
+	echo '<script type="text/javascript">(function(){$(function(){$("#searchIcon").click(function(){$("#searchInput").focus();$("#searchForm").toggleClass("active");return!1});$(".sf-menu").superfish();$("#activateMobile").click(function(){return $("#mobileMenu").slideToggle()});$("#creditsDisplay, #mobileMenu").hide();$("#footerCredits").click(function(){$("#creditsDisplay").fadeToggle();return!1});$(".bxslider").bxSlider({controls:!1,auto:!0,infiniteLoop:!0});';
 		if($a['slimbox_gallery'])
 			echo '$(\'.gallery .gallery-item .gallery-icon a[href*=".jpg"], .gallery .gallery-item .gallery-icon a[href*=".png"], .gallery .gallery-item .gallery-icon a[href*=".jpeg"]\').attr("rel","lightbox").slimbox();';
 		if($a['slimbox_single'])
@@ -39,6 +39,7 @@ function custom_footer() {
 	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/html5.js"></script>
 	<script type="text/javascript" src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/respond.min.js"></script>
 	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/IE9.js"></script>
+	<script src="'.get_template_directory_uri().'/lib/jquery.1.9.1.min.js" type="text/javascript"></script>
 <![endif]-->
 <!--[if lt IE 8]>
 	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/IE8.js"></script>
@@ -51,11 +52,12 @@ function custom_footer() {
 add_filter( 'wp_head' , 'custom_head' );
 function custom_head() {
 	global $a;
-	if(is_single()){
+	if(is_singular()){
 		echo '<meta property="og:title" content="'.get_the_title().'" />';
 		echo '<meta property="og:url" content="'.get_permalink().'" />';
 		echo '<meta property="og:description" content="'.get_the_excerpt().'" />';
 		echo '<meta property="og:type" content="article" />';
+		wp_enqueue_script( 'comment-reply' );
 	} elseif((is_home()) || (is_archive())){
 		echo '<meta property="og:title" content="'.get_bloginfo('name').'" />';
 		echo '<meta property="og:url" content="'.get_bloginfo('url').'" />';
@@ -71,9 +73,7 @@ function custom_head() {
 		echo '<link rel="icon" type="image/x-icon" href="'.$a['favicon'].'" />';
 	}
 
-	echo '<link href="'.get_bloginfo('stylesheet_url').'" rel="stylesheet" type="text/css" />
-	<style type="text/css">'.stripslashes($a['custom_css']).'</style>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>';
+	echo '<style type="text/css">'.stripslashes($a['custom_css']).'</style>';
 	if($a['do_not_track_users']){
 		if(!is_user_logged_in())
 			echo stripslashes($a['analytics_code']);
@@ -94,10 +94,9 @@ function get_copyright(){
 	} else {
 		echo '&copy; Copyright <a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">'.get_bloginfo('name').'</a> '.date('Y');
 	}
-	if($a['footer_credit']){
+	if($a['footer_credit'])
 		echo ' | Code and Design by <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a>';
-	} else {
+	else
 		echo ' | <div id="creditsDisplay"><div><a href="'.get_template_directory_uri().'/humans.txt" title="Credits">Credits</a></div><div>Code and Design by <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a></div></div> <a href="#" title="Tim Shedor" class="cred" id="footerCredits"><i class="icon-asterisk"></i></a>';
-	}
 	echo '</div>';
 }
