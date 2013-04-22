@@ -207,6 +207,7 @@ hr {
 
 .comment-list {
 	@include no-list;
+	list-style:none!important;
 }
 .comment {
 	padding:10px 0px;
@@ -264,6 +265,10 @@ hr {
 	}
 	ul, ol {
 		margin-left:0px;
+	}
+	#respond {
+		width:80%;
+		float:right;
 	}
 }
 .comment-content {
@@ -595,6 +600,18 @@ button, .button, input[type="submit"] {
 	}
 	.button, button {
 		@include border-radius(3px);
+	}
+}
+.ts-sitemap {
+	@include no-list;
+	list-style:none!important;
+	li {
+		padding-left:10px;
+	}
+	li:first-child {
+		@include fs-xlg;
+		margin-bottom:10px;
+		padding-left:0px;
 	}
 }
 .search-form {

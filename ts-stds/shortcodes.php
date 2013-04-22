@@ -105,21 +105,19 @@ function sibling_shortcode( $atts, $content = null ) {
 		'media' => '',
 		'align' => 'left',
 	), $atts ) );
-	if($media == 'video'){
+	if($media == 'video')
 		$media_title = '<i class="icon-play"></i> Video';
-	} elseif($media == 'audio'){
+	elseif($media == 'audio')
 		$media_title = '<i class="icon-sound"></i> Audio';
-	}  elseif($media == 'gallery'){
+	elseif($media == 'gallery')
 		$media_title = '<i class="icon-pictures"></i> Gallery';
-	} else {
+	else
 		$media_title = '';
-	}
 	$p = get_post($post);
-	if($description != ''){
+	if($description != '')
 		$ct = $description;
-	} else {
+	else
 		$ct = $p->post_excerpt;
-	}
 	return '
 		<aside class="sibling align'.esc_attr($align).' bump'.esc_attr($align).'">
 			<h3 class="inline-title">'.$media_title.'</h3>'.thumb_image('thumbnail','',NULL,$post).'<a href="'.get_permalink($post).'" title="'.$p->post_title.'"><h3 class="inline-title">'.$p->post_title.'</h3></a>'.$ct.'</aside>';
@@ -227,3 +225,54 @@ function contact_shortcode( $atts, $content = null ) {
 	return $contactme;
 }
 add_shortcode( 'contact', 'contact_shortcode' );
+function loop_sitemap_args($arg, $array){
+	if($arg == 'true')
+		array_push($array, $arg);
+}
+function sitemap_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+		'pages' =>	'true',
+		'categories'	=>	'true',
+		'tags'	=>	'true',
+	), $atts ) );
+	$smarr = array();
+	$sitemap = '';
+	if($pages == 'true')
+		array_push($smarr, 'pages');
+	if($categories == 'true')
+		array_push($smarr, 'categories');
+	if($tags == 'true')
+		array_push($smarr, 'tags');
+	if(count($smarr) == 3)
+		$divclass = '4';
+	elseif(count($smarr) == 2)
+		$divclass = '6';
+	else
+		$divclass = '12';
+	if($pages == 'true'){
+		$page = get_pages();
+		$sitemap .= '<ul class="ts-sitemap large-'.$divclass.' columns"><li>Pages</li>';
+		foreach($page as $p){
+			$sitemap .= '<li><a href="'.get_page_link($p->ID).'" title="'.$p->post_title.'">'.$p->post_title.'</a></li>';
+		}
+		$sitemap .= '</ul>';
+	}
+	if($categories == 'true'){
+		$cat = get_categories();
+		$sitemap .= '<ul class="ts-sitemap large-'.$divclass.' columns"><li>Categories</li>';
+		foreach($cat as $c){
+			$sitemap .= '<li><a href="'.get_category_link($c->term_id).'" title="'.$c->name.'">'.$c->name.'</a></li>';
+		}
+		$sitemap .= '</ul>';
+	}
+	if($tags == 'true'){
+		$tag = get_tags();
+		$sitemap .= '<ul class="ts-sitemap large-'.$divclass.' columns"><li>Tags</li>';
+		foreach($tag as $t){
+			$sitemap .= '<li><a href="'.get_tag_link($t->term_id).'" title="'.$t->name.'">'.$t->name.'</a></li>';
+		}
+		$sitemap .= '</ul>';
+	}
+	return '<div class="row clear">'.$sitemap.'</div>';
+}
+add_shortcode( 'sitemap', 'sitemap_shortcode' );
