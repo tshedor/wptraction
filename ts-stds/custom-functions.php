@@ -183,10 +183,7 @@ function ts_related($post_count = 5){
 				if( $q82->have_posts() ) :
 					echo '<ul class="ts-related">';
 					while ($q82->have_posts()) : $q82->the_post();
-						echo '<li>';
-						get_image('thumbnail');
-						echo '<a href="'.get_permalink().' title="'.get_the_title().'">'.get_the_title().'</a>';
-						echo '</li>';
+						echo '<li><a href="'.get_permalink().' title="'.get_the_title().'">'.get_the_title().'</a></li>';
 					endwhile;
 					echo '</ul>';
 				endif; wp_reset_query();
@@ -213,6 +210,8 @@ function ts_pagination(){
 }
 function ts_breadcrumbs(){
 	global $wp_query, $a;
+	echo '<div class="row clear breadcrumbs">
+	<div class="large-12 columns">';
 	if(function_exists('bcn_display'))
 		bcn_display();
 	elseif($a['breadcrumbs_archive']) {
@@ -277,6 +276,8 @@ function ts_breadcrumbs(){
 			}
 		}
 	}
+	echo '</div>
+	</div>';
 }
 class adminfield
 {
