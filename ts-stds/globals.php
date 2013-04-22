@@ -39,7 +39,7 @@ function custom_footer() {
 	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/html5.js"></script>
 	<script type="text/javascript" src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/respond.min.js"></script>
 	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/IE9.js"></script>
-	<script src="'.get_template_directory_uri().'/lib/jquery.1.9.1.min.js" type="text/javascript"></script>
+	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/jquery.1.9.1.min.js" type="text/javascript"></script>
 <![endif]-->
 <!--[if lt IE 8]>
 	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/IE8.js"></script>
