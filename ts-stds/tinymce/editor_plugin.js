@@ -4,64 +4,64 @@
 		var tbEntry = '';
 		var tbInput = '';
 		if(btn === 'audio'){
-			tbEntry += '<table class="ts-shortcode-options"><tbody>';
-			tbEntry += '<tr><td>File URL*<span>The direct link to the audio file</span></td><td><input type="text" id="field1" name="src" placeholder="http://kansan.com/media/2012/10/15/how-to-eat-apples.mp3" /></td></tr>';
-			tbEntry += '<tr><td>Title*<span>An appropriate name</span></td><td><input type="text" id="field2" name="title" placeholder="How to Plant an Appleseed" /></td></tr>';
-			tbEntry += '<tr><td>Description*<span>Sort of like a caption</span></td><td><input type="text" id="field3" name="description" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit." /></td></tr>';
-			tbEntry += '<tr><td>Align<span>left, right, center</span></td><td><select name="align"><option value="left">Left</option><option value="right">Right</option><option value="center">Center</option></select></td></tr>';
-			tbEntry += '<tr><td>Extension<span>File type. mp3 preferred.</span></td><td><input type="text" id="field4" name="extension" placeholder="mp3" /></td></tr>';
-			tbEntry += '<tr><td>Author<span>The author of said file</span></td><td><input type="text" id="field5" name="author" placeholder="Johnny Appleseed" /></td></tr>';
-			tbEntry += '<tr><td><input type="hidden" id="field8" name="after" value=" /]" /></td><td></td></tr>';
-			tbEntry += '<tr><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td></tr></tbody></table>';
+			tbEntry += '<table class="ts-shortcode-options"><tbody>\
+			<tr><td>File URL*<span>The direct link to the audio file</span></td><td><input type="text" id="field1" name="src" placeholder="http://kansan.com/media/2012/10/15/how-to-eat-apples.mp3" /></td></tr>\
+				<tr><td>Title*<span>An appropriate name</span></td><td><input type="text" id="field2" name="title" placeholder="How to Plant an Appleseed" /></td></tr>\
+				<tr><td>Description*<span>Sort of like a caption</span></td><td><input type="text" id="field3" name="description" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit." /></td></tr>\
+				<tr><td>Align<span>left, right, center</span></td><td><select name="align"><option value="left">Left</option><option value="right">Right</option><option value="center">Center</option></select></td></tr>\
+				<tr><td>Extension<span>File type. mp3 preferred.</span></td><td><input type="text" id="field4" name="extension" placeholder="mp3" /></td></tr>\
+				<tr><td>Author<span>The author of said file</span></td><td><input type="text" id="field5" name="author" placeholder="Johnny Appleseed" /></td></tr>\
+				<tr><td><input type="hidden" id="field8" name="after" value=" /]" /></td><td></td></tr>\
+				<tr><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td></tr></tbody></table>';
 			tb_show( 'Audio Shortcode', '#TB_inline?width=670&height=500&inlineId=appearID' );
 			jQuery('#TB_ajaxContent').html(tbEntry);
 		}
 		if(btn === 'video'){
-			tbEntry += '<table class="ts-shortcode-options"><tbody>';
-			tbEntry += '<tr><td>File URL*<span>The direct link to the audio file</span></td><td><input type="text" id="field1" name="src" placeholder="http://kansan.com/media/2012/10/15/how-to-eat-apples.m4v" /></td></tr>';
-			tbEntry += '<tr><td>Title*<span>An appropriate name</span></td><td><input type="text" id="field2" name="title" placeholder="How to Plant an Appleseed" /></td></tr>';
-			tbEntry += '<tr><td>Caption*<span>Describe the clip</span></td><td><textarea id="field3" name="caption" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit."></textarea></td></tr>';
-			tbEntry += '<tr><td>Screenshot*<span>A placeholder image before the video is played.<br />Should be same dimensions as video</span></td><td><input type="text" id="field6" name="screenshot" placeholder="http://kansan.com/media/2012/10/15/how-to-eat-apples.png" /></td></tr>';
-			tbEntry += '<tr><td>Align<span>left, right, center</span></td><td><select name="align"><option value="left">Left</option><option value="right">Right</option><option value="center">Center</option></select></td></tr>';
-			tbEntry += '<tr><td>Width<span>In pixels</span></td><td><input type="text" id="field7" name="width" placeholder="490" value="" /></td></tr>';
-			tbEntry += '<tr><td>Height<span>In pixels</span></td><td><input type="text" id="field8" name="height" placeholder="276" value="" /></td></tr>';
-			tbEntry += '<tr><td>Type<span>m4v preferred. If Flash, enter "flash."</span></td><td><input type="text" id="field8" name="height" placeholder="m4v" value="" /></td></tr>';
-			tbEntry += '<tr><td></td><td><input type="hidden" id="field8" name="after" value=" /]" /></td></tr>';
-			tbEntry += '<tr><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td></tr></tbody></table>';
+			tbEntry += '<table class="ts-shortcode-options"><tbody>\
+				<tr><td>File URL*<span>The direct link to the audio file</span></td><td><input type="text" id="field1" name="src" placeholder="http://kansan.com/media/2012/10/15/how-to-eat-apples.m4v" /></td></tr>\
+				<tr><td>Title*<span>An appropriate name</span></td><td><input type="text" id="field2" name="title" placeholder="How to Plant an Appleseed" /></td></tr>\
+				<tr><td>Caption*<span>Describe the clip</span></td><td><textarea id="field3" name="caption" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit."></textarea></td></tr>\
+				<tr><td>Screenshot*<span>A placeholder image before the video is played.<br />Should be same dimensions as video</span></td><td><input type="text" id="field6" name="screenshot" placeholder="http://kansan.com/media/2012/10/15/how-to-eat-apples.png" /></td></tr>\
+				<tr><td>Align<span>left, right, center</span></td><td><select name="align"><option value="left">Left</option><option value="right">Right</option><option value="center">Center</option></select></td></tr>\
+				<tr><td>Width<span>In pixels</span></td><td><input type="text" id="field7" name="width" placeholder="490" value="" /></td></tr>\
+				<tr><td>Height<span>In pixels</span></td><td><input type="text" id="field8" name="height" placeholder="276" value="" /></td></tr>\
+				<tr><td>Type<span>m4v preferred. If Flash, enter "flash."</span></td><td><input type="text" id="field8" name="height" placeholder="m4v" value="" /></td></tr>\
+				<tr><td></td><td><input type="hidden" id="field8" name="after" value=" /]" /></td></tr>\
+				<tr><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td></tr></tbody></table>';
 			tb_show( 'Video Shortcode', '#TB_inline?width=670&height=500&inlineId=appearID' );
 			jQuery('#TB_ajaxContent').html(tbEntry);
 		}
 		if(btn === 'inline_text'){
-			tbEntry += '<table class="ts-shortcode-options"><tbody>';
-			tbEntry += '<tr><td>Title*<span>An appropriate name</span></td><td><input type="text" id="field1" name="title" placeholder="How to Plant an Appleseed" /></td></tr>';
-			tbEntry += '<tr><td>Align<span>left, right, center</span></td><td><select name="align"><option value="left">Left</option><option value="right">Right</option><option value="center">Center</option></select></td></tr>';
-			tbEntry += '<tr><td><input type="hidden" id="field3" name="after" value="] YOUR CONTENT HERE [/inline_text]" /></td><td></td></tr>';
-			tbEntry += '<tr><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td></tr></tbody></table>';
+			tbEntry += '<table class="ts-shortcode-options"><tbody>\
+				<tr><td>Title*<span>An appropriate name</span></td><td><input type="text" id="field1" name="title" placeholder="How to Plant an Appleseed" /></td></tr>\
+				<tr><td>Align<span>left, right, center</span></td><td><select name="align"><option value="left">Left</option><option value="right">Right</option><option value="center">Center</option></select></td></tr>\
+				<tr><td><input type="hidden" id="field3" name="after" value="] YOUR CONTENT HERE [/inline_text]" /></td><td></td></tr>\
+				<tr><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td></tr></tbody></table>';
 			tb_show( 'Aside Text Shortcode', '#TB_inline?width=670&height=500&inlineId=appearID' );
 			jQuery('#TB_ajaxContent').html(tbEntry);
 		}
 		if(btn === 'timeline'){
-			tbEntry += '<table class="ts-shortcode-options"><tbody>';
-			tbEntry += '<tr><td>URL*<span>Link to Storify article or Google Docs Spreadsheet</span></td><td><input type="type" id="field1" name="url" placeholder="http://storify.com/kansan/booze" /></td></tr>';
-			tbEntry += '<tr><td>Title*<span>An appropriate name</span></td><td><input type="text" id="field2" name="title" placeholder="How to Plant an Appleseed" /></td></tr>';
-			tbEntry += '<tr><td>Description*<span>Describe the timeline</span></td><td><textarea id="field3" name="description" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit."></textarea></td></tr>';
-			tbEntry += '<tr><td><input type="hidden" id="field5" name="after" value=" /]" /></td><td></td></tr>';
-			tbEntry += '<tr><td><a href="https://drive.google.com/previewtemplate?id=0AppSVxABhnltdEhzQjQ4MlpOaldjTmZLclQxQWFTOUE&mode=public&pli=1#" title="Google Spreadsheet">Google Spreadsheet Template</a></td><td><a href="http://storify.com/zachwise/test" title="Storify Sample">Storify Sample</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://timeline.verite.co/" title="Timeline">Timeline Example</a></td></tr>';
-			tbEntry += '<tr><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td><td</td></tr></tbody></table>';
+			tbEntry += '<table class="ts-shortcode-options"><tbody>\
+				<tr><td>URL*<span>Link to Storify article or Google Docs Spreadsheet</span></td><td><input type="type" id="field1" name="url" placeholder="http://storify.com/kansan/booze" /></td></tr>\
+				<tr><td>Title*<span>An appropriate name</span></td><td><input type="text" id="field2" name="title" placeholder="How to Plant an Appleseed" /></td></tr>\
+				<tr><td>Description*<span>Describe the timeline</span></td><td><textarea id="field3" name="description" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit."></textarea></td></tr>\
+				<tr><td><input type="hidden" id="field5" name="after" value=" /]" /></td><td></td></tr>\
+				<tr><td><a href="https://drive.google.com/previewtemplate?id=0AppSVxABhnltdEhzQjQ4MlpOaldjTmZLclQxQWFTOUE&mode=public&pli=1#" title="Google Spreadsheet">Google Spreadsheet Template</a></td><td><a href="http://storify.com/zachwise/test" title="Storify Sample">Storify Sample</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://timeline.verite.co/" title="Timeline">Timeline Example</a></td></tr>\
+				<tr><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td><td</td></tr></tbody></table>';
 			tb_show( 'Timeline Shortcode', '#TB_inline?width=670&height=500&inlineId=appearID' );
 			jQuery('#TB_ajaxContent').html(tbEntry);
 		}
 		if(btn === 'tabs'){
 			var count = 1;
-			tbEntry += '<table class="ts-shortcode-options" id="tabsTable"><tbody>';
-			tbEntry += '<tr><td>Style<span>The style of the tabs</span></td><td><select name="type"><option value="horizontal">Horizontal</option><option value="vertical">Vertical</option></select></td></tr>';
-			tbEntry += '<tr><td><button class="button button-large button-primary" id="addNewTab">Add Another Tab</button></td><td></td></tr>';
-			tbEntry += '<tr><td><input type="hidden" id="field5" name="after" value=" ]<br />[tab " /></td><td></td></tr>';
-			tbEntry += '<tr><td>Tab '+count+'<span>An appropriate name</span></td><td><input type="text" id="field2" name="name" placeholder="How to Plant an Appleseed" /></td></tr>';
-			tbEntry += '<tr><td><input type="hidden" id="field5" name="after" value=" ]<br />" /></td><td></td></tr>';
-			tbEntry += '<tr><td>Tab '+count+' Content<span>The tab content</span></td><td><textarea id="field3" name="description" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit."></textarea></td></tr>';
-			tbEntry += '<tr><td><input type="hidden" id="field5" name="after" value="<br />[/tab]<br />" /></td><td></td></tr>';
-			tbEntry += '<tr id="tinyRow"><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td></tr></tbody></table>';
+			tbEntry += '<table class="ts-shortcode-options" id="tabsTable"><tbody>\
+				<tr><td>Style<span>The style of the tabs</span></td><td><select name="type"><option value="horizontal">Horizontal</option><option value="vertical">Vertical</option></select></td></tr>\
+				<tr><td><button class="button button-large button-primary" id="addNewTab">Add Another Tab</button></td><td></td></tr>\
+				<tr><td><input type="hidden" id="field5" name="after" value=" ]<br />[tab " /></td><td></td></tr>\
+				<tr><td>Tab '+count+'<span>An appropriate name</span></td><td><input type="text" id="field2" name="name" placeholder="How to Plant an Appleseed" /></td></tr>\
+				<tr><td><input type="hidden" id="field5" name="after" value=" ]<br />" /></td><td></td></tr>\
+				<tr><td>Tab '+count+' Content<span>The tab content</span></td><td><textarea id="field3" name="description" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit."></textarea></td></tr>\
+				<tr><td><input type="hidden" id="field5" name="after" value="<br />[/tab]<br />" /></td><td></td></tr>\
+				<tr id="tinyRow"><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td></tr></tbody></table>';
 			tb_show( 'Tabs Shortcode', '#TB_inline?width=670&height=500&inlineId=appearID' );
 			jQuery('#TB_ajaxContent').html(tbEntry);
 			jQuery('#TB_window').css('overflow-y', 'scroll');
@@ -69,11 +69,11 @@
 			jQuery('#addNewTab').click(function(){
 				count++;
 				tbNewTab = '';
-				tbNewTab += '<tr><td><input type="hidden" id="field5" name="after" value="[tab " /></td><td></td></tr>';
-				tbNewTab += '<tr><td>Tab '+count+'<span>An appropriate name</span></td><td><input type="text" id="field2" name="name" placeholder="How to Plant an Appleseed" /></td></tr>';
-				tbNewTab += '<tr><td><input type="hidden" id="field5" name="after" value=" ]<br />" /></td><td></td></tr>';
-				tbNewTab += '<tr><td>Tab '+count+' Content<span>The tab content</span></td><td><textarea id="field3" name="description" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit."></textarea></td></tr>';
-				tbNewTab += '<tr><td><input type="hidden" id="field5" name="after" value="<br />[/tab]<br />" /></td><td></td></tr>';
+				tbNewTab += '<tr><td><input type="hidden" id="field5" name="after" value="[tab " /></td><td></td></tr>\
+					<tr><td>Tab '+count+'<span>An appropriate name</span></td><td><input type="text" id="field2" name="name" placeholder="How to Plant an Appleseed" /></td></tr>\
+					<tr><td><input type="hidden" id="field5" name="after" value=" ]<br />" /></td><td></td></tr>\
+					<tr><td>Tab '+count+' Content<span>The tab content</span></td><td><textarea id="field3" name="description" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit."></textarea></td></tr>\
+					<tr><td><input type="hidden" id="field5" name="after" value="<br />[/tab]<br />" /></td><td></td></tr>';
 				var tbHeight = jQuery('#TB_ajaxContent').css('height');
 				var newTBHeight = parseInt(tbHeight.slice(0,-2))+200;
 				jQuery('#TB_ajaxContent').css('height', newTBHeight+'px');
@@ -81,19 +81,19 @@
 			});
 		}
 		if(btn === 'sibling'){
-			tbEntry += '<table class="ts-shortcode-options"><tbody>';
-			tbEntry += '<tr><td>Media Type<span>If related post is photo gallery, video or neither</span></td><td><select name="media"><option value="">Please Select One</option><option value="audio">Audio</option><option value="video">Video</option><option value="gallery">Gallery</option></select></td></tr>';
-			tbEntry += '<tr><td>Description<span>Describe the related story. If nothing provided, <br />excerpt will be used</span></td><td><textarea id="field3" name="description" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit."></textarea></td></tr>';
-			tbEntry += '<tr><td>Align<span>left, right, center</span></td><td><select name="align"><option value="left">Left</option><option value="right">Right</option><option value="center">Center</option></select></td></tr>';
-			tbEntry += '<tr><td>Post<span>Pick the related post</span></td><td><select id="addMoreJson" name="post"><option value="">Please select one</option>';
+			tbEntry += '<table class="ts-shortcode-options"><tbody>\
+				<tr><td>Media Type<span>If related post is photo gallery, video or neither</span></td><td><select name="media"><option value="">Please Select One</option><option value="audio">Audio</option><option value="video">Video</option><option value="gallery">Gallery</option></select></td></tr>\
+				<tr><td>Description<span>Describe the related story. If nothing provided, <br />excerpt will be used</span></td><td><textarea id="field3" name="description" placeholder="Johnny describes the best way to slice, dice, and dissect yo fruit."></textarea></td></tr>\
+				<tr><td>Align<span>left, right, center</span></td><td><select name="align"><option value="left">Left</option><option value="right">Right</option><option value="center">Center</option></select></td></tr>\
+				<tr><td>Post<span>Pick the related post</span></td><td><select id="addMoreJson" name="post"><option value="">Please select one</option>';
 			jQuery.getJSON("/api/get_recent_posts",function(data){
 					jQuery.each(data.posts, function(i,article) {
 						jQuery('#addMoreJson').append('<option value="'+article.id+'">'+article.title+'</option>');
 					})
 			});
-			tbEntry += '</select></td></tr>';
-			tbEntry += '<tr><td><input type="hidden" id="field5" name="after" value=" /]" /></td><td></td></tr>';
-			tbEntry += '<tr><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td></tr></tbody></table>';
+			tbEntry += '</select></td></tr>\
+				<tr><td><input type="hidden" id="field5" name="after" value=" /]" /></td><td></td></tr>\
+				<tr><td></td><td><button class="button button-large button-primary" name="insertTiny" id="insertTiny">Submit</button></td></tr></tbody></table>';
 			tb_show( 'Related Post Shortcode', '#TB_inline?width=670&height=800&inlineId=appearID' );
 			jQuery('#TB_ajaxContent').html(tbEntry);
 		}
