@@ -4,13 +4,7 @@ $a = get_option('ts_admin_options');
 add_filter( 'wp_footer' , 'custom_footer' );
 function custom_footer() {
 	global $a;
-	echo '<script type="text/javascript">(function(){$(function(){$("#searchIcon").click(function(){$("#searchInput").focus();$("#searchForm").toggleClass("active");return!1});$(".sf-menu").superfish();$("#activateMobile").click(function(){return $("#mobileMenu").slideToggle()});$("#creditsDisplay, #mobileMenu").hide();$("#footerCredits").click(function(){$("#creditsDisplay").fadeToggle();return!1});$(".bxslider").bxSlider({controls:!1,auto:!0,infiniteLoop:!0});';
-		if($a['slimbox_gallery'])
-			echo '$(\'.gallery .gallery-item .gallery-icon a[href*=".jpg"], .gallery .gallery-item .gallery-icon a[href*=".png"], .gallery .gallery-item .gallery-icon a[href*=".jpeg"]\').attr("rel","lightbox").slimbox();';
-		if($a['slimbox_single'])
-			echo '$(\'a[href*=".png"], a[href*=".jpg"], a[href*=".jpeg"]\').attr("rel", "lightbox").slimbox();';
-	echo '})}).call(this)</script>
-	<div class="notice ie-warning">
+	echo '<div class="notice ie-warning">
 	<div class="row ie6-warning warning">
 		<div class="large-12 columns">
 			<div class="alert">

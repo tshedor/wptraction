@@ -35,6 +35,13 @@
 }
 */
 
+@mixin tab-size($value:auto){
+	-moz-tab-size:$value;
+	-o-tab-size:$value;
+	tab-size:$value;
+}
+
+
 $selector:#690;
 $comment:slategray;
 $punctuation:#999;
