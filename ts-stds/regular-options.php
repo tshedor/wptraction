@@ -304,18 +304,18 @@ array(
 	'type'	=>	'checkbox'
 ),
 array(
-	'name'	=>	'Use Slimbox lightbox for single images',
-	'desc'	=>	'In case you don\'t use a plugin like NextGEN',
-	'id'	=>	'slimbox_single',
+	'name'	=>	'Use all JS libraries included with theme',
+	'desc'	=>	'This includes Modernizr, PrismJS, Superfish, bxSlider, hoverIntent and jQuery Easing (with compatibility)',
+	'id'	=>	'use_ts_plugins',
 	'std'	=>	'',
 	'class'	=>	'half',
 	'type'	=>	'checkbox',
 	'def'	=>	true
 ),
 array(
-	'name'	=>	'Use Slimbox lightbox for galleries',
-	'desc'	=>	'In case you don\'t use a plugin like NextGEN',
-	'id'	=>	'slimbox_gallery',
+	'name'	=>	'Use builtin Magnific lightbox for single images and galleries',
+	'desc'	=>	'In case you don\'t use a plugin like NextGEN, or anyother lightbox plugin',
+	'id'	=>	'magnific_lb',
 	'std'	=>	'',
 	'class'	=>	'half',
 	'type'	=>	'checkbox',

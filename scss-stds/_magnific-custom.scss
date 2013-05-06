@@ -1,3 +1,5 @@
+@import "compass";
+@import "magnific";
 .mfp-zoom-in {
 	#small-dialog {
 		@include opacity(0);
@@ -25,4 +27,7 @@
 	.mfp-removing.mfp-bg {
 		@include opacity(0);
 	}
+}
+.mfp-img {
+	background:white;
 }
