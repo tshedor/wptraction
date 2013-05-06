@@ -208,6 +208,9 @@ hr {
 .comment-list {
 	@include no-list;
 	list-style:none!important;
+	ol {
+		list-style:none!important;
+	}
 }
 .comment {
 	padding:10px 0px;
