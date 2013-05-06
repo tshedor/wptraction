@@ -86,6 +86,15 @@ $script:Brush Script MT, Trebuchet MS, 'Helvetica Neue', Helvetica, Arial, scrip
 @mixin emboss {
 	@include text-shadow(-1px -1px 1px #fff, 1px 1px 1px #000);
 }
+
+@mixin custom-animation($content){
+	-moz-animation: $content;
+	-webkit-animation: $content;
+	-o-animation: $content;
+	-ms-animation: $content;
+	-khtml-animation: $content;
+	animation: $content;
+}
 @mixin keyframes($name) {
   @-moz-keyframes #{$name} { @content; }
   @-webkit-keyframes #{$name} { @content; }

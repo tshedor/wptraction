@@ -1,0 +1,201 @@
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+@import "compass";
+/** If not using Compass, uncomment the following:
+
+@mixin hyphens($value:auto){
+	-webkit-hyphens:$value;
+	-moz-hyphens:$value;
+	-ms-hyphens:$value;
+	hyphens:$value;
+}
+@mixin tab-size($value:auto){
+	-moz-tab-size:$value;
+	-o-tab-size:$value;
+	tab-size:$value;
+}
+@mixin border-radius($value:auto){
+	-webkit-border-radius:$value;
+	-moz-border-radius:$value;
+	-khtml-border-radius:$value;
+	border-radius:$value;
+}
+@mixin opacity($value:1){
+    filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($value * 100)})");
+	opacity:$value;
+}
+@mixin box-shadow($content:none){
+	-webkit-box-shadow:$content;
+	-moz-box-shadow:$content;
+	box-shadow:$content;
+}
+*/
+
+$selector:#690;
+$comment:slategray;
+$punctuation:#999;
+$property:#905;
+$string:#a67f59;
+$important:#e90;
+$attr-value:#07a;
+$background:#f5f2f0;
+
+$top-spacing:1em;
+
+/* Plugins */
+$line-highlight:true;
+$show-invisibles:false;
+
+code[class*="language-"], pre[class*="language-"] {
+	@include tab-size(4);
+	@include hyphens(none);
+	color: black;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+}
+
+pre[class*="language-"] {
+	padding: $top-spacing;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+@media print {
+	code[class*="language-"], pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+
+:not(pre) {
+	&> code[class*="language-"], pre[class*="language-"] {
+		background: $background;
+	}
+	&> code[class*="language-"]{
+		@include border-radius(.3em);
+		padding:.1em;
+	}
+}
+
+.token {
+	&.comment, &.prolog, &.doctype, &.cdata {
+		color: $comment;
+	}
+	&.punctuation {
+		color: $punctuation;
+	}
+	&.atrule, &.attr-value, &.keyword {
+		color: $attr-value;
+	}
+	&.regex {
+		color: $important;
+	}
+	&.important {
+		color: $important;
+		font-weight: bold;
+	}
+	&.entity {
+		cursor: help;
+	}
+	&.property, &.tag, &.boolean, &.number {
+		color: $property;
+	}
+	&.selector, &.attr-name, &.string {
+		color: $selector;
+	}
+	&.operator, &.entity, &.url {
+		color: $string;
+		background: hsla(0, 0%, 100%, 0.5); //white semi-transparent
+	}
+	a {
+		color:inherit;
+	}
+}
+
+.namespace {
+	@include opacity(0.7);
+}
+
+/* Hacks and shame */
+
+.language-css .token.string, .style .token.string {
+	color: $string;
+	background: hsla(0, 0%, 100%, 0.5); //white semi-transparent
+}
+@if $line-highlight == true {
+.line-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: inherit 0;
+	margin-top: $top-spacing;
+	background-color:darken($background,4%);
+	pointer-events: none;
+	line-height: inherit;
+	white-space: pre;
+	&:before {
+		@include border-radius(999px);
+		@include box-shadow(0 1px white);
+		content: attr(data-start);
+		position: absolute;
+		top: .4em;
+		left: .6em;
+		min-width: 1em;
+		padding: 0 .5em;
+		background-color: rgba(darken($background, 8%), 0.4);
+		color:white;
+		font: bold 65% / 1.5 sans-serif;
+		text-align: center;
+		vertical-align: .3em;
+		text-shadow: none;
+	}
+	&[data-end]:after {
+		@include border-radius(999px);
+		@include box-shadow(0 1px white);
+		content: attr(data-start);
+		position: absolute;
+		top: .4em;
+		left: .6em;
+		min-width: 1em;
+		padding: 0 .5em;
+		background-color: rgba(darken($background, 8%), 0.4);
+		color:white;
+		font: bold 65% / 1.5 sans-serif;
+		text-align: center;
+		vertical-align: .3em;
+		text-shadow: none;
+		content: attr(data-end);
+		top: auto;
+		bottom: .4em;
+	}
+}
+}
+
+@if $show-invisibles == true {
+.token {
+	&.tab:not(:empty):before, &.cr:before, &.lf:before {
+		color: hsl(24, 20%, 85%);
+	}
+	&.tab:not(:empty):before {
+		content: '▸';
+	}
+	&.cr:before {
+		content: '␍';
+	}
+	&.lf:before {
+		content: '␊';
+	}
+	a {
+		color: inherit;
+	}
+}
+}

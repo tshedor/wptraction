@@ -21,20 +21,20 @@
 		}
 	}
 	li {
+		@include inline-block;
+		position: relative;
 		&:hover {
 			visibility: inherit;
 		}
 		&:hover ul, &.sfHover ul {
-			left: 0;
 			top: 1.5em;
+			left: 0;
 			z-index: 99;
 		}
-		@include inline-block;
-		position: relative;
 	}
 	a {
-		display: block;
 		position: relative;
+		display: block;
 	}
 }
 
@@ -44,16 +44,16 @@ ul.sf-menu li {
 	}
 	li {
 		&:hover ul, &.sfHover ul {
-			left: 10em;
 			top: 0;
+			left: 10em;
 		}
 		&:hover li ul, &.sfHover li ul {
 			top: -999em;
 		}
 		li {
 			&:hover ul, &.sfHover ul {
-				left: 10em;
 				top: 0;
+				left: 10em;
 			}
 		}
 	}
@@ -69,8 +69,8 @@ ul.sf-menu li {
 		&.sf-with-ul {
 			min-width: 1px;
 			&:after {
-				content:'\bb';
 				padding-left:2px;
+				content:'\bb';
 			}
 		}
 	}
@@ -85,13 +85,13 @@ ul.sf-menu li {
 
 .sf-sub-indicator {
 	position: absolute;
-	display: block;
-	right: .75em;
 	top: 1.05em;
+	right: .75em;
+	display: block;
+	overflow: hidden;
 	width: 10px;
 	height: 10px;
 	text-indent: -999em;
-	overflow: hidden;
 }
 
 a {
@@ -130,9 +130,9 @@ li {
 }
 
 .sf-shadow ul {
-	padding: 0 8px 9px 0;
 	@include border-bottom-right-radius(14px);
 	@include border-bottom-left-radius(14px);
+	padding: 0 8px 9px 0;
 	&.sf-shadow-off {
 		background: transparent;
 	}

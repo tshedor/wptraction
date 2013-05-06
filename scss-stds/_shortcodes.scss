@@ -1,15 +1,15 @@
 
 aside {
-	background:#f3f3f3;
-	clear:both;
-	padding:12px;
-	margin:6px;
 	@include border-radius(2px);
+	clear:both;
+	margin:6px;
+	padding:12px;
 	border:1px solid darken(#e4e4e4, 12%);
+	background:#f3f3f3;
 	&:after {
+		display:table;
 		clear:both;
 		content:"";
-		display:table;
 	}
 }
 .bumpleft {
@@ -23,34 +23,34 @@ aside {
 .tabContainer {
 	margin:15px 0px;
 	.tabNavigator {
-		max-width:30%;
-		padding:10px;
 		@include no-list;
 		@include inline-block;
 		float:left;
 		margin:10px;
+		padding:10px;
+		max-width:30%;
 		li {
-			border-bottom:1px solid $lightest_gray;
 			@include inline-block;
-			width:100%;
 			@include cond;
 			margin:0px;
+			width:100%;
+			border-bottom:1px solid $lightest_gray;
 			a {
 				display:block;
 				padding:4px;
 			}
 			&.active a {
-				background:$domColor;
 				@include hover($lightest_gray);
+				background:$domColor;
 				color:white;
 			}
 			&.active:hover a {
 				color:white;
 			}
 			&:hover a {
-				color:white;
-				background:$domColor;
 				@include single-transition(all, 0.3s, linear);
+				background:$domColor;
+				color:white;
 			}
 			&:last-child {
 				border-bottom:none;
@@ -61,26 +61,26 @@ aside {
 	}
 	&.vertical {
 		.tabNavigator {
-			padding:0px;
 			margin:0px;
 			margin-right:30px;
+			padding:0px;
 			li {
 				&.active {
 					position:relative;
 					&:after {
+						position: absolute;
 						left: 100%;
+						width: 0;
+						height: 0;
 						border: solid transparent;
 						content: " ";
-						height: 0;
-						width: 0;
-						position: absolute;
 						pointer-events: none;
 					}
 					&:after {
-						border-left-color: $domColor;
-						border-width: 16px;
 						top: 50%;
 						margin-top: -16px;
+						border-width: 16px;
+						border-left-color: $domColor;
 					}
 				}
 			}
@@ -90,16 +90,16 @@ aside {
 		.tabNavigator {
 			display:block;
 			float:none;
-			width:100%;
-			max-width:100%;
-			text-align:center;
-			border-bottom:1px solid $lightest_gray;
 			margin:0px;
 			padding-bottom:0px;
+			max-width:100%;
+			width:100%;
+			border-bottom:1px solid $lightest_gray;
+			text-align:center;
 			li {
-				width:auto;
 				margin:5px;
 				margin-bottom:0px;
+				width:auto;
 				border-bottom:0px;
 				a {
 					padding:6px;
@@ -107,19 +107,19 @@ aside {
 				&.active {
 					position:relative;
 					&:after {
+						position: absolute;
 						top: 100%;
+						width: 0;
+						height: 0;
 						border: solid transparent;
 						content: " ";
-						height: 0;
-						width: 0;
-						position: absolute;
 						pointer-events: none;
 					}
 					&:after {
-						border-top-color: $domColor;
-						border-width: 12px;
 						left: 50%;
 						margin-left: -12px;
+						border-width: 12px;
+						border-top-color: $domColor;
 					}
 				}
 			}
@@ -130,8 +130,8 @@ aside {
 	@include fs-small;
 	text-align:justify;
 	p {
-		line-height:19px!important;
 		font-size:13px!important;
+		line-height:19px!important;
 	}
 }
 
@@ -141,15 +141,15 @@ aside {
 /* POLL */
 .inline-poll {
 	.total-votes {
-		color:$gray;
 		@include fs-medium;
 		margin-left:-1%;
+		color:$gray;
 	}
 	.poll-results {
 		color:$gray;
 		.option {
-			color:$gray;
 			@include cond;
+			color:$gray;
 		}
 		.responses {
 			color:lighten($gray, 10%);

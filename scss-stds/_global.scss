@@ -13,8 +13,8 @@ h1 {
 	letter-spacing:0px;
 }
 h2 {
-	color:$subColor;
 	margin:20px 0px;
+	color:$subColor;
 }
 h3 {
 	color:$terColor;
@@ -31,11 +31,11 @@ ul {
 }
 body {
 	@include body;
-	@include color-scheme;
 	line-height:1.4;
+	@include color-scheme;
 }
 .row {
-	max-width:72em
+	max-width:72em;
 }
 .clear, .clearfix {
 	@include pie-clearfix;
@@ -73,12 +73,12 @@ body {
 	padding-bottom:10px!important;
 }
 a {
-	color:$linkColor;
 	@include std-hover($domColor);
+	color:$linkColor;
+	text-decoration:none!important;
 	&:hover {
 		text-decoration:none;
 	}
-	text-decoration:none!important;
 }
 
 i {
@@ -111,20 +111,20 @@ hr {
 	float:right;
 }
 .aligncenter {
+	display:block;
 	margin:0 auto;
 	text-align:center;
-	display:block;
 }
 .copyright {
-	text-align:right;
 	@include color-scheme;
 	@include fs-small;
 	position:relative;
+	text-align:right;
 	.cred sup {
-		top:-0.7em;
-		left:2px;
 		@include fs-xxsmall;
 		position:relative;
+		top:-0.7em;
+		left:2px;
 	}
 }
 .hidden {
@@ -138,16 +138,16 @@ hr {
 }
 
 .wp-caption, .gallery-caption {
-	background:#eee;
-	padding:8px;
 	margin-bottom:30px;
+	padding:8px;
+	background:#eee;
 	img {
 		border:2px solid #fff;
 	}
 	.wp-caption-text {
+		margin-bottom:0px;
 		text-align:center;
 		font-style:italic;
-		margin-bottom:0px;
 	}
 }
 .sidebar {
@@ -157,20 +157,20 @@ hr {
 		ul {
 			@include no-list;
 			li {
-				border-bottom:1px solid $light-gray;
 				padding:12px 0px;
+				border-bottom:1px solid $light-gray;
 				&:before {
-					content: '\bb';
 					@include fs-small;
-					color: $gray;
 					margin-right: 10px;
+					color: $gray;
+					content: '\bb';
 				}
 			}
 		}
 		&:first-child {
 			@include box-shadow(none);
-			padding-top:0px;
 			margin-top:0px;
+			padding-top:0px;
 		}
 	}
 }
@@ -219,44 +219,44 @@ hr {
 		background:none!important;
 	}
 	&.depth-2, &.depth-3, &.depth-4 {
-		margin-left:10%;
 		margin-right:0;
-		border-bottom:0px;
+		margin-left:10%;
 		border-top:1px solid $light-gray;
+		border-bottom:0px;
 	}
 	&.bypostauthor {
 		h4 {
 			.author {
-				text-transform:uppercase;
 				@include inline-block;
+				@include fs-tiny;
+				padding:2px 4px;
 				background:$domColor;
 				color:white;
-				padding:2px 4px;
-				@include fs-tiny;
+				text-transform:uppercase;
 				font-weight:400;
 			}
 		}
 	}
 	h4 {
 		@include light;
-		@include fs-xxlg;
 		.edit {
 			@include cond;
-			@include fs-xsmall;
 			@include inline-block;
 			float:right;
+			@include fs-xsmall;
 		}
+		@include fs-xxlg;
 	}
 	.reply {
-		background:darken($domColor,4%);
-		color:white!important;
-		padding:4px 8px;
 		@include border-radius(1px);
-		border:0px!important;
-		margin-top:4px;
 		@include fs-tiny;
 		@include inline-block;
 		float:right;
+		margin-top:4px;
+		padding:4px 8px;
+		border:0px!important;
+		background:darken($domColor,4%);
+		color:white!important;
 		-webkit-font-smoothing:antialiased;
 		a {
 			@include cond;
@@ -267,8 +267,8 @@ hr {
 		margin-left:0px;
 	}
 	#respond {
-		width:80%;
 		float:right;
+		width:80%;
 	}
 }
 .comment-content {
@@ -278,52 +278,52 @@ hr {
 	}
 }
 .comment-meta {
-	text-align:center;
 	@include fs-small;
+	text-align:center;
 	img {
 		@include box-shadow(0px 8px 14px -8px $gray);
-		border:2px solid $lightest-gray;
+		display:block;
 		margin:0 auto;
 		margin-bottom:6px;
-		display:block;
+		border:2px solid $lightest-gray;
 	}
 	a {
 		display:block;
 	}
 }
 .logged-in-as {
-	margin-bottom:10px;
-	text-align:center;
 	@include light;
 	@include fs-lg;
+	margin-bottom:10px;
+	text-align:center;
 }
 #reply-title {
 	@include dom;
-	color:$domColor;
 	margin:0px;
+	color:$domColor;
 }
 #respond {
-	text-align:center;
 	padding:20px 0px;
+	text-align:center;
 	textarea {
 		@include border-radius(4px);
-		width:90%;
-		margin:0 auto;
-		min-height:140px;
-		padding:20px;
 		@include fs-lg;
-		font-weight:300;
+		margin:0 auto;
 		margin-bottom:35px;
+		padding:20px;
+		min-height:140px;
+		width:90%;
+		font-weight:300;
 		&:focus {
 			background:white!important;
 		}
 	}
 }
 .comment-fields-row {
-	max-width:90%!important;
 	margin:auto!important;
 	margin-top:45px!important;
 	margin-bottom:0px!important;
+	max-width:90%!important;
 	input {
 		@include border-radius(4px);
 	}
@@ -336,11 +336,11 @@ hr {
 	@include fs-medium;
 }
 .notice, .alert {
-	background:$domColor;
-	padding:10px;
-	color:white;
 	@include border-radius(3px);
 	@include box-shadow(0px 2px 8px -3px $gray);
+	padding:10px;
+	background:$domColor;
+	color:white;
 	&.success {
 		background:#4AC089;
 	}
@@ -357,21 +357,21 @@ hr {
 		color:$lightest_gray;
 	}
 	.close {
-		color:white;
 		@include text-shadow(none);
 		@include opacity(0.9);
-		top:-4px;
 		position:relative;
+		top:-4px;
+		color:white;
 	}
 }
 .search {
 	h1 span {
-		text-transform:uppercase;
 		@include fs-tiny;
 		@include inline-block;
+		padding:6px;
 		background:$domColor;
 		color:white;
-		padding:6px;
+		text-transform:uppercase;
 	}
 }
 
@@ -389,11 +389,10 @@ hr {
 }
 .social-single {
 	@include color-scheme;
-	@include fs-medium;
 	@include no-list;
 	text-align:center;
-	font-family:$sans;
 	font-weight:300;
+	font-family:$sans;
 	i {
 		@include fs-xlg;
 	}
@@ -405,6 +404,7 @@ hr {
 		@include color-scheme;
 		@include hover($linkColor);
 	}
+	@include fs-medium;
 }
 .extra-margin {
 	margin:30px 0px;
@@ -422,41 +422,41 @@ img.alignright {
 
 button, .button, input[type="submit"] {
 	@include box-shadow(none);
-	border:0px;
-	background:$domColor;
-	color:white;
 	@include fs-xlg;
-	font-family:$sans;
-	font-weight:100;
 	@include border-radius(6px);
 	@include single-transition(all, 0.2s, linear);
 	padding:4px 14px;
+	border:0px;
+	background:$domColor;
+	color:white;
+	font-weight:100;
+	font-family:$sans;
 	&:hover {
-		cursor:pointer;
+		@include box-shadow(inset 0px -12px 22px 0px rgba(0, 0, 0, 0.24));
 		background:darken($domColor,12%);
-		@include box-shadow(inset 0px -12px 22px 0px rgba(0, 0, 0, 0.24))
+		cursor:pointer;
 	}
 	&:active {
-		background:darken($domColor,18%);
 		@include box-shadow(inset 0px -12px 22px 0px rgba(0, 0, 0, 0.24), inset 0 1px 2px rgba(0, 0, 0, 0.3));
+		background:darken($domColor,18%);
 	}
 }
 
 /* NAVIGATION */
 .page-navigation, .wp-pagenavi {
-	text-align:center;
-	margin:15px 0px;
 	@include fs-xlg;
+	margin:15px 0px;
 	color:$subColor;
+	text-align:center;
 	.prev, .next, .first, .last, .pages {
 		@include fs-xsmall;
-		text-transform: uppercase;
 		margin:0px 6px;
+		text-transform: uppercase;
 	}
 	a {
-		color:desaturate($domColor, 50%);
 		@include hover($subColor);
 		border:0px;
+		color:desaturate($domColor, 50%);
 	}
 	span {
 		border:0px;
@@ -469,8 +469,8 @@ button, .button, input[type="submit"] {
 		li {
 			@include inline-block;
 			a {
-				display:block;
 				@include sub;
+				display:block;
 				padding:0px 15px;
 			}
 			&:first-child a {
@@ -480,14 +480,14 @@ button, .button, input[type="submit"] {
 	}
 }
 .breadcrumbs {
-	margin-top:20px;
 	@include fs-medium;
-	background:inherit;
-	border:0px;
+	margin-top:20px;
 	padding-left:0px;
+	border:0px;
+	background:inherit;
 	a {
-		color:lighten($gray,12%);
 		@include hover($linkColor);
+		color:lighten($gray,12%);
 	}
 }
 .footer, footer {
@@ -499,9 +499,9 @@ button, .button, input[type="submit"] {
 	.menu ul {
 		li {
 			a {
-				color:$domColor;
 				@include hover($linkColor);
 				padding:0px 15px;
+				color:$domColor;
 			}
 		}
 	}
@@ -526,68 +526,68 @@ button, .button, input[type="submit"] {
 		color:$domColor;
 	}
 	ul {
-		padding-left:0px!important;
-		margin-left:0px!important;
-		background:white;
-		top:-12px;
 		position:relative;
+		top:-12px;
+		margin-left:0px!important;
+		padding-left:0px!important;
+		background:white;
 		li {
 			display:inline;
 			float:none;
 			background:white;
 			a {
-				display:block;
-				background:white;
-				color:$domColor;
 				@include cond;
+				display:block;
 				padding:12px 8px;
 				border-bottom:1px solid $dark_gray;
+				background:white;
+				color:$domColor;
 			}
 		}
 	}
 }
 #creditsDisplay {
-	background-color: #ffffff;
-	@include filter-gradient(#ffffff, #f0f0f0, vertical);
 	$experimental-support-for-svg: true;
+	@include filter-gradient(#ffffff, #f0f0f0, vertical);
 	@include background-image(linear-gradient(top, #ffffff 0%,#f0f0f0 100%));
 	@include border-radius(2px);
 	position:absolute;
-	right:0px;
 	top:-52px;
+	right:0px;
 	z-index:9999;
+	display:none;
+	padding:2px;
 	width:240px;
 	height:auto;
-	text-align:center;
 	border:1px solid #e8e8e8;
-	padding:2px;
-	display:none;
+	background-color: #ffffff;
+	text-align:center;
 }
 #footerCredits {
 	position:relative;
 }
 .ts-maintenance-mode {
-	position:absolute;
-	left:0;
-	right:0;
-	top:0;
-	bottom:0;
-	background:$domColor;
-	padding:25% 0px;
-	width:100%;
-	margin:0 auto;
-	text-align:center;
-	min-height:100%;
-	color:white;
+	$experimental-support-for-svg: true;
 	@include cond;
 	@include fs-giant;
-	background-color: $domColor;
 	@include filter-gradient(lighten($domColor,16%), $domColor, horizontal);
-	$experimental-support-for-svg: true;
 	@include background-image(radial-gradient(center, ellipse cover, lighten($domColor,16%) 0%,$domColor 100%));
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	margin:0 auto;
+	padding:25% 0px;
+	min-height:100%;
+	width:100%;
+	background:$domColor;
+	background-color: $domColor;
+	color:white;
+	text-align:center;
 	.coming-soon {
-		margin:0;
 		@include fs-xlg;
+		margin:0;
 	}
 }
 .ts-contact {
@@ -616,20 +616,20 @@ button, .button, input[type="submit"] {
 }
 .search-form {
 	input[type="text"] {
-		max-width:180px;
 		@include box-shadow(none);
-		border:0px;
-		font-style:italic;
+		@include border-left-radius(5px);
 		float:left;
 		margin-right:-2px;
 		padding:7px;
-		@include border-left-radius(5px);
+		max-width:180px;
+		border:0px;
+		font-style:italic;
 	}
 	button {
 		@include fs;
-		margin-top:0px;
 		@include border-radius(0px);
 		@include border-right-radius(5px);
+		margin-top:0px;
 		padding:7px 9px;
 	}
 }
@@ -637,19 +637,19 @@ button, .button, input[type="submit"] {
 	@include no-list;
 	text-align:center;
 	i {
-		color:$gray;
 		margin-right:4px;
+		color:$gray;
 	}
 	a {
-		color:$domColor;
 		@include hover($linkColor);
+		color:$domColor;
 	}
 	li {
 		@include inline-block;
 		margin:4px;
 		&:after {
-			content:'\2f';
 			padding:0px 4px;
+			content:'\2f';
 		}
 		&:last-child:after {
 			content:'\A0';

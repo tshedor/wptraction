@@ -33,8 +33,8 @@
 			-webkit-backface-visibility: hidden;
 		}
 		img {
-			width: 100%;
 			display: block;
+			width: 100%;
 		}
 	}
 }
@@ -48,12 +48,12 @@
 /* Clearfix for the .slides element */
 
 .slides:after {
-	content: ".";
 	display: block;
-	clear: both;
 	visibility: hidden;
-	line-height: 0;
+	clear: both;
 	height: 0;
+	content: ".";
+	line-height: 0;
 }
 
 html[xmlns] .slides {
@@ -76,12 +76,12 @@ html[xmlns] .slides {
 *********************************/
 
 .flexslider {
-	margin: 0 0 60px;
-	background: #fff;
-	border: 4px solid #fff;
-	position: relative;
 	@include border-radius(4px);
 	@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+	position: relative;
+	margin: 0 0 60px;
+	border: 4px solid #fff;
+	background: #fff;
 	zoom: 1;
 	.slides {
 		zoom: 1;
@@ -89,8 +89,8 @@ html[xmlns] .slides {
 }
 
 .flex-viewport {
-	max-height: 2000px;
 	@include transition(all 1s ease);
+	max-height: 2000px;
 }
 
 .loading .flex-viewport {
@@ -106,22 +106,22 @@ html[xmlns] .slides {
 .flex-direction-nav {
 	*height: 0;
 	a {
-		width: 30px;
-		height: 30px;
-		margin: -20px 0 0;
-		display: block;
-		background: url(img/bg_direction_nav.png) no-repeat 0 0;
+		@include opacity(0);
+		@include transition(all .3s ease);
 		position: absolute;
 		top: 50%;
 		z-index: 10;
-		cursor: pointer;
+		display: block;
+		margin: -20px 0 0;
+		width: 30px;
+		height: 30px;
+		background: url(img/bg_direction_nav.png) no-repeat 0 0;
 		text-indent: -9999px;
-		@include opacity(0);
-		@include transition(all .3s ease);
+		cursor: pointer;
 	}
 	.flex-next {
-		background-position: 100% 0;
 		right: -36px;
+		background-position: 100% 0;
 	}
 	.flex-prev {
 		left: -36px;
@@ -148,28 +148,28 @@ html[xmlns] .slides {
 }
 
 .flex-control-nav {
-	width: 100%;
 	position: absolute;
 	bottom: -40px;
+	width: 100%;
 	text-align: center;
 	li {
-		margin: 0 6px;
 		display: inline-block;
+		margin: 0 6px;
 		zoom: 1;
 		*display: inline;
 	}
 }
 
 .flex-control-paging li a {
-	width: 11px;
-	height: 11px;
-	display: block;
-	background: #666;
-	background: rgba(0, 0, 0, 0.5);
-	cursor: pointer;
-	text-indent: -9999px;
 	@include border-radius(20px);
 	@include box-shadow(inset 0 0 3px rgba(0, 0, 0, 0.3));
+	display: block;
+	width: 11px;
+	height: 11px;
+	background: #666;
+	background: rgba(0, 0, 0, 0.5);
+	text-indent: -9999px;
+	cursor: pointer;
 	&:hover {
 		background: #333;
 		background: rgba(0, 0, 0, 0.7);
@@ -182,18 +182,18 @@ html[xmlns] .slides {
 }
 
 .flex-control-thumbs {
-	margin: 5px 0 0;
 	position: static;
 	overflow: hidden;
+	margin: 5px 0 0;
 	li {
-		width: 25%;
 		float: left;
 		margin: 0;
+		width: 25%;
 	}
 	img {
-		width: 100%;
-		display: block;
 		@include opacity(0.7);
+		display: block;
+		width: 100%;
 		cursor: pointer;
 		&:hover {
 			@include opacity(1);

@@ -1,0 +1,28 @@
+.mfp-zoom-in {
+	#small-dialog {
+		@include opacity(0);
+		@include transform(scale(0.8));
+		@include single-transition(all 0.2s ease-in-out);
+	}
+	//Animate In
+	&.mfp-ready {
+		&.mfp-bg {
+			@include opacity(0.8);
+		}
+		#small-dialog {
+			@include opacity(1);
+			@include transform(scale(1));
+		}
+	}
+	&.mfp-removing #small-dialog {
+		@include transform(scale(0.8));
+		@include opacity(0);
+	}
+	&.mfp-bg {
+		@include opacity(0);
+		@include single-transition(opacity 0.3s ease-out);
+	}
+	.mfp-removing.mfp-bg {
+		@include opacity(0);
+	}
+}
