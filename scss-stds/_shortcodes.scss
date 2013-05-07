@@ -5,7 +5,7 @@ aside {
 	margin:6px;
 	padding:12px;
 	border:1px solid darken(#e4e4e4, 12%);
-	background:#f3f3f3;
+	background:lighten($lightest_gray,3%);
 	&:after {
 		display:table;
 		clear:both;
@@ -132,6 +132,15 @@ aside {
 	p {
 		font-size:13px!important;
 		line-height:19px!important;
+	}
+}
+
+.inline-title {
+	i {
+		color:$dark_gray;
+		@include fs-small;
+		position:relative;
+		top:-2px;
 	}
 }
 

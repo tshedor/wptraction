@@ -33,13 +33,13 @@ function html5video_shortcode( $atts, $content = null ) {
 		wp_enqueue_script('swfobject');
 		$video_statement .= '<object id="PlayFlash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="300" height="120">
 					<param name="movie" value="'.esc_attr($src).'/js/swfobject/test.swf" />
-        				<!--[if !IE]>--><object type="application/x-shockwave-flash" data="'.esc_attr($src).'" width="'.$width.'" height="'.$height.'"><!--<![endif]-->
-        				<div>
-        					<h1>Alternative content</h1>
-        					<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
-        				</div>
-        				<!--[if !IE]>--></object><!--<![endif]-->
-        			</object>';
+						<!--[if !IE]>--><object type="application/x-shockwave-flash" data="'.esc_attr($src).'" width="'.$width.'" height="'.$height.'"><!--<![endif]-->
+						<div>
+							<h1>Alternative content</h1>
+							<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+						</div>
+						<!--[if !IE]>--></object><!--<![endif]-->
+					</object>';
 	} else {
 		$video_statement .= '
 			<video width="'.$width.'" height="'.$height.'" poster="'.esc_attr($screenshot).'" controls="controls" preload="none">
@@ -51,7 +51,7 @@ function html5video_shortcode( $atts, $content = null ) {
 				</object>
 			</video>';
 	}
-		 	$video_statement .= '<div class="inline-caption">'.esc_attr($caption).'</div>';
+			$video_statement .= '<div class="inline-caption">'.esc_attr($caption).'</div>';
 		 if(esc_attr($class) != 'simple'){ $video_statement .= '</aside>'; }
 	return $video_statement;
 }
@@ -92,7 +92,7 @@ function inline_text_shortcode( $atts, $content = null ) {
 	}
 	return '
 		<aside class="inline-text align'.esc_attr($align).'">
-			<h3 class="inline-title"><i class="icon-write"></i> '.esc_attr($title).'</h3>'
+			<h3 class="inline-title"><i class="icon-pencil-2"></i> '.esc_attr($title).'</h3>'
 			.$text_content.
 		'</aside>';
 }
@@ -139,7 +139,7 @@ function timeline_shortcode( $atts, $content = null ) {
 	wp_enqueue_script('storyjs');
 	return '
 		<aside class="timeline">
-			<h3 class="inline-title"><i class="icon-clock"></i>'.esc_attr($title).'</h3>
+			<h3 class="inline-title"><i class="icon-clock"></i> '.esc_attr($title).'</h3>
 			<div id="timeline-embed"></div>'
 			.$description.'
 		</aside>
@@ -156,30 +156,18 @@ add_shortcode( 'timeline', 'timeline_shortcode' );
 
 function tabbed_shortcode( $atts, $content = null ) {
 	extract( shortcode_atts( array(
-		'name' => '',
 		'type' => 'vertical',
 	), $atts ) );
-	$tabContainer = '<div class="tabContainer '.esc_attr($type).' clearfix">
-		<ul class="tabNavigator" id="'.get_the_ID().'"></ul>
+	$tabContainer = '<div class="tabContainer '.esc_attr($type).' clearfix" id="tab'.get_the_ID().time().'">
+		<ul class="tabNavigator" id="tabNav'.get_the_ID().time().'"></ul>
 		'.do_shortcode($content).'
 	</div>
 	<script type="text/javascript">
-		$(function(){
-			$(".tabContainer .tab").each(function(){
+		jQuery(document).ready(function($){
+			$("#'.get_the_ID().time().' .tab").each(function(){
 				var tabID = $(this).attr("id");
 				var tabName = $(this).attr("title");
-				$("#'.get_the_ID().'").append(\'<li><a href="#\'+tabID+\'" title="\'+tabName+\'">\'+tabName+\'</a></li>\');
-			});
-			$(".tabContainer .tab").hide();
-			$(".tabContainer .tab:first").show();
-			$(".tabContainer ul li:first").addClass("active");
-			$(".tabContainer ul li").click(function(){
-				$(".tabContainer ul li").removeClass("active");
-				$(this).addClass("active");
-				$(".tab").hide();
-				var activeTab = $(this).find("a").attr("href");
-				$(activeTab).fadeIn();
-				return false;
+				$("#tabNav'.get_the_ID().time().'").append(\'<li><a href="#\'+tabID+\'" title="\'+tabName+\'">\'+tabName+\'</a></li>\');
 			});
 		});
 	</script>';
@@ -276,3 +264,38 @@ function sitemap_shortcode( $atts, $content = null ) {
 	return '<div class="row clear">'.$sitemap.'</div>';
 }
 add_shortcode( 'sitemap', 'sitemap_shortcode' );
+
+function example_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+		'just_code' => 'false',
+		'lang' => 'markup',
+	), $atts ) );
+	$code = strip_tags($content, '<!doctype><a><img><div><body><html><head><script><style><h1><h2><h3><h4><h5><h6><hr><video><audio><ul><ol><li><table><tbody><tr><td><th><link><strong><em><code><pre><span><embed><b><i><dd><dt><dl><blockquote><header><footer><article><aside><form><input><textarea><button><section><address><cite><embed><object>');
+	$code = str_replace('<p>', '', $code);
+	$code = str_replace('</p>', '', $code);
+	$code = str_replace('<', '&lt;', $code);
+	$code = '<pre><code class="language-'.$lang.'">'.$code.'</code></pre>';
+	$code_and_example = '<div class="large-6 columns code-block">'.$content.'</div><div class="large-6 columns">'.$code.'</div>';
+	if($just_code == 'true'){
+		return '<div class="row clearfix md-margin full-code-row"><div class="span12 full-code">'.$code.'</div></div>';
+	} else {
+		return '<div class="row example-row clearfix md-margin">'.$code_and_example.'</div>';
+	}
+}
+add_shortcode( 'example', 'example_shortcode' );
+
+function notice_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+		'bonus' => false,
+		'tip' => false,
+	), $atts ) );
+	if($bonus){
+		$wsc = '<span class="label label-success">Bonus</span>';
+	} elseif ($tip) {
+		$wsc = '<span class="label label-info">'.esc_attr($tip).'</span>';
+	} else {
+		$wsc = '<span class="label label-important">Heads up</span>';
+	}
+	return '<p>'.$wsc.' '.$content.'</p>';
+}
+add_shortcode( 'notice', 'notice_shortcode' );

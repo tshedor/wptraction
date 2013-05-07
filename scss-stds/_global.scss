@@ -25,7 +25,9 @@ h4 {
 a h1, a h2, a h3, a h4, a h5, a h6 {
 	@include std-hover($linkColor);
 }
-
+code {
+	font-weight:normal;
+}
 ul {
 	padding-left:17px;
 }
@@ -666,4 +668,10 @@ button, .button, input[type="submit"] {
 			content:'\A0';
 		}
 	}
+}
+.label-warning, .label-important {
+	background-color:#b94a48;
+}
+.label-bonus, .label-success {
+	background-color:#468847;
 }

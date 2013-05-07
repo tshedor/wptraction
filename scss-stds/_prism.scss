@@ -4,36 +4,6 @@
  * @author Lea Verou
  */
 
-@import "compass";
-/** If not using Compass, uncomment the following:
-
-@mixin hyphens($value:auto){
-	-webkit-hyphens:$value;
-	-moz-hyphens:$value;
-	-ms-hyphens:$value;
-	hyphens:$value;
-}
-@mixin tab-size($value:auto){
-	-moz-tab-size:$value;
-	-o-tab-size:$value;
-	tab-size:$value;
-}
-@mixin border-radius($value:auto){
-	-webkit-border-radius:$value;
-	-moz-border-radius:$value;
-	-khtml-border-radius:$value;
-	border-radius:$value;
-}
-@mixin opacity($value:1){
-    filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($value * 100)})");
-	opacity:$value;
-}
-@mixin box-shadow($content:none){
-	-webkit-box-shadow:$content;
-	-moz-box-shadow:$content;
-	box-shadow:$content;
-}
-*/
 
 @mixin tab-size($value:auto){
 	-moz-tab-size:$value;
@@ -42,14 +12,14 @@
 }
 
 
-$selector:#690;
-$comment:slategray;
+$selector:#2f9c0a;
+$comment:$light_gray;
 $punctuation:#999;
-$property:#905;
+$property:#c92c2c;
 $string:#a67f59;
 $important:#e90;
-$attr-value:#07a;
-$background:#f5f2f0;
+$attr-value:#1990b8;
+$background:lighten($lightest_gray,4.5%);
 
 $top-spacing:1em;
 
@@ -62,7 +32,7 @@ code[class*="language-"], pre[class*="language-"] {
 	@include hyphens(none);
 	color: black;
 	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	font-family: Consolas, Monaco, Menlo, 'Andale Mono', monospace;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
@@ -70,9 +40,11 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 pre[class*="language-"] {
+	border-left:6px solid $domColor;
 	padding: $top-spacing;
-	margin: .5em 0;
+	margin:0;
 	overflow: auto;
+	padding-top:0px;
 }
 
 @media print {
@@ -205,4 +177,14 @@ pre[class*="language-"] {
 		color: inherit;
 	}
 }
+}
+
+.example-row {
+	background:white;
+	margin-left:0px!important;
+	margin-right:0px!important;
+}
+.full-code-row {
+	margin-left:0px!important;
+	margin-right:0px!important;
 }
