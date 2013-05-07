@@ -140,7 +140,7 @@ hr {
 .wp-caption, .gallery-caption {
 	margin-bottom:30px;
 	padding:8px;
-	background:#eee;
+	background:$lightest_gray;
 	img {
 		border:2px solid #fff;
 	}
@@ -149,6 +149,14 @@ hr {
 		text-align:center;
 		font-style:italic;
 	}
+}
+.gallery-item {
+	img {
+		margin:0 auto;
+	}
+}
+.gallery-caption {
+	margin:10px 8px;
 }
 .sidebar {
 	.widget {

@@ -11,12 +11,12 @@
 		&.mfp-bg {
 			@include opacity(0.8);
 		}
-		#small-dialog {
+		.mfp-figure {
 			@include opacity(1);
 			@include transform(scale(1));
 		}
 	}
-	&.mfp-removing #small-dialog {
+	&.mfp-removing .mfp-figure {
 		@include transform(scale(0.8));
 		@include opacity(0);
 	}
@@ -24,7 +24,7 @@
 		@include opacity(0);
 		@include transition(opacity 0.3s ease-out);
 	}
-	.mfp-removing.mfp-bg {
+	&.mfp-removing.mfp-bg {
 		@include opacity(0);
 	}
 }
