@@ -31,6 +31,7 @@ function resume_register() {
 
 	register_post_type( 'resume' , $args );
 
+
 	register_taxonomy("resume_categories", array("resume"), array("hierarchical" => true, "label" => "Resume Categories", "singular_label" => "Resume Category", "rewrite" => true));
 
 function add_resume_meta_box() {
