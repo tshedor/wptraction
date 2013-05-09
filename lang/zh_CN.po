@@ -1,0 +1,577 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.5.5\n"
+
+#. Text in function
+#: comments.php:22
+msgid "&laquo; Older Comments"
+msgstr "较旧的评论 "
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:134
+msgid "(Edit)"
+msgstr "编辑"
+
+#. Text in function
+#: loop-tease.php:6 loop-single.php:11
+msgid "0 Comments"
+msgstr "0评论"
+
+#. Text in function
+#: loop-tease.php:6 loop-single.php:11
+msgid "1 Comment"
+msgstr "1条评论"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:499
+msgid "API Key"
+msgstr "API密钥"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Add New Resume Item"
+msgstr "添加新简历项目"
+
+#. Text in function
+#: comments.php:36
+msgid "Add Your Comment"
+msgstr "添"
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Aside Box"
+msgstr "除了盒"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "August 2013 or Present"
+msgstr "2013年8月或现"
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:149
+msgid "Author"
+msgstr "作者"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:111
+msgid "Box height:"
+msgstr "箱高度："
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Button"
+msgstr "Button"
+
+#. Text in echo
+#: index.php:28
+msgid "By"
+msgstr "编制"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Chunk 1/3"
+msgstr "组块1/3"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Chunk 1/4"
+msgstr "组块1/4"
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Col."
+msgstr "COL"
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Columns"
+msgstr "列"
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:156
+msgid "Comment awaiting moderation"
+msgstr "等待审核"
+
+#. Text in echo
+#: comments.php:21
+msgid "Comment navigation"
+msgstr "评论导航"
+
+#. Text in function
+#: loop-tease.php:6 loop-single.php:11
+msgid "Comments"
+msgstr "评论"
+
+#. Text in echo
+#: comments.php:30
+msgid "Comments are now closed."
+msgstr "评论已关闭。"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Contact"
+msgstr "联系我们"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Contact Form from"
+msgstr "联系表"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:122
+msgid "Dark"
+msgstr "深色"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Date Begun"
+msgstr "开始日期"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Date Completed"
+msgstr "竣工完成日期"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Description"
+msgstr "绪论"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Display Style"
+msgstr "显示样式"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Display a contact form"
+msgstr "显示一个接触的形式"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Display most popular posts"
+msgstr "显示最热门的帖子"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Display related posts"
+msgstr "显示相关文章"
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:146
+msgid "Edit"
+msgstr "编辑"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Edit Resume Item"
+msgstr "编辑恢复项目"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Email"
+msgstr "电子邮件"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:115
+msgid "Facebook Color Scheme:"
+msgstr "Facebook的颜色方案："
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:89
+msgid "Facebook Profile:"
+msgstr "Facebook个人资料："
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "First Name"
+msgstr "名"
+
+#. Text in echo
+#: index.php:26
+msgid "From"
+msgstr "发件人"
+
+#. Text in function
+#: inc/ts-stds/post-meta/layout.php:1
+msgid "Full Width"
+msgstr "全宽"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:499
+msgid "Get an API Key"
+msgstr "获取API密钥"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:537
+msgid "Get first and last name"
+msgstr "第一个和最后一个名字"
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Headers"
+msgstr " Headers"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Last Name"
+msgstr "姓氏"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Latest Tweets"
+msgstr "Latest Tweets"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:1
+msgid "Latest from Facebook"
+msgstr "最新从Facebook"
+
+#. Text in function
+#: inc/ts-stds/post-meta/layout.php:1
+msgid "Layouts"
+msgstr "布局"
+
+#. Text in function
+#: inc/ts-stds/post-meta/layout.php:1
+msgid "Left Sidebar"
+msgstr "左侧边栏"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:118
+msgid "Light"
+msgstr " light "
+
+#. Text in echo
+#: inc/ts-stds/theme-hooks-callbacks.php:143
+msgid "Link to this comment"
+msgstr "此评论"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Long"
+msgstr "長"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "May 2012"
+msgstr "2012年05月04日"
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Minor Subhead"
+msgstr "次要目"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "My job responsibilities included sweeping, smiling and fetching coffee"
+msgstr "我的工作职责包括扫地，面带​​微笑，取咖啡"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Name"
+msgstr "名称"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "New Resume Item"
+msgstr "新简历编号"
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "New Row"
+msgstr "新行"
+
+#. Text in function
+#: comments.php:23
+msgid "Newer Comments &raquo;"
+msgstr "较新的评论"
+
+#. Text in function
+#: inc/ts-stds/custom-functions.php:1
+msgid "Next"
+msgstr "下"
+
+#. Text in echo
+#: search.php:13
+msgid "No Results"
+msgstr "无结果"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:506
+msgid "No lists available"
+msgstr "没有可用的名单"
+
+#. Text in echo
+#: inc/ts-stds/custom-functions.php:1
+msgid "No related posts"
+msgstr "没有相关的职位"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Normal"
+msgstr "中"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Nothing found"
+msgstr "未找到任何内容。"
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:1
+msgid "Options"
+msgstr "选项"
+
+#. Text in echo
+#: inc/ts-stds/loop-error.php:3
+msgid "Page Not Found"
+msgstr "未找到页面"
+
+#. Text in echo
+#: inc/ts-stds/theme-hooks-callbacks.php:134
+msgid "Pingback"
+msgstr "Pingback 引用通告："
+
+#. Text in echo
+#: search.php:14
+msgid "Please feel free try again"
+msgstr "请随时再试"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Popular Posts"
+msgstr "热门帖子"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Position Held"
+msgstr "职位"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:318
+msgid "Post Count:"
+msgstr "文章数"
+
+#. Text in function
+#: inc/ts-stds/custom-functions.php:1
+msgid "Previous"
+msgstr "前一个"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Related Posts"
+msgstr "相关文章"
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:154
+msgid "Reply"
+msgstr "回复"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Resume Categories"
+msgstr "简历分类"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Resume Category"
+msgstr "简历类别"
+
+#. Text in function
+#: inc/ts-stds/post-meta/layout.php:1
+msgid "Right Sidebar"
+msgstr "右侧栏"
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:1
+msgid "Search"
+msgstr "搜索"
+
+#. Text in echo
+#: search.php:4
+msgid "Search Results"
+msgstr "搜索结果"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Search Resumes"
+msgstr "搜索简历"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:514 inc/ts-stds/custom-functions.php:1
+msgid "Select One"
+msgstr "（单选）"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:525
+msgid "Send a confirmation email"
+msgstr "发送一封确认邮件"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:390
+msgid "Send to Email:"
+msgstr "发送电​​子邮件："
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:531
+msgid "Send welcome email (no effect if confirmation email is checked)"
+msgstr "发送欢迎邮件（无效果，如果检查确认电子邮件）"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:101
+msgid "Show Faces"
+msgstr "显示面"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:107
+msgid "Show Header"
+msgstr "显示页眉"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:208
+msgid "Show Retweets"
+msgstr "显示转发"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:95
+msgid "Show Stream"
+msgstr "显示流"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:1
+msgid "Show your Facebook Page or Profile feed"
+msgstr "显示你的Facebook页面或档案饲料"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Show your latest tweets"
+msgstr "显示您最新的鸣叫"
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Styles"
+msgstr "样式"
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Subhead"
+msgstr "目"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Subscribe"
+msgstr "订阅"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:540
+msgid "Success. Look for the confirmation message in your inbox."
+msgstr "成功。看在你的收件箱中的确认消息。"
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Supervisor/Corporation"
+msgstr "监事/公司"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "TS Contact"
+msgstr "TS联系"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:1
+msgid "TS Facebook Like Box"
+msgstr "TS Facebook的喜欢盒"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "TS Mailchimp"
+msgstr "TS Mailchimp"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "TS Popular Posts"
+msgstr "TS热门文章"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "TS Related Posts"
+msgstr "TS相关文章"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "TS Twitter"
+msgstr "TS Twitter的"
+
+#. Text in echo
+#: index.php:22 inc/ts-stds/custom-functions.php:1
+msgid "Tagged"
+msgstr "标签"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Thank you for your message"
+msgstr "感谢您的留言"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:495
+msgid "Title:"
+msgstr "标题："
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:202
+msgid "Tweet Count:"
+msgstr "Tweets 数"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:198
+msgid "Twitter Profile:"
+msgstr "Twitter的个人资料："
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "View Resume Item"
+msgstr "查看恢复项目"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "View on Twitter"
+msgstr "在Twitter上查看"
+
+#. Text in function
+#: inc/ts-stds/custom-functions.php:1
+msgid "Views"
+msgstr "视图"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540 inc/ts-stds/widgets.php:500
+#: inc/ts-stds/widgets.php:513
+msgid "YOUR API KEY"
+msgstr "您的API密钥"
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:505
+msgid "Your lists (please add API key, save and refresh):"
+msgstr "你的列表（请添加API密钥，保存和刷新）："
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Your message"
+msgstr "您的消息"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540 inc/ts-stds/widgets.php:391
+msgid "name@example.com"
+msgstr "name@example.com"
+
+#. Text in function
+#: inc/ts-stds/widgets.php:1
+msgid "on"
+msgstr "开启"

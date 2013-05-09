@@ -25,6 +25,12 @@ function ts_initialize_options(){
 }
 add_action('after_switch_theme', 'ts_initialize_options');
 
+function ts_theme_localization(){
+    load_theme_textdomain('tswp', get_template_directory().'/inc/lang');
+}
+add_action('after_setup_theme', 'ts_theme_localization');
+
+
 function admin_meta_scripts(){
 	if(function_exists( 'wp_enqueue_media' )){
 		wp_enqueue_media();

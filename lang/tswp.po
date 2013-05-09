@@ -1,0 +1,577 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.5.5\n"
+
+#. Text in function
+#: comments.php:22
+msgid "&laquo; Older Comments"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:134
+msgid "(Edit)"
+msgstr ""
+
+#. Text in function
+#: loop-tease.php:6 loop-single.php:11
+msgid "0 Comments"
+msgstr ""
+
+#. Text in function
+#: loop-tease.php:6 loop-single.php:11
+msgid "1 Comment"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:499
+msgid "API Key"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Add New Resume Item"
+msgstr ""
+
+#. Text in function
+#: comments.php:36
+msgid "Add Your Comment"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Aside Box"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "August 2013 or Present"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:149
+msgid "Author"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:111
+msgid "Box height:"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Button"
+msgstr ""
+
+#. Text in echo
+#: index.php:28
+msgid "By"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Chunk 1/3"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Chunk 1/4"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Col."
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Columns"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:156
+msgid "Comment awaiting moderation"
+msgstr ""
+
+#. Text in echo
+#: comments.php:21
+msgid "Comment navigation"
+msgstr ""
+
+#. Text in function
+#: loop-tease.php:6 loop-single.php:11
+msgid "Comments"
+msgstr ""
+
+#. Text in echo
+#: comments.php:30
+msgid "Comments are now closed."
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Contact"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Contact Form from"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:122
+msgid "Dark"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Date Begun"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Date Completed"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Description"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Display Style"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Display a contact form"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Display most popular posts"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Display related posts"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:146
+msgid "Edit"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Edit Resume Item"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Email"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:115
+msgid "Facebook Color Scheme:"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:89
+msgid "Facebook Profile:"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "First Name"
+msgstr ""
+
+#. Text in echo
+#: index.php:26
+msgid "From"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/post-meta/layout.php:1
+msgid "Full Width"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:499
+msgid "Get an API Key"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:537
+msgid "Get first and last name"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Headers"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Last Name"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Latest Tweets"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:1
+msgid "Latest from Facebook"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/post-meta/layout.php:1
+msgid "Layouts"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/post-meta/layout.php:1
+msgid "Left Sidebar"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:118
+msgid "Light"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/theme-hooks-callbacks.php:143
+msgid "Link to this comment"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Long"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "May 2012"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Minor Subhead"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "My job responsibilities included sweeping, smiling and fetching coffee"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Name"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "New Resume Item"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "New Row"
+msgstr ""
+
+#. Text in function
+#: comments.php:23
+msgid "Newer Comments &raquo;"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/custom-functions.php:1
+msgid "Next"
+msgstr ""
+
+#. Text in echo
+#: search.php:13
+msgid "No Results"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:506
+msgid "No lists available"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/custom-functions.php:1
+msgid "No related posts"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Normal"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Nothing found"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:1
+msgid "Options"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/loop-error.php:3
+msgid "Page Not Found"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/theme-hooks-callbacks.php:134
+msgid "Pingback"
+msgstr ""
+
+#. Text in echo
+#: search.php:14
+msgid "Please feel free try again"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Popular Posts"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Position Held"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:318
+msgid "Post Count:"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/custom-functions.php:1
+msgid "Previous"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Related Posts"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:154
+msgid "Reply"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Resume Categories"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Resume Category"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/post-meta/layout.php:1
+msgid "Right Sidebar"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/theme-hooks-callbacks.php:1
+msgid "Search"
+msgstr ""
+
+#. Text in echo
+#: search.php:4
+msgid "Search Results"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Search Resumes"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:514 inc/ts-stds/custom-functions.php:1
+msgid "Select One"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:525
+msgid "Send a confirmation email"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:390
+msgid "Send to Email:"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:531
+msgid "Send welcome email (no effect if confirmation email is checked)"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:101
+msgid "Show Faces"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:107
+msgid "Show Header"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:208
+msgid "Show Retweets"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:95
+msgid "Show Stream"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:1
+msgid "Show your Facebook Page or Profile feed"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Show your latest tweets"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Styles"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/tinymce/functions.php:1
+msgid "Subhead"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Subscribe"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:540
+msgid "Success. Look for the confirmation message in your inbox."
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "Supervisor/Corporation"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "TS Contact"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:1
+msgid "TS Facebook Like Box"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "TS Mailchimp"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "TS Popular Posts"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "TS Related Posts"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "TS Twitter"
+msgstr ""
+
+#. Text in echo
+#: index.php:22 inc/ts-stds/custom-functions.php:1
+msgid "Tagged"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Thank you for your message"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:495
+msgid "Title:"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:202
+msgid "Tweet Count:"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:198
+msgid "Twitter Profile:"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/resume-pt.php:1
+msgid "View Resume Item"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "View on Twitter"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/custom-functions.php:1
+msgid "Views"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540 inc/ts-stds/widgets.php:500
+#: inc/ts-stds/widgets.php:513
+msgid "YOUR API KEY"
+msgstr ""
+
+#. Text in echo
+#: inc/ts-stds/widgets.php:505
+msgid "Your lists (please add API key, save and refresh):"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540
+msgid "Your message"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:540 inc/ts-stds/widgets.php:391
+msgid "name@example.com"
+msgstr ""
+
+#. Text in function
+#: inc/ts-stds/widgets.php:1
+msgid "on"
+msgstr ""

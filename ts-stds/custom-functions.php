@@ -188,7 +188,7 @@ function ts_related($post_count = 5){
 					echo '</ul>';
 				endif; wp_reset_query();
 			} else
-				__e('No related posts', 'tswp');
+				_e('No related posts', 'tswp');
 		}
 	}
 }

@@ -46,20 +46,20 @@ function themeit_mce_buttons_2( $buttons ) {
 }
 add_filter( 'mce_buttons_2', 'themeit_mce_buttons_2' );
 function themeit_tiny_mce_before_init( $settings ) {
-  $settings['theme_advanced_blockformats'] = 'p,a,div,span,h1,h2,h3,h4,h5,h6,tr,';
+  $settings['theme_advanced_blockformats'] = 'p,a,div,span,h1,h2,h3,tr,';
   $style_formats = array(
-      array( 'title' => 'Headers' ),
-      array( 'title' => 'Subhead',      'block'    => 'h2',  'classes' => '' ),
-      array( 'title' => 'Minor Subhead',      'block'    => 'h3',  'classes' => '' ),
-      array( 'title' => 'Styles' ),
-      array( 'title' => 'Button',         'inline' => 'span',  'classes' => 'button' ),
-      array( 'title' => 'Aside Box',        'block'    => 'aside',  'classes' => 'inline-text' ),
-      array( 'title' => 'Columns' ),
-      array( 'title' => 'New Row',            'block'    => 'div',  'classes' => 'row clearfix' ),
-      array( 'title' => '&frac12; Col.',      'block'    => 'div',  'classes' => 'small-6 large-6 columns' ),
-      array( 'title' => '&frac13; Col.',      'block'    => 'div',  'classes' => 'large-4 columns' ),
-      array( 'title' => '&frac14; Col.',      'block'    => 'div',  'classes' => 'large-3 columns' ),
-      array( 'title' => '&frac16; Col.',      'block'    => 'div',  'classes' => 'large-2 columns' ),
+      array( 'title' => __('Headers', 'tswp') ),
+      array( 'title' => __('Subhead', 'tswp'),      'block'    => 'h2',  'classes' => '' ),
+      array( 'title' => __('Minor Subhead', 'tswp'),      'block'    => 'h3',  'classes' => '' ),
+      array( 'title' => __('Styles', 'tswp') ),
+      array( 'title' => __('Button', 'tswp'),         'inline' => 'span',  'classes' => 'button' ),
+      array( 'title' => __('Aside Box', 'tswp'),        'block'    => 'aside',  'classes' => 'inline-text' ),
+      array( 'title' => __('Columns', 'tswp') ),
+      array( 'title' => __('New Row', 'tswp'),            'block'    => 'div',  'classes' => 'row clearfix' ),
+      array( 'title' => '&frac12; '.__('Col.', 'tswp'),      'block'    => 'div',  'classes' => 'small-6 large-6 columns' ),
+      array( 'title' => '&frac13; '.__('Col.', 'tswp'),      'block'    => 'div',  'classes' => 'large-4 columns' ),
+      array( 'title' => '&frac14; '.__('Col.', 'tswp'),      'block'    => 'div',  'classes' => 'large-3 columns' ),
+      array( 'title' => '&frac16; '.__('Col.', 'tswp'),      'block'    => 'div',  'classes' => 'large-2 columns' ),
   );
   $settings['style_formats'] = json_encode( $style_formats );
   return $settings;
