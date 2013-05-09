@@ -10,7 +10,7 @@ function ts_add_admin() {
 	}
 	$admin_options['has_saved'] = true;
 	update_option('ts_admin_options', $admin_options);
-	echo '<div id="message" class="updated" style="width:800px; margin-left:0px; padding-right:0px;margin-top:20px"><p><strong>Settings saved.</strong></p></div>';
+	echo '<div id="message" class="updated" style="width:800px; margin-left:0px; padding-right:0px;margin-top:20px"><p><strong>'.__('Settings saved.', 'tswp').'</strong></p></div>';
 }
 
 function ts_admin() {
@@ -28,7 +28,7 @@ function ts_admin() {
 		echo '<div id="message" class="updated" style="width:800px; margin-left:0px; padding-right:0px;margin-top:20px"><p><strong>Settings reset.</strong></p></div>';
 	}
 	echo '<div class="wrap tsao clear clearfix" id="poststuff">
-		<h2>'.$themename.' settings</h2>
+		<h2>'.$themename.' '.__('settings', 'tswp').'</h2>
 		<form method="post" novalidate data-validate="parsley">
 		<input type="hidden" name="update_themeoptions" value="true" />';
 	$globalMeta = get_option('ts_admin_options');
@@ -42,13 +42,13 @@ function ts_admin() {
 		echo '
 </div>
 <p class="submit">
-	<input name="save" type="submit" class="button button-primary button-large" value="Save changes" />
+	<input name="save" type="submit" class="button button-primary button-large" value="'.__('Save changes', 'tswp').'" />
 	<input type="hidden" name="action" value="save" />
 </p>
 </form>
 <script type="text/javascript">
 function reallyreset(){
-var agree=confirm("Are you sure you want to reset all options?");
+var agree=confirm("'.__('Are you sure you want to reset all options?', 'tswp').'");
 if (agree)
 	return true ;
 else
@@ -56,7 +56,7 @@ else
 }
 </script>
 <form method="post">
-	<p class="submit"> 	<input name="save" type="submit" class="button" value="Reset" onclick="return reallyreset()" />
+	<p class="submit"> 	<input name="save" type="submit" class="button" value="'.__('Reset', 'tswp').'" onclick="return reallyreset()" />
 <input type="hidden" name="action" value="reset" /></form> </p>
 ';
 }
@@ -64,6 +64,6 @@ else
 
 function themeoptions_admin_menu()  {
 	global $themename;
-	add_theme_page($themename." Options", "".$themename." Options", 'edit_themes', basename(__FILE__), 'ts_admin');
+	add_theme_page($themename.' '.__('Options', 'tswp'), $themename.' '.__('Options', 'tswp'), 'edit_themes', basename(__FILE__), 'ts_admin');
 }
 add_action('admin_menu', 'themeoptions_admin_menu');

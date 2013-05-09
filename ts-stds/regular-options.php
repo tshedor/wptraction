@@ -14,7 +14,7 @@ function arrayKey($array, $arrayValue) {
 
 $social = array(
 array(
-	'name'	=>	'Social',
+	'name'	=>	__('Social', 'tswp'),
 	'desc'	=>	'',
 	'id'	=>	'separate',
 	'std'	=>	'',
@@ -22,70 +22,70 @@ array(
 ),
 array(
 	'name'	=>	'Twitter',
-	'desc'	=>	'Twitter Profile. No @ sign.',
+	'desc'	=>	__('Twitter Profile. No @ sign.', 'tswp'),
 	'id'	=>	'twitter_profile',
 	'std'	=>	'tshedor',
 	'class'	=>	'third',
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Facebook Profile',
-	'desc'	=>	'Include for display in header',
+	'name'	=>	'Facebook '.__('Profile', 'tswp'),
+	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'facebook_profile',
 	'std'	=>	'http://facebook.com/tshedor',
 	'class'	=>	'third',
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Pinterest Profile',
-	'desc'	=>	'Include for display in header',
+	'name'	=>	'Pinterest '.__('Profile', 'tswp'),
+	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'pinterest_profile',
 	'std'	=>	'http://pinterest.com/tshedor',
 	'class'	=>	'third',
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Instagram Profile',
-	'desc'	=>	'Include for display in header',
+	'name'	=>	'Instagram '.__('Profile', 'tswp'),
+	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'instagram_profile',
 	'std'	=>	'http://instagram.com/tshedor',
 	'class'	=>	'third',
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Flickr Profile',
-	'desc'	=>	'Include for display in header',
+	'name'	=>	'Flickr '.__('Profile', 'tswp'),
+	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'flickr_profile',
 	'std'	=>	'http://www.flickr.com/photos/tshedor/',
 	'class'	=>	'third',
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'LinkedIn Profile',
-	'desc'	=>	'Include for display in header',
+	'name'	=>	'LinkedIn '.__('Profile', 'tswp'),
+	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'linkedin_profile',
 	'std'	=>	'http://www.linkedin.com/profile/view?id=76301105&trk=hb_tab_pro_top',
 	'class'	=>	'third',
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Google+ Profile',
-	'desc'	=>	'Include for display in header',
+	'name'	=>	'Google+ '.__('Profile', 'tswp'),
+	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'googleplus_profile',
 	'std'	=>	'https://plus.google.com/u/0/115986805136940069805/posts',
 	'class'	=>	'half',
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Github Profile',
-	'desc'	=>	'Include for display in header',
+	'name'	=>	'Github '.__('Profile', 'tswp'),
+	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'github_profile',
 	'std'	=>	'http://github.com/tshedor',
 	'class'	=>	'half',
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Show RSS in header',
+	'name'	=>	__('Show RSS in header', 'tswp'),
 	'desc'	=>	'',
 	'id'	=>	'feed_profile',
 	'std'	=>	'',
@@ -94,8 +94,8 @@ array(
 	'def'	=>	true,
 ),
 array(
-	'name'	=>	'Show Email in header',
-	'desc'	=>	'Uses the email set in General settings',
+	'name'	=>	__('Show Email in header', 'tswp'),
+	'desc'	=>	__('Uses the email set in General settings', 'tswp'),
 	'id'	=>	'email_profile',
 	'std'	=>	'',
 	'class'	=>	'third',
@@ -103,7 +103,7 @@ array(
 	'def'	=>	true,
 ),
 array(
-	'name'	=>	'Show RSS on Archive pages',
+	'name'	=>	__('Show RSS on Archive pages', 'tswp'),
 	'desc'	=>	'',
 	'id'	=>	'show_rss_on_archive',
 	'std'	=>	'',
@@ -112,7 +112,7 @@ array(
 	'def'	=>	true,
 ),
 array(
-	'name'	=>	'Show social buttons on posts',
+	'name'	=>	__('Show social buttons on posts', 'tswp'),
 	'desc'	=>	'',
 	'id'	=>	'show_social',
 	'std'	=>	'',
@@ -121,7 +121,7 @@ array(
 	'def'	=>	true,
 ),
 array(
-	'name'	=> 'Share icon style',
+	'name'	=> __('Share icon style', 'tswp'),
 	'desc'	=> '',
 	'id'	=> 'share_icon_style',
 	'std'	=> 'plain',
@@ -159,7 +159,7 @@ array(
 	'def'	=>	true,
 ),
 array(
-	'name'	=>	'FB Like button',
+	'name'	=>	__('Like button', 'tswp'),
 	'desc'	=>	'thumbs-up',
 	'id'	=>	'fblike',
 	'std'	=>	'',
@@ -211,7 +211,7 @@ array(
 	'type'	=>	'socialcheckbox',
 ),
 array(
-	'name'	=>	'Print',
+	'name'	=>	__('Print', 'tswp'),
 	'desc'	=>	'print',
 	'id'	=>	'show_print',
 	'std'	=>	'',
@@ -227,51 +227,51 @@ array(
 );
 $sitewide = array(
 array(
-	'name'	=>	'Sitewide',
+	'name'	=>	__('Sitewide', 'tswp'),
 	'desc'	=>	'',
 	'id'	=>	'separate',
 	'std'	=>	'',
 	'type'	=>	'separate'
 ),
 array(
-	'name'	=>	'Logo URL',
-	'desc'	=>	'The URL to your logo',
+	'name'	=>	__('Logo URL', 'tswp'),
+	'desc'	=>	__('The URL to your logo', 'tswp'),
 	'id'	=>	'logo',
 	'std'	=>	'http://example.com/logo.png',
 	'type'	=>	'media'
 ),
 array(
-	'name'	=>	'Favicon URL',
-	'desc'	=>	'The URL to your favicon, like http://example.com/favicon.ico. Should be 32x32.',
+	'name'	=>	__('Favicon URL', 'tswp'),
+	'desc'	=>	__('The URL to your favicon, like http://example.com/favicon.ico. Should be 32x32.', 'tswp'),
 	'id'	=>	'favicon',
 	'std'	=>	'http://timshedor.com/favicon.ico',
 	'type'	=>	'media'
 ),
 array(
-	'name'	=>	'Landing/Coming Soon/Splash Page Active',
-	'desc'	=>	'Show a splash page instead of the actual site unless you\'re logged in',
+	'name'	=>	__('Landing/Coming Soon/Splash Page Active', 'tswp'),
+	'desc'	=>	__('Show a splash page instead of the actual site unless you\'re logged in', 'tswp'),
 	'id'	=>	'maintenance_mode',
 	'std'	=>	'',
 	'type'	=>	'checkbox'
 ),
 array(
-	'name'	=>	'Show dates',
-	'desc'	=>	'Have dates appear anywhere arcross the site',
+	'name'	=>	__('Show dates', 'tswp'),
+	'desc'	=>	__('Have dates appear anywhere arcross the site', 'tswp'),
 	'id'	=>	'show_dates',
 	'std'	=>	'',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
 ),
 array(
-	'name'	=>	'Get first post image and set it as the featured image',
-	'desc'	=>	'In case you don\'t want to use a plugin like Get the Image or similar',
+	'name'	=>	__('Get first post image and set it as the featured image', 'tswp'),
+	'desc'	=>	__('In case you don\'t want to use a plugin like Get the Image or similar', 'tswp'),
 	'id'	=>	'get_first_image',
 	'std'	=>	'',
 	'type'	=>	'checkbox',
 	'def'	=>	true,
 ),
 array(
-	'name'	=>	'Show breadcrumbs on archive pages',
+	'name'	=>	__('Show breadcrumbs on archive pages', 'tswp'),
 	'desc'	=>	'',
 	'id'	=>	'breadcrumbs_archive',
 	'std'	=>	'',
@@ -279,7 +279,7 @@ array(
 	'type'	=>	'checkbox'
 ),
 array(
-	'name'	=>	'Show breadcrumbs on single pages',
+	'name'	=>	__('Show breadcrumbs on single pages', 'tswp'),
 	'desc'	=>	'',
 	'id'	=>	'breadcrumbs_single',
 	'std'	=>	'',
@@ -287,7 +287,7 @@ array(
 	'type'	=>	'checkbox'
 ),
 array(
-	'name'	=>	'Show related posts at the bottom of posts',
+	'name'	=>	__('Show related posts at the bottom of posts', 'tswp'),
 	'desc'	=>	'',
 	'id'	=>	'show_related_on_single',
 	'std'	=>	'',
@@ -296,7 +296,7 @@ array(
 	'def'	=>	true
 ),
 array(
-	'name'	=>	'Show comments on pages',
+	'name'	=>	__('Show comments on pages', 'tswp'),
 	'desc'	=>	'',
 	'id'	=>	'comments_on_pages',
 	'std'	=>	'',
@@ -304,8 +304,8 @@ array(
 	'type'	=>	'checkbox'
 ),
 array(
-	'name'	=>	'Use all JS libraries included with theme',
-	'desc'	=>	'This includes Modernizr, PrismJS, Superfish, bxSlider, hoverIntent and jQuery Easing (with compatibility)',
+	'name'	=>	__('Use all JS libraries included with theme', 'tswp'),
+	'desc'	=>	__('This includes Modernizr, PrismJS, Superfish, bxSlider, hoverIntent and jQuery Easing (with compatibility)', 'tswp'),
 	'id'	=>	'use_ts_plugins',
 	'std'	=>	'',
 	'class'	=>	'half',
@@ -313,8 +313,8 @@ array(
 	'def'	=>	true
 ),
 array(
-	'name'	=>	'Use builtin Magnific lightbox for single images and galleries',
-	'desc'	=>	'In case you don\'t use a plugin like NextGEN, or anyother lightbox plugin',
+	'name'	=>	__('Use builtin Magnific lightbox for single images and galleries', 'tswp'),
+	'desc'	=>	__('In case you don\'t use a plugin like NextGEN, or anyother lightbox plugin', 'tswp'),
 	'id'	=>	'magnific_lb',
 	'std'	=>	'',
 	'class'	=>	'half',
@@ -322,8 +322,8 @@ array(
 	'def'	=>	true
 ),
 array(
-	'name'	=>	'Author credit in footer',
-	'desc'	=>	'Please leave this credit in the footer',
+	'name'	=>	__('Author credit in footer', 'tswp'),
+	'desc'	=>	__('Please leave this credit in the footer', 'tswp'),
 	'id'	=>	'footer_credit',
 	'std'	=>	'',
 	'class'	=>	'half',
@@ -331,31 +331,31 @@ array(
 	'def'	=>	true
 ),
 array(
-	'name'	=>	'Copyright Text',
-	'desc'	=>	'Defaults to &copy; Copyright {SITE NAME} {CURRENT YEAR}',
+	'name'	=>	__('Copyright Text', 'tswp'),
+	'desc'	=>	__('Defaults to &copy; Copyright {SITE NAME} {CURRENT YEAR}', 'tswp'),
 	'id'	=>	'copyright_text',
 	'std'	=>	'',
 	'class'	=>	'half',
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Default Contact Form Email',
-	'desc'	=>	'Defaults to the admin email (under Settings > General)',
+	'name'	=>	__('Default Contact Form Email', 'tswp'),
+	'desc'	=>	__('Defaults to the admin email (under Settings > General)', 'tswp'),
 	'id'	=>	'contact_form_email',
 	'std'	=>	'',
 	'class'	=>	'clear',
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Analytics Code',
-	'desc'	=>	'Paste the code from Google Analytics or a similar analytics service here if you don\'t use a plugin',
+	'name'	=>	__('Analytics Code', 'tswp'),
+	'desc'	=>	__('Paste the code from Google Analytics or a similar analytics service here if you don\'t use a plugin', 'tswp'),
 	'id'	=>	'analytics_code',
 	'std'	=>	'',
 	'class'	=>	'two-thirds',
 	'type'	=>	'textareacode'
 ),
 array(
-	'name'	=>	'Do not track logged in users',
+	'name'	=>	__('Do not track logged in users', 'tswp'),
 	'desc'	=>	'',
 	'id'	=>	'do_not_track_users',
 	'class'	=>	'third',
@@ -363,8 +363,8 @@ array(
 	'def'	=>	true
 ),
 array(
-	'name'	=>	'Custom CSS',
-	'desc'	=>	'Override styles with your own code',
+	'name'	=>	__('Custom CSS', 'tswp'),
+	'desc'	=>	__('Override styles with your own code', 'tswp'),
 	'id'	=>	'custom_css',
 	'std'	=>	'',
 	'class'	=>	'clear',

@@ -4,8 +4,8 @@ class TS_FBLike extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'ts_fblike',
-			'TS Facebook Like Box',
-			array( 'description' => __( 'Show your Facebook Page or Profile feed', 'text_domain' ), )
+			__('TS Facebook Like Box', 'tswp'),
+			array( 'description' => __( 'Show your Facebook Page or Profile feed', 'tswp' ), )
 		);
 	}
 	public function widget( $args, $instance ) {
@@ -59,67 +59,67 @@ class TS_FBLike extends WP_Widget {
 		if(isset($instance[ 'title' ]))
 			$title = $instance[ 'title' ];
 		else
-			$title = __( 'Latest from Facebook', 'text_domain' );
+			$title = __( 'Latest from Facebook', 'tswp' );
 		if(isset($instance['fblike_profile']))
 			$fblike_profile = $instance['fblike_profile'];
 		else
-			$fblike_profile = __( 'platform', 'text_domain' );
+			$fblike_profile = 'platform';
 		if(isset($instance['fblike_show_faces']))
 			$fblike_show_faces = $instance['fblike_show_faces'];
 		if(isset($instance['fblike_show_stream']))
 			$fblike_show_stream = $instance['fblike_show_stream'];
 		else
-			$fblike_show_stream =  __( 'on', 'text_domain' );
+			$fblike_show_stream =  __( 'on', 'tswp' );
 		if(isset($instance['fblike_show_header']))
 			$fblike_show_header = $instance['fblike_show_header'];
 		if(isset($instance['fblike_height']))
 			$fblike_height = $instance['fblike_height'];
 		else
-			$fblike_height = __( '350', 'text_domain' );
+			$fblike_height = '350';
 		if(isset($instance['fblike_color_scheme']))
 			$fblike_color_scheme = $instance['fblike_color_scheme'];
 		else
-			$fblike_color_scheme = __( 'light', 'text_domain' );
+			$fblike_color_scheme = 'light';
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php __e('Title:', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'fblike_profile' ); ?>">Facebook Profile:</label>
+			<label for="<?php echo $this->get_field_id( 'fblike_profile' ); ?>"><?php __e('Facebook Profile:', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'fblike_profile' ); ?>" name="<?php echo $this->get_field_name( 'fblike_profile' ); ?>" type="text" value="<?php echo esc_attr( $fblike_profile ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'fblike_show_stream' ); ?>">
 				<input id="<?php echo $this->get_field_id( 'fblike_show_stream' ); ?>" name="<?php echo $this->get_field_name( 'fblike_show_stream' ); ?>" type="checkbox" <?php if($fblike_show_stream) { echo ' checked '; } ?> />
-				Show Stream
+				<?php __e('Show Stream', 'tswp') ?>
 			</label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'fblike_show_faces' ); ?>">
 				<input id="<?php echo $this->get_field_id( 'fblike_show_faces' ); ?>" name="<?php echo $this->get_field_name( 'fblike_show_faces' ); ?>" type="checkbox" <?php if($fblike_show_faces) { echo ' checked '; } ?> />
-				Show Faces
+				<?php __e('Show Faces', 'tswp') ?>
 			</label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'fblike_show_header' ); ?>">
 				<input id="<?php echo $this->get_field_id( 'fblike_show_header' ); ?>" name="<?php echo $this->get_field_name( 'fblike_show_header' ); ?>" type="checkbox" <?php if($fblike_show_header) { echo ' checked '; } ?> />
-				Show Header
+				<?php __e('Show Header', 'tswp') ?>
 			</label>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'fblike_height' ); ?>">Box height:</label>
+			<label for="<?php echo $this->get_field_id( 'fblike_height' ); ?>"><?php __e('Box height:', 'tswp') ?></label>
 			<input id="<?php echo $this->get_field_id( 'fblike_height' ); ?>" name="<?php echo $this->get_field_name( 'fblike_height' ); ?>" type="number" value="<?php echo esc_attr( $fblike_height ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'fblike_color_scheme' ); ?>">Facebook Color Scheme:<br /></label>
+			<label for="<?php echo $this->get_field_id( 'fblike_color_scheme' ); ?>"><?php __e('Facebook Color Scheme:', 'tswp') ?><br /></label>
 			<label for="colorLight">
 				<input id="colorLight" name="<?php echo $this->get_field_name( 'fblike_color_scheme' ); ?>" type="radio" <?php if($fblike_color_scheme == 'light') { echo ' checked '; } ?> value="light" />
-			&nbsp;Light&nbsp;
+			&nbsp;<?php __e('Light', 'tswp') ?>&nbsp;
 			</label>
 			<label for="colorDark">
 				<input id="colorDark" name="<?php echo $this->get_field_name( 'fblike_color_scheme' ); ?>" type="radio" <?php if($fblike_color_scheme == 'dark') { echo ' checked '; } ?> value="dark" />
-			&nbsp;Dark&nbsp;
+			&nbsp;<?php __e('Dark', 'tswp') ?>&nbsp;
 			</label>
 		</p>
 		<?php
@@ -133,8 +133,8 @@ class TS_Twitter extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'ts_twitter',
-			'TS Twitter',
-			array( 'description' => __( 'Show your latest tweets', 'text_domain' ), )
+			__('TS Twitter', 'tswp'),
+			array( 'description' => __( 'Show your latest tweets', 'tswp' ), )
 		);
 	}
 	public function widget( $args, $instance ) {
@@ -155,7 +155,7 @@ class TS_Twitter extends WP_Widget {
 		if($tweets){
 			echo '<ul>';
 			foreach ($tweets as $t) {
-				echo '<li>'.make_clickable($t->text).'&nbsp<small><a href="http://twitter.com/'.$twitter_profile.'/statuses/'.$t->id_str.'" target="_blank" title="View on Twitter">View on Twitter</a></small></li>';
+				echo '<li>'.make_clickable($t->text).'&nbsp<small><a href="http://twitter.com/'.$twitter_profile.'/statuses/'.$t->id_str.'" target="_blank" title="'.__('View on Twitter', 'tswp').'">'.__('View on Twitter', 'tswp').'</a></small></li>';
 			}
 			echo '</ul>';
 		}
@@ -176,36 +176,36 @@ class TS_Twitter extends WP_Widget {
 		if(isset($instance[ 'title' ]))
 			$title = $instance[ 'title' ];
 		else
-			$title = __( 'Latest Tweets', 'text_domain' );
+			$title = __( 'Latest Tweets', 'tswp' );
 		if(isset($instance['twitter_profile']))
 			$twitter_profile = $instance['twitter_profile'];
 		else
-			$twitter_profile = __( 'tshedor', 'text_domain' );
+			$twitter_profile = 'tshedor';
 		if(isset($instance['show_retweets']))
 			$show_retweets = $instance['show_retweets'];
 		else
-			$show_retweets = __( 'on', 'text_domain' );
+			$show_retweets = 'on';
 		if(isset($instance['tweet_count']))
 			$tweet_count = $instance['tweet_count'];
 		else
-			$tweet_count = __( '5', 'text_domain' );
+			$tweet_count = '5';
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php __e('Title:', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'twitter_profile' ); ?>">Twitter Profile:</label>
+			<label for="<?php echo $this->get_field_id( 'twitter_profile' ); ?>"><?php __e('Twitter Profile:', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'twitter_profile' ); ?>" name="<?php echo $this->get_field_name( 'twitter_profile' ); ?>" type="text" value="<?php echo esc_attr( $twitter_profile ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'tweet_count' ); ?>">Tweet Count:</label>
+			<label for="<?php echo $this->get_field_id( 'tweet_count' ); ?>"><?php __e('Tweet Count:', 'tswp') ?></label>
 			<input id="<?php echo $this->get_field_id( 'tweet_count' ); ?>" name="<?php echo $this->get_field_name( 'tweet_count' ); ?>" type="number" value="<?php echo esc_attr( $tweet_count ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'show_retweets' ); ?>">
 				<input id="<?php echo $this->get_field_id( 'show_retweets' ); ?>" name="<?php echo $this->get_field_name( 'show_retweets' ); ?>" type="checkbox" <?php if($show_retweets) { echo ' checked '; } ?> />
-				Show Retweets
+				<?php __e('Show Retweets', 'tswp') ?>
 			</label>
 		</p>
 		<?php
@@ -219,8 +219,8 @@ class TS_Related extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'ts_related',
-			'TS Related Posts',
-			array( 'description' => __( 'Display related posts', 'text_domain' ), )
+			__('TS Related Posts', 'tswp'),
+			array( 'description' => __( 'Display related posts', 'tswp' ), )
 		);
 	}
 	public function widget( $args, $instance ) {
@@ -247,18 +247,18 @@ class TS_Related extends WP_Widget {
 		if(isset($instance[ 'title' ]))
 			$title = $instance[ 'title' ];
 		else
-			$title = __( 'Latest Tweets', 'text_domain' );
+			$title = __( 'Related Posts', 'tswp' );
 		if(isset($instance['post_count']))
 			$post_count = $instance['post_count'];
 		else
-			$post_count = __( '5', 'text_domain' );
+			$post_count = '5';
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php __e('Title:', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'post_count' ); ?>">Tweet Count:</label>
+			<label for="<?php echo $this->get_field_id( 'post_count' ); ?>"><?php __e('Post Count:', 'tswp') ?></label>
 			<input id="<?php echo $this->get_field_id( 'post_count' ); ?>" name="<?php echo $this->get_field_name( 'post_count' ); ?>" type="number" value="<?php echo esc_attr( $post_count ); ?>" />
 		</p>
 		<?php
@@ -272,8 +272,8 @@ class TS_Popular extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'ts_popular',
-			'TS Popular Posts',
-			array( 'description' => __( 'Display most popular posts', 'text_domain' ), )
+			__('TS Popular Posts', 'tswp'),
+			array( 'description' => __( 'Display most popular posts', 'tswp' ), )
 		);
 	}
 	public function widget( $args, $instance ) {
@@ -304,18 +304,18 @@ class TS_Popular extends WP_Widget {
 		if(isset($instance[ 'title' ]))
 			$title = $instance[ 'title' ];
 		else
-			$title = __( 'Latest Tweets', 'text_domain' );
+			$title = __( 'Popular Posts', 'tswp' );
 		if(isset($instance['post_count']))
 			$post_count = $instance['post_count'];
 		else
-			$post_count = __( '5', 'text_domain' );
+			$post_count = '5';
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php __e('Title:', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'post_count' ); ?>">Tweet Count:</label>
+			<label for="<?php echo $this->get_field_id( 'post_count' ); ?>"><?php __e('Post Count:', 'tswp') ?></label>
 			<input id="<?php echo $this->get_field_id( 'post_count' ); ?>" name="<?php echo $this->get_field_name( 'post_count' ); ?>" type="number" value="<?php echo esc_attr( $post_count ); ?>" />
 		</p>
 		<?php
@@ -328,8 +328,8 @@ class TS_Contact extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'ts_contact',
-			'TS Contact',
-			array( 'description' => __( 'Display a contact form', 'text_domain' ), )
+			__('TS Contact', 'tswp'),
+			array( 'description' => __( 'Display a contact form', 'tswp' ), )
 		);
 	}
 	public function widget( $args, $instance ) {
@@ -347,18 +347,18 @@ class TS_Contact extends WP_Widget {
 			}
 		}
 		$contact_form = '<form method="post" class="ts-contact">
-			<input type="text" placeholder="Name" name="ts_name"/>
-			<input type="text" placeholder="Email" name="ts_email"/>
-			<textarea placeholder="Your message" name="ts_message"></textarea>
+			<input type="text" placeholder="'.__('Name', 'tswp').'" name="ts_name"/>
+			<input type="text" placeholder="'.__('Email', 'tswp').'" name="ts_email"/>
+			<textarea placeholder="'.__('Your message', 'tswp').'" name="ts_message"></textarea>
 			<input type="hidden" name="ts_contact"/>
-			<input type="submit" class="button" value="Contact" />
+			<input type="submit" class="button" value="'.__('Contact', 'tswp').'" />
 		</form>';
 		echo $before_widget;
 		if (!empty($title))
 			echo $before_title . $title . $after_title;
 		if(isset($_POST['ts_contact'])){
-			wp_mail($email, 'Contact Form from '.$_POST['ts_name'], esc_attr(strip_tags($_POST['ts_message'])));
-			echo '<div class="notice success">Thank you for your message</div>';
+			wp_mail($email, __('Contact Form from', 'tswp').' '.$_POST['ts_name'], esc_attr(strip_tags($_POST['ts_message'])));
+			echo '<div class="notice success">'.__('Thank you for your message', 'tswp').'</div>';
 		}
 		echo $contact_form;
 		echo $after_widget;
@@ -376,19 +376,19 @@ class TS_Contact extends WP_Widget {
 		if(isset($instance[ 'title' ]))
 			$title = $instance[ 'title' ];
 		else
-			$title = __( 'Contact', 'text_domain' );
+			$title = __( 'Contact', 'tswp' );
 		if(isset($instance['contact_email']))
 			$contact_email = $instance['contact_email'];
 		else
-			$contact_email = __('name@example.com', 'text_domain');
+			$contact_email = __('name@example.com', 'tswp');
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php __e('Title:', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'contact_email' ); ?>">Send to Email:</label>
-			<input id="<?php echo $this->get_field_id( 'contact_email' ); ?>" name="<?php echo $this->get_field_name( 'contact_email' ); ?>" type="text" value="<?php echo esc_attr( $contact_email ); ?>" placeholder="name@example.com" class="widefat" />
+			<label for="<?php echo $this->get_field_id( 'contact_email' ); ?>"><?php __e('Send to Email:', 'tswp') ?></label>
+			<input id="<?php echo $this->get_field_id( 'contact_email' ); ?>" name="<?php echo $this->get_field_name( 'contact_email' ); ?>" type="text" value="<?php echo esc_attr( $contact_email ); ?>" placeholder="<?php __e('name@example.com', 'tswp') ?>" class="widefat" />
 		</p>
 		<?php
 	}
@@ -400,8 +400,8 @@ class TS_Mailchimp extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'ts_mailchimp',
-			'TS Mailchimp',
-			array( 'description' => __( 'Display a Mailchimp subscribe form', 'text_domain' ), )
+			__('TS Mailchimp', 'tswp'),
+			array( 'description' => __( 'Display a Mailchimp subscribe form', 'tswp' ), )
 		);
 	}
 	public function widget( $args, $instance ) {
@@ -435,19 +435,19 @@ class TS_Mailchimp extends WP_Widget {
 			} else {
 				echo '<div class="notice success">';
 				if($double_optin)
-					echo 'Success. Look for the confirmation message in your inbox.';
+					__e('Success. Look for the confirmation message in your inbox.', 'tswp');
 				else
-					echo 'Success. Stay tuned.';
+					__e('Success. Stay tuned.', 'tswp');
 				echo '</div>';
 			}
 		} else {
 			echo '<form method="post" class="ts-contact ts-mailchimp">
-			<input type="text" name="email" placeholder="Email" />';
+			<input type="text" name="email" placeholder="'.__('Email', 'tswp').'" />';
 			if($get_name)
-				echo '<input type="text" name="fname" placeholder="First Name" />
-				<input type="text" name="lname" placeholder="Last Name" />';
+				echo '<input type="text" name="fname" placeholder="'.__('First Name', 'tswp').'" />
+				<input type="text" name="lname" placeholder="'.__('Last Name', 'tswp').'" />';
 			echo '<input type="hidden" name="ts_mailchimp" />
-			<input type="submit" class="button" value="Subscribe" />
+			<input type="submit" class="button" value="'.__('Subscribe').'" />
 			</form>';
 		}
 		echo $after_widget;
@@ -469,11 +469,11 @@ class TS_Mailchimp extends WP_Widget {
 		if(isset($instance[ 'title' ]))
 			$title = $instance[ 'title' ];
 		else
-			$title = __( 'Subscribe', 'text_domain' );
+			$title = __( 'Subscribe', 'tswp' );
 		if(isset($instance['mc_api_key']))
 			$mc_api_key = $instance['mc_api_key'];
 		else
-			$mc_api_key = __('YOUR API KEY', 'text_domain');
+			$mc_api_key = __('YOUR API KEY', 'tswp');
 		if(isset($instance['mc_list_id']))
 			$mc_list_id = $instance['mc_list_id'];
 		else
@@ -481,7 +481,7 @@ class TS_Mailchimp extends WP_Widget {
 		if(isset($instance['double_optin']))
 			$double_optin = $instance['double_optin'];
 		else
-			$double_optin = __( 'on', 'text_domain' );
+			$double_optin = 'on';
 		if(isset($instance['send_welcome']))
 			$send_welcome = $instance['send_welcome'];
 		else
@@ -492,26 +492,26 @@ class TS_Mailchimp extends WP_Widget {
 			$get_name = false;
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php __e('Title:', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'mc_api_key' ); ?>">API Key <a href="http://admin.mailchimp.com/account/api" target="_blank">Get an API Key</a>:</label>
-			<input id="<?php echo $this->get_field_id( 'mc_api_key' ); ?>" name="<?php echo $this->get_field_name( 'mc_api_key' ); ?>" type="text" value="<?php echo esc_attr( $mc_api_key ); ?>" placeholder="YOUR API KEY" class="widefat" />
+			<label for="<?php echo $this->get_field_id( 'mc_api_key' ); ?>"><?php __e('API Key', 'tswp') ?> <a href="http://admin.mailchimp.com/account/api" target="_blank"><?php __e('Get an API Key', 'tswp') ?></a>:</label>
+			<input id="<?php echo $this->get_field_id( 'mc_api_key' ); ?>" name="<?php echo $this->get_field_name( 'mc_api_key' ); ?>" type="text" value="<?php echo esc_attr( $mc_api_key ); ?>" placeholder="<?php __e('YOUR API KEY', 'tswp') ?>" class="widefat" />
 		</p>
 		<?php if($mc_api_key != 'YOUR API KEY'){ ?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'mc_list_id' ); ?>">Your lists (please add API key, save and reload):</label>
+			<label for="<?php echo $this->get_field_id( 'mc_list_id' ); ?>"><?php __e('Your lists (please add API key, save and refresh):', 'tswp') ?></label>
 			<?php
 			include_once(get_template_directory().'/inc/ts-stds/libs/mailchimp/MCAPI.class.php');
 			$api = new MCAPI($mc_api_key);
 			$getlists = $api->lists();
 			if ($api->errorCode){
-				echo 'No lists available';
+				__e('No lists available', 'tswp');
 			} else { ?>
-			<select id="<?php echo $this->get_field_id( 'mc_list_id' ); ?>" name="<?php echo $this->get_field_name( 'mc_list_id' ); ?>" placeholder="YOUR API KEY" class="widefat">
-				<option>Select One</option>
+			<select id="<?php echo $this->get_field_id( 'mc_list_id' ); ?>" name="<?php echo $this->get_field_name( 'mc_list_id' ); ?>" placeholder="<?php __e('YOUR API KEY', 'tswp') ?>" class="widefat">
+				<option><?php __e('Select One') ?></option>
 				<?php foreach ($getlists['data'] as $list) {
 					echo '<option value="'.$list['id'].'" ',$mc_list_id == $list['id'] ? 'selected' : '','>'.$list['name'].'</option>';
 				} ?>
@@ -522,19 +522,19 @@ class TS_Mailchimp extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'double_optin' ); ?>">
 				<input id="<?php echo $this->get_field_id( 'double_optin' ); ?>" name="<?php echo $this->get_field_name( 'double_optin' ); ?>" type="checkbox" <?php if($double_optin) { echo ' checked '; } ?> />
-				Send a confirmation email
+				<?php __e('Send a confirmation email', 'tswp') ?>
 			</label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'send_welcome' ); ?>">
 				<input id="<?php echo $this->get_field_id( 'send_welcome' ); ?>" name="<?php echo $this->get_field_name( 'send_welcome' ); ?>" type="checkbox" <?php if($send_welcome) { echo ' checked '; } ?> />
-				Send welcome email (no effect if confirmation email is checked)
+				<?php __e('Send welcome email (no effect if confirmation email is checked)', 'tswp') ?>
 			</label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'get_name' ); ?>">
 				<input id="<?php echo $this->get_field_id( 'get_name' ); ?>" name="<?php echo $this->get_field_name( 'get_name' ); ?>" type="checkbox" <?php if($get_name) { echo ' checked '; } ?> />
-				Get first and last name
+				<?php __e('Get first and last name', 'tswp') ?>
 			</label>
 		</p>
 		<?php

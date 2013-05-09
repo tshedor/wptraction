@@ -1,7 +1,7 @@
 <?php
 function getPostViews($postID){
 	$count = get_post_meta($postID, 'post_views_count', true);
-	return $count.' Views';
+	return $count.' '.__('Views', 'tswp');
 }
 function setPostViews($postID) {
 	$count = get_post_meta($postID, 'post_views_count', true);
@@ -132,7 +132,7 @@ function social_single($showNames = true){
 		}
 	}
 	if($a['show_print'])
-		echo '<li class="social-list-item"><a href="'.get_permalink().'?print='.get_the_ID().'" title="Print '.get_the_title().'"><i class="icon-print"></i>',$showNames ? ' print' : '','</a></li>';
+		echo '<li class="social-list-item"><a href="'.get_permalink().'?print='.get_the_ID().'" title="'.__('Print', 'tswp').' '.get_the_title().'"><i class="icon-print"></i>',$showNames ? ' print' : '','</a></li>';
 }
 function social_header(){
 	global $a;
@@ -188,7 +188,7 @@ function ts_related($post_count = 5){
 					echo '</ul>';
 				endif; wp_reset_query();
 			} else
-				echo 'No related posts';
+				__e('No related posts', 'tswp');
 		}
 	}
 }
@@ -201,8 +201,8 @@ function ts_pagination(){
 			'base'      => @add_query_arg( 'paged', '%#%' ),
 			'format'	=>	'',
 			'total' 	=>	$wp_query->max_num_pages,
-			'prev_text'	=>	'&laquo;&nbsp;Previous&nbsp;',
-			'next_text'	=>	'&nbsp;Next&nbsp;&raquo;',
+			'prev_text'	=>	'&laquo;&nbsp;'.__('Previous', 'tswp').'&nbsp;',
+			'next_text'	=>	'&nbsp;'.__('Next', 'tswp').'&nbsp;&raquo;',
 			'end_size'	=>	3,
 			'current'	=>	$current
 		));
@@ -224,7 +224,7 @@ function ts_breadcrumbs(){
 					echo get_category_parents(get_query_var('cat'), TRUE, ' &raquo; ');
 					echo single_cat_title();
 				} elseif(is_tag()) {
-					echo 'Tagged ';
+					__('Tagged', 'tswp').' ';
 					echo single_tag_title();
 				} elseif(is_tax()) {
 					$tax =  get_term_by('slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
@@ -515,7 +515,7 @@ class adminfield
 		if(isset($this->value['required']))
 			$html .= ' required ';
 		$html .= '>
-			<option value="">Select One</option>';
+			<option value="">'.__('Select One', 'tswp').'</option>';
 			$rp = get_pages();
 			foreach ($rp as $page) {
 				$html .= '<option value="'.$page->ID.'"';
@@ -533,7 +533,7 @@ class adminfield
 		if(isset($this->value['required']))
 			$html .= ' required ';
 		$html .= '>
-			<option value="">Select One</option>';
+			<option value="">'.__('Select One', 'tswp').'</option>';
 			$rps = wp_get_recent_posts();
 			foreach ($rps as $recent) {
 				$html .= '<option value="'.$recent["ID"].'"';
@@ -552,7 +552,7 @@ class adminfield
 		if(isset($this->value['required']))
 			$html .= ' required ';
 		$html .= '>
-			<option value="">Select One</option>';
+			<option value="">'.__('Select One', 'tswp').'</option>';
 			$cats = get_categories();
 			foreach ($cats as $cat) {
 				$html .= '<option value="'.$cat->cat_ID.'"';
@@ -658,7 +658,7 @@ class adminfield
 		if($this->meta)
 			$html .= '<i class="icon-'.$this->meta.'"></i> '.ucfirst(str_replace('-', ' ', $this->meta));
 		else
-			$html .= 'Select One';
+			$html .= __('Select One', 'tswp');
 		$html .= ' <i class="icon-angle-down"></i></div>';
 		$html .= '<ul class="list-icons" data-name="'.$this->meta.'"';
 		if(isset($this->value['required']))

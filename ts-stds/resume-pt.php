@@ -6,12 +6,12 @@ function resume_register() {
 		'name'			=>	_x('Resume', 'post type general name'),
 		'singular_name'	=>	_x('Resume Item', 'post type singular name'),
 		'add_new'		=>	_x('Add New Item', 'resume item'),
-		'add_new_item'	=>	'Add New Resume Item',
-		'edit_item'		=>	'Edit Resume Item',
-		'new_item'		=>	'New Resume Item',
-		'view_item'		=>	'View Resume Item',
-		'search_items'	=>	'Search Resumes',
-		'not_found'		=>	'Nothing found',
+		'add_new_item'	=>	__('Add New Resume Item', 'tswp'),
+		'edit_item'		=>	__('Edit Resume Item', 'tswp'),
+		'new_item'		=>	__('New Resume Item', 'tswp'),
+		'view_item'		=>	__('View Resume Item', 'tswp'),
+		'search_items'	=>	__('Search Resumes', 'tswp'),
+		'not_found'		=>	__('Nothing found', 'tswp'),
 		'parent_item_colon'	=>	''
 	);
 
@@ -30,7 +30,7 @@ function resume_register() {
 
 	register_post_type( 'resume' , $args );
 
-	register_taxonomy("resume_categories", array("resume"), array("hierarchical" => true, "label" => "Resume Categories", "singular_label" => "Resume Category", "rewrite" => true));
+	register_taxonomy("resume_categories", array("resume"), array("hierarchical" => true, "label" => __('Resume Categories', 'tswp'), "singular_label" => __('Resume Category', 'tswp'), "rewrite" => true));
 
 function add_resume_meta_box() {
 	add_meta_box(
@@ -49,7 +49,7 @@ function show_resume_meta_box() {
 
 $resume_meta_fields = array(
 	array(
-		'name'	=> 'Display Style',
+		'name'	=> __('Display Style', 'tswp'),
 		'desc'	=> '',
 		'id'	=> 'display_style',
 		'type'	=> 'radio',
@@ -58,34 +58,34 @@ $resume_meta_fields = array(
 		'std' => 'normal',
 		'options' => array(
 			array(
-				'label' => 'Normal',
+				'label' => __('Normal', 'tswp'),
 				'value' => 'normal',
 			),
 			array(
-				'label' => 'Chunk 1/3',
+				'label' => __('Chunk 1/3', 'tswp'),
 				'value' => 'one_third'
 			),
 			array(
-				'label' => 'Chunk 1/4',
+				'label' => __('Chunk 1/4', 'tswp'),
 				'value' => 'one_fourth'
 			),
 			array(
-				'label' => 'Long',
+				'label' => __('Long', 'tswp'),
 				'value' => 'just_text'
 			),
 		)
 	),
 	array(
-		'name'	=> 'Date Begun',
+		'name'	=> __('Date Begun', 'tswp'),
 		'desc'	=> '',
 		'id'	=> 'date_begun',
-		'std'	=>	'May 2012',
+		'std'	=>	__('May 2012', 'tswp'),
 		'type'	=> 'date',
 		'required' => true,
 		'class'	=>	'',
 	),
 	array(
-		'name'	=> 'Position Held',
+		'name'	=> __('Position Held', 'tswp'),
 		'desc'	=> '',
 		'id'	=> 'position',
 		'std'	=>	'intern',
@@ -94,24 +94,23 @@ $resume_meta_fields = array(
 		'required'	=>	false,
 	),
 	array(
-		'name'	=> 'Date Completed',
+		'name'	=> __('Date Completed', 'tswp'),
 		'desc'	=> '',
 		'id'	=> 'date_completed',
-		'std'	=>	'August 2013 or Present',
+		'std'	=>	__('August 2013 or Present', 'tswp'),
 		'type'	=> 'date',
 		'class'	=>	'',
 		'required'	=>	false
 	),
 	array(
-		'name'	=> 'Description',
+		'name'	=> __('Description', 'tswp'),
 		'desc'	=> '',
 		'id'	=> 'description',
 		'type'	=> 'textarea',
 		'class'	=>	'',
 		'required'	=>	false,
-		'std'	=> 'My job responsibilities included sweeping, smiling and fetching coffee'
+		'std'	=> __('My job responsibilities included sweeping, smiling and fetching coffee', 'tswp')
 	),
-
 );
 	wp_nonce_field( basename( __FILE__ ), 'resume_meta_box_nonce' );
 	echo '<div class="form-table tsao">';
@@ -130,7 +129,7 @@ function save_resume_meta($post_id) {
 
 $resume_meta_fields = array(
 	array(
-		'name'	=> 'Display Style',
+		'name'	=> __('Display Style', 'tswp'),
 		'desc'	=> '',
 		'id'	=> 'display_style',
 		'type'	=> 'radio',
@@ -139,34 +138,34 @@ $resume_meta_fields = array(
 		'std' => 'normal',
 		'options' => array(
 			array(
-				'label' => 'Normal',
+				'label' => __('Normal', 'tswp'),
 				'value' => 'normal',
 			),
 			array(
-				'label' => 'Chunk 1/3',
+				'label' => __('Chunk 1/3', 'tswp'),
 				'value' => 'one_third'
 			),
 			array(
-				'label' => 'Chunk 1/4',
+				'label' => __('Chunk 1/4', 'tswp'),
 				'value' => 'one_fourth'
 			),
 			array(
-				'label' => 'Long',
+				'label' => __('Long', 'tswp'),
 				'value' => 'just_text'
 			),
 		)
 	),
 	array(
-		'name'	=> 'Date Begun',
+		'name'	=> __('Date Begun', 'tswp'),
 		'desc'	=> '',
 		'id'	=> 'date_begun',
-		'std'	=>	'May 2012',
+		'std'	=>	__('May 2012', 'tswp'),
 		'type'	=> 'date',
 		'required' => true,
 		'class'	=>	'',
 	),
 	array(
-		'name'	=> 'Position Held',
+		'name'	=> __('Position Held', 'tswp'),
 		'desc'	=> '',
 		'id'	=> 'position',
 		'std'	=>	'intern',
@@ -175,24 +174,23 @@ $resume_meta_fields = array(
 		'required'	=>	false,
 	),
 	array(
-		'name'	=> 'Date Completed',
+		'name'	=> __('Date Completed', 'tswp'),
 		'desc'	=> '',
 		'id'	=> 'date_completed',
-		'std'	=>	'August 2013 or Present',
+		'std'	=>	__('August 2013 or Present', 'tswp'),
 		'type'	=> 'date',
 		'class'	=>	'',
 		'required'	=>	false
 	),
 	array(
-		'name'	=> 'Description',
+		'name'	=> __('Description', 'tswp'),
 		'desc'	=> '',
 		'id'	=> 'description',
 		'type'	=> 'textarea',
 		'class'	=>	'',
 		'required'	=>	false,
-		'std'	=> 'My job responsibilities included sweeping, smiling and fetching coffee'
+		'std'	=> __('My job responsibilities included sweeping, smiling and fetching coffee', 'tswp')
 	),
-
 );	if ( !isset( $_POST['resume_meta_box_nonce'] )  || !wp_verify_nonce($_POST['resume_meta_box_nonce'], basename(__FILE__)))
 		return $post_id;
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
@@ -224,11 +222,11 @@ add_filter("manage_edit-resume_columns", "resume_edit_columns");
 function resume_edit_columns($columns){
 	$columns = array(
 		"cb" => "<input type=\"checkbox\" />",
-		"title" => "Supervisor/Corporation",
-		"date_begun" => "Date Begun",
-		"date_completed" => "Date Completed",
-		"position" => "Position Held",
-		"description" => "Description",
+		"title" => __('Supervisor/Corporation', 'tswp'),
+		"date_begun" => __('Date Begun', 'tswp'),
+		"date_completed" => __('Date Completed', 'tswp'),
+		"position" => __('Position Held', 'tswp'),
+		"description" => __('Description', 'tswp'),
 	);
 	return $columns;
 }

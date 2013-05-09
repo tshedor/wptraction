@@ -2,7 +2,7 @@
 function add_layout_meta_box() {
 	add_meta_box(
 	'layout_meta_box',
-	'Layouts',
+	__('Layouts', 'tswp'),
 	'show_layout_meta_box',
 	'post',
 	'normal',
@@ -18,17 +18,17 @@ array(
 	'type'	=> 'radio',
 	'options' => array(
 		array(
-			'label' => 'Right Sidebar',
+			'label' => __('Right Sidebar', 'tswp'),
 			'value' => 'default',
 			'image'	=>	get_template_directory_uri().'/inc/ts-stds/post-meta/right-sidebar.png'
 		),
 		array(
-			'label' => 'Left Sidebar',
+			'label' => __('Left Sidebar', 'tswp'),
 			'value' => 'left-sidebar',
 			'image'	=>	get_template_directory_uri().'/inc/ts-stds/post-meta/left-sidebar.png'
 		),
 		array(
-			'label' => 'Full Width',
+			'label' => __('Full Width', 'tswp'),
 			'value' => 'full-width',
 			'image'	=>	get_template_directory_uri().'/inc/ts-stds/post-meta/full-width.png'
 		),

@@ -83,7 +83,7 @@ function ts_add_option_bar() {
 	$wp_admin_bar->add_menu( array(
 		'parent' => false,
 		'id' => 'ts_options',
-		'title' => $themename.' Options',
+		'title' => $themename.' '.__('Options', 'tswp'),
 		'href' => admin_url( 'themes.php?page=ts-admin-options.php'),
 		'meta' => false
 	));
@@ -94,9 +94,9 @@ add_action( 'wp_before_admin_bar_render', 'ts_add_option_bar' );
 
 function custom_search_template(){
 	return '<form method="get" class="search-form" action="'.get_bloginfo('url').'/">
-		<input type="text" size="16" placeholder="Search" id="searchInput" onfocus="this.value=(this.value==\'Search\') ? \'\' : this.value;" onblur="this.value=(this.value==\'\') ? \'Search\' : this.value;" name="s" id="s" />
+		<input type="text" size="16" placeholder="'.__('Search', 'tswp').'" id="searchInput" onfocus="this.value=(this.value==\'Search\') ? \'\' : this.value;" onblur="this.value=(this.value==\'\') ? \''.__('Search', 'tswp').'\' : this.value;" name="s" id="s" />
 		<input type="hidden" size="16" id="searchsubmit"  value="Search" />
-		<button type="submit" value="Search"><i class="icon-search"></i></button>
+		<button type="submit" value="'.__('Search', 'tswp').'"><i class="icon-search"></i></button>
 	</form>';
 }
 add_filter('get_search_form', 'custom_search_template', 1, 0);
@@ -125,7 +125,7 @@ function ts_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p>Pingback: <?php comment_author_link(); ?> <?php edit_comment_link( '(Edit)', '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php __e('Pingback', 'tswp') ?>: <?php comment_author_link(); ?> <?php edit_comment_link( __('(Edit)', 'tswp'), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 		break;
 		default :
@@ -134,21 +134,21 @@ function ts_comment( $comment, $args, $depth ) {
 	<li <?php comment_class('row clearfix'); ?> id="comment-<?php comment_ID(); ?>">
 			<div class="large-2 small-2 columns comment-meta comment-author">
 				<?php echo get_avatar($comment, 60 ); ?>
-				<a href="<?php the_permalink(); ?>#comment-<?php comment_ID(); ?>" title="Link to this comment">
+				<a href="<?php the_permalink(); ?>#comment-<?php comment_ID(); ?>" title="<?php __e('Link to this comment', 'tswp'); ?>">
 					<?php echo get_comment_time('M. j, Y'); ?>
 				</a>
-				<span class="edit"><?php edit_comment_link( 'Edit'); ?></span>
+				<span class="edit"><?php edit_comment_link( __('Edit', 'tswp')); ?></span>
 			</div>
 			<div class="large-10 small-4 columns">
 				<h4><?php comment_author_link();
 					if($comment->user_id === $post->post_author)
-						echo ' <span class="author">Author</span>';
+						echo ' <span class="author">'.__('Author', 'tswp').'</span>';
 				?>
 				<span class="reply">
-					<?php comment_reply_link( array_merge( $args, array( 'reply_text' => 'Reply', 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __('Reply', 'tswp'), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 				</span></h4>
 				<?php if ('0' == $comment->comment_approved)
-				 	echo '<p class="comment-awaiting-moderation">Comment awaiting moderation</p>'; ?>
+				 	echo '<p class="comment-awaiting-moderation">'.__('Comment awaiting moderation', 'tswp').'</p>'; ?>
 				<div class="comment-content">
 					<?php comment_text(); ?>
 				</div>

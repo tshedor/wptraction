@@ -74,7 +74,7 @@ function custom_head() {
 	} else {
 		echo stripslashes($a['analytics_code']);
 	}
-	if($a['maintenance_mode'] && !is_user_logged_in()) echo '<style type="text/css">div,hide-for-small,.home .header {display:none!important; }</style><article class="ts-maintenance-mode gradient">'.get_bloginfo('name').'<p class="coming-soon">Coming Soon</p></article>';
+	if($a['maintenance_mode'] && !is_user_logged_in()) echo '<style type="text/css">div,hide-for-small,.home .header {display:none!important; }</style><article class="ts-maintenance-mode gradient">'.get_bloginfo('name').'<p class="coming-soon">'.__('Coming Soon', 'tswp').'</p></article>';
 }
 
 function get_copyright(){
@@ -86,10 +86,10 @@ function get_copyright(){
 		$copytext = str_replace('{CURRENT YEAR}', date('Y'), $copytext);
 		echo $copytext;
 	} else {
-		echo '&copy; Copyright <a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">'.get_bloginfo('name').'</a> '.date('Y');
+		echo '&copy; '.__('Copyright', 'tswp').' <a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">'.get_bloginfo('name').'</a> '.date('Y');
 	}
 	if($a['footer_credit'])
-		echo ' | Code and Design by <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a>';
+		echo ' | '.__('Code and Design by', 'tswp').' <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a>';
 	else
 		echo ' | <div id="creditsDisplay"><div><a href="'.get_template_directory_uri().'/humans.txt" title="Credits">Credits</a></div><div>Code and Design by <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a></div></div> <a href="#" title="Tim Shedor" class="cred" id="footerCredits"><i class="icon-asterisk"></i></a>';
 	echo '</div>';

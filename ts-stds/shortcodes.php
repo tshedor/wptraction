@@ -9,8 +9,8 @@ function html5video_shortcode( $atts, $content = null ) {
 		'screenshot' => '',
 		'width' => '490',
 		'height' => '276',
-		'title' => 'My Video',
-		'caption' => 'I made this video',
+		'title' => __('My Video', 'tswp'),
+		'caption' => __('I made this video', 'tswp'),
 		'align' => 'left'
 	), $atts ) );
 	$width = esc_attr($width);
@@ -59,11 +59,11 @@ add_shortcode( 'html5video', 'html5video_shortcode' );
 
 function html5audio_shortcode( $atts, $content = null ) {
 	extract( shortcode_atts( array(
-		'title' => 'Some Audio',
-		'description' => 'A Bit of Audio',
+		'title' => __('Some Audio', 'tswp'),
+		'description' => __('A Bit of Audio', 'tswp'),
 		'src' => '',
 		'extension' => 'mp3',
-		'author' => 'Me',
+		'author' => __('Me', 'tswp'),
 		'align' => 'left'
 	), $atts ) );
 	wp_enqueue_script('mediaelement');
@@ -83,7 +83,7 @@ add_shortcode( 'html5audio', 'html5audio_shortcode' );
 
 function inline_text_shortcode( $atts, $content = null ) {
 	extract( shortcode_atts( array(
-		'title' => 'More',
+		'title' => __('More', 'tswp'),
 		'align' => 'left',
 		'text_content' => '',
 	), $atts ) );
@@ -188,7 +188,7 @@ add_shortcode( 'tab', 'tab_shortcode' );
 function contact_shortcode( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 		'email' =>	'',
-		'label'	=>	'Get in touch',
+		'label'	=>	__('Get in touch', 'tswp'),
 	), $atts ) );
 	$a = get_option('ts_admin_options');
 	$contactme = '';
@@ -199,16 +199,16 @@ function contact_shortcode( $atts, $content = null ) {
 			$email = get_option('admin_email');
 	}
 	if(isset($_POST['ts_contact_shortcode'])){
-		wp_mail($email, 'Contact Form from '.$_POST['ts_name'], esc_attr(strip_tags($_POST['ts_message'])));
+		wp_mail($email, __('Contact Form from ', 'tswp').$_POST['ts_name'], esc_attr(strip_tags($_POST['ts_message'])));
 		$contactme .= '<div class="notice success">Thank you for your message</div>';
 	}
 	$contactme .= '<h3>'.$label.'</h3>';
 	$contactme .= '<form method="post" class="ts-contact">
-		<input type="text" placeholder="Name" name="ts_name"/>
-		<input type="text" placeholder="Email" name="ts_email"/>
-		<textarea placeholder="Your message" name="ts_message"></textarea>
+		<input type="text" placeholder="'.__('Name', 'tswp').'" name="ts_name"/>
+		<input type="text" placeholder="'.__('Email', 'tswp').'" name="ts_email"/>
+		<textarea placeholder="'.__('Your message', 'tswp').'" name="ts_message"></textarea>
 		<input type="hidden" name="ts_contact_shortcode"/>
-		<input type="submit" class="button" value="Contact" />
+		<input type="submit" class="button" value="'.__('Contact', 'tswp').'" />
 	</form>';
 	return $contactme;
 }
@@ -239,7 +239,7 @@ function sitemap_shortcode( $atts, $content = null ) {
 		$divclass = '12';
 	if($pages == 'true'){
 		$page = get_pages();
-		$sitemap .= '<ul class="ts-sitemap large-'.$divclass.' columns"><li>Pages</li>';
+		$sitemap .= '<ul class="ts-sitemap large-'.$divclass.' columns"><li>'.__('Pages', 'tswp').'</li>';
 		foreach($page as $p){
 			$sitemap .= '<li><a href="'.get_page_link($p->ID).'" title="'.$p->post_title.'">'.$p->post_title.'</a></li>';
 		}
@@ -247,7 +247,7 @@ function sitemap_shortcode( $atts, $content = null ) {
 	}
 	if($categories == 'true'){
 		$cat = get_categories();
-		$sitemap .= '<ul class="ts-sitemap large-'.$divclass.' columns"><li>Categories</li>';
+		$sitemap .= '<ul class="ts-sitemap large-'.$divclass.' columns"><li>'.__('Categories', 'tswp').'</li>';
 		foreach($cat as $c){
 			$sitemap .= '<li><a href="'.get_category_link($c->term_id).'" title="'.$c->name.'">'.$c->name.'</a></li>';
 		}
@@ -255,7 +255,7 @@ function sitemap_shortcode( $atts, $content = null ) {
 	}
 	if($tags == 'true'){
 		$tag = get_tags();
-		$sitemap .= '<ul class="ts-sitemap large-'.$divclass.' columns"><li>Tags</li>';
+		$sitemap .= '<ul class="ts-sitemap large-'.$divclass.' columns"><li>'.__('Tags', 'tswp').'</li>';
 		foreach($tag as $t){
 			$sitemap .= '<li><a href="'.get_tag_link($t->term_id).'" title="'.$t->name.'">'.$t->name.'</a></li>';
 		}
@@ -290,11 +290,11 @@ function notice_shortcode( $atts, $content = null ) {
 		'tip' => false,
 	), $atts ) );
 	if($bonus){
-		$wsc = '<span class="label label-success">Bonus</span>';
+		$wsc = '<span class="label label-success">'.__('Bonus', 'tswp').'</span>';
 	} elseif ($tip) {
 		$wsc = '<span class="label label-info">'.esc_attr($tip).'</span>';
 	} else {
-		$wsc = '<span class="label label-important">Heads up</span>';
+		$wsc = '<span class="label label-important">'.__('Heads up', 'tswp').'</span>';
 	}
 	return '<p>'.$wsc.' '.$content.'</p>';
 }
