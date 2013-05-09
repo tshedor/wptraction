@@ -3,31 +3,30 @@
 add_action('init', 'resume_register');
 function resume_register() {
 	$labels = array(
-		'name' => _x('Resume', 'post type general name'),
-		'singular_name' => _x('Resume Item', 'post type singular name'),
-		'add_new' => _x('Add New Item', 'resume item'),
-		'add_new_item' => 'Add New Resume Item',
-		'edit_item' => 'Edit Resume Item',
-		'new_item' => 'New Resume Item',
-		'view_item' => 'View Resume Item',
-		'search_items' => 'Search Resumes',
-		'not_found' => 'Nothing found',
-		'not_found_in_trash' => 'Nothing found in Trash',
-		'parent_item_colon' => ''
+		'name'			=>	_x('Resume', 'post type general name'),
+		'singular_name'	=>	_x('Resume Item', 'post type singular name'),
+		'add_new'		=>	_x('Add New Item', 'resume item'),
+		'add_new_item'	=>	'Add New Resume Item',
+		'edit_item'		=>	'Edit Resume Item',
+		'new_item'		=>	'New Resume Item',
+		'view_item'		=>	'View Resume Item',
+		'search_items'	=>	'Search Resumes',
+		'not_found'		=>	'Nothing found',
+		'parent_item_colon'	=>	''
 	);
 
 	$args = array(
-		'labels' => $labels,
-		'public' => true,
-		'publicly_queryable' => true,
-		'show_ui' => true,
-		'query_var' => true,
-		'rewrite' => true,
-		'capability_type' => 'post',
-		'hierarchical' => false,
-		'menu_position' => 3,
-		'supports' => array('title','thumbnail')
-		);
+		'labels'				=>	$labels,
+		'public'				=>	true,
+		'publicly_queryable'	=>	true,
+		'show_ui'				=>	true,
+		'query_var'				=>	true,
+		'rewrite'				=>	true,
+		'capability_type'		=>	'post',
+		'hierarchical'			=>	false,
+		'menu_position'			=>	3,
+		'supports'				=>	array('title','thumbnail')
+	);
 
 	register_post_type( 'resume' , $args );
 

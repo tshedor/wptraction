@@ -112,7 +112,7 @@ function my_template_redirect_2322() {
 	global $wp;
 	global $wp_query;
 	if (isset($wp->query_vars["print"])) {
-		include_once(get_template_directory().'/inc/ts-stds/print-template.php');
+		include_once(get_template_directory().'/inc/templates/print-template.php');
 		die();
 	}
 }
