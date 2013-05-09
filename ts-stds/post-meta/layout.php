@@ -20,17 +20,17 @@ array(
 		array(
 			'label' => 'Right Sidebar',
 			'value' => 'default',
-			'image'	=>	get_template_directory_uri().'/lib/ts-stds/post-meta/right-sidebar.png'
+			'image'	=>	get_template_directory_uri().'/inc/ts-stds/post-meta/right-sidebar.png'
 		),
 		array(
 			'label' => 'Left Sidebar',
 			'value' => 'left-sidebar',
-			'image'	=>	get_template_directory_uri().'/lib/ts-stds/post-meta/left-sidebar.png'
+			'image'	=>	get_template_directory_uri().'/inc/ts-stds/post-meta/left-sidebar.png'
 		),
 		array(
 			'label' => 'Full Width',
 			'value' => 'full-width',
-			'image'	=>	get_template_directory_uri().'/lib/ts-stds/post-meta/full-width.png'
+			'image'	=>	get_template_directory_uri().'/inc/ts-stds/post-meta/full-width.png'
 		),
 	)
 ),

@@ -70,9 +70,9 @@ function html5audio_shortcode( $atts, $content = null ) {
 	wp_enqueue_script('custom-media');
 	wp_enqueue_style('mediaelement-css');
 	return '
-		<script src="'. get_template_directory_uri().'/lib/ts-stds/libs/mediaelement/mediaelement-and-player.min.js" type="text/javascript"></script>
-		<script src="'. get_template_directory_uri().'/lib/ts-stds/libs/custom-media.min.js" type="text/javascript"></script>
-		<link href="'. get_template_directory_uri().'/lib/ts-stds/libs/mediaelement/mediaelementplayer.min.css" rel="stylesheet" type="text/css" />
+		<script src="'. get_template_directory_uri().'/inc/ts-stds/libs/mediaelement/mediaelement-and-player.min.js" type="text/javascript"></script>
+		<script src="'. get_template_directory_uri().'/inc/ts-stds/libs/custom-media.min.js" type="text/javascript"></script>
+		<link href="'. get_template_directory_uri().'/inc/ts-stds/libs/mediaelement/mediaelementplayer.min.css" rel="stylesheet" type="text/css" />
 		<aside class="html5audio align'.esc_attr($align).'">
 			<h3 class="inline-title"><i class="icon-sound"></i> '.esc_attr($title).'</h3>
 			<div class="inline-caption">'.esc_attr($description).'</div>

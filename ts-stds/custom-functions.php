@@ -693,15 +693,15 @@ class adminfield
 	}
 }
 
-include_once(get_template_directory().'/lib/ts-stds/theme-hooks-callbacks.php');
-include_once(get_template_directory().'/lib/ts-stds/widgets.php');
-include_once(get_template_directory().'/lib/ts-stds/shortcodes.php');
-include_once(get_template_directory().'/lib/ts-stds/globals.php');
-include_once(get_template_directory().'/lib/ts-stds/resume-pt.php');
-include_once(get_template_directory().'/lib/ts-stds/post-meta/layout.php');
+include_once(get_template_directory().'/inc/ts-stds/theme-hooks-callbacks.php');
+include_once(get_template_directory().'/inc/ts-stds/widgets.php');
+include_once(get_template_directory().'/inc/ts-stds/shortcodes.php');
+include_once(get_template_directory().'/inc/ts-stds/globals.php');
+include_once(get_template_directory().'/inc/ts-stds/resume-pt.php');
+include_once(get_template_directory().'/inc/ts-stds/post-meta/layout.php');
 if(is_user_logged_in()){
-	include_once(get_template_directory().'/lib/ts-stds/tinymce/functions.php');
-	include_once(get_template_directory().'/lib/ts-stds/ts-admin-options.php');
+	include_once(get_template_directory().'/inc/ts-stds/tinymce/functions.php');
+	include_once(get_template_directory().'/inc/ts-stds/ts-admin-options.php');
 }
 
 ?>

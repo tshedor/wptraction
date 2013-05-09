@@ -30,17 +30,17 @@ function custom_footer() {
 		</div>
 	</noscript>
 <!--[if lt IE 9]>
-	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/html5.js"></script>
-	<script type="text/javascript" src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/respond.min.js"></script>
-	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/IE9.js"></script>
-	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/jquery.1.9.1.min.js" type="text/javascript"></script>
+	<script src="'.get_template_directory_uri().'/inc/ts-stds/libs/compatibility/html5.js"></script>
+	<script type="text/javascript" src="'.get_template_directory_uri().'/inc/ts-stds/libs/compatibility/respond.min.js"></script>
+	<script src="'.get_template_directory_uri().'/inc/ts-stds/libs/compatibility/IE9.js"></script>
+	<script src="'.get_template_directory_uri().'/inc/ts-stds/libs/compatibility/jquery.1.9.1.min.js" type="text/javascript"></script>
 <![endif]-->
 <!--[if lt IE 8]>
-	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/IE8.js"></script>
+	<script src="'.get_template_directory_uri().'/inc/ts-stds/libs/compatibility/IE8.js"></script>
 <![endif]-->
 <!--[if lt IE 7]>
-	<script src="'.get_template_directory_uri().'/lib/ts-stds/libs/compatibility/IE7.js"></script>
-	<script src="'.get_template_directory_uri().'/lib/fonts/CharlieGordon/lte-ie7.js" type="text/javascript"></script>
+	<script src="'.get_template_directory_uri().'/inc/ts-stds/libs/compatibility/IE7.js"></script>
+	<script src="'.get_template_directory_uri().'/inc/fonts/CharlieGordon/lte-ie7.js" type="text/javascript"></script>
 <![endif]-->';
 }
 add_filter( 'wp_head' , 'custom_head' );

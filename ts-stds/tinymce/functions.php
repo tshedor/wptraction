@@ -23,12 +23,12 @@ function register_tiny_buttons($buttons) {
 
 // Load the TinyMCE plugin : editor_plugin.js (wp2.5)
 function add_tiny_plugin($plugin_array) {
-   $plugin_array['audio'] = get_template_directory_uri().'/lib/ts-stds/tinymce/editor_plugin.js';
-   $plugin_array['video'] = get_template_directory_uri().'/lib/ts-stds/tinymce/editor_plugin.js';
-   $plugin_array['text'] = get_template_directory_uri().'/lib/ts-stds/tinymce/editor_plugin.js';
-   $plugin_array['timeline'] = get_template_directory_uri().'/lib/ts-stds/tinymce/editor_plugin.js';
-   $plugin_array['tabs'] = get_template_directory_uri().'/lib/ts-stds/tinymce/editor_plugin.js';
-   //$plugin_array['sibling'] = get_template_directory_uri().'/lib/ts-stds/tinymce/editor_plugin.js';
+   $plugin_array['audio'] = get_template_directory_uri().'/inc/ts-stds/tinymce/editor_plugin.js';
+   $plugin_array['video'] = get_template_directory_uri().'/inc/ts-stds/tinymce/editor_plugin.js';
+   $plugin_array['text'] = get_template_directory_uri().'/inc/ts-stds/tinymce/editor_plugin.js';
+   $plugin_array['timeline'] = get_template_directory_uri().'/inc/ts-stds/tinymce/editor_plugin.js';
+   $plugin_array['tabs'] = get_template_directory_uri().'/inc/ts-stds/tinymce/editor_plugin.js';
+   //$plugin_array['sibling'] = get_template_directory_uri().'/inc/ts-stds/tinymce/editor_plugin.js';
    return $plugin_array;
 }
 

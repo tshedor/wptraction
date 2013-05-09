@@ -406,7 +406,7 @@ class TS_Mailchimp extends WP_Widget {
 	}
 	public function widget( $args, $instance ) {
 		extract( $args );
-		include_once(get_template_directory().'/lib/ts-stds/libs/mailchimp/MCAPI.class.php');
+		include_once(get_template_directory().'/inc/ts-stds/libs/mailchimp/MCAPI.class.php');
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$mc_api_key = $instance['mc_api_key'];
 		$mc_list_id = $instance['mc_list_id'];
@@ -504,7 +504,7 @@ class TS_Mailchimp extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'mc_list_id' ); ?>">Your lists (please add API key, save and reload):</label>
 			<?php
-			include_once(get_template_directory().'/lib/ts-stds/libs/mailchimp/MCAPI.class.php');
+			include_once(get_template_directory().'/inc/ts-stds/libs/mailchimp/MCAPI.class.php');
 			$api = new MCAPI($mc_api_key);
 			$getlists = $api->lists();
 			if ($api->errorCode){
