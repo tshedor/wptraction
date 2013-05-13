@@ -21,7 +21,7 @@ array(
 	'type'	=>	'separate'
 ),
 array(
-	'name'	=>	'Twitter',
+	'name'	=>	__('Twitter', 'tswp'),
 	'desc'	=>	__('Twitter Profile. No @ sign.', 'tswp'),
 	'id'	=>	'twitter_profile',
 	'std'	=>	'tshedor',
@@ -29,7 +29,7 @@ array(
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Facebook '.__('Profile', 'tswp'),
+	'name'	=>	__('Facebook Profile', 'tswp'),
 	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'facebook_profile',
 	'std'	=>	'http://facebook.com/tshedor',
@@ -37,7 +37,7 @@ array(
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Pinterest '.__('Profile', 'tswp'),
+	'name'	=>	__('Pinterest Profile', 'tswp'),
 	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'pinterest_profile',
 	'std'	=>	'http://pinterest.com/tshedor',
@@ -45,7 +45,7 @@ array(
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Instagram '.__('Profile', 'tswp'),
+	'name'	=>	__('Instagram Profile', 'tswp'),
 	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'instagram_profile',
 	'std'	=>	'http://instagram.com/tshedor',
@@ -53,7 +53,7 @@ array(
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Flickr '.__('Profile', 'tswp'),
+	'name'	=>	__('Flickr Profile', 'tswp'),
 	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'flickr_profile',
 	'std'	=>	'http://www.flickr.com/photos/tshedor/',
@@ -61,7 +61,7 @@ array(
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'LinkedIn '.__('Profile', 'tswp'),
+	'name'	=>	__('LinkedIn Profile', 'tswp'),
 	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'linkedin_profile',
 	'std'	=>	'http://www.linkedin.com/profile/view?id=76301105&trk=hb_tab_pro_top',
@@ -69,7 +69,7 @@ array(
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Google+ '.__('Profile', 'tswp'),
+	'name'	=>	__('Google+ Profile', 'tswp'),
 	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'googleplus_profile',
 	'std'	=>	'https://plus.google.com/u/0/115986805136940069805/posts',
@@ -77,7 +77,7 @@ array(
 	'type'	=>	'text'
 ),
 array(
-	'name'	=>	'Github '.__('Profile', 'tswp'),
+	'name'	=>	__('Github Profile', 'tswp'),
 	'desc'	=>	__('Include for display in header', 'tswp'),
 	'id'	=>	'github_profile',
 	'std'	=>	'http://github.com/tshedor',
@@ -150,7 +150,7 @@ array(
 	'type'	=>	'customnotice'
 ),
 array(
-	'name'	=>	'Facebook',
+	'name'	=>	__('Facebook', 'tswp'),
 	'desc'	=>	'facebook-2',
 	'id'	=>	'facebook',
 	'std'	=>	'',
@@ -159,7 +159,7 @@ array(
 	'def'	=>	true,
 ),
 array(
-	'name'	=>	__('Like button', 'tswp'),
+	'name'	=>	__('FB Like button', 'tswp'),
 	'desc'	=>	'thumbs-up',
 	'id'	=>	'fblike',
 	'std'	=>	'',
@@ -168,7 +168,7 @@ array(
 	'def'	=>	true,
 ),
 array(
-	'name'	=>	'Twitter',
+	'name'	=>	__('Twitter', 'tswp'),
 	'desc'	=>	'twitter-2',
 	'id'	=>	'twitter',
 	'std'	=>	'',
@@ -176,35 +176,35 @@ array(
 	'def'	=>	true,
 ),
 array(
-	'name'	=>	'Pinterest',
+	'name'	=>	__('Pinterest', 'tswp'),
 	'desc'	=>	'pinterest-2',
 	'id'	=>	'pinterest',
 	'std'	=>	'',
 	'type'	=>	'socialcheckbox',
 ),
 array(
-	'name'	=>	'Google+',
+	'name'	=>	__('Google+', 'tswp'),
 	'desc'	=>	'googleplus-2',
 	'id'	=>	'googleplus',
 	'std'	=>	'',
 	'type'	=>	'socialcheckbox',
 ),
 array(
-	'name'	=>	'StumbleUpon',
+	'name'	=>	__('StumbleUpon', 'tswp'),
 	'desc'	=>	'stumbleupon-2',
 	'id'	=>	'stumbleupon',
 	'std'	=>	'',
 	'type'	=>	'socialcheckbox',
 ),
 array(
-	'name'	=>	'Reddit',
+	'name'	=>	__('Reddit', 'tswp'),
 	'desc'	=>	'reddit',
 	'id'	=>	'reddit',
 	'std'	=>	'',
 	'type'	=>	'socialcheckbox',
 ),
 array(
-	'name'	=>	'LinkedIn',
+	'name'	=>	__('LinkedIn', 'tswp'),
 	'desc'	=>	'linkedin-2',
 	'id'	=>	'linkedin',
 	'std'	=>	'',

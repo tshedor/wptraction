@@ -25,7 +25,7 @@ function ts_admin() {
 				$admin_options[$value['id']] = false;
 		}
 		update_option('ts_admin_options', $admin_options);
-		echo '<div id="message" class="updated" style="width:800px; margin-left:0px; padding-right:0px;margin-top:20px"><p><strong>Settings reset.</strong></p></div>';
+		echo '<div id="message" class="updated" style="width:800px; margin-left:0px; padding-right:0px;margin-top:20px"><p><strong>'.__('Settings reset', 'tswp').'</strong></p></div>';
 	}
 	echo '<div class="wrap tsao clear clearfix" id="poststuff">
 		<h2>'.$themename.' '.__('settings', 'tswp').'</h2>

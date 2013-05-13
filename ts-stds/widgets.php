@@ -69,7 +69,7 @@ class TS_FBLike extends WP_Widget {
 		if(isset($instance['fblike_show_stream']))
 			$fblike_show_stream = $instance['fblike_show_stream'];
 		else
-			$fblike_show_stream =  __( 'on', 'tswp' );
+			$fblike_show_stream =  'on';
 		if(isset($instance['fblike_show_header']))
 			$fblike_show_header = $instance['fblike_show_header'];
 		if(isset($instance['fblike_height']))
@@ -82,11 +82,11 @@ class TS_FBLike extends WP_Widget {
 			$fblike_color_scheme = 'light';
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'fblike_profile' ); ?>"><?php _e('Facebook Profile:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'fblike_profile' ); ?>"><?php _e('Facebook Profile', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'fblike_profile' ); ?>" name="<?php echo $this->get_field_name( 'fblike_profile' ); ?>" type="text" value="<?php echo esc_attr( $fblike_profile ); ?>" />
 		</p>
 		<p>
@@ -108,11 +108,11 @@ class TS_FBLike extends WP_Widget {
 			</label>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'fblike_height' ); ?>"><?php _e('Box height:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'fblike_height' ); ?>"><?php _e('Box height', 'tswp') ?></label>
 			<input id="<?php echo $this->get_field_id( 'fblike_height' ); ?>" name="<?php echo $this->get_field_name( 'fblike_height' ); ?>" type="number" value="<?php echo esc_attr( $fblike_height ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'fblike_color_scheme' ); ?>"><?php _e('Facebook Color Scheme:', 'tswp') ?><br /></label>
+			<label for="<?php echo $this->get_field_id( 'fblike_color_scheme' ); ?>"><?php _e('Facebook Color Scheme', 'tswp') ?><br /></label>
 			<label for="colorLight">
 				<input id="colorLight" name="<?php echo $this->get_field_name( 'fblike_color_scheme' ); ?>" type="radio" <?php if($fblike_color_scheme == 'light') { echo ' checked '; } ?> value="light" />
 			&nbsp;<?php _e('Light', 'tswp') ?>&nbsp;
@@ -191,15 +191,15 @@ class TS_Twitter extends WP_Widget {
 			$tweet_count = '5';
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'twitter_profile' ); ?>"><?php _e('Twitter Profile:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'twitter_profile' ); ?>"><?php _e('Twitter Profile', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'twitter_profile' ); ?>" name="<?php echo $this->get_field_name( 'twitter_profile' ); ?>" type="text" value="<?php echo esc_attr( $twitter_profile ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'tweet_count' ); ?>"><?php _e('Tweet Count:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'tweet_count' ); ?>"><?php _e('Tweet Count', 'tswp') ?></label>
 			<input id="<?php echo $this->get_field_id( 'tweet_count' ); ?>" name="<?php echo $this->get_field_name( 'tweet_count' ); ?>" type="number" value="<?php echo esc_attr( $tweet_count ); ?>" />
 		</p>
 		<p>
@@ -254,11 +254,11 @@ class TS_Related extends WP_Widget {
 			$post_count = '5';
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'post_count' ); ?>"><?php _e('Post Count:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'post_count' ); ?>"><?php _e('Post Count', 'tswp') ?></label>
 			<input id="<?php echo $this->get_field_id( 'post_count' ); ?>" name="<?php echo $this->get_field_name( 'post_count' ); ?>" type="number" value="<?php echo esc_attr( $post_count ); ?>" />
 		</p>
 		<?php
@@ -311,11 +311,11 @@ class TS_Popular extends WP_Widget {
 			$post_count = '5';
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'post_count' ); ?>"><?php _e('Post Count:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'post_count' ); ?>"><?php _e('Post Count', 'tswp') ?></label>
 			<input id="<?php echo $this->get_field_id( 'post_count' ); ?>" name="<?php echo $this->get_field_name( 'post_count' ); ?>" type="number" value="<?php echo esc_attr( $post_count ); ?>" />
 		</p>
 		<?php
@@ -383,11 +383,11 @@ class TS_Contact extends WP_Widget {
 			$contact_email = __('name@example.com', 'tswp');
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'contact_email' ); ?>"><?php _e('Send to Email:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'contact_email' ); ?>"><?php _e('Send to Email', 'tswp') ?></label>
 			<input id="<?php echo $this->get_field_id( 'contact_email' ); ?>" name="<?php echo $this->get_field_name( 'contact_email' ); ?>" type="text" value="<?php echo esc_attr( $contact_email ); ?>" placeholder="<?php _e('name@example.com', 'tswp') ?>" class="widefat" />
 		</p>
 		<?php
@@ -492,7 +492,7 @@ class TS_Mailchimp extends WP_Widget {
 			$get_name = false;
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'tswp') ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
@@ -502,7 +502,7 @@ class TS_Mailchimp extends WP_Widget {
 		<?php if($mc_api_key != 'YOUR API KEY'){ ?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'mc_list_id' ); ?>"><?php _e('Your lists (please add API key, save and refresh):', 'tswp') ?></label>
+			<label for="<?php echo $this->get_field_id( 'mc_list_id' ); ?>"><?php _e('Your lists (please add API key, save and refresh)', 'tswp') ?></label>
 			<?php
 			include_once(get_template_directory().'/inc/ts-stds/libs/mailchimp/MCAPI.class.php');
 			$api = new MCAPI($mc_api_key);
