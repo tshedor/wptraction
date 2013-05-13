@@ -18,14 +18,14 @@ get_header(); $a = get_option('ts_admin_options'); if(have_posts()) : while(have
 				<div class="large-4 columns">
 					<h2>Categories</h2>
 					<ul class="ts-sitemap">
-						<?php wp_list_categories('title_li='); ?>
+						<?php wp_list_categories('title_li=&pad_counts=1'); ?>
 					</ul>
 				</div>
 				<div class="large-4 columns">
 					<h2>Tags</h2>
 					<ul class="ts-sitemap">
 						<?php $tag = get_tags(); foreach($tag as $t){
-							echo '<li><a href="'.get_tag_link($t->term_id).'" title="'.$t->name.'">'.$t->name.'</a></li>';
+							echo '<li><a href="'.esc_url(get_tag_link($t->term_id)).'" title="'.esc_html($t->name).'">'.esc_html($t->name).'</a></li>';
 						} ?>
 					</ul>
 				</div>

@@ -509,24 +509,6 @@ class adminfield
 		wp_editor( $val, $this->value['id'], array( 'textarea_name' => $this->value['id'], 'media_buttons' => true, 'textarea_rows' => 12, 'tinymce' => array( 'theme_advanced_buttons1' => 'formatselect,forecolor,|,bold,italic,underline,|,bullist,numlist,blockquote,|,justifyleft,justifycenter,justifyright,justifyfull,|,link,unlink,|,spellchecker,wp_adv' ) ) );
 		echo $this->finish;
 	}
-	public function pages(){
-		$html = $this->initial;
-		$html .= '<select name="'.$this->value['id'].'"';
-		if(isset($this->value['required']))
-			$html .= ' required ';
-		$html .= '>
-			<option value="">'.__('Select One', 'tswp').'</option>';
-			$rp = get_pages();
-			foreach ($rp as $page) {
-				$html .= '<option value="'.$page->ID.'"';
-					if($this->meta == $page->ID)
-						$html .= 'selected="selected"';
-				$html .= '>'.$page->post_title.'</option>';
-			}
-		$html .= '</select>';
-		$html .= $this->finish;
-		echo $html;
-	}
 	public function posts(){
 		$html = $this->initial;
 		$html .= '<select name="'.$this->value['id'].'"';
@@ -546,21 +528,21 @@ class adminfield
 		$html .= $this->finish;
 		echo $html;
 	}
+	public function pages(){
+		$html = $this->initial;
+		$html .= wp_dropdown_pages(array('echo' => 0, 'name' => $this->value['id'], 'selected' => $this->meta, 'show_option_none' => __('Select One', 'tswp')));
+		$html .= $this->finish;
+		echo $html;
+	}
 	public function categories(){
 		$html = $this->initial;
-		$html .= '<select name="'.$this->value['id'].'"';
-		if(isset($this->value['required']))
-			$html .= ' required ';
-		$html .= '>
-			<option value="">'.__('Select One', 'tswp').'</option>';
-			$cats = get_categories();
-			foreach ($cats as $cat) {
-				$html .= '<option value="'.$cat->cat_ID.'"';
-				if($this->meta == $cat->cat_ID)
-					$html .= 'selected="selected"';
-				$html .= '>'.$cat->cat_name.'</option>';
-			}
-		$html .= '</select>';
+		$html .= wp_dropdown_categories(array('hide_empty' => 0, 'echo' => 0, 'name' => $this->value['id'], 'selected' => $this->meta, 'hierarchical' => true, 'show_option_none' => __('Select One', 'tswp')));
+		$html .= $this->finish;
+		echo $html;
+	}
+	public function users(){
+		$html = $this->initial;
+		$html .= wp_dropdown_users(array('echo' => 0, 'name' => $this->value['id'], 'selected' => $this->meta, 'hierarchical' => true, 'show_option_none' => __('Select One', 'tswp')));
 		$html .= $this->finish;
 		echo $html;
 	}
