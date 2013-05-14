@@ -38,20 +38,17 @@ function isnt_blank($var){
 	}
 }
 endif;
-//http://codex.wordpress.org/Function_Reference/the_post_thumbnail
-function my_post_image_html( $html, $post_id, $post_image_id ) {
-  $html = '<a href="'.get_permalink( $post_id ).'" title="'.esc_attr(get_post_field('post_title', $post_id)).'">'.$html.'</a>';
-  echo $html;
-}
-add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
 
 //http://themeforest.net/forums/thread/get-attachment-id-by-image-url/36381
+if(!function_exists('get_image_id')) :
 function get_image_id($image_url) {
     global $wpdb;
     $prefix = $wpdb->prefix;
     $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM " . $prefix . "posts" . " WHERE guid='" . $image_url . "';"));
     return $attachment[0];
 }
+endif;
+if(!function_exists('get_image')) :
 function get_image($size = 'medium',$class = '',$attr = NULL, $id = NULL){
 	global $post, $a;
 	if($id == NULL)
@@ -59,7 +56,9 @@ function get_image($size = 'medium',$class = '',$attr = NULL, $id = NULL){
 	if(function_exists('get_the_image')){
 		get_the_image(array('image_scan' => true, 'post_id' => $id, 'size' => $size, 'image_class' => $class, $attr));
 	} elseif(has_post_thumbnail($id)) {
+		echo '<a href="'.get_permalink($id).'" title="'.esc_attr(get_post_field('post_title', $id)).'">';
 		the_post_thumbnail($size, array('class' => $class, $attr));
+		echo '</a>';
 	} elseif($a['get_first_image']) {
 		//http://wpforce.com/automatically-set-the-featured-image-in-wordpress/
 		$attached_image = get_children( "post_parent=".$post->ID."&post_type=attachment&post_mime_type=image&numberposts=1" );
@@ -67,7 +66,10 @@ function get_image($size = 'medium',$class = '',$attr = NULL, $id = NULL){
 			foreach ($attached_image as $attachment_id => $attachment) {
 				set_post_thumbnail($id, $attachment_id);
 			}
+			echo '<a href="'.get_permalink($id).'" title="'.esc_attr(get_post_field('post_title', $id)).'">';
+
 			the_post_thumbnail($size, array('class' => $class, $attr));
+			echo '</a>'
 		} else {
 			$first_img = ''; ob_start(); ob_end_clean();
 			$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
@@ -84,6 +86,7 @@ function get_image($size = 'medium',$class = '',$attr = NULL, $id = NULL){
 		return;
 	}
 }
+endif;
 class socialshare {
 	private $url;
 	private $title;
@@ -120,6 +123,7 @@ class socialshare {
 		return '<a href="http://www.linkedin.com/cws/share?url='.$this->url.'&isFramed=false&ts='.time().'" title="'.$this->title.'">'.$this->content.'</a>';
 	}
 }
+if(!function_exists('social_single')) :
 function social_single($showNames = true){
 	global $post, $a;
 	if($a['show_social']){
@@ -142,6 +146,8 @@ function social_single($showNames = true){
 	if($a['show_print'])
 		echo '<li class="social-list-item"><a href="'.get_permalink().'?print='.get_the_ID().'" title="'.__('Print', 'tswp').' '.get_the_title().'"><i class="icon-print"></i>',$showNames ? ' print' : '','</a></li>';
 }
+endif;
+if(!function_exists('social_header')) :
 function social_header(){
 	global $a;
 	$social = array('twitter', 'facebook', 'pinterest', 'instagram', 'flickr', 'googleplus', 'github', 'linkedin', 'feed', 'email');
@@ -162,6 +168,8 @@ function social_header(){
 		}
 	endforeach;
 }
+endif;
+if(!function_exists('get_logo')) :
 function get_logo(){
 	global $a;
 	echo '<a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">';
@@ -171,6 +179,8 @@ function get_logo(){
 			echo '<img src="'.$a['logo'].'" alt="'.get_bloginfo('name').'" />';
 	echo '</a>';
 }
+endif;
+if(!function_exists('ts_related')) :
 function ts_related($post_count = 5){
 	if(function_exists('related_posts'))
 		related_posts();
@@ -200,6 +210,8 @@ function ts_related($post_count = 5){
 		}
 	}
 }
+endif;
+if(!function_exists('ts_pagination')) :
 function ts_pagination(){
 	if(function_exists('wp_pagenavi'))
 		wp_pagenavi();
@@ -216,6 +228,8 @@ function ts_pagination(){
 		));
 	}
 }
+endif;
+if(!function_exists('ts_breadcrumbs')) :
 function ts_breadcrumbs(){
 	global $wp_query, $a;
 	echo '<div class="row clear breadcrumbs">
@@ -287,6 +301,7 @@ function ts_breadcrumbs(){
 	echo '</div>
 	</div>';
 }
+endif;
 class adminfield
 {
 	private $meta;
