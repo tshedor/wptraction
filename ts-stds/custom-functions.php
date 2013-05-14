@@ -69,7 +69,7 @@ function get_image($size = 'medium',$class = '',$attr = NULL, $id = NULL){
 			echo '<a href="'.get_permalink($id).'" title="'.esc_attr(get_post_field('post_title', $id)).'">';
 
 			the_post_thumbnail($size, array('class' => $class, $attr));
-			echo '</a>'
+			echo '</a>';
 		} else {
 			$first_img = ''; ob_start(); ob_end_clean();
 			$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
