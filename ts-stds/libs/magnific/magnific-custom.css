@@ -121,3 +121,5 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 .mfp-zoom-in.mfp-removing.mfp-bg { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
 
 .mfp-img { background: white; }
+
+button.mfp-arrow:hover { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }

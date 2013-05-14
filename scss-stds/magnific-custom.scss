@@ -1,5 +1,5 @@
 @import "compass";
-@import "magnific";
+@import "vendor/magnific";
 .mfp-zoom-in {
 	.mfp-figure {
 		@include opacity(0);
@@ -30,4 +30,9 @@
 }
 .mfp-img {
 	background:white;
+}
+button.mfp-arrow {
+	&:hover {
+		@include box-shadow(none);
+	}
 }
