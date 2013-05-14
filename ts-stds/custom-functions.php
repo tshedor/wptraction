@@ -1,24 +1,31 @@
 <?php
+if(!function_exists('getPostViews')) :
 function getPostViews($postID){
 	$count = get_post_meta($postID, 'post_views_count', true);
 	return $count.' '.__('Views', 'tswp');
 }
+endif;
+if(!function_exists('setPostViews')) :
 function setPostViews($postID) {
 	$count = get_post_meta($postID, 'post_views_count', true);
 	$count++;
 	update_post_meta($postID, 'post_views_count', $count);
 }
+endif;
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-
+if(!function_exists('ifExists')) :
 function ifExists($var){
 	return ($var || $var != '');
 }
-
+endif;
+if(!function_exists('if_paged')) :
 function if_paged(){
 	if(isset($_GET['paged']) && !empty($_GET['paged'])) {
 		echo ' ('.$_GET['paged'].')';
 	}
 }
+endif;
+if(!function_exists('isnt_blank')) :
 function isnt_blank($var){
 	if($var){
 		if($var != ''){
@@ -30,6 +37,7 @@ function isnt_blank($var){
 		return false;
 	}
 }
+endif;
 //http://codex.wordpress.org/Function_Reference/the_post_thumbnail
 function my_post_image_html( $html, $post_id, $post_image_id ) {
   $html = '<a href="'.get_permalink( $post_id ).'" title="'.esc_attr(get_post_field('post_title', $post_id)).'">'.$html.'</a>';
