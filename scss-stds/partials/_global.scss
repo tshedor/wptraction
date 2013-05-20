@@ -1,6 +1,6 @@
 /********* GENERAL ***********/
 
-@import "lib/fonts/CharlieGordon/style.css";
+@import "inc/fonts/CharlieGordon/style.css";
 
 h1, h2, h3, h4, h5, h6, h7, h8 {
 	@include dom;
@@ -214,7 +214,7 @@ figure.quote {
 		@include fs-small;
 		color:#555;
 		&:before {
-			content:"\2014 \0020"
+			//content:"\2014 \0020"
 		}
 	}
 }
