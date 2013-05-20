@@ -3,7 +3,7 @@
 add_editor_style();
 add_post_type_support( 'page', 'excerpt' );
 add_theme_support( 'automatic-feed-links' );
-add_theme_support( 'post-formats' );
+add_theme_support( 'post-formats', array('gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'aside') );
 add_theme_support( 'post-thumbnails' );
 
 if ( ! isset( $content_width ) ) $content_width = 1000;
