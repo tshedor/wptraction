@@ -134,7 +134,7 @@ function ts_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p>Pingback: <?php comment_author_link(); ?> <?php edit_comment_link( '(Edit)', '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e('Pingback', 'tswp'); ?>: <?php comment_author_link(); ?> <?php edit_comment_link( '(Edit)', '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 		break;
 		default :
@@ -161,6 +161,7 @@ function ts_comment( $comment, $args, $depth ) {
  				<div class="comment-content">
  					<?php comment_text(); ?>
  				</div>
+ 			</div>
 
 <?php break; endswitch;
 }
