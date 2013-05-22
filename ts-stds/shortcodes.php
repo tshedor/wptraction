@@ -44,36 +44,6 @@ function sibling_shortcode( $atts, $content = null ) {
 }
 add_shortcode( 'sibling', 'sibling_shortcode' );
 
-function timeline_shortcode( $atts, $content = null ) {
-	extract( shortcode_atts( array(
-		'url' => '',
-		'description' => '',
-		'title' => '',
-	), $atts ) );
-	if(substr($url,7,7) == 'storify'){
-		$src = $url;
-	} else {
-		$src = substr($url, 44, 44);
-		$src = 'https://docs.google.com/spreadsheet/pub?key='.$src.'&amp;output=html';
-	}
-	wp_enqueue_script('storyjs');
-	return '
-		<aside class="timeline">
-			<h3 class="inline-title"><i class="icon-clock"></i> '.esc_attr($title).'</h3>
-			<div id="timeline-embed"></div>'
-			.$description.'
-		</aside>
-
-		<script type="text/javascript">
-			var timeline_config = {
-				width: "100%",
-				height: "700",
-				source: "'.$src.'"
-			}
-		</script>';
-}
-add_shortcode( 'timeline', 'timeline_shortcode' );
-
 function tabbed_shortcode( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 		'type' => 'vertical',
