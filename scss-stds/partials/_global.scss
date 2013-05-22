@@ -391,7 +391,6 @@ figure.quote {
 		margin-bottom:35px;
 		padding:20px;
 		min-height:140px;
-		width:90%;
 		font-weight:300;
 		&:focus {
 			background:white!important;
@@ -408,6 +407,10 @@ figure.quote {
 	}
 }
 
+.comments-area {
+	width:90%;
+	margin:1em auto;
+}
 
 /******** UI ********/
 

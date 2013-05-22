@@ -12,8 +12,6 @@ function add_tiny_buttons() {
 }
 
 function register_tiny_buttons($buttons) {
-  array_push($buttons, "|", "audio");
-   array_push($buttons, "", "video");
    array_push($buttons, "", "text");
    array_push($buttons, "", "timeline");
    array_push($buttons, "", "tabs");
@@ -23,8 +21,6 @@ function register_tiny_buttons($buttons) {
 
 // Load the TinyMCE plugin : editor_plugin.js (wp2.5)
 function add_tiny_plugin($plugin_array) {
-   $plugin_array['audio'] = get_template_directory_uri().'/inc/ts-stds/tinymce/editor_plugin.js';
-   $plugin_array['video'] = get_template_directory_uri().'/inc/ts-stds/tinymce/editor_plugin.js';
    $plugin_array['text'] = get_template_directory_uri().'/inc/ts-stds/tinymce/editor_plugin.js';
    $plugin_array['timeline'] = get_template_directory_uri().'/inc/ts-stds/tinymce/editor_plugin.js';
    $plugin_array['tabs'] = get_template_directory_uri().'/inc/ts-stds/tinymce/editor_plugin.js';
@@ -49,6 +45,7 @@ function themeit_tiny_mce_before_init( $settings ) {
   $settings['theme_advanced_blockformats'] = 'p,a,div,span,h1,h2,h3,tr,';
   $style_formats = array(
       array( 'title' => __('Headers', 'tswp') ),
+      array( 'title' => __('Heading', 'tswp'),      'block'    => 'h1',  'classes' => '' ),
       array( 'title' => __('Subhead', 'tswp'),      'block'    => 'h2',  'classes' => '' ),
       array( 'title' => __('Minor Subhead', 'tswp'),      'block'    => 'h3',  'classes' => '' ),
       array( 'title' => __('Styles', 'tswp') ),
@@ -56,10 +53,10 @@ function themeit_tiny_mce_before_init( $settings ) {
       array( 'title' => __('Aside Box', 'tswp'),        'block'    => 'aside',  'classes' => 'inline-text' ),
       array( 'title' => __('Columns', 'tswp') ),
       array( 'title' => __('New Row', 'tswp'),            'block'    => 'div',  'classes' => 'row clearfix' ),
-      array( 'title' => '&frac12; '.__('Col.', 'tswp'),      'block'    => 'div',  'classes' => 'small-6 large-6 columns' ),
-      array( 'title' => '&frac13; '.__('Col.', 'tswp'),      'block'    => 'div',  'classes' => 'large-4 columns' ),
-      array( 'title' => '&frac14; '.__('Col.', 'tswp'),      'block'    => 'div',  'classes' => 'large-3 columns' ),
-      array( 'title' => '&frac16; '.__('Col.', 'tswp'),      'block'    => 'div',  'classes' => 'large-2 columns' ),
+      array( 'title' => '&frac12; '.__('Column', 'tswp'),      'block'    => 'div',  'classes' => 'small-6 large-6 columns' ),
+      array( 'title' => '&frac13; '.__('Column', 'tswp'),      'block'    => 'div',  'classes' => 'large-4 columns' ),
+      array( 'title' => '&frac14; '.__('Column', 'tswp'),      'block'    => 'div',  'classes' => 'large-3 columns' ),
+      array( 'title' => '&frac16; '.__('Column', 'tswp'),      'block'    => 'div',  'classes' => 'large-2 columns' ),
   );
   $settings['style_formats'] = json_encode( $style_formats );
   return $settings;
