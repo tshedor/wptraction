@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-android, .icon-shield, .icon-vote, .icon-users, .icon-file, .icon-circleinfo, .icon-asterisk, .icon-tie, .icon-intersection, .icon-todo, .icon-tags, .icon-wheelchair, .icon-pie-chart, .icon-shopping, .icon-scales, .icon-support, .icon-error, .icon-html, .icon-braces, .icon-presentation, .icon-volumemute2, .icon-volumehalf, .icon-volumefull, .icon-bluetooth, .icon-instagram, .icon-record, .icon-podcast, .icon-paw, .icon-quote, .icon-quote-2, .icon-cabinet, .icon-microphone, .icon-picture, .icon-pictures, .icon-checkmark, .icon-cancel, .icon-location, .icon-vote-2, .icon-megaphone, .icon-lamp, .icon-chat, .icon-info, .icon-paper-plane, .icon-paperclip, .icon-user, .icon-users-2, .icon-user-add, .icon-share, .icon-export, .icon-clock, .icon-help, .icon-warning, .icon-sound, .icon-menu, .icon-heart, .icon-cog, .icon-home, .icon-tag, .icon-repeat, .icon-print, .icon-chevron-left, .icon-chevron-right, .icon-resize-full, .icon-resize-small, .icon-plus, .icon-minus, .icon-random, .icon-cogs, .icon-comments, .icon-heart-empty, .icon-reorder, .icon-comments-alt, .icon-mobile, .icon-angle-left, .icon-angle-right, .icon-angle-up, .icon-angle-down, .icon-pencil, .icon-folder-open, .icon-calendar, .icon-map, .icon-quotes-left, .icon-zoom-out, .icon-zoom-in, .icon-search, .icon-spinner, .icon-earth, .icon-link, .icon-star, .icon-star-2, .icon-star-3, .icon-pencil-2, .icon-calendar-2, .icon-film, .icon-phone, .icon-code, .icon-googleplus, .icon-googleplus-2, .icon-googleplus-3, .icon-facebook, .icon-facebook-2, .icon-facebook-3, .icon-twitter, .icon-twitter-2, .icon-twitter-3, .icon-feed, .icon-feed-2, .icon-feed-3, .icon-vimeo, .icon-youtube, .icon-vimeo-2, .icon-vimeo2, .icon-flickr, .icon-flickr-2, .icon-flickr-3, .icon-dribbble, .icon-dribbble-2, .icon-dribbble-3, .icon-github, .icon-github-2, .icon-github-3, .icon-skype, .icon-reddit, .icon-linkedin, .icon-linkedin-2, .icon-linkedin-3, .icon-pinterest, .icon-pinterest-2, .icon-pinterest-3, .icon-stumbleupon, .icon-stumbleupon-2, .icon-stumbleupon-3, .icon-email, .icon-email-2, .icon-email-3, .icon-thumbs-up, .icon-thumbs-down {
+.icon-asterisk, .icon-tie, .icon-intersection, .icon-todo, .icon-tags, .icon-wheelchair, .icon-pie-chart, .icon-shopping, .icon-scales, .icon-support, .icon-error, .icon-html, .icon-braces, .icon-presentation, .icon-volumemute2, .icon-volumehalf, .icon-volumefull, .icon-bluetooth, .icon-instagram, .icon-record, .icon-podcast, .icon-paw, .icon-paperclip, .icon-user, .icon-users, .icon-share, .icon-export, .icon-clock, .icon-help, .icon-warning, .icon-sound, .icon-menu, .icon-heart, .icon-heart-empty, .icon-home, .icon-tag, .icon-repeat, .icon-print, .icon-chevron-left, .icon-chevron-right, .icon-plus, .icon-minus, .icon-random, .icon-cogs, .icon-comments, .icon-cog, .icon-reorder, .icon-mobile, .icon-angle-left, .icon-angle-right, .icon-angle-up, .icon-angle-down, .icon-pencil, .icon-folder-open, .icon-calendar, .icon-map, .icon-quotes-left, .icon-zoom-out, .icon-zoom-in, .icon-search, .icon-spinner, .icon-earth, .icon-link, .icon-star, .icon-star-2, .icon-star-3, .icon-pencil-2, .icon-calendar-2, .icon-film, .icon-phone, .icon-googleplus, .icon-googleplus-2, .icon-googleplus-3, .icon-facebook, .icon-facebook-2, .icon-facebook-3, .icon-twitter, .icon-twitter-2, .icon-twitter-3, .icon-feed, .icon-feed-2, .icon-feed-3, .icon-vimeo, .icon-youtube, .icon-vimeo-2, .icon-vimeo2, .icon-flickr, .icon-flickr-2, .icon-flickr-3, .icon-dribbble, .icon-dribbble-2, .icon-dribbble-3, .icon-github, .icon-github-2, .icon-github-3, .icon-skype, .icon-reddit, .icon-linkedin, .icon-linkedin-2, .icon-linkedin-3, .icon-pinterest, .icon-pinterest-2, .icon-pinterest-3, .icon-stumbleupon, .icon-stumbleupon-2, .icon-stumbleupon-3, .icon-email, .icon-email-2, .icon-email-3, .icon-thumbs-up, .icon-thumbs-down, .icon-check, .icon-ok, .icon-remove {
 	font-family: 'CharlieGordon';
 	speak: none;
 	font-style: normal;
@@ -36,24 +36,6 @@ you can use the generic selector below, but it's slower:
 	text-transform: none;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
-}
-.icon-android:before {
-	content: "\f085";
-}
-.icon-shield:before {
-	content: "\e00f";
-}
-.icon-vote:before {
-	content: "\e00c";
-}
-.icon-users:before {
-	content: "\e017";
-}
-.icon-file:before {
-	content: "\e059";
-}
-.icon-circleinfo:before {
-	content: "\e016";
 }
 .icon-asterisk:before {
 	content: "\e058";
@@ -121,62 +103,14 @@ you can use the generic selector below, but it's slower:
 .icon-paw:before {
 	content: "\e026";
 }
-.icon-quote:before {
-	content: "\e029";
-}
-.icon-quote-2:before {
-	content: "\e01e";
-}
-.icon-cabinet:before {
-	content: "\e004";
-}
-.icon-microphone:before {
-	content: "\e005";
-}
-.icon-picture:before {
-	content: "\e040";
-}
-.icon-pictures:before {
-	content: "\e03e";
-}
-.icon-checkmark:before {
-	content: "\e006";
-}
-.icon-cancel:before {
-	content: "\e007";
-}
-.icon-location:before {
-	content: "\f02f";
-}
-.icon-vote-2:before {
-	content: "\e009";
-}
-.icon-megaphone:before {
-	content: "\e00a";
-}
-.icon-lamp:before {
-	content: "\e00e";
-}
-.icon-chat:before {
-	content: "\e038";
-}
-.icon-info:before {
-	content: "\e053";
-}
-.icon-paper-plane:before {
-	content: "\e056";
-}
 .icon-paperclip:before {
 	content: "\e04a";
 }
 .icon-user:before {
 	content: "\e012";
 }
-.icon-users-2:before {
+.icon-users:before {
 	content: "\e013";
-}
-.icon-user-add:before {
-	content: "\e011";
 }
 .icon-share:before {
 	content: "\f29d";
@@ -202,7 +136,7 @@ you can use the generic selector below, but it's slower:
 .icon-heart:before {
 	content: "\f074";
 }
-.icon-cog:before {
+.icon-heart-empty:before {
 	content: "\f189";
 }
 .icon-home:before {
@@ -223,12 +157,6 @@ you can use the generic selector below, but it's slower:
 .icon-chevron-right:before {
 	content: "\f054";
 }
-.icon-resize-full:before {
-	content: "\f065";
-}
-.icon-resize-small:before {
-	content: "\f066";
-}
 .icon-plus:before {
 	content: "\f067";
 }
@@ -244,14 +172,11 @@ you can use the generic selector below, but it's slower:
 .icon-comments:before {
 	content: "\e02f";
 }
-.icon-heart-empty:before {
+.icon-cog:before {
 	content: "\e045";
 }
 .icon-reorder:before {
 	content: "\f0c9";
-}
-.icon-comments-alt:before {
-	content: "\e037";
 }
 .icon-mobile:before {
 	content: "\f10b";
@@ -321,9 +246,6 @@ you can use the generic selector below, but it's slower:
 }
 .icon-phone:before {
 	content: "\e043";
-}
-.icon-code:before {
-	content: "\e049";
 }
 .icon-googleplus:before {
 	content: "\e00d";
@@ -447,4 +369,13 @@ you can use the generic selector below, but it's slower:
 }
 .icon-thumbs-down:before {
 	content: "\e010";
+}
+.icon-check:before {
+	content: "\f046";
+}
+.icon-ok:before {
+	content: "\f00c";
+}
+.icon-remove:before {
+	content: "\f00d";
 }

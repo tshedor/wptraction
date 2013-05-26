@@ -129,11 +129,12 @@ function social_single($showNames = true){
 	if($a['show_social']){
 		$share_array = array('facebook','twitter','pinterest','googleplus','stumbleupon','reddit','linkedin','fblike');
 		foreach($share_array as $s){
+			$sIconClass = $s;
 			if($a['share_icon_style'] == 'round')
-				$s = $s.'-2';
+				$sIconClass = $s.'-2';
 			if($a['share_icon_style'] == 'square')
-				$s = $s.'-3';
-			$content = '<i class="icon-'.$s.'"></i> ';
+				$sIconClass = $s.'-3';
+			$content = '<i class="icon-'.$sIconClass.'"></i> ';
 			if($showNames)
 				$content .= $s;
 			if($a[$s]){

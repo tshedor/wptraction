@@ -141,14 +141,14 @@ function ts_comment( $comment, $args, $depth ) {
 		global $post;
 	?>
 	<li <?php comment_class('row clearfix'); ?> id="comment-<?php comment_ID(); ?>">
-			 			<div class="large-2 small-2 columns comment-meta comment-author">
+			 <div class="large-2 small-4 columns comment-meta comment-author">
  				<?php echo get_avatar($comment, 60 ); ?>
 				<a href="<?php the_permalink(); ?>#comment-<?php comment_ID(); ?>" title="<?php _e('Link to this comment', 'tswp'); ?>">
  					<?php echo get_comment_time('M. j, Y'); ?>
  				</a>
 				<span class="edit"><?php edit_comment_link( __('Edit', 'tswp')); ?></span>
  			</div>
- 			<div class="large-10 small-4 columns">
+ 			<div class="large-10 small-8 columns">
  				<h4><?php comment_author_link();
  					if($comment->user_id === $post->post_author)
 						echo ' <span class="author">'.__('Author','tswp').'</span>';
