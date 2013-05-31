@@ -1,45 +1,45 @@
 $size-value:15px!default;
-@mixin fs-tiny($value:$size-value) {
+@mixin fs-tiny($lh:15px,$value:$size-value) {
 	font-size: emCalc($value * 0.36);
-	line-height:15px;
+	line-height:$lh;
 }
-@mixin fs-xxsmall($value:$size-value) {
+@mixin fs-xxsmall($lh:15px,$value:$size-value) {
 	font-size: emCalc($value * 0.5);
-	line-height:15px;
+	line-height:$lh;
 }
-@mixin fs-xsmall($value:$size-value) {
+@mixin fs-xsmall($lh:18px,$value:$size-value) {
 	font-size: emCalc($value * 0.7);
-	line-height:18px;
+	line-height:$lh;
 }
-@mixin fs-small($value:$size-value) {
+@mixin fs-small($lh:20px,$value:$size-value) {
 	font-size: emCalc($value * 0.8);
-	line-height:20px;
+	line-height:$lh;
 }
-@mixin fs-medium($value:$size-value) {
+@mixin fs-medium($lh:19px,$value:$size-value) {
 	font-size: emCalc($value * 0.9);
-	line-height:19px;
+	line-height:$lh;
 }
-@mixin fs($value:$size-value) {
+@mixin fs($lh:24px,$value:$size-value) {
 	font-size: emCalc($value);
-	line-height:24px;
+	line-height:$lh;
 }
-@mixin fs-lg($value:$size-value) {
+@mixin fs-lg($lh:24px,$value:$size-value) {
 	font-size: emCalc($value * 1.2);
-	line-height:24px;
+	line-height:$lh;
 }
-@mixin fs-xlg($value:$size-value) {
+@mixin fs-xlg($lh:32px,$value:$size-value) {
 	font-size: emCalc($value * 1.6);
-	line-height:32px;
+	line-height:$lh;
 }
-@mixin fs-xxlg($value:$size-value) {
+@mixin fs-xxlg($lh:34px,$value:$size-value) {
 	font-size: emCalc($value * 2.4);
-	line-height:34px;
+	line-height:$lh;
 }
-@mixin fs-xxxlg($value:$size-value) {
+@mixin fs-xxxlg($lh:40px,$value:$size-value) {
 	font-size: emCalc($value * 3);
-	line-height:40px;
+	line-height:$lh;
 }
-@mixin fs-giant($value:$size-value) {
+@mixin fs-giant($lh:68px,$value:$size-value) {
 	font-size: emCalc($value * 5);
-	line-height:68px;
+	line-height:$lh;
 }

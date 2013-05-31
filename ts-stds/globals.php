@@ -43,7 +43,8 @@ function custom_head() {
 		echo '<meta property="og:url" content="'.get_permalink().'" />';
 		echo '<meta property="og:description" content="'.get_the_excerpt().'" />';
 		echo '<meta property="og:type" content="article" />';
-		wp_enqueue_script( 'comment-reply' );
+		if(get_option('thread_comments') && comments_open())
+			wp_enqueue_script( 'comment-reply' );
 	} elseif((is_home()) || (is_archive())){
 		echo '<meta property="og:title" content="'.get_bloginfo('name').'" />';
 		echo '<meta property="og:url" content="'.get_bloginfo('url').'" />';
