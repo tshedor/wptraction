@@ -231,7 +231,7 @@ class TS_Related extends WP_Widget {
 		echo $before_widget;
 		if (!empty($title))
 			echo $before_title . $title . $after_title;
-			ts_related($post_count);
+			TSThemes::related($post_count);
 		echo $after_widget;
 	}
 
