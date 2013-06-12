@@ -82,8 +82,8 @@ function contact_shortcode( $atts, $content = null ) {
 	), $atts ) );
 	$a = get_option('ts_admin_options');
 	$contactme = '';
-	if(isnt_blank($email)){
-		if(isnt_blank($a['contact_form_email']))
+	if(!empty($email)){
+		if(!empty($a['contact_form_email']))
 			$email = $a['contact_form_email'];
 		else
 			$email = get_option('admin_email');

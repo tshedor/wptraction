@@ -35,11 +35,11 @@ get_header(); $a = get_option('ts_admin_options'); if(have_posts()) : while(have
 			<div class="row clearfix item-row">
 				<div class="large-4 columns item-details">
 					<?php the_title(); echo '<br />';
-					if(isnt_blank($rc['position_held'][0])) {
+					if(!empty($rc['position_held'][0])) {
 						echo $rc['position_held'][0].'<br />';
 					}
 					echo $rc['date_begun'][0];
-					if(isnt_blank($rc['date_completed'][0])) {
+					if(!empty($rc['date_completed'][0])) {
 						echo ' - '.$rc['date_completed'][0];
 					}
 				echo '</div>';

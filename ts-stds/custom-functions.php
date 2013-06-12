@@ -96,7 +96,7 @@ class TSThemes {
 		$social = array('twitter', 'facebook', 'pinterest', 'instagram', 'flickr', 'googleplus', 'github', 'linkedin', 'feed', 'email');
 		foreach($social as $sicon) :
 			$op = $a[$sicon.'_profile'];
-			if(isnt_blank($op)){
+			if(!empty($op)){
 				if($sicon == 'twitter')
 					$op = 'http://twitter.com/'.$op;
 				if($a['share_icon_style'] == 'round')

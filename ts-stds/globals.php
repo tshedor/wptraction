@@ -73,7 +73,7 @@ function custom_head() {
 function get_copyright(){
 	global $a;
 	echo '<div class="copyright">';
-	if(isnt_blank($a['copyright_text'])){
+	if(!empty($a['copyright_text'])){
 		$copytext = $a['copyright_text'];
 		$copytext = str_replace('{SITE NAME}', get_bloginfo('name'), $copytext);
 		$copytext = str_replace('{CURRENT YEAR}', date('Y'), $copytext);

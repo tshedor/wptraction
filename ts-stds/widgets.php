@@ -340,7 +340,7 @@ class TS_Contact extends WP_Widget {
 		$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 		if(!isset($email_please)){
 			if(!$email_please){
-				if(isnt_blank($a['contact_form_email']))
+				if(!empty($a['contact_form_email']))
 					$email_please = $a['contact_form_email'];
 				else
 					$email_please = get_option('admin_email');
