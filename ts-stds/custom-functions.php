@@ -112,7 +112,7 @@ class TSThemes {
 		endforeach;
 	}
 
-	static function get_logo(){
+	static function logo(){
 		global $a;
 		echo '<a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">';
 			if($a['logo'] == '')
