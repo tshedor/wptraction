@@ -239,6 +239,23 @@ class TSThemes {
 		echo '</div>
 		</div>';
 	}
+	static function get_copyright(){
+		global $a;
+		echo '<div class="copyright">';
+		if(!empty($a['copyright_text'])){
+			$copytext = $a['copyright_text'];
+			$copytext = str_replace('{SITE NAME}', get_bloginfo('name'), $copytext);
+			$copytext = str_replace('{CURRENT YEAR}', date('Y'), $copytext);
+			echo $copytext;
+		} else {
+			echo '&copy; '.__('Copyright', 'tswp').' <a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">'.get_bloginfo('name').'</a> '.date('Y');
+		}
+		if($a['footer_credit'])
+			echo ' | '.__('Code and Design by', 'tswp').' <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a>';
+		else
+			echo ' | <div id="creditsDisplay"><div><a href="'.get_template_directory_uri().'/humans.txt" title="Credits">Credits</a></div><div>'.__('Code and Design by', 'tswp').' <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a></div></div> <a href="#" title="Tim Shedor" class="cred" id="footerCredits"><i class="icon-asterisk"></i></a>';
+		echo '</div>';
+	}
 }
 
 
