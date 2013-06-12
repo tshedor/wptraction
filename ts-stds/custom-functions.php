@@ -1,92 +1,247 @@
 <?php
-if(!function_exists('getPostViews')) :
-function getPostViews($postID){
-	$count = get_post_meta($postID, 'post_views_count', true);
-	return $count.' '.__('Views', 'tswp');
-}
-endif;
-if(!function_exists('setPostViews')) :
-function setPostViews($postID) {
-	$count = get_post_meta($postID, 'post_views_count', true);
-	$count++;
-	update_post_meta($postID, 'post_views_count', $count);
-}
-endif;
+
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-if(!function_exists('ifExists')) :
-function ifExists($var){
-	return ($var || $var != '');
-}
-endif;
-if(!function_exists('if_paged')) :
-function if_paged(){
-	if(isset($_GET['paged']) && !empty($_GET['paged'])) {
-		echo ' ('.$_GET['paged'].')';
+
+class TSThemes {
+
+	static function getPostViews($postID){
+		$count = get_post_meta($postID, 'post_views_count', true);
+		return $count.' '.__('Views', 'tswp');
 	}
-}
-endif;
-if(!function_exists('isnt_blank')) :
-function isnt_blank($var){
-	if($var){
-		if($var != ''){
-			return true;
-		} else {
-			return false;
+
+	static function setPostViews($postID) {
+		$count = get_post_meta($postID, 'post_views_count', true);
+		$count++;
+		update_post_meta($postID, 'post_views_count', $count);
+	}
+
+	static function if_paged(){
+		if(isset($_GET['paged']) && !empty($_GET['paged'])) {
+			echo ' ('.$_GET['paged'].')';
 		}
-	} else {
-		return false;
 	}
-}
-endif;
 
-//http://themeforest.net/forums/thread/get-attachment-id-by-image-url/36381
-if(!function_exists('get_image_id')) :
-function get_image_id($image_url) {
-    global $wpdb;
-    $prefix = $wpdb->prefix;
-    $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM " . $prefix . "posts" . " WHERE guid='" . $image_url . "';"));
-    return $attachment[0];
-}
-endif;
-if(!function_exists('get_image')) :
-function get_image($size = 'medium',$class = '',$attr = NULL, $id = NULL){
-	global $post, $a;
-	if($id == NULL)
-		$id = $post->ID;
-	if(function_exists('get_the_image')){
-		get_the_image(array('image_scan' => true, 'post_id' => $id, 'size' => $size, 'image_class' => $class, $attr));
-	} elseif(has_post_thumbnail($id)) {
-		echo '<a href="'.get_permalink($id).'" title="'.esc_attr(get_post_field('post_title', $id)).'">';
-		the_post_thumbnail($size, array('class' => $class, $attr));
-		echo '</a>';
-	} elseif($a['get_first_image']) {
-		//http://wpforce.com/automatically-set-the-featured-image-in-wordpress/
-		$attached_image = get_children( "post_parent=".$post->ID."&post_type=attachment&post_mime_type=image&numberposts=1" );
-		if($attached_image){
-			foreach ($attached_image as $attachment_id => $attachment) {
-				set_post_thumbnail($id, $attachment_id);
-			}
+	static function get_image_id($image_url) {
+    	global $wpdb;
+	    $prefix = $wpdb->prefix;
+    	$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM " . $prefix . "posts" . " WHERE guid='" . $image_url . "';"));
+    	return $attachment[0];
+	}
+
+	static function get_image($size = 'medium',$class = '',$attr = NULL, $id = NULL){
+		global $post, $a;
+		if($id == NULL)
+			$id = $post->ID;
+		//http://themeforest.net/forums/thread/get-attachment-id-by-image-url/36381
+		if(function_exists('get_the_image')){
+			get_the_image(array('image_scan' => true, 'post_id' => $id, 'size' => $size, 'image_class' => $class, $attr));
+		} elseif(has_post_thumbnail($id)) {
 			echo '<a href="'.get_permalink($id).'" title="'.esc_attr(get_post_field('post_title', $id)).'">';
-
 			the_post_thumbnail($size, array('class' => $class, $attr));
 			echo '</a>';
-		} else {
-			$first_img = ''; ob_start(); ob_end_clean();
-			$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-			$first_img = $matches [1] [0];
-			if(empty($first_img)){
-				return;
+		} elseif($a['get_first_image']) {
+			//http://wpforce.com/automatically-set-the-featured-image-in-wordpress/
+			$attached_image = get_children( "post_parent=".$post->ID."&post_type=attachment&post_mime_type=image&numberposts=1" );
+			if($attached_image){
+				foreach ($attached_image as $attachment_id => $attachment) {
+					set_post_thumbnail($id, $attachment_id);
+				}
+				echo '<a href="'.get_permalink($id).'" title="'.esc_attr(get_post_field('post_title', $id)).'">';
+
+				the_post_thumbnail($size, array('class' => $class, $attr));
+				echo '</a>';
+			} else {
+				$first_img = ''; ob_start(); ob_end_clean();
+				$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+				$first_img = $matches [1] [0];
+				if(empty($first_img)){
+					return;
+				}
+				$html = '<a href="'.get_permalink($id).'" title="'.esc_attr(get_post_field('post_title', $id)).'">';
+				$html .= wp_get_attachment_image(get_image_id($first_img), $size, array('class' => $class, $attr));
+				$html .= '</a>';
+				echo $html;
 			}
-			$html = '<a href="'.get_permalink($id).'" title="'.esc_attr(get_post_field('post_title', $id)).'">';
-			$html .= wp_get_attachment_image(get_image_id($first_img), $size, array('class' => $class, $attr));
-			$html .= '</a>';
-			echo $html;
+		} else {
+			return;
 		}
-	} else {
-		return;
+	}
+
+	static function social_single($showNames = true){
+		global $post, $a;
+		if($a['show_social']){
+			$share_array = array('facebook','twitter','pinterest','googleplus','stumbleupon','reddit','linkedin','fblike');
+			foreach($share_array as $s){
+				$sIconClass = $s;
+				if($a['share_icon_style'] == 'round')
+					$sIconClass = $s.'-2';
+				if($a['share_icon_style'] == 'square')
+					$sIconClass = $s.'-3';
+				$content = '<i class="icon-'.$sIconClass.'"></i> ';
+				if($showNames)
+					$content .= $s;
+				if($a[$s]){
+					$shareinfo = new socialshare(get_permalink(),get_the_title(),$content,$a['twitter_profile']);
+					$shareme = $shareinfo->$s();
+					echo '<li class="social-list-item">'.$shareme.'</li>';
+				}
+			}
+		}
+		if($a['show_print'])
+			echo '<li class="social-list-item"><a href="'.get_permalink().'?print='.get_the_ID().'" title="'.__('Print', 'tswp').' '.get_the_title().'"><i class="icon-print"></i>',$showNames ? ' print' : '','</a></li>';
+	}
+
+	static function social_header(){
+		global $a;
+		$social = array('twitter', 'facebook', 'pinterest', 'instagram', 'flickr', 'googleplus', 'github', 'linkedin', 'feed', 'email');
+		foreach($social as $sicon) :
+			$op = $a[$sicon.'_profile'];
+			if(isnt_blank($op)){
+				if($sicon == 'twitter')
+					$op = 'http://twitter.com/'.$op;
+				if($a['share_icon_style'] == 'round')
+					$sicon = $sicon.'-2';
+				if($a['share_icon_style'] == 'square')
+					$sicon = $sicon.'-3';
+				if($sicon == 'feed')
+					$op = get_bloginfo('rss2_url');
+				if($sicon == 'email')
+					$op = 'mailto:'.get_bloginfo('admin_email');
+				echo '<a href="'.$op.'" title="'.ucfirst($sicon).'"><i class="icon-'.$sicon.'"></i></a>';
+			}
+		endforeach;
+	}
+
+	static function get_logo(){
+		global $a;
+		echo '<a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">';
+			if($a['logo'] == '')
+				echo '<h1>'.get_bloginfo('name').'</h1>';
+			else
+				echo '<img src="'.$a['logo'].'" alt="'.get_bloginfo('name').'" />';
+		echo '</a>';
+	}
+
+	static function ts_related($post_count = 5){
+		if(function_exists('related_posts'))
+			related_posts();
+		else {
+			if(function_exists('yarpp_related'))
+				yarpp_related();
+			else {
+				global $post;
+				$tags = wp_get_post_tags($post->ID);
+				if ($tags){
+					$first_tag = $tags[0]->term_id;
+					$args = array(
+						'tag__in' => array($first_tag),
+						'post__not_in' => array($post->ID),
+						'showposts'=> $post_count,
+					);
+					$q82 = new WP_Query($args);
+					if( $q82->have_posts() ) :
+						echo '<ul class="ts-related">';
+						while ($q82->have_posts()) : $q82->the_post();
+							echo '<li><a href="'.get_permalink().' title="'.get_the_title().'">'.get_the_title().'</a></li>';
+						endwhile;
+						echo '</ul>';
+					endif; wp_reset_query();
+				} else
+					_e('No related posts', 'tswp');
+			}
+		}
+	}
+
+	static function ts_pagination(){
+		if(function_exists('wp_pagenavi'))
+			wp_pagenavi();
+		else {
+			global $wp_query; $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+			echo paginate_links(array(
+				'base'      => @add_query_arg( 'paged', '%#%' ),
+				'format'	=>	'',
+				'total' 	=>	$wp_query->max_num_pages,
+				'prev_text'	=>	'&laquo;&nbsp;'.__('Previous', 'tswp').'&nbsp;',
+				'next_text'	=>	'&nbsp;'.__('Next', 'tswp').'&nbsp;&raquo;',
+				'end_size'	=>	3,
+				'current'	=>	$current
+			));
+		}
+	}
+
+	static function ts_breadcrumbs(){
+		global $wp_query, $a;
+		echo '<div class="row clear breadcrumbs">
+		<div class="large-12 columns">';
+		if(function_exists('bcn_display'))
+			bcn_display();
+		elseif($a['breadcrumbs_archive']) {
+			if(!is_home()){
+				echo '<a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">Home</a>';
+				if(is_archive()){
+					global $wp_query;
+					echo '&nbsp;&raquo;&nbsp;';
+					if(is_category()){
+						echo get_category_parents(get_query_var('cat'), TRUE, ' &raquo; ');
+						echo single_cat_title();
+					} elseif(is_tag()) {
+						__('Tagged', 'tswp').' ';
+						echo single_tag_title();
+					} elseif(is_tax()) {
+						$tax =  get_term_by('slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+						echo get_query_var('taxonomy').': '.$tax->name;
+					} elseif(is_day() || is_month() || is_year()) {
+						echo 'From '.the_time('F j, Y');
+					} elseif(is_author()) {
+						echo 'By '.the_author_meta('display_name', get_query_var('author'));
+					}
+					if_paged();
+				}
+				if(is_single()){
+					global $post;
+					echo '&nbsp;&raquo;&nbsp;';
+					$post_cats = get_the_category($post->ID);
+					if($post_cats[0]){
+						echo get_category_parents($post_cats[0]->term_id, TRUE, '&nbsp;&raquo;&nbsp;');
+						echo '<a href="'.get_category_link($post_cats[0]->term_id ).'">'.$post_cats[0]->cat_name.'</a> &raquo; ';
+					}
+					the_title();
+				}
+				if(is_page()){
+					global $post;
+					echo '&nbsp;&raquo;&nbsp;';
+					$parents = get_post_ancestors($post->ID);
+					$top_parent = $parents[count($parents)-1];
+					if($post->post_parent){
+						$parent = get_page($post->post_parent);
+						if($parent->post_parent){
+							$higher_parent = get_page($parent->post_parent);
+							if($higher_parent->post_parent){
+								$highest_parent = get_page($higher_parent->post_parent);
+								if($highest_parent->post_parent){
+									$ultra_parent = get_page($highest_parent->post_parent);
+									if($ultra_parent->post_parent){
+										$ultimate_parent = get_page($ultra_parent->post_parent);
+										echo '<a href="'.get_permalink($ultimate_parent->ID).'" title="'.$ultimage_parent->post_title.'">'.$ultimate_parent->post_title.'</a>&nbsp;&raquo;&nbsp;';
+									}
+									echo '<a href="'.get_permalink($ultra_parent->ID).'" title="'.$ultra_parent->post_title.'">'.$ultra_parent->post_title.'</a>&nbsp;&raquo;&nbsp;';
+								}
+								echo '<a href="'.get_permalink($highest_parent->ID).'" title="'.$highest_parent->post_title.'">'.$highest_parent->post_title.'</a>&nbsp;&raquo;&nbsp;';
+							}
+							echo '<a href="'.get_permalink($higher_parent->ID).'" title="'.$higher_parent->post_title.'">'.$higher_parent->post_title.'</a>&nbsp;&raquo;&nbsp;';
+						}
+						echo '<a href="'.get_permalink($parent->ID).'" title="'.$parent->post_title.'">'.$parent->post_title.'</a>&nbsp;&raquo;&nbsp;';
+					}
+					the_title();
+				}
+			}
+		}
+		echo '</div>
+		</div>';
 	}
 }
-endif;
+
+
 class socialshare {
 	private $url;
 	private $title;
@@ -123,188 +278,8 @@ class socialshare {
 		return '<a href="http://www.linkedin.com/cws/share?url='.$this->url.'&isFramed=false&ts='.time().'" title="'.$this->title.'">'.$this->content.'</a>';
 	}
 }
-if(!function_exists('social_single')) :
-function social_single($showNames = true){
-	global $post, $a;
-	if($a['show_social']){
-		$share_array = array('facebook','twitter','pinterest','googleplus','stumbleupon','reddit','linkedin','fblike');
-		foreach($share_array as $s){
-			$sIconClass = $s;
-			if($a['share_icon_style'] == 'round')
-				$sIconClass = $s.'-2';
-			if($a['share_icon_style'] == 'square')
-				$sIconClass = $s.'-3';
-			$content = '<i class="icon-'.$sIconClass.'"></i> ';
-			if($showNames)
-				$content .= $s;
-			if($a[$s]){
-				$shareinfo = new socialshare(get_permalink(),get_the_title(),$content,$a['twitter_profile']);
-				$shareme = $shareinfo->$s();
-				echo '<li class="social-list-item">'.$shareme.'</li>';
-			}
-		}
-	}
-	if($a['show_print'])
-		echo '<li class="social-list-item"><a href="'.get_permalink().'?print='.get_the_ID().'" title="'.__('Print', 'tswp').' '.get_the_title().'"><i class="icon-print"></i>',$showNames ? ' print' : '','</a></li>';
-}
-endif;
-if(!function_exists('social_header')) :
-function social_header(){
-	global $a;
-	$social = array('twitter', 'facebook', 'pinterest', 'instagram', 'flickr', 'googleplus', 'github', 'linkedin', 'feed', 'email');
-	foreach($social as $sicon) :
-		$op = $a[$sicon.'_profile'];
-		if(isnt_blank($op)){
-			if($sicon == 'twitter')
-				$op = 'http://twitter.com/'.$op;
-			if($a['share_icon_style'] == 'round')
-				$sicon = $sicon.'-2';
-			if($a['share_icon_style'] == 'square')
-				$sicon = $sicon.'-3';
-			if($sicon == 'feed')
-				$op = get_bloginfo('rss2_url');
-			if($sicon == 'email')
-				$op = 'mailto:'.get_bloginfo('admin_email');
-			echo '<a href="'.$op.'" title="'.ucfirst($sicon).'"><i class="icon-'.$sicon.'"></i></a>';
-		}
-	endforeach;
-}
-endif;
-if(!function_exists('get_logo')) :
-function get_logo(){
-	global $a;
-	echo '<a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">';
-		if($a['logo'] == '')
-			echo '<h1>'.get_bloginfo('name').'</h1>';
-		else
-			echo '<img src="'.$a['logo'].'" alt="'.get_bloginfo('name').'" />';
-	echo '</a>';
-}
-endif;
-if(!function_exists('ts_related')) :
-function ts_related($post_count = 5){
-	if(function_exists('related_posts'))
-		related_posts();
-	else {
-		if(function_exists('yarpp_related'))
-			yarpp_related();
-		else {
-			global $post;
-			$tags = wp_get_post_tags($post->ID);
-			if ($tags){
-				$first_tag = $tags[0]->term_id;
-				$args = array(
-					'tag__in' => array($first_tag),
-					'post__not_in' => array($post->ID),
-					'showposts'=> $post_count,
-				);
-				$q82 = new WP_Query($args);
-				if( $q82->have_posts() ) :
-					echo '<ul class="ts-related">';
-					while ($q82->have_posts()) : $q82->the_post();
-						echo '<li><a href="'.get_permalink().' title="'.get_the_title().'">'.get_the_title().'</a></li>';
-					endwhile;
-					echo '</ul>';
-				endif; wp_reset_query();
-			} else
-				_e('No related posts', 'tswp');
-		}
-	}
-}
-endif;
-if(!function_exists('ts_pagination')) :
-function ts_pagination(){
-	if(function_exists('wp_pagenavi'))
-		wp_pagenavi();
-	else {
-		global $wp_query; $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
-		echo paginate_links(array(
-			'base'      => @add_query_arg( 'paged', '%#%' ),
-			'format'	=>	'',
-			'total' 	=>	$wp_query->max_num_pages,
-			'prev_text'	=>	'&laquo;&nbsp;'.__('Previous', 'tswp').'&nbsp;',
-			'next_text'	=>	'&nbsp;'.__('Next', 'tswp').'&nbsp;&raquo;',
-			'end_size'	=>	3,
-			'current'	=>	$current
-		));
-	}
-}
-endif;
-if(!function_exists('ts_breadcrumbs')) :
-function ts_breadcrumbs(){
-	global $wp_query, $a;
-	echo '<div class="row clear breadcrumbs">
-	<div class="large-12 columns">';
-	if(function_exists('bcn_display'))
-		bcn_display();
-	elseif($a['breadcrumbs_archive']) {
-		if(!is_home()){
-			echo '<a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">Home</a>';
-			if(is_archive()){
-				global $wp_query;
-				echo '&nbsp;&raquo;&nbsp;';
-				if(is_category()){
-					echo get_category_parents(get_query_var('cat'), TRUE, ' &raquo; ');
-					echo single_cat_title();
-				} elseif(is_tag()) {
-					__('Tagged', 'tswp').' ';
-					echo single_tag_title();
-				} elseif(is_tax()) {
-					$tax =  get_term_by('slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-					echo get_query_var('taxonomy').': '.$tax->name;
-				} elseif(is_day() || is_month() || is_year()) {
-					echo 'From '.the_time('F j, Y');
-				} elseif(is_author()) {
-					echo 'By '.the_author_meta('display_name', get_query_var('author'));
-				}
-				if_paged();
-			}
-			if(is_single()){
-				global $post;
-				echo '&nbsp;&raquo;&nbsp;';
-				$post_cats = get_the_category($post->ID);
-				if($post_cats[0]){
-					echo get_category_parents($post_cats[0]->term_id, TRUE, '&nbsp;&raquo;&nbsp;');
-					echo '<a href="'.get_category_link($post_cats[0]->term_id ).'">'.$post_cats[0]->cat_name.'</a> &raquo; ';
-				}
-				the_title();
-			}
-			if(is_page()){
-				global $post;
-				echo '&nbsp;&raquo;&nbsp;';
-				$parents = get_post_ancestors($post->ID);
-				$top_parent = $parents[count($parents)-1];
-				if($post->post_parent){
-					$parent = get_page($post->post_parent);
-					if($parent->post_parent){
-						$higher_parent = get_page($parent->post_parent);
-						if($higher_parent->post_parent){
-							$highest_parent = get_page($higher_parent->post_parent);
-							if($highest_parent->post_parent){
-								$ultra_parent = get_page($highest_parent->post_parent);
-								if($ultra_parent->post_parent){
-									$ultimate_parent = get_page($ultra_parent->post_parent);
-									echo '<a href="'.get_permalink($ultimate_parent->ID).'" title="'.$ultimage_parent->post_title.'">'.$ultimate_parent->post_title.'</a>&nbsp;&raquo;&nbsp;';
-								}
-								echo '<a href="'.get_permalink($ultra_parent->ID).'" title="'.$ultra_parent->post_title.'">'.$ultra_parent->post_title.'</a>&nbsp;&raquo;&nbsp;';
-							}
-							echo '<a href="'.get_permalink($highest_parent->ID).'" title="'.$highest_parent->post_title.'">'.$highest_parent->post_title.'</a>&nbsp;&raquo;&nbsp;';
-						}
-						echo '<a href="'.get_permalink($higher_parent->ID).'" title="'.$higher_parent->post_title.'">'.$higher_parent->post_title.'</a>&nbsp;&raquo;&nbsp;';
-					}
-					echo '<a href="'.get_permalink($parent->ID).'" title="'.$parent->post_title.'">'.$parent->post_title.'</a>&nbsp;&raquo;&nbsp;';
 
-				}
-				the_title();
-			}
-		}
-	}
-	echo '</div>
-	</div>';
-}
-endif;
-class adminfield
-{
+class adminfield {
 	private $meta;
 	private $value;
 	private $initial;

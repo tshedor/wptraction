@@ -6,8 +6,6 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-formats', array('gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'aside') );
 add_theme_support( 'post-thumbnails' );
 
-if ( ! isset( $content_width ) ) $content_width = 1000;
-
 function ts_initialize_options(){
 	global $options;
 	$a = get_option('ts_admin_options');
@@ -63,12 +61,7 @@ add_action('admin_enqueue_scripts', 'custom_admin_swag');
 
 function ts_scripts(){
 	global $a;
-	wp_register_script('mediaelement', get_template_directory_uri().'/inc/ts-stds/libs/mediaelement/mediaelement-and-player.min.js', array('jquery'));
-	wp_register_script('storyjs', get_template_directory_uri().'/inc/ts-stds/libs/timeline/js/storyjs-embed.js', array('jquery'));
-	wp_register_script('custom-media', get_template_directory_uri().'/inc/ts-stds/libs/custom-media.min.js', array('jquery', 'mediaelement'));
 	wp_enqueue_script('jquery');
-
-	wp_register_style('mediaelement-css', get_template_directory_uri().'/inc/ts-stds/libs/mediaelement/mediaelementplayer.min.css');
 
 	wp_enqueue_style('foundation', get_template_directory_uri().'/inc/foundation.min.css');
 	wp_enqueue_style('theme-style', get_template_directory_uri().'/style.css', array('foundation'));
@@ -110,23 +103,7 @@ function custom_search_template(){
 }
 add_filter('get_search_form', 'custom_search_template', 1, 0);
 
-function add_print_query_vars($vars) {
-	$new_vars = array('print');
-	$vars = $new_vars + $vars;
-	return $vars;
-}
-add_action("template_redirect", 'my_template_redirect_2322');
-
-function my_template_redirect_2322() {
-	global $wp;
-	global $wp_query;
-	if (isset($wp->query_vars["print"])) {
-		include_once(get_template_directory().'/inc/templates/print-template.php');
-		die();
-	}
-}
-add_filter('query_vars', 'add_print_query_vars');
-
+if(!function_exists('ts_comment')) :
 function ts_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
@@ -141,27 +118,27 @@ function ts_comment( $comment, $args, $depth ) {
 		global $post;
 	?>
 	<li <?php comment_class('row clearfix'); ?> id="comment-<?php comment_ID(); ?>">
-			 <div class="large-2 small-4 columns comment-meta comment-author">
- 				<?php echo get_avatar($comment, 60 ); ?>
-				<a href="<?php the_permalink(); ?>#comment-<?php comment_ID(); ?>" title="<?php _e('Link to this comment', 'tswp'); ?>">
- 					<?php echo get_comment_time('M. j, Y'); ?>
- 				</a>
-				<span class="edit"><?php edit_comment_link( __('Edit', 'tswp')); ?></span>
+		<div class="large-2 small-4 columns comment-meta comment-author">
+ 			<?php echo get_avatar($comment, 60 ); ?>
+			<a href="<?php the_permalink(); ?>#comment-<?php comment_ID(); ?>" title="<?php _e('Link to this comment', 'tswp'); ?>">
+ 				<?php echo get_comment_time('M. j, Y'); ?>
+ 			</a>
+			<span class="edit"><?php edit_comment_link( __('Edit', 'tswp')); ?></span>
+ 		</div>
+ 		<div class="large-10 small-8 columns">
+ 			<h4><?php comment_author_link();
+ 				if($comment->user_id === $post->post_author)
+					echo ' <span class="author">'.__('Author','tswp').'</span>';
+ 			?>
+ 			<span class="reply">
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __('Reply','tswp'), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+ 			</span></h4>
+ 			<?php if ('0' == $comment->comment_approved)
+			 	echo '<p class="comment-awaiting-moderation">'.__('Comment awaiting moderation', 'tswp').'</p>'; ?>
+ 			<div class="comment-content">
+ 				<?php comment_text(); ?>
  			</div>
- 			<div class="large-10 small-8 columns">
- 				<h4><?php comment_author_link();
- 					if($comment->user_id === $post->post_author)
-						echo ' <span class="author">'.__('Author','tswp').'</span>';
- 				?>
- 				<span class="reply">
-					<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __('Reply','tswp'), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
- 				</span></h4>
- 				<?php if ('0' == $comment->comment_approved)
-				 	echo '<p class="comment-awaiting-moderation">'.__('Comment awaiting moderation', 'tswp').'</p>'; ?>
- 				<div class="comment-content">
- 					<?php comment_text(); ?>
- 				</div>
- 			</div>
+ 		</div>
 
 <?php break; endswitch;
-}
+} endif; ?>
