@@ -122,7 +122,7 @@ class TSThemes {
 		echo '</a>';
 	}
 
-	static function ts_related($post_count = 5){
+	static function related($post_count = 5){
 		if(function_exists('related_posts'))
 			related_posts();
 		else {
@@ -152,7 +152,7 @@ class TSThemes {
 		}
 	}
 
-	static function ts_pagination(){
+	static function pagination(){
 		if(function_exists('wp_pagenavi'))
 			wp_pagenavi();
 		else {
@@ -169,7 +169,7 @@ class TSThemes {
 		}
 	}
 
-	static function ts_breadcrumbs(){
+	static function breadcrumbs(){
 		global $wp_query, $a;
 		echo '<div class="row clear breadcrumbs">
 		<div class="large-12 columns">';
@@ -239,7 +239,7 @@ class TSThemes {
 		echo '</div>
 		</div>';
 	}
-	static function get_copyright(){
+	static function copyright(){
 		global $a;
 		echo '<div class="copyright">';
 		if(!empty($a['copyright_text'])){
