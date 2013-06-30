@@ -508,6 +508,7 @@ img.alignright {
 /* BUTTONS */
 
 button, .button, input[type="submit"] {
+	-webkit-appearance:none;
 	@include box-shadow(none);
 	@include fs-xlg;
 	@include border-radius(6px);
@@ -516,8 +517,9 @@ button, .button, input[type="submit"] {
 	border:0px;
 	background:$domColor;
 	color:white;
-	font-weight:100;
+	font-weight:200;
 	font-family:$sans;
+	@include inline-block;
 	&:hover {
 		@include box-shadow(inset 0px -12px 22px 0px rgba(0, 0, 0, 0.24));
 		background:darken($domColor,12%);

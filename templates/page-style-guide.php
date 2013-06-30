@@ -48,7 +48,8 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 			</div>
 			<div class="row clearfix">
 				<div class="large-12 columns">
-					<h1>Forms</h1>
+					<h2>Forms</h2>
+					<hr />
 				</div>
 			</div>
 			<form class="row clearfix">
@@ -56,9 +57,9 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 					<h4>Text</h4>
 						<input type="text" placeholder="Text" />
 					<h4>Text Prepent</h4>
-						<div class="clearfix">
-							<span class="attached-label">Prefix</span>
-							<input type="text" class="attached-input" />
+						<div class="row clearfix">
+							<div class="prefix large-3 columns">Prefix</div>
+								<input type="text" class="attached-input large-9 columns" />
 						</div>
 					<h4>Radio</h4>
 					<div class="inline-radio">
@@ -86,8 +87,6 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 					</div>
 					<h4>Textarea</h4>
 						<textarea placeholder="Textarea"></textarea>
-					<h4>Speech Input</h4>
-						<input type="text" x-webkit-speech />
 					<h4>Select</h4>
 						<select>
 							<option>Option 1</option>
@@ -95,12 +94,17 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 							<option>Option 1</option>
 							<option>Option 1</option>
 						</select>
+					<h4>Speech Input</h4>
+						<input type="text" x-webkit-speech />
+					<h4>File Upload</h4>
+						<input type="file" />
+
 				</div>
 				<div class="large-6 columns">
 					<h4>Password</h4>
 						<input type="password" />
 					<h4>Range</h4>
-						<input type="range" />
+						<input type="range" name="range" />
 					<h4>Color</h4>
 						<input type="color" />
 					<h4>Number</h4>
@@ -109,19 +113,15 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						<input type="date" />
 					<h4>Submit</h4>
 						<input type="submit" value="Button" />
-					</form>
 				</div>
-			</div>
-			<div class="row clearfix">
-			</div>
+			</form>
 			<div class="row clearfix">
 				<div class="large-12 columns">
-					<h2>Content</h2>
+					<h2>Content and Type</h2>
+					<hr />
 				</div>
 			</div>
 			<div class="row clearfix">
-				<h2>Type</h2>
-				<hr />
 				<div class="large-6 columns">
 					<h1>Heading 1</h1>
 					<h2>Heading 2</h2>
@@ -169,6 +169,7 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 			<div class="row clearfix">
 				<div class="large-12 columns">
 					<h2>UI</h2>
+					<hr />
 				</div>
 			</div>
 			<div class="row clearfix">
