@@ -174,18 +174,13 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 			</div>
 			<div class="row clearfix">
 				<div class="large-6 columns">
-					<h3>Alerts</h3>
-					<div class="alert md-margin">Regular alert with text</div>
-					<div class="alert md-margin success">Success alert with text</div>
-					<div class="alert md-margin error">Error alert with text</div>
-				</div>
-				<div class="large-6 columns">
+
 					<h3>Buttons</h3>
 					<div class="button">Regular button</div>
-				</div>
-			</div>
-			<div class="row clearfix">
-				<div class="large-6 columns">
+					<h3>Labels</h3>
+					<div class="label">Regular label</div>
+					<div class="label label-success">Success label</div>
+					<div class="label label-warning">Warning label</div>
 					<h3>Breadcrumbs</h3>
 					<div class="breadcrumbs">
 						<a href="#">Breadcrumb one</a>
@@ -195,6 +190,10 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 					</div>
 				</div>
 				<div class="large-6 columns">
+					<h3>Alerts</h3>
+					<div class="alert md-margin">Regular alert with text</div>
+					<div class="alert md-margin success">Success alert with text</div>
+					<div class="alert md-margin error">Error alert with text</div>
 					<h3>Pagination</h3>
 					<div class="page-navigation">
 						<span class="page-numbers current">1</span>
@@ -203,13 +202,6 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						<a href="#" class="page-numbers">4</a>
 						<a href="#" class="next page-numbers">&nbsp;Next&nbsp;&raquo;</a>
 					</div>
-				</div>
-			</div>
-			<div class="row clearfix">
-				<div class="large-6 columns">
-					<div class="label">Regular label</div>
-					<div class="label label-success">Success label</div>
-					<div class="label label-warning">Warning label</div>
 				</div>
 			</div>
 			<div class="clear"></div>
