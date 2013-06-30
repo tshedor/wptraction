@@ -147,7 +147,7 @@ class TSThemes {
 						echo '</ul>';
 					endif; wp_reset_query();
 				} else
-					_e('No related posts', 'tswp');
+					return;
 			}
 		}
 	}
@@ -314,7 +314,7 @@ class adminfield {
 	}
 	public function text() {
 		$html = $this->initial;
-		$html .= '<input name="'.$this->value['id'].'" type="text" value="';
+		$html .= '<input name="'.$this->value['id'].'" type="text" id="'.$this->value['id'].'" value="';
 		if ($this->meta != "")
 			$html .= stripslashes($this->meta);
 		$html .= '" placeholder="'.stripslashes($this->value['std']).'" ';
@@ -452,7 +452,7 @@ class adminfield {
 	}
 	public function hidden() {
 		$html = $this->initial;
-		$html .= '<input name="'.$this->value['id'].'" type="hidden" value="';
+		$html .= '<input name="'.$this->value['id'].'" type="hidden" id="'.$this->value['id'].'" value="';
 		if ($this->meta != "")
 			$html .= $this->meta;
 		$html .= '" placeholder="'.$this->value['std'].'" ';
