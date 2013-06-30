@@ -181,10 +181,7 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 				</div>
 				<div class="large-6 columns">
 					<h3>Buttons</h3>
-					<button>Regular button</button>
 					<div class="button">Regular button</div>
-					<div class="button success">Regular button</div>
-					<div class="button error">Regular button</div>
 				</div>
 			</div>
 			<div class="row clearfix">

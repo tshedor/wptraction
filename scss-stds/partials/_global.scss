@@ -535,7 +535,9 @@ button, .button, input[type="submit"] {
 		color:white
 	}
 }
-
+button {
+	font-weight:100;
+}
 /* NAVIGATION */
 .page-navigation, .wp-pagenavi {
 	@include fs-xlg;
