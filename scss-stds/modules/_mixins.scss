@@ -92,17 +92,27 @@ $monospace:'Bitstream Vera Sans Mono', Consolas, Monaco, Menlo, 'Andale Mono', m
 	-moz-animation: $content;
 	-webkit-animation: $content;
 	-o-animation: $content;
-	-ms-animation: $content;
-	-khtml-animation: $content;
 	animation: $content;
 }
 @mixin keyframes($name) {
   @-moz-keyframes #{$name} { @content; }
   @-webkit-keyframes #{$name} { @content; }
   @-o-keyframes #{$name} { @content; }
-  @-ms-keyframes #{$name} { @content; }
-  @-khtml-keyframes #{$name} { @content; }
   @keyframes #{$name} { @content; }
+}
+@mixin placeholder-text($color:$gray) {
+	::-webkit-input-placeholder {
+		color:$color;
+	}
+	::-moz-input-placeholder {
+		color:$color;
+	}
+	:-moz-input-placeholder {
+		color:$color;
+	}
+	:-ms-input-placeholder {
+		color:$color;
+	}
 }
 /******* FOUNDATION ************/
 

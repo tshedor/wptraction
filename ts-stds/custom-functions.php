@@ -116,7 +116,7 @@ class TSThemes {
 		global $a;
 		echo '<a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">';
 			if($a['logo'] == '')
-				echo '<h1>'.get_bloginfo('name').'</h1>';
+				echo '<h2 class="head-logo">'.get_bloginfo('name').'</h2>';
 			else
 				echo '<img src="'.$a['logo'].'" alt="'.get_bloginfo('name').'" />';
 		echo '</a>';
