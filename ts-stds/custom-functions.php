@@ -115,7 +115,7 @@ class TSThemes {
 	static function logo(){
 		global $a;
 		echo '<a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">';
-			if($a['logo'] == '')
+			if(empty($a['logo']))
 				echo '<h2 class="head-logo">'.get_bloginfo('name').'</h2>';
 			else
 				echo '<img src="'.$a['logo'].'" alt="'.get_bloginfo('name').'" />';
@@ -316,8 +316,8 @@ class adminfield {
 		$html = $this->initial;
 		$html .= '<input name="'.$this->value['id'].'" type="text" id="'.$this->value['id'].'" value="';
 		if ($this->meta != "")
-			$html .= stripslashes($this->meta);
-		$html .= '" placeholder="'.stripslashes($this->value['std']).'" ';
+			$html .= htmlspecialchars($this->meta);
+		$html .= '" placeholder="'.htmlspecialchars($this->value['std']).'" ';
 		if(isset($this->value['required']))
 			$html .= 'required data-required="true"';
 		$html .= ' />';
@@ -332,12 +332,12 @@ class adminfield {
 		if($this->meta) {
 			foreach($this->meta as $row) {
 				$html .= '<li><span class="sort hndle">|||</span>
-				<input type="text" name="'.$this->value['id'].'['.$i.']" id="'.$this->field['id'].'" value="'.stripslashes($row).'" /><a class="repeatable-remove button" href="#">-</a></li>';
+				<input type="text" name="'.$this->value['id'].'['.$i.']" id="'.$this->field['id'].'" value="'.htmlspecialchars($row).'" /><a class="repeatable-remove button" href="#">-</a></li>';
 				$i++;
 			}
 		} else {
 			$html .= '<li><span class="sort hndle">|||</span>
-			<input type="text" name="'.$this->value['id'].'['.$i.']" id="'.$this->field['id'].'" value="'.stripslashes($row).'" /><a class="repeatable-remove button" href="#">-</a></li>';
+			<input type="text" name="'.$this->value['id'].'['.$i.']" id="'.$this->field['id'].'" value="'.htmlspecialchars($row).'" /><a class="repeatable-remove button" href="#">-</a></li>';
 		}
 		$html .= $this->finish;
 		echo $html;
@@ -494,10 +494,10 @@ class adminfield {
 		if(isset($this->value['required']))
 			$html .= ' required ';
 		if ($this->meta == "")
-			$html .= 'placeholder="'.stripslashes($this->value['std']).'"';
+			$html .= 'placeholder="'.htmlspecialchars($this->value['std']).'"';
 		$html .= '>';
 		if ($this->meta != "")
-			$html .= stripslashes($this->meta);
+			$html .= htmlspecialchars($this->meta);
 		$html .= '</textarea>';
 		$html .= $this->finish;
 		echo $html;
@@ -509,9 +509,9 @@ class adminfield {
 			$html .= ' required';
 		$html .= '>';
 			if ($this->meta != "")
-				$html .= stripslashes($this->meta );
+				$html .= htmlspecialchars($this->meta );
 			else
-				$html .= stripslashes($this->value['std']);
+				$html .= htmlspecialchars($this->value['std']);
 			$html .= '</textarea>';
 			$html .= $this->finish;
 		echo $html;
@@ -519,9 +519,9 @@ class adminfield {
 	public function tinymce(){
 		echo $this->initial;
 			if ($this->meta != "")
-				$val = stripslashes($this->meta);
+				$val = htmlspecialchars($this->meta);
 			else
-				$val = stripslashes($this->value['std']);
+				$val = htmlspecialchars($this->value['std']);
 		wp_editor( $val, $this->value['id'], array( 'textarea_name' => $this->value['id'], 'media_buttons' => true, 'textarea_rows' => 12, 'tinymce' => array( 'theme_advanced_buttons1' => 'formatselect,forecolor,|,bold,italic,underline,|,bullist,numlist,blockquote,|,justifyleft,justifycenter,justifyright,justifyfull,|,link,unlink,|,spellchecker,wp_adv' ) ) );
 		echo $this->finish;
 	}
@@ -682,6 +682,10 @@ class adminfield {
 	}
 	public function customnotice(){
 		$html = $this->value['std'];
+		echo $html;
+	}
+	public function clearfix(){
+		$html = '<input type="hidden" name="clearfix" /><div class="clearfix"></div>';
 		echo $html;
 	}
 	public function endarray(){

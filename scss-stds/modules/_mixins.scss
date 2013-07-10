@@ -87,33 +87,6 @@ $monospace:'Bitstream Vera Sans Mono', Consolas, Monaco, Menlo, 'Andale Mono', m
 @mixin emboss {
 	@include text-shadow(-1px -1px 1px #fff, 1px 1px 1px #000);
 }
-
-@mixin custom-animation($content){
-	-moz-animation: $content;
-	-webkit-animation: $content;
-	-o-animation: $content;
-	animation: $content;
-}
-@mixin keyframes($name) {
-  @-moz-keyframes #{$name} { @content; }
-  @-webkit-keyframes #{$name} { @content; }
-  @-o-keyframes #{$name} { @content; }
-  @keyframes #{$name} { @content; }
-}
-@mixin placeholder-text($color:$gray) {
-	::-webkit-input-placeholder {
-		color:$color;
-	}
-	::-moz-input-placeholder {
-		color:$color;
-	}
-	:-moz-input-placeholder {
-		color:$color;
-	}
-	:-ms-input-placeholder {
-		color:$color;
-	}
-}
 /******* FOUNDATION ************/
 
 @function emCalc($pxWidth) {
@@ -142,7 +115,7 @@ $monospace:'Bitstream Vera Sans Mono', Consolas, Monaco, Menlo, 'Andale Mono', m
 		@include border-radius(0 0 $radius $radius);
 	}
 }
-@mixin css-triangle($triangle-size, $triangle-color, $triangle-direction) {
+@mixin psuedo-triangle($triangle-size, $triangle-color, $triangle-direction) {
   content: "";
   display: block;
   width: 0;

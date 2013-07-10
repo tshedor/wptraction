@@ -841,3 +841,76 @@ sup {
 	font-size:smaller;
 	vertical-align:super;
 }
+
+/* MAGNIFIC */
+
+.mfp-zoom-in {
+	.mfp-figure {
+		@include opacity(0);
+		@include transform(scale(0.8));
+		@include transition(all 0.2s ease-in-out);
+	}
+	//Animate In
+	&.mfp-ready {
+		&.mfp-bg {
+			@include opacity(0.8);
+		}
+		.mfp-figure {
+			@include opacity(1);
+			@include transform(scale(1));
+		}
+	}
+	&.mfp-removing .mfp-figure {
+		@include transform(scale(0.8));
+		@include opacity(0);
+	}
+	&.mfp-bg {
+		@include opacity(0);
+		@include transition(opacity 0.3s ease-out);
+	}
+	&.mfp-removing.mfp-bg {
+		@include opacity(0);
+	}
+}
+.mfp-removing {
+	.mfp-arrow {
+		@include opacity(0);
+	}
+}
+.mfp-zoom-in.mfp-ready.mfp-bg {
+	@include opacity(0.88);
+}
+
+.mfp-img {
+	background:white;
+}
+
+button.mfp-arrow {
+	&:hover {
+		@include box-shadow(none);
+	}
+}
+.mfp-zoom-out-cur,.mfp-zoom-out-cur .mfp-image-holder .mfp-close, .mfp-zoom {
+	cursor:auto;
+}
+.mfp-arrow {
+	&:hover {
+		background:none;
+	}
+}
+.mfp-arrow-left:before, .mfp-arrow-left .mfp-b{
+	border-right:none;
+}
+.mfp-arrow-right:before, .mfp-arrow-right .mfp-b {
+	border-left:none;
+}
+img.mfp-img {
+	padding:0;
+	@include border-radius(2px);
+}
+.mfp-close {
+	display:none!important;
+}
+.mfp-bottom-bar {
+	margin-top:8px
+}
