@@ -2,7 +2,7 @@
 /*
 Template Name: Sitemap
 */
-get_header(); $a = get_option('ts_admin_options'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+get_header(); global $a; if(have_posts()) : while(have_posts()) : the_post(); ?>
 <div class="row clearfix">
 	<article class="large-12 columns" id="<?php the_ID(); ?>">
 		<div <?php post_class('entry clearfix'); ?>>

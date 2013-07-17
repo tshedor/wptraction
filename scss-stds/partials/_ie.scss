@@ -24,12 +24,12 @@
 		}
 	}
 	&.ie8 {
-		.gradient {
+		.gradient, .button, button, input[type="submit"], input[type="button"] {
 			filter:none;
 		}
 	}
 	&.ie9 {
-		.gradient {
+		.gradient, .button, button, input[type="submit"], input[type="button"] {
 			filter:none;
 		}
 	}
