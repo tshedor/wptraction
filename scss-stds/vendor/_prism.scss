@@ -1,9 +1,8 @@
 /**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
+ * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
+ * @author Tim  Shedor
  */
-
 
 @mixin tab-size($value:auto){
 	-moz-tab-size:$value;
@@ -11,10 +10,9 @@
 	tab-size:$value;
 }
 
-
 $selector:#2f9c0a;
-$comment:$light_gray;
-$punctuation:#999;
+$comment:#7D8B99;
+$punctuation:#5F6364;
 $property:#c92c2c;
 $string:#a67f59;
 $important:#e90;
@@ -23,80 +21,117 @@ $background:lighten($lightest_gray,4.5%);
 
 $top-spacing:1em;
 
-/* Plugins */
+// Plugins
 $line-highlight:true;
 $show-invisibles:false;
 
 code[class*="language-"], pre[class*="language-"] {
+	color:black;
+	font-family:$monospace;
+	direction:ltr;
+	text-align:left;
+	@include force-wrap;
+	word-spacing:normal;
 	@include tab-size(4);
 	@include hyphens(none);
-	color: black;
-	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, Menlo, 'Andale Mono', monospace;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
 }
 
 pre[class*="language-"] {
-	border-left:6px solid $domColor;
-	padding: $top-spacing;
-	margin:0;
-	overflow: auto;
-	padding-top:0px;
+	position: relative;
+	padding: 1em;
+	margin: .5em 0;
+	@include box-shadow(-1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf);
+	border-left: 10px solid #358ccb;
+	background-color: #fdfdfd;
+	background-size: 3em 3em;
+	background-origin: content-box;
+	overflow: visible;
+	max-height: 30em;
 }
 
-@media print {
-	code[class*="language-"], pre[class*="language-"] {
-		text-shadow: none;
+// Code blocks
+
+code[class*="language"] {
+	max-height: 29em;
+	display: block;
+	overflow: scroll;
+}
+
+/* Margin bottom to accomodate shadow */
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+	background-color: #fdfdfd;
+	@include box-sizing(border-box);
+	margin-bottom: 1em;
+}
+
+/* Inline code */
+
+:not(pre) > code[class*="language-"] {
+	position: relative;
+	padding: .2em;
+	@include border-radius(0.3em);
+	color: #c92c2c;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+pre[class*="language-"] {
+	&:before, &:after {
+		content: '';
+		z-index: -2;
+		display: block;
+		position: absolute;
+		bottom: 0.75em;
+		left: 0.18em;
+		width: 40%;
+		height: 20%;
+		@include box-shadow(0 13px 8px #979797);
+		@include transform(rotate(-2deg));
 	}
 }
 
-/* Code blocks */
-
-:not(pre) {
-	&> code[class*="language-"], pre[class*="language-"] {
-		background: $background;
-	}
-	&> code[class*="language-"]{
-		@include border-radius(.3em);
-		padding:.1em;
-	}
+:not(pre) > code[class*="language-"]:after, pre[class*="language-"]:after {
+	right: 0.75em;
+	left: auto;
+	@include transform(rotate(2deg));
 }
 
 .token {
-	&.comment, &.prolog, &.doctype, &.cdata {
-		color: $comment;
+	&.comment, &.block-comment, &.prolog, &.doctype, &.cdata {
+		color:$comment;
 	}
 	&.punctuation {
 		color: $punctuation;
 	}
-	&.atrule, &.attr-value, &.keyword {
+	&.property, &.tag, &.boolean, &.number, &.function-name, &.constant, &.symbol {
+		color: $property;
+	}
+	&.selector, &.attr-name, &.string, &.function, &.builtin {
+		color: $selector;
+	}
+	&.operator, &.entity, &.url, &.variable {
+		color: $string;
+		background: rgba(white, 0.5);
+	}
+	&.atrule, &.attr-value, &.keyword, &.class-name {
 		color: $attr-value;
 	}
-	&.regex {
+	&.regex, &.important {
 		color: $important;
 	}
+}
+
+.language-css .token.string, .style .token.string {
+	color: $string;
+	background: rgba(white, 0.5);
+}
+
+.token {
 	&.important {
-		color: $important;
-		font-weight: bold;
+		font-weight: normal;
 	}
 	&.entity {
 		cursor: help;
-	}
-	&.property, &.tag, &.boolean, &.number {
-		color: $property;
-	}
-	&.selector, &.attr-name, &.string {
-		color: $selector;
-	}
-	&.operator, &.entity, &.url {
-		color: $string;
-		background: hsla(0, 0%, 100%, 0.5); //white semi-transparent
-	}
-	a {
-		color:inherit;
 	}
 }
 
@@ -104,12 +139,23 @@ pre[class*="language-"] {
 	@include opacity(0.7);
 }
 
-/* Hacks and shame */
-
-.language-css .token.string, .style .token.string {
-	color: $string;
-	background: hsla(0, 0%, 100%, 0.5); //white semi-transparent
+@media screen and (max-width: 767px) {
+	pre[class*="language-"] {
+		&:before, &:after {
+			bottom: 14px;
+			@include box-shadow(none);
+		}
+	}
 }
+
+/* Plugin styles */
+
+.token {
+	&.tab:not(:empty):before, &.cr:before, &.lf:before {
+		color: #e0d7d1;
+	}
+}
+
 @if $line-highlight == true {
 .line-highlight {
 	position: absolute;

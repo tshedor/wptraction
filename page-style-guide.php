@@ -6,44 +6,21 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 <?php global $a; ?>
 <div class="row clearfix">
 	<div class="large-12 columns">
-		<h1 class="single-title"><?php the_title(); ?></h1>
+		<div class="lg-margin text-center">
+			<h1 class="single-title"><?php the_title(); ?></h1>
+		</div>
 		<div <?php post_class('entry clearfix'); ?>>
 			<?php the_content(); ?>
 			<h2>Colors</h2>
 			<div class="row">
-				<div class="color-block large-4 columns dom-color"></div>
-				<div class="color-block large-4 columns sub-color"></div>
-				<div class="color-block large-4 columns ter-color"></div>
-			</div>
-			<div class="row">
-				<h2>Quote (blockquote)</h2>
-				<blockquote>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar tellus lorem. Suspendisse est arcu, pretium a commodo nec, placerat ac metus. Praesent non ipsum lorem. Quisque dolor nulla, pulvinar eu orci ut, mollis malesuada ligula. Nam eu elit nec erat mollis mattis sed sit amet nunc. Cras tincidunt ligula id vestibulum vehicula. Vestibulum ornare nisl a enim mattis, in dignissim felis consectetur. Vestibulum sed feugiat diam. Sed id urna lacinia velit consectetur egestas eget sit amet est. Nam blandit varius tempor. Nulla vel risus pellentesque, imperdiet lacus id, lobortis enim. Ut mattis aliquam metus eget faucibus. Curabitur sed facilisis lacus, at malesuada orci. Praesent volutpat velit vitae mauris faucibus, quis lacinia lectus faucibus. Curabitur aliquet, elit convallis rutrum pretium, magna nulla posuere eros, ac feugiat odio risus quis dui.
-					<cite>Quote Source</cite>
-				</blockquote>
-			</div>
-			<div class="row clearfix">
-				<div class="large-6 columns">
-					<h2>Unordered List</h2>
-					<ul>
-						<li>List Item</li>
-						<li>List Item</li>
-						<li>List Item</li>
-						<li>List Item</li>
-						<li>List Item</li>
-						<li>List Item</li>
-					</ul>
+				<div class="large-4 columns">
+					<div class="color-block dom-color"></div>
 				</div>
-				<div class="large-6 columns">
-					<h2>Ordered List</h2>
-					<ol>
-						<li>List Item</li>
-						<li>List Item</li>
-						<li>List Item</li>
-						<li>List Item</li>
-						<li>List Item</li>
-						<li>List Item</li>
-					</ol>
+				<div class="large-4 columns">
+					<div class="color-block sub-color"></div>
+				</div>
+				<div class="large-4 columns">
+					<div class="color-block ter-color"></div>
 				</div>
 			</div>
 			<div class="row clearfix">
@@ -166,6 +143,86 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 					<p>Lorem ipsum <code>dolor sit amet</code></p>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="large-6 columns">
+					<h4>Quote (blockquote)</h4>
+					<blockquote>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar tellus lorem. Suspendisse est arcu, pretium a commodo nec, placerat ac metus. Praesent non ipsum lorem. Quisque dolor nulla, pulvinar eu orci ut, mollis malesuada ligula. Nam eu elit nec erat mollis mattis.
+						<cite>Quote Source</cite>
+					</blockquote>
+				</div>
+				<div class="large-3 columns">
+					<h4>Unordered List</h4>
+					<ul>
+						<li>List Item</li>
+						<li>List Item</li>
+						<li>List Item</li>
+						<li>List Item</li>
+						<li>List Item</li>
+						<li>List Item</li>
+					</ul>
+				</div>
+				<div class="large-3 columns">
+					<h4>Ordered List</h4>
+					<ol>
+						<li>List Item</li>
+						<li>List Item</li>
+						<li>List Item</li>
+						<li>List Item</li>
+						<li>List Item</li>
+						<li>List Item</li>
+					</ol>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="large-6 columns">
+					<h4>Table</h4>
+					<table>
+						<tbody>
+							<tr>
+								<th>Heading</th>
+								<th>Heading</th>
+								<th>Heading</th>
+							</tr>
+							<tr>
+								<td>Label</td>
+								<td>Much longer and more descriptive attribute</td>
+								<td>Secondary label</td>
+							</tr>
+							<tr>
+								<td>Label</td>
+								<td>Much longer and more descriptive attribute</td>
+								<td>Secondary label</td>
+							</tr>
+							<tr>
+								<td>Label</td>
+								<td>Much longer and more descriptive attribute</td>
+								<td>Secondary label</td>
+							</tr>
+							<tr>
+								<td>Label</td>
+								<td>Much longer and more descriptive attribute</td>
+								<td>Secondary label</td>
+							</tr>
+							<tr>
+								<td>Label</td>
+								<td>Much longer and more descriptive attribute</td>
+								<td>Secondary label</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="large-6 columns">
+					<h4>Code</h4>
+<pre>
+<code class="language-css">.dollar-bill {
+  color:#3d3d3d;
+  background:green;
+}</code>
+</pre>
+				</div>
+			</div>
 			<div class="row clearfix">
 				<div class="large-12 columns">
 					<h2>UI</h2>
@@ -174,14 +231,11 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 			</div>
 			<div class="row clearfix">
 				<div class="large-6 columns">
-
-					<h3>Buttons</h3>
-					<div class="button">Regular button</div>
-					<h3>Labels</h3>
-					<div class="label">Regular label</div>
-					<div class="label label-success">Success label</div>
-					<div class="label label-warning">Warning label</div>
-					<h3>Breadcrumbs</h3>
+					<h4>Buttons</h4>
+					<a href="#" class="button">Regular button</a>
+					<h4>Labels</h4>
+					<span class="label">Regular label</span> <span class="label info">Info label</span> <span class="label success">Success label</span> <span class="label error">Warning label</span>
+					<h4>Breadcrumbs</h4>
 					<div class="breadcrumbs">
 						<a href="#">Breadcrumb one</a>
 						<a href="#">Breadcrumb two</a>
@@ -190,11 +244,12 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 					</div>
 				</div>
 				<div class="large-6 columns">
-					<h3>Alerts</h3>
-					<div class="alert md-margin">Regular alert with text</div>
-					<div class="alert md-margin success">Success alert with text</div>
-					<div class="alert md-margin error">Error alert with text</div>
-					<h3>Pagination</h3>
+					<h4>Alerts</h4>
+					<div class="alert sm-margin">Regular alert with text</div>
+					<div class="alert sm-margin info">Info alert with text</div>
+					<div class="alert sm-margin success">Success alert with text</div>
+					<div class="alert sm-margin error">Error alert with text</div>
+					<h4>Pagination</h4 >
 					<div class="page-navigation">
 						<span class="page-numbers current">1</span>
 						<a href="#" class="page-numbers">2</a>
@@ -202,6 +257,150 @@ get_header(); if(have_posts()) : while(have_posts()) : the_post(); ?>
 						<a href="#" class="page-numbers">4</a>
 						<a href="#" class="next page-numbers">&nbsp;Next&nbsp;&raquo;</a>
 					</div>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="large-12 columns">
+					<h2>Shortcodes</h2>
+					<hr />
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="large-12 columns">
+					<h3>Content Supplements</h3>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="large-4 columns">
+					<pre><code class="language-shortcodes">[inline_text title="More" align="(left,right,center,none)"]Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar tellus lorem....[/inline_text]</code></pre>
+					<?php echo do_shortcode('[inline_text title="More" align="left"]Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar tellus lorem. Suspendisse est arcu, pretium a commodo nec, placerat ac metus. Praesent non ipsum lorem. Quisque dolor nulla, pulvinar eu orci ut, mollis malesuada ligula. Nam eu elit nec erat mollis mattis.[/inline_text]') ?>
+				</div>
+				<div class="large-4 columns">
+					<pre><code class="language-shortcodes">[sibling post="1" description="Your first Wordpress post" media="(video,audio,gallery)" align="(left,right,center,none)" /]</code></pre>
+					<?php echo do_shortcode('[sibling post="1" description="Your first Wordpress post" media="(video,audio,gallery)" align="(left,right,center,none)" /]') ?>
+				</div>
+
+				<div class="large-4 columns">
+					<pre><code class="language-shortcodes">[contact email="youremail@example.com" label="Get in Touch" /]</code></pre>
+					<?php echo do_shortcode('[contact email="youremail@example.com" label="Get in Touch" /]'); ?>
+				</div>
+			</div>
+			<div class="row md-margin clearfix">
+				<div class="large-12 columns">
+					<h3>Tabs</h3>
+				</div>
+			</div>
+			<div class="row clearfix sm-margin">
+				<div class="large-7 large-centered columns">
+<pre><code class="language-shortcodes">[tabbed type="(vertical, horizontal)"]
+  [tab name="Tab 1"]Tab one content would appear here[/tab]
+  [tab name="Tab 2"]Tab two content would appear here[/tab]
+  [tab name="Tab 3"]Tab three content would appear here[/tab]
+[/tabbed]
+</code></pre>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="large-6 columns">
+					<h5>Vertical</h5>
+					<?php echo do_shortcode('[tabbed type="vertical"][tab name="Tab 1" ]Tab one content would appear here[/tab][tab name="Tab 2"]Tab two content would appear here[/tab][tab name="Tab 3" ]Tab three content would appear here[/tab][/tabbed]') ?>
+				</div>
+				<div class="large-6 columns">
+					<h5>Horizontal</h5>
+					<?php echo do_shortcode('[tabbed type="horizontal"][tab name="Tab 1" ]Tab one content would appear here[/tab][tab name="Tab 2"]Tab two content would appear here[/tab][tab name="Tab 3" ]Tab three content would appear here[/tab][/tabbed]') ?>
+				</div>
+			</div>
+			<div class="row clearfix md-margin">
+				<div class="large-12 columns">
+					<h2>Code</h2>
+				</div>
+			</div>
+			<div class="row clearfix sm-margin">
+				<div class="large-8 large-centered columns">
+<pre><code class="language-shortcodes">[example just_code="(false, true)" lang="(markup, css, javascript, php)"]
+  &lt;div>
+    &lt;p style="color:green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar tellus lorem. Suspendisse est arcu, pretium a commodo nec, placerat ac metus. Praesent non ipsum lorem.&lt;/p>
+  &lt;/div>
+[/example]
+</code></pre>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="large-6 columns">
+					<h4>Just_code="false"</h4>
+<?php echo do_shortcode('[example just_code="false" lang="markup"]<div>
+    <p style="color:green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar tellus lorem. Suspendisse est arcu, pretium a commodo nec, placerat ac metus. Praesent non ipsum lorem.</p>
+</div>[/example]') ?>
+				</div>
+				<div class="large-6 columns">
+					<h4>Just_code="true"</h4>
+<?php echo do_shortcode('[example just_code="true" lang="markup"]<div>
+    <p style="color:green">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar tellus lorem. Suspendisse est arcu, pretium a commodo nec, placerat ac metus. Praesent non ipsum lorem.</p>
+</div>[/example]') ?>
+				</div>
+			</div>
+			<div class="row clearfix md-margin">
+				<div class="large-12 columns">
+					<h3>Alerts and Labels</h3>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="large-6 columns">
+					<pre class="language-shortcodes"><code>[label name="Heads Up" type="(bonus/success, tip/info, error/danger)"]Label paragraph (opt.)[/label]</code></pre>
+				</div>
+				<div class="large-6 columns">
+					<pre class="language-shortcodes"><code>[alert type="(bonus/success, tip/info, error/danger)"]Alert content[/alert]</code></pre>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="large-6 columns">
+					<div class="sm-margin">
+						<h4>Default</h4>
+						<?php echo do_shortcode('[label name="Heads Up"]Custom label[/label]'); ?>
+					</div>
+					<div class="sm-margin">
+						<h4>Info/Tip</h4>
+						<?php echo do_shortcode('[label name="Tip" type="tip"]Custom label (tip)[/label]'); ?>
+					</div>
+					<div class="sm-margin">
+						<h4>Bonus/Success</h4>
+						<?php echo do_shortcode('[label name="Bonus" type="bonus"]Custom label (bonus)[/label]'); ?>
+					</div>
+					<div class="sm-margin">
+						<h4>Error/Danger</h4>
+						<?php echo do_shortcode('[label name="Danger" type="danger"]Custom label (danger)[/label]'); ?>
+					</div>
+				</div>
+				<div class="large-6 columns">
+					<div class="sm-margin">
+						<h4>Default</h4>
+						<?php echo do_shortcode('[alert]Custom alert[/alert]'); ?>
+					</div>
+					<div class="sm-margin">
+						<h4>Info/Tip</h4>
+						<?php echo do_shortcode('[alert type="info"]Custom alert (info)[/alert]'); ?>
+					</div>
+					<div class="sm-margin">
+						<h4>Bonus/Success</h4>
+						<?php echo do_shortcode('[alert type="success"]Custom alert (success)[/alert]'); ?>
+					</div>
+					<div class="sm-margin">
+						<h4>Error/Danger</h4>
+						<?php echo do_shortcode('[alert type="error"]Custom alert (error)[/alert]'); ?>
+					</div>
+				</div>
+			</div>
+			<div class="row clearfix md-margin">
+				<div class="large-12 columns">
+					<h3>Sitemap</h3>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="large-4 columns">
+					<pre><code class="language-shortcodes">[sitemap pages="true" categories="true" tags="true" /]</code></pre>
+				</div>
+				<div class="large-8 columns">
+					<?php echo do_shortcode('[sitemap pages="true" categories="true" tags="true" /]') ?>
 				</div>
 			</div>
 			<div class="clear"></div>

@@ -158,6 +158,18 @@ $monospace:'Bitstream Vera Sans Mono', Consolas, Monaco, Menlo, 'Andale Mono', m
 			margin-left: -$size;
 			border-top-color: $color;
 		}
+		@if ($direction == left){
+			top: 100%;
+			left: 50%;
+			margin-left: -$size;
+			border-left-color: $color;
+		}
+		@if ($direction == right){
+			top: 100%;
+			left: 50%;
+			margin-left: -$size;
+			border-left-color: $color;
+		}
 	}
 }
 @mixin clearfix() {

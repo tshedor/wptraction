@@ -1,6 +1,5 @@
 /********* GENERAL ***********/
 
-@import "inc/fonts/CharlieGordon/style.css";
 html {
 	font-size:100%;
 	font-size:remCalc(16px);
@@ -29,14 +28,53 @@ h3 {
 h4 {
 	color:$gray;
 }
+.italic {
+	font-style:italic;
+}
 a h1, a h2, a h3, a h4, a h5, a h6 {
 	@include std-hover($linkColor);
 }
-code {
+.circle {
+	@include border-radius(500px);
+}
+pre,code {
 	font-weight:normal;
+	@include word-break(break-all);
+	word-wrap:break-word;
+	white-space: -moz-pre-wrap;
+	white-space: pre-wrap;
+	background:#f4f4f4;
+	border:1px solid #ddd;
+	color:$domColor;
+	//font-family:$monospace;
+	padding:4px 8px;
+	@include border-radius(4px);
+}
+pre code {
+	padding:0;
+	border:0;
+	color:$dark_gray;
+}
+th {
+	font-weight:bold;
+	background:$lightest_gray;
 }
 ul {
 	padding-left:17px;
+}
+ol {
+	list-style:decimal;
+}
+sub {
+	font-size:smaller;
+	vertical-align:sub
+}
+sup {
+	font-size:smaller;
+	vertical-align:super;
+}
+.disable-hover, .disable-hover * {
+	pointer-events: none !important;
 }
 blockquote {
 	padding-top:0px;
@@ -145,7 +183,6 @@ hr {
 	@include color-scheme;
 	@include fs-small;
 	position:relative;
-	text-align:right;
 	.cred sup {
 		@include fs-xxsmall;
 		position:relative;
@@ -168,6 +205,7 @@ hr {
 	margin-bottom:30px;
 	padding:8px;
 	background:$lightest_gray;
+	max-width:100%;
 	img {
 		border:2px solid #fff;
 		margin-bottom:7px;
@@ -181,7 +219,7 @@ hr {
 .wp-video-shortcode, .mejs-video, .mejs-container {
 	margin:15px;
 }
-.post, .entry {
+.hentry {
 	.mejs-container .mejs-controls {
 		background-color:$domColor;
 		@include filter-gradient($domColor, darken($domColor, 8%), vertical);
@@ -272,26 +310,13 @@ figure.quote {
 		}
 	}
 }
-.post-tease {
-	margin:45px 0px;
-}
-
-.post {
+.hentry {
 	ul {
 		list-style:disc;
-	}
-	ol {
-		list-style:decimal;
-	}
-	.entry {
-		margin-bottom:30px;
-	}
-}
-.entry {
-	ul {
-		list-style:disc;
-		margin-left:2em;
-		padding-left:0px;
+		font-size:1em;
+		line-height:1.4;
+		margin:-0.5em 0 2em 2em;
+		padding-left:0;
 	}
 	ol {
 		margin-left:2em;
@@ -437,21 +462,27 @@ figure.quote {
 .notice {
 	@include fs-medium;
 }
+.label {
+	padding:2px 4px;
+	@include border-radius(3px);
+}
+.label, .notice, .alert {
+	background:$domColor;
+	color:white;
+	&.success, &.bonus {
+		background:#4AC089;
+	}
+	&.info, &.tip {
+		background:#4487CE;
+	}
+	&.error, &.danger {
+		background:#B64040;
+	}
+}
 .notice, .alert {
 	@include border-radius(3px);
 	@include box-shadow(0px 2px 8px -3px $gray);
 	padding:10px;
-	background:$domColor;
-	color:white;
-	&.success {
-		background:#4AC089;
-	}
-	&.info {
-		background:#4487CE;
-	}
-	&.error {
-		background:#B64040;
-	}
 	&.no-shadow{
 		@include box-shadow(none);
 	}
@@ -508,9 +539,6 @@ figure.quote {
 	}
 	@include fs-medium;
 }
-.extra-margin {
-	margin:30px 0px;
-}
 img.alignleft {
 	float:left;
 	margin-right:10px;
@@ -521,7 +549,6 @@ img.alignright {
 }
 
 /* BUTTONS */
-
 button, .button, input[type="submit"] {
 	-webkit-appearance:none;
 	@include box-shadow(none);
@@ -532,7 +559,7 @@ button, .button, input[type="submit"] {
 	@include filter-gradient(lighten($domColor,5%), darken($domColor,5%), vertical);
 	@include background(linear-gradient(top, lighten($domColor,5%) 0%, darken($domColor,5%) 100%));
     //text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
-    text-shadow: 0 -1px 1px rgba(darken($background, 30%), 0.35);
+    text-shadow: 0 -1px 1px rgba(darken($domColor, 30%), 0.35);
 	padding:4px 14px;
 	border:0px;
 	color:white;
@@ -540,16 +567,17 @@ button, .button, input[type="submit"] {
 	font-family:$sans;
 	@include inline-block;
 	&:hover {
+		color:white;
 		$experimental-support-for-svg: true;
 		@include filter-gradient(lighten($domColor,10%), darken($domColor,5%), vertical);
 		@include background(linear-gradient(top, lighten($domColor,10%) 0%, darken($domColor,5%) 100%));
 		cursor:pointer;
 	}
 	&:active {
-		@include box-shadow(inset 0px 1px 3px rgba(0, 0, 0, .3), 0px 1px 0px rgba(255, 255, 255, 1));
-		text-shadow: 0px 1px 0px rgba(255, 255, 255, .4);
-		background: desaturate($domColor, 20%);
-		color: darken($domColor, 20%);
+		@include box-shadow(inset 0px 2px 3px rgba(0, 0, 0, .3), 0px 2px 0px rgba(255, 255, 255, 1));
+		text-shadow: 0px -1px 2px rgba(darken($domColor, 30%), 0.5);
+		color:white;
+		outline:none;
 	}
 	a {
 		display:block;
@@ -564,7 +592,7 @@ button, input[type="submit"] {
 .page-navigation, .wp-pagenavi {
 	@include fs-xlg;
 	margin:15px 0px;
-	color:$subColor;
+	color:$domColor;
 	text-align:center;
 	.prev, .next, .first, .last, .pages {
 		@include fs-xsmall;
@@ -572,34 +600,30 @@ button, input[type="submit"] {
 		text-transform: uppercase;
 	}
 	a {
-		@include hover($subColor);
+		@include hover($domColor);
 		border:0px;
-		color:desaturate($domColor, 50%);
+		color:$subColor;
 	}
 	span {
 		border:0px;
 	}
 }
 
-.menu {
-	ul {
-		@include no-list;
-		li {
-			@include inline-block;
-			a {
-				@include sub;
-				display:block;
-				padding:0px 15px;
-			}
-			&:first-child a {
-				padding-left:0px!important;
-			}
+ul.menu {
+	@include no-list;
+	li {
+		@include inline-block;
+		a {
+			display:block;
+			padding:0px 15px;
+		}
+		&:first-child a {
+			padding-left:0px!important;
 		}
 	}
 }
 .breadcrumbs {
 	@include fs-medium;
-	margin-top:20px;
 	padding-left:0px;
 	border:0px;
 	background:inherit;
@@ -624,7 +648,7 @@ button, input[type="submit"] {
 		}
 	}
 }
-.link-list, .header ul {
+.header ul {
 	@include no-list;
 	li {
 		@include inline-block;
@@ -696,46 +720,25 @@ button, input[type="submit"] {
 	bottom:0;
 	left:0;
 	margin:0 auto;
-	padding:25% 0px;
+	padding:18% 0px;
 	min-height:100%;
 	width:100%;
 	background:$domColor;
 	background-color: $domColor;
 	color:white;
 	text-align:center;
+	line-height:1;
 	.coming-soon {
 		@include fs-xlg;
+		line-height:1;
 		margin:0;
-	}
-}
-.ts-contact {
-	max-width:460px;
-	input, textarea {
-		@include border-radius(5px);
-	}
-	textarea {
-		min-height:85px;
-	}
-	.button, button {
-		@include border-radius(3px);
-	}
-}
-.ts-sitemap {
-	@include no-list;
-	list-style:none!important;
-	li {
-		padding-left:10px;
-	}
-	li:first-child {
-		@include fs-xlg;
-		margin-bottom:10px;
-		padding-left:0px;
 	}
 }
 .search-form {
 	input[type="text"] {
 		@include box-shadow(none);
 		@include border-left-radius(5px);
+		@include border-right-radius(0);
 		float:left;
 		margin-right:-2px;
 		padding:7px;
@@ -764,7 +767,6 @@ button, input[type="submit"] {
 	}
 	li {
 		@include inline-block;
-		margin:4px;
 		&:after {
 			padding:0px 4px;
 			content:'\2f';
@@ -839,85 +841,4 @@ input[type="range"] {
 		width:14px;
 		height:14px;
 	}
-}
-sub {
-	font-size:smaller;
-	vertical-align:sub
-}
-sup {
-	font-size:smaller;
-	vertical-align:super;
-}
-
-/* MAGNIFIC */
-
-.mfp-zoom-in {
-	.mfp-figure {
-		@include opacity(0);
-		@include transform(scale(0.8));
-		@include transition(all 0.2s ease-in-out);
-	}
-	//Animate In
-	&.mfp-ready {
-		&.mfp-bg {
-			@include opacity(0.8);
-		}
-		.mfp-figure {
-			@include opacity(1);
-			@include transform(scale(1));
-		}
-	}
-	&.mfp-removing .mfp-figure {
-		@include transform(scale(0.8));
-		@include opacity(0);
-	}
-	&.mfp-bg {
-		@include opacity(0);
-		@include transition(opacity 0.3s ease-out);
-	}
-	&.mfp-removing.mfp-bg {
-		@include opacity(0);
-	}
-}
-.mfp-removing {
-	.mfp-arrow {
-		@include opacity(0);
-	}
-}
-.mfp-zoom-in.mfp-ready.mfp-bg {
-	@include opacity(0.88);
-}
-
-.mfp-img {
-	background:white;
-}
-
-button.mfp-arrow {
-	&:hover {
-		@include box-shadow(none);
-	}
-}
-.mfp-zoom-out-cur,.mfp-zoom-out-cur .mfp-image-holder .mfp-close, .mfp-zoom {
-	cursor:auto;
-}
-.mfp-arrow {
-	&:hover {
-		background:none;
-	}
-}
-.mfp-arrow-left:before, .mfp-arrow-left .mfp-b{
-	border-right:none;
-}
-.mfp-arrow-right:before, .mfp-arrow-right .mfp-b {
-	border-left:none;
-}
-img.mfp-img {
-	padding:0;
-	@include border-radius(2px);
-}
-.mfp-close {
-	display:none!important;
-}
-.mfp-bottom-bar {
-	margin-top:8px
 }

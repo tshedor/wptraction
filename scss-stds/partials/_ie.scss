@@ -2,13 +2,9 @@
 .ie-warning {
 	display:none;
 }
-.ie, .ie.ie6, .ie.ie7, .ie.ie8, .ie.ie9 {
-	display:none;
-}
 .ie {
 	display:block;
 	.ie-warning {
-		display:block;
 		overflow:hidden;
 	}
 	&.ie6 {
@@ -19,17 +15,27 @@
 	}
 	&.ie7 {
 		display:block;
-		.ie6-warning {
+		.ie7-warning, .ie-warning {
 			display:block;
 		}
 	}
 	&.ie8 {
-		.gradient, .button, button, input[type="submit"], input[type="button"] {
+		.ie8-warning, .ie-warning {
+			display:block;
+		}
+		.gradient {
 			filter:none;
 		}
 	}
 	&.ie9 {
-		.gradient, .button, button, input[type="submit"], input[type="button"] {
+		.gradient {
+			filter:none;
+		}
+	}
+	.lt-ie10 {
+		.button, button, input[type="submit"], input[type="button"] {
+			background:lighten($domColor, 10%);
+			@include box-shadow(0 -21px 30px -7px darken($domColor, 5%) inset);
 			filter:none;
 		}
 	}

@@ -1,0 +1,28 @@
+
+$property:$domColor;
+$comment:$gray;
+//$selector:#0088D5;
+$selector:darken($subColor, 14%);
+$attr-value:darken($subColor, 28%);
+$operator:#FF6F6F;
+$dark-code:true;
+
+@if $dark-code == true {
+code .token {
+	&.comment, &.block-comment, &.prolog, &.doctype, &.cdata, &.punctuation {
+		color:$comment;
+	}
+	&.property, &.tag, &.boolean, &.number, &.function-name, &.constant, &.symbol {
+		color: $property;
+	}
+	&.selector, &.attr-name, &.string, &.function, &.builtin {
+		color: $selector;
+	}
+	&.operator, &.entity, &.url, &.variable {
+		color: $operator;
+	}
+	&.atrule, &.attr-value, &.keyword, &.class-name {
+		color: $attr-value;
+	}
+}
+}
