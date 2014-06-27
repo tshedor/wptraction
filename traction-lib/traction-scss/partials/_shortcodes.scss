@@ -1,3 +1,6 @@
+/** SHORTCODES
+===================================*/
+
 aside {
 	@include border-radius(2px);
 	clear:both;
@@ -11,6 +14,8 @@ aside {
 		content:"";
 	}
 }
+
+/* Tabs */
 .tab-container {
 	margin:20px 0px;
 	br {
@@ -124,10 +129,11 @@ aside {
 		}
 	}
 }
+
+/* Inline */
 .inline-text {
 	text-align:justify;
 }
-
 .inline-title {
 	i {
 		color:$dark_gray;
@@ -137,6 +143,7 @@ aside {
 	}
 }
 
+/* Contact */
 .traction-contact {
 	input, textarea {
 		@include border-radius(5px);
@@ -146,6 +153,8 @@ aside {
 		min-height:85px;
 	}
 }
+
+/* Sitemap */
 .traction-sitemap {
 	li {
 		padding-left:10px;
@@ -156,6 +165,8 @@ aside {
 		}
 	}
 }
+
+/* Code */
 .example-row {
 	background:$lightest_gray;
 	@include box-shadow(0 10px 11px -9px $gray);
@@ -165,4 +176,4 @@ aside {
 .example-row, .full-code-row {
 	margin-left:0!important;
 	margin-right:0!important;
-}\
+}

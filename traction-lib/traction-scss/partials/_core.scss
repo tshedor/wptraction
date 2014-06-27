@@ -1,5 +1,7 @@
-/********* GENERAL ***********/
+/** CORE
+===================================*/
 
+/*** GENERAL ***/
 html {
 	font-size:100%;
 	font-size:remCalc(16px);
@@ -7,8 +9,9 @@ html {
 body {
 	font-size:16px;
 	font-size:1rem;
+	@include body;
+	line-height:1.4;
 }
-
 h1, h2, h3, h4, h5, h6, h7, h8 {
 	@include dom;
 	color: $domColor;
@@ -33,7 +36,8 @@ h4 {
 	font-style:italic;
 }
 a h1, a h2, a h3, a h4, a h5, a h6 {
-	@include std-hover($linkColor);
+	@include single-transition(all, 0.2s, linear);
+	@include hover($linkColor);
 }
 .circle {
 	@include border-radius(500px);
@@ -47,7 +51,7 @@ pre,code {
 	background:#f4f4f4;
 	border:1px solid #ddd;
 	color:$domColor;
-	//font-family:$monospace;
+	font-family:$monospace;
 	padding:4px 8px;
 	@include border-radius(4px);
 }
@@ -59,9 +63,6 @@ pre code {
 th {
 	font-weight:bold;
 	background:$lightest_gray;
-}
-ul {
-	padding-left:17px;
 }
 ol {
 	list-style:decimal;
@@ -75,19 +76,33 @@ sup {
 	font-size:smaller;
 	vertical-align:super;
 }
-.disable-hover, .disable-hover * {
-	pointer-events: none !important;
-}
 blockquote {
 	padding-top:0px;
 	@include fs-lg;
 	border-left:3px solid $domColor;
 }
-body {
-	@include body;
-	line-height:1.4;
-	@include color-scheme;
+a {
+	@include single-transition(all, 0.2s, linear);
+	color:$linkColor;
+	text-decoration:none!important;
+	&:hover {
+		color:$domColor;
+		text-decoration:none;
+	}
 }
+i {
+	@include inline-block;
+}
+::selection, ::-moz-selection {
+	@include text-shadow(0px);
+}
+
+hr {
+	border-color:$dark_gray;
+	border-bottom:0px;
+}
+
+//Larger Foundation rows
 .row {
 	max-width:72em;
 }
@@ -98,13 +113,44 @@ body {
 .full-row {
 	max-width:100%;
 }
-.lg-margin {
-	margin-top:40px!important;
-	margin-bottom:40px!important;
+
+//For use with "onScroll" JS function
+.disable-hover, .disable-hover * {
+	pointer-events: none !important;
+}
+
+/* Helper Classes */
+
+.centered {
+	text-align:center;
+}
+.text-left {
+	text-align:left;
+}
+.text-right {
+	text-align:right;
+}
+.pull-left {
+	float:left;
+}
+.pull-right {
+	float:right;
+}
+.aligncenter {
+	display:block;
+	margin:0 auto;
+	text-align:center;
+}
+.hidden {
+	display:none;
 }
 .xlg-margin {
 	margin-top:80px!important;
 	margin-bottom:80px!important;
+}
+.lg-margin {
+	margin-top:40px!important;
+	margin-bottom:40px!important;
 }
 .md-margin {
 	margin-top:20px!important;
@@ -138,70 +184,24 @@ body {
 .sm-text {
 	@include fs-small;
 }
-a {
-	@include std-hover($domColor);
-	color:$linkColor;
-	text-decoration:none!important;
-	&:hover {
-		text-decoration:none;
-	}
-}
-
-i {
-	@include inline-block;
-}
-::selection, ::-moz-selection {
-	@include text-shadow(0px);
-}
-
-hr {
-	border-color:$dark_gray;
-	border-bottom:0px;
-}
-
-/* HELPER CLASSES */
-
-.centered {
-	text-align:center;
-}
-.text-left {
-	text-align:left;
-}
-.text-right {
-	text-align:right;
-}
-.pull-left {
-	float:left;
-}
-.pull-right {
-	float:right;
-}
-.aligncenter {
-	display:block;
-	margin:0 auto;
-	text-align:center;
-}
-.copyright {
-	@include color-scheme;
-	@include fs-small;
-	position:relative;
-	.cred sup {
-		@include fs-xxsmall;
-		position:relative;
-		top:-0.7em;
-		left:2px;
-	}
-}
-.hidden {
-	display:none;
-}
-
-/***** WORDPRESS ****/
-
 .sticky {
 	position:fixed;
 }
 
+.inline-list {
+	margin:0;
+	padding:0;
+	li {
+		@include inline-block;
+		a {
+			display:block;
+		}
+	}
+}
+
+/*** WORDPRESS ***/
+
+/* Media */
 .wp-caption, .gallery-caption {
 	margin:0 auto;
 	margin-bottom:30px;
@@ -218,6 +218,26 @@ hr {
 	text-align:center;
 	font-style:italic;
 }
+
+.gallery-item {
+	img {
+		margin:0 auto;
+	}
+}
+.gallery-caption {
+	margin:10px 8px;
+}
+
+
+img.alignleft {
+	float:left;
+	margin-right:10px;
+}
+img.alignright {
+	float:right;
+	margin-left:10px;
+}
+
 .hentry {
 	.mejs-container .mejs-controls {
 		button {
@@ -241,9 +261,15 @@ hr {
 		}
 	}
 	ul {
-		padding-left:18px;
+		padding-left:0;
+	}
+	ol {
+		margin-left:2em;
+		list-style:decimal;
 	}
 }
+
+/* Format Posts */
 .format-link .post-format-content {
 	@include fs-xlg;
 	border-left:4px solid $domColor;
@@ -269,30 +295,10 @@ figure.quote {
 		display:block;
 		@include fs-small;
 		color:#555;
-		&:before {
-			//content:"\2014 \0020"
-		}
-	}
-}
-.gallery-item {
-	img {
-		margin:0 auto;
-	}
-}
-.gallery-caption {
-	margin:10px 8px;
-}
-.hentry {
-	ul {
-		padding-left:0;
-	}
-	ol {
-		margin-left:2em;
-		list-style:decimal;
 	}
 }
 
-/******** UI ********/
+/***** UI *****/
 
 .notice {
 	@include fs-medium;
@@ -332,6 +338,12 @@ figure.quote {
 		color:white;
 	}
 }
+.label-warning, .label-important, .label-error {
+	background-color:#b94a48;
+}
+.label-bonus, .label-success {
+	background-color:#468847;
+}
 .social {
 	@include fs-lg;
 	position:absolute;
@@ -340,40 +352,10 @@ figure.quote {
 		@include inline-block;
 		padding:0px 2px;
 	}
-	a {
-		@include color-scheme;
-	}
-}
-.social-single {
-	@include color-scheme;
-	@include no-list;
-	text-align:center;
-	font-weight:300;
-	font-family:$sans;
-	i {
-		@include fs-xlg;
-	}
-	li {
-		@include inline-block;
-		padding:0px 10px;
-	}
-	a {
-		@include color-scheme;
-		@include hover($linkColor);
-	}
-	@include fs-medium;
-}
-img.alignleft {
-	float:left;
-	margin-right:10px;
-}
-img.alignright {
-	float:right;
-	margin-left:10px;
 }
 
-/* BUTTONS */
-.button, input[type="submit"], button {
+/* Buttons */
+button, .button, input[type="submit"] {
 	border:1px solid $domColor;
 	padding:0.3em 0.9em;
 	text-align:center;
@@ -389,7 +371,8 @@ img.alignright {
 		border-color:darken($domColor, 10%);
 	}
 }
-/* NAVIGATION */
+
+/* Navigation */
 .page-navigation, .wp-pagenavi {
 	@include fs-xlg;
 	margin:15px 0px;
@@ -410,7 +393,7 @@ img.alignright {
 	}
 }
 
-ul.menu {
+ul.menu, .header ul {
 	@include no-list;
 	li {
 		@include inline-block;
@@ -434,45 +417,9 @@ ul.menu {
 	}
 }
 .footer {
-	padding:15px 0px;
+	padding:2em 0px;
 	h2 {
 		color:$subColor;
 		text-transform:lowercase;
-	}
-	.menu ul {
-		li {
-			a {
-				@include hover($linkColor);
-				padding:0px 15px;
-				color:$domColor;
-			}
-		}
-	}
-}
-.header ul {
-	@include no-list;
-	li {
-		@include inline-block;
-		a {
-			display:block;
-			padding:4px 8px;
-		}
-	}
-}
-.label-warning, .label-important, .label-error {
-	background-color:#b94a48;
-}
-.label-bonus, .label-success {
-	background-color:#468847;
-}
-
-.inline-list {
-	margin:0;
-	padding:0;
-	li {
-		@include inline-block;
-		a {
-			display:block;
-		}
 	}
 }

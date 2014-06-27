@@ -4,27 +4,6 @@
  * @author Tim  Shedor
  */
 
-@mixin tab-size($value:auto){
-	-moz-tab-size:$value;
-	-o-tab-size:$value;
-	tab-size:$value;
-}
-
-$selector:#2f9c0a;
-$comment:#7D8B99;
-$punctuation:#5F6364;
-$property:#c92c2c;
-$string:#a67f59;
-$important:#e90;
-$attr-value:#1990b8;
-$background:lighten($lightest_gray,4.5%);
-
-$top-spacing:1em;
-
-// Plugins
-$line-highlight:true;
-$show-invisibles:false;
-
 code[class*="language-"], pre[class*="language-"] {
 	color:black;
 	font-family:$monospace;
@@ -50,23 +29,20 @@ pre[class*="language-"] {
 }
 
 // Code blocks
-
 code[class*="language"] {
 	max-height: 29em;
 	display: block;
 	overflow: scroll;
 }
 
-/* Margin bottom to accomodate shadow */
-
+//Margin bottom to accomodate shadow
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
 	background-color: #fdfdfd;
 	@include box-sizing(border-box);
 	margin-bottom: 1em;
 }
 
-/* Inline code */
-
+//Inline code
 :not(pre) > code[class*="language-"] {
 	position: relative;
 	padding: .2em;
@@ -98,31 +74,31 @@ pre[class*="language-"] {
 
 .token {
 	&.comment, &.block-comment, &.prolog, &.doctype, &.cdata {
-		color:$comment;
+		color:$prism-comment;
 	}
 	&.punctuation {
-		color: $punctuation;
+		color: $prism-punctuation;
 	}
 	&.property, &.tag, &.boolean, &.number, &.function-name, &.constant, &.symbol {
-		color: $property;
+		color: $prism-property;
 	}
 	&.selector, &.attr-name, &.string, &.function, &.builtin {
-		color: $selector;
+		color: $prism-selector;
 	}
 	&.operator, &.entity, &.url, &.variable {
-		color: $string;
+		color: $prism-string;
 		background: rgba(white, 0.5);
 	}
 	&.atrule, &.attr-value, &.keyword, &.class-name {
-		color: $attr-value;
+		color: $prism-attr-value;
 	}
 	&.regex, &.important {
-		color: $important;
+		color: $prism-important;
 	}
 }
 
 .language-css .token.string, .style .token.string {
-	color: $string;
+	color: $prism-string;
 	background: rgba(white, 0.5);
 }
 
@@ -148,7 +124,7 @@ pre[class*="language-"] {
 	}
 }
 
-/* Plugin styles */
+//Plugin styles
 
 .token {
 	&.tab:not(:empty):before, &.cr:before, &.lf:before {
@@ -156,73 +132,73 @@ pre[class*="language-"] {
 	}
 }
 
-@if $line-highlight == true {
-.line-highlight {
-	position: absolute;
-	left: 0;
-	right: 0;
-	padding: inherit 0;
-	margin-top: $top-spacing;
-	background-color:darken($background,4%);
-	pointer-events: none;
-	line-height: inherit;
-	white-space: pre;
-	&:before {
-		@include border-radius(999px);
-		@include box-shadow(0 1px white);
-		content: attr(data-start);
+@if $prism-prism-line-highlight == true {
+	.line-highlight {
 		position: absolute;
-		top: .4em;
-		left: .6em;
-		min-width: 1em;
-		padding: 0 .5em;
-		background-color: rgba(darken($background, 8%), 0.4);
-		color:white;
-		font: bold 65% / 1.5 sans-serif;
-		text-align: center;
-		vertical-align: .3em;
-		text-shadow: none;
+		left: 0;
+		right: 0;
+		padding: inherit 0;
+		margin-top: 1em;
+		background-color:darken($prism-prism-background,4%);
+		pointer-events: none;
+		line-height: inherit;
+		white-space: pre;
+		&:before {
+			@include border-radius(999px);
+			@include box-shadow(0 1px white);
+			content: attr(data-start);
+			position: absolute;
+			top: .4em;
+			left: .6em;
+			min-width: 1em;
+			padding: 0 .5em;
+			background-color: rgba(darken($prism-prism-background, 8%), 0.4);
+			color:white;
+			font: bold 65% / 1.5 sans-serif;
+			text-align: center;
+			vertical-align: .3em;
+			text-shadow: none;
+		}
+		&[data-end]:after {
+			@include border-radius(999px);
+			@include box-shadow(0 1px white);
+			content: attr(data-start);
+			position: absolute;
+			top: .4em;
+			left: .6em;
+			min-width: 1em;
+			padding: 0 .5em;
+			background-color: rgba(darken($prism-prism-background, 8%), 0.4);
+			color:white;
+			font: bold 65% / 1.5 sans-serif;
+			text-align: center;
+			vertical-align: .3em;
+			text-shadow: none;
+			content: attr(data-end);
+			top: auto;
+			bottom: .4em;
+		}
 	}
-	&[data-end]:after {
-		@include border-radius(999px);
-		@include box-shadow(0 1px white);
-		content: attr(data-start);
-		position: absolute;
-		top: .4em;
-		left: .6em;
-		min-width: 1em;
-		padding: 0 .5em;
-		background-color: rgba(darken($background, 8%), 0.4);
-		color:white;
-		font: bold 65% / 1.5 sans-serif;
-		text-align: center;
-		vertical-align: .3em;
-		text-shadow: none;
-		content: attr(data-end);
-		top: auto;
-		bottom: .4em;
-	}
-}
 }
 
-@if $show-invisibles == true {
-.token {
-	&.tab:not(:empty):before, &.cr:before, &.lf:before {
-		color: hsl(24, 20%, 85%);
+@if $prism-prism-show-invisibles == true {
+	.token {
+		&.tab:not(:empty):before, &.cr:before, &.lf:before {
+			color: hsl(24, 20%, 85%);
+		}
+		&.tab:not(:empty):before {
+			content: '▸';
+		}
+		&.cr:before {
+			content: '␍';
+		}
+		&.lf:before {
+			content: '␊';
+		}
+		a {
+			color: inherit;
+		}
 	}
-	&.tab:not(:empty):before {
-		content: '▸';
-	}
-	&.cr:before {
-		content: '␍';
-	}
-	&.lf:before {
-		content: '␊';
-	}
-	a {
-		color: inherit;
-	}
-}
 }
 
 .example-row {

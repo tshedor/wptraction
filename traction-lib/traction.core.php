@@ -74,26 +74,30 @@ class Traction {
 	*/
 	static function get_image($size = 'medium',$class = '',$attr = NULL, $just_url = false, $id = NULL){
 		global $post, $a;
-		if($id == NULL)
+		if(empty($id))
 			$id = $post->ID;
 
 		//Use get_the_image if available
 		if(function_exists('get_the_image')){
 
 			//Set get the image settings
-			$gti_settings = array('image_scan' => true, 'post_id' => $id, 'size' => $size, 'image_class' => $class, $attr);
+			$gti_settings = array('image_scan' => true, 'meta_key_save' => true, 'post_id' => $id, 'size' => $size, 'image_class' => $class);
 
 			//Apply attributes array if available
 			if(!empty($attr))
 				$gti_settings = array_merge($gti_settings, $attr);
 
 			if($just_url){
+
 				$gti_settings = array_merge($gti_settings, array('format' => 'array'));
 				$gti = get_the_image($gti_settings);
 				return $gti['src'];
+
 			} else {
+
 				get_the_image($gti_settings);
 				return;
+
 			}
 
 		//See if the post has a thumbnail
@@ -101,8 +105,10 @@ class Traction {
 
 			//Only get the URL
 			if($just_url){
+
 				$image = wp_get_attachment_image_src(get_post_thumbnail_id($id), $size);
 				return $image[0];
+
 			} else {
 
 				//See if we should link to the post
@@ -499,6 +505,25 @@ class TractionShare {
 * Display admin fields for user options or custom post meta
 * @package Traction
 * @subpackage TractionInput
+*
+* Arrays constructed for each field in this way:
+* @param string 'name' the displayed title of the field
+* @param string 'desc' helper description beneath title of the field
+* @param string 'id' the custom field unique identifier
+* @param string 'std' often the placeholder
+* @param string 'type' the input type (text | textarea | hidden | checkbox | select | radio |
+* password | textareacode | repeatable | number | range | date | week | month |
+* datetime | url | email | color)
+* as well as WP-specific helpers to convert into inputs: (tinymce | media | posts | pages |
+* categories | users)
+* traction specific: (icons | socialcheckbox | map)
+* HTML helpers: (separate | customnotice | clearfix | endarray)
+* @param string|boolean 'def' the default text or value of the field
+* @param array 'options' to be applied for radio or select fields. Constructed in this way:
+*** @param array for each option
+****** @param string 'name' the front-facing label for the option
+****** @param string 'id' the unique identifier
+****** @param string 'image' absolute path of image to display above radio option (not applicable to select fields)
 */
 class TractionInput {
 
@@ -615,6 +640,20 @@ class TractionInput {
 	}
 
 	/**
+	* Display a select box
+	*/
+	public function select(){
+		$html = $this->initial;
+		$html .= '<select name="' . $this->value['id'] . '">';
+		foreach ($this->value['options'] as $opt) {
+			$html .= '<option value="'.$opt['id'].'">'.$opt['name'].'</option>';
+		}
+		$html .= '</select>';
+		$html .= $this->finish;
+		echo $html;
+	}
+
+	/**
 	* Display a radio select box
 	*/
 	public function radio(){
@@ -626,9 +665,9 @@ class TractionInput {
 			if(isset($opt['image']))
 				$html .= '<img src="'.$opt['image'].'" />';
 			$html .= '<input name="'.$this->value['id'].'" type="radio" value="'.$opt['id'].'"';
-			if(!$this->meta && $opt['id'] == $this->value['std'])
-				$html .= 'checked="checked"';
-			if($this->meta == $opt['id'])
+
+			//If meta has it as checked or the opt
+			if(!$this->meta && $opt['id'] == $this->value['def'] xor $this->meta == $opt['id'])
 				$html .= 'checked="checked"';
 			$html .= '/>';
 			$html .= '&nbsp;&nbsp;'.$opt['name'].'</label>&nbsp;&nbsp;';
@@ -1162,14 +1201,14 @@ class TractionMetaBoxes {
 
 }
 
-include_once(get_template_directory().'/inc/traction-lib/traction.hooks-callbacks.php');
-include_once(get_template_directory().'/inc/traction-lib/traction.widgets.php');
-include_once(get_template_directory().'/inc/traction-lib/traction.shortcodes.php');
-include_once(get_template_directory().'/inc/traction-lib/traction.globals.php');
-include_once(get_template_directory().'/inc/traction-lib/post-meta/layout.php');
+include_once(dirname(__FILE__) . '/traction.hooks-callbacks.php');
+include_once(dirname(__FILE__) . '/traction.widgets.php');
+include_once(dirname(__FILE__) . '/traction.shortcodes.php');
+include_once(dirname(__FILE__) . '/traction.globals.php');
+include_once(dirname(__FILE__) . '/post-meta/traction.layout.php');
 if(is_user_logged_in()){
-	include_once(get_template_directory().'/inc/traction-lib/tinymce/functions.php');
-	include_once(get_template_directory().'/inc/traction-lib/traction-admin-options.php');
+	include_once(dirname(__FILE__) . '/tinymce/functions.php');
+	include_once(dirname(__FILE__) . '/traction-admin-options.php');
 }
 
 ?>

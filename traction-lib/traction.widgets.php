@@ -298,7 +298,7 @@ class Traction_Mailchimp extends WP_Widget {
 	}
 	public function widget( $args, $instance ) {
 		extract( $args );
-		include_once(get_template_directory().'/inc/ts-stds/libs/mailchimp/MCAPI.class.php');
+		include_once(get_template_directory().'/inc/traction-lib/mailchimp/MCAPI.class.php');
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$mc_api_key = $instance['mc_api_key'];
 		$mc_list_id = $instance['mc_list_id'];

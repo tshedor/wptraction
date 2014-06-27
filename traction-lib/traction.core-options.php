@@ -384,4 +384,4 @@ array(
 	'type'	=>	'endarray'
 ),
 );
-$options = array_merge($social,$sitewide);
+$traction_options = array_merge($social,$sitewide);

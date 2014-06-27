@@ -1,28 +1,20 @@
+/** PRISM LITE
+===================================*/
 
-$property:$domColor;
-$comment:$gray;
-//$selector:#0088D5;
-$selector:darken($subColor, 14%);
-$attr-value:darken($subColor, 28%);
-$operator:#FF6F6F;
-$dark-code:true;
-
-@if $dark-code == true {
 code .token {
 	&.comment, &.block-comment, &.prolog, &.doctype, &.cdata, &.punctuation {
-		color:$comment;
+		color:$prism-comment;
 	}
 	&.property, &.tag, &.boolean, &.number, &.function-name, &.constant, &.symbol {
-		color: $property;
+		color: $prism-property;
 	}
 	&.selector, &.attr-name, &.string, &.function, &.builtin {
-		color: $selector;
+		color: $prism-selector;
 	}
 	&.operator, &.entity, &.url, &.variable {
-		color: $operator;
+		color: $prism-operator;
 	}
 	&.atrule, &.attr-value, &.keyword, &.class-name {
-		color: $attr-value;
+		color: $prism-attr-value;
 	}
-}
 }

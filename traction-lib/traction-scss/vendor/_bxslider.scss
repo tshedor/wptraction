@@ -1,4 +1,4 @@
-/**
+/*!
  * BxSlider v4.0 - Fully loaded, responsive content slider
  * http://bxslider.com
  *
@@ -10,18 +10,15 @@
  * http://bxcreative.com
  */
 
-/** RESET AND LAYOUT
-===================================*/
-
 .bx-wrapper {
 	position: relative;
 	margin: 0 0 60px;
 	padding: 0;
 	*zoom: 1;
-		img {
-			display: block;
-			width: 100%;
-		}
+	img {
+		display: block;
+		width: 100%;
+	}
 	.bx-viewport {
 		left: -5px;
 		background: #fff;
@@ -30,7 +27,7 @@
 		position: absolute;
 		bottom: -30px;
 		width: 100%;
-}
+	}
 	.bx-loading {
 		position: absolute;
 		top: 0;
@@ -40,7 +37,7 @@
 		width: 100%;
 		height: 100%;
 		background: url(img/bx_loader.gif) center center no-repeat white;
-}
+	}
 	.bx-pager {
 		padding-top: 20px;
 		color: #666;
@@ -52,42 +49,55 @@
 			display: inline-block;
 			*zoom: 1;
 			*display: inline;
-}
-}
-	.bx-controls-auto .bx-controls-auto-item {
-		display: inline-block;
-		*zoom: 1;
-		*display: inline;
-}
-	.bx-pager.bx-default-pager a {
-	display: block;
-		margin: 0 5px;
-		width: 10px;
-		height: 10px;
-		outline: 0;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-		background: #666;
-		text-indent: -9999px;
-		&:hover, &.active {
-			background: #000;
-}
-}
+		}
+		&.bx-default-pager a {
+			display: block;
+			margin: 0 5px;
+			width: 10px;
+			height: 10px;
+			outline: 0;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			background: #666;
+			text-indent: -9999px;
+			&:hover, &.active {
+				background: #000;
+			}
+		}
+	}
+	.bx-controls-auto {
+		text-align: center;
+		.bx-start {
+			display: block;
+			margin: 0 3px;
+			width: 10px;
+			height: 11px;
+			outline: 0;
+			background: url(img/controls.png) -86px -11px no-repeat;
+			text-indent: -9999px;
+			&:hover, &.active {
+				background-position: -86px 0;
+			}
+			.bx-controls-auto-item {
+				@include inline-block;
+			}
+		}
+	}
 	.bx-prev {
 		left: 10px;
 		background: url(img/controls.png) no-repeat 0 -32px;
-}
+		&:hover {
+			background-position: 0 0;
+		}
+	}
 	.bx-next {
 		right: 10px;
 		background: url(img/controls.png) no-repeat -43px -32px;
-}
-	.bx-prev:hover {
-		background-position: 0 0;
-}
-	.bx-next:hover {
-		background-position: -43px 0;
-}
+		&:hover {
+			background-position: -43px 0;
+		}
+	}
 	.bx-controls-direction a {
 		position: absolute;
 		top: 50%;
@@ -99,34 +109,19 @@
 		text-indent: -9999px;
 		&.disabled {
 			display: none;
+		}
 	}
-	}
-	.bx-controls-auto {
-	text-align: center;
-		.bx-start {
-			display: block;
-			margin: 0 3px;
-			width: 10px;
-			height: 11px;
-			outline: 0;
-			background: url(img/controls.png) -86px -11px no-repeat;
-			text-indent: -9999px;
-			&:hover, &.active {
-				background-position: -86px 0;
-	}
-}
-		.bx-stop {
-	display: block;
-			margin: 0 3px;
-			width: 9px;
-			height: 11px;
-			outline: 0;
-			background: url(img/controls.png) -86px -44px no-repeat;
-	text-indent: -9999px;
-			&:hover, &.active {
-				background-position: -86px -33px;
-			}
-	}
+	.bx-stop {
+		display: block;
+		margin: 0 3px;
+		width: 9px;
+		height: 11px;
+		outline: 0;
+		background: url(img/controls.png) -86px -44px no-repeat;
+		text-indent: -9999px;
+		&:hover, &.active {
+			background-position: -86px -33px;
+		}
 	}
 	.bx-controls.bx-has-controls-auto.bx-has-pager {
 		.bx-pager {
@@ -136,7 +131,7 @@
 		.bx-controls-auto {
 			right: 0;
 			width: 35px;
-}
+		}
 	}
 	.bx-caption {
 		position: absolute;
@@ -153,7 +148,7 @@
 			font-family: Arial;
 		}
 	}
-		}
+}
 @media (max-width:767px){
 	.bx-prev, .bx-next {
 		display:none;
