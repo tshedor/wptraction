@@ -91,7 +91,7 @@ array(
 array(
 	'name'	=>	__('Google+ Profile', 'trwp'),
 	'desc'	=>	__('Include for display in header', 'trwp'),
-	'id'	=>	'google-plus_profile',
+	'id'	=>	'googleplus_profile',
 	'std'	=>	'https://plus.google.com/u/0/115986805136940069805/posts',
 	'class'	=>	'third',
 	'type'	=>	'text'
@@ -144,7 +144,7 @@ array(
 	'name'	=> __('Share icon style', 'trwp'),
 	'desc'	=> '',
 	'id'	=> 'share_icon_style',
-	'std'	=> 'plain',
+	'def'	=> 'plain',
 	'class' => 'half',
 	'type'	=> 'radio',
 	'options' => array(
@@ -204,8 +204,8 @@ array(
 ),
 array(
 	'name'	=>	__('Google+', 'trwp'),
-	'desc'	=>	'google-plus',
-	'id'	=>	'google-plus',
+	'desc'	=>	'googleplus',
+	'id'	=>	'googleplus',
 	'std'	=>	'',
 	'type'	=>	'socialcheckbox',
 ),

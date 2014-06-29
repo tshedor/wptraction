@@ -220,7 +220,7 @@ class Traction {
 			$postID = $post;
 		}
 		if($a['show_social']){
-			$share_array = array('facebook', 'twitter', 'linkedin', 'youtube', 'pinterest', 'google-plus', 'stumbleupon', 'dribbble');
+			$share_array = array('facebook', 'twitter', 'linkedin', 'youtube', 'pinterest', 'googleplus', 'stumbleupon', 'dribbble');
 			if($a['show_print']) array_push($share_array, 'htmlprint');
 			foreach($share_array as $s){
 				$content = '<i class="social-ico-'.$s.'"></i>';
@@ -228,7 +228,7 @@ class Traction {
 					$content .= ' '.$s;
 
 				//See if the option is in the array
-				if($a[$s]){
+				if(!empty($a[$s])){
 					$shareinfo = new TractionShare(get_permalink(),get_the_title(),$content,$a['twitter_profile']);
 					$shareme = $shareinfo->$s();
 					echo '<li class="social-list-item">'.$shareme.'</li>';
@@ -244,7 +244,7 @@ class Traction {
 	*/
 	static function social_header(){
 		global $a;
-		$social = array('facebook', 'twitter', 'linkedin', 'youtube', 'pinterest', 'instagram', 'vimeo', 'google-plus', 'github', 'foursquare', 'dribbble', 'flickr', 'feed', 'mail');
+		$social = array('facebook', 'twitter', 'linkedin', 'youtube', 'pinterest', 'instagram', 'vimeo', 'googleplus', 'github', 'foursquare', 'dribbble', 'flickr', 'feed', 'mail');
 		foreach($social as $sicon) :
 			$op = $a[$sicon.'_profile'];
 			if(!empty($op)){
@@ -410,29 +410,6 @@ class Traction {
 		}
 		echo '</div>
 		</div>';
-	}
-
-	/**
-	* Inject copyright/theme credit
-	* @uses $a global user options
-	* @echo copywright text
-	*/
-	static function copyright(){
-		global $a;
-		echo '<div class="copyright">';
-		if(!empty($a['copyright_text'])){
-			$copytext = $a['copyright_text'];
-			$copytext = str_replace('{SITE NAME}', get_bloginfo('name'), $copytext);
-			$copytext = str_replace('{CURRENT YEAR}', date('Y'), $copytext);
-			echo $copytext;
-		} else {
-			echo '&copy; '.__('Copyright', 'trwp').' <a href="'.get_bloginfo('url').'" title="'.get_bloginfo('name').'">'.get_bloginfo('name').'</a> '.date('Y');
-		}
-		if($a['footer_credit'])
-			echo __('Code and Design by', 'trwp').' <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a>';
-		else
-			echo ' | <div id="creditsDisplay"><div><a href="'.get_template_directory_uri().'/humans.txt" title="Credits">Credits</a></div><div>'.__('Code and Design by', 'trwp').' <a href="http://timshedor.com" title="Tim Shedor">Tim Shedor</a></div></div> <a href="#" title="Tim Shedor" class="cred" id="footerCredits"><i class="icon-asterisk"></i></a>';
-		echo '</div>';
 	}
 
 	/**

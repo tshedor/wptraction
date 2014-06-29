@@ -23,7 +23,7 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.social-ico-google-plus:before {
+.social-ico-googleplus:before {
 	content: "\e600";
 }
 .social-ico-facebook:before {
