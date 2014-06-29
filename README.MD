@@ -1,4 +1,4 @@
-# Traction
+# WP Traction
 
 A WordPress framework for the impatient.
 
@@ -37,4 +37,6 @@ The goal of this framework is to help new theme builders spend less time navigat
 
 ## License
 
-MIT License except where noted or for code I have not written.
+GPLv2 License except where noted or for code I have not written.
+
+Some code is also licensed under MIT, and these portions are noted.
