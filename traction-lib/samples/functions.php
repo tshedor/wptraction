@@ -11,7 +11,7 @@ add_action( 'wp_enqueue_scripts', 'custom_scripts', 0);
 
 //Traction
 include_once(get_template_directory().'/inc/traction-lib/traction.core-options.php');
-$themename = "Portfolio 2012";
+$themename = "Traction Sample";
 $homewide = array(
 	array(
 		'name'	=>	'Homepage',
