@@ -1205,7 +1205,6 @@ include_once(dirname(__FILE__) . '/traction.hooks-callbacks.php');
 include_once(dirname(__FILE__) . '/traction.widgets.php');
 include_once(dirname(__FILE__) . '/traction.shortcodes.php');
 include_once(dirname(__FILE__) . '/traction.globals.php');
-include_once(dirname(__FILE__) . '/post-meta/traction.layout.php');
 if(is_user_logged_in()){
 	include_once(dirname(__FILE__) . '/tinymce/functions.php');
 	include_once(dirname(__FILE__) . '/traction-admin-options.php');

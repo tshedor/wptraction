@@ -68,63 +68,52 @@ function sample_register() {
 }
 add_action('init', 'sample_register');
 
-register_taxonomy(
-	"sample_categories",
-	array("sample"),
-	array(
-		"hierarchical"		=> true,
-		"label"				=> "Sample Categories",
-		"singular_label"	=> "Sample Category",
-		"rewrite"			=> true
-	)
-);
 
 $sample_meta_fields = array(
-array(
-	'name'	=> 'Just Text',
-	'desc'	=> 'Some text',
-	'id'	=> 'enter_text',
-	'std'	=> 'Enter text here',
-	'type'	=> 'text',
-),
-array(
-	'name'	=> 'Email',
-	'id'	=> 'enter_email',
-	'type'	=> 'email'
-),
-array(
-	'name'	=> 'Date Completed',
-	'desc'	=> 'Required',
-	'id'	=> 'date_completed',
-	'std'	=> 'August 2012',
-	'type'	=> 'text'
-),
-array(
-	'name'	=> 'Appearance',
-	'desc'	=> 'General Appearance',
-	'id'	=> 'resume_style',
-	'type'	=> 'radio',
-	'def'	=>	'third_chunk',
-	'options' => array(
-		array(
-			'name' => 'Normal',
-			'id' => 'standard_meta',
-		),
-		array(
-			'name' => 'Chunk (1/3)',
-			'id' => 'third_chunk'
-		),
-		array(
-			'name' => 'Chunk (1/4)',
-			'id' => 'fourth_chunk'
-		),
-		array(
-			'name' => 'Just Text',
-			'id' => 'just_text'
-		),
-	)
-),
-
+	array(
+		'name'	=> 'Just Text',
+		'desc'	=> 'Some text',
+		'id'	=> 'enter_text',
+		'std'	=> 'Enter text here',
+		'type'	=> 'text',
+	),
+	array(
+		'name'	=> 'Email',
+		'id'	=> 'enter_email',
+		'type'	=> 'email'
+	),
+	array(
+		'name'	=> 'Date Completed',
+		'desc'	=> 'Required',
+		'id'	=> 'date_completed',
+		'std'	=> 'August 2012',
+		'type'	=> 'text'
+	),
+	array(
+		'name'	=> 'Appearance',
+		'desc'	=> 'General Appearance',
+		'id'	=> 'resume_style',
+		'type'	=> 'radio',
+		'def'	=>	'third_chunk',
+		'options' => array(
+			array(
+				'name' => 'Normal',
+				'id' => 'standard_meta',
+			),
+			array(
+				'name' => 'Chunk (1/3)',
+				'id' => 'third_chunk'
+			),
+			array(
+				'name' => 'Chunk (1/4)',
+				'id' => 'fourth_chunk'
+			),
+			array(
+				'name' => 'Just Text',
+				'id' => 'just_text'
+			),
+		)
+	),
 );
 
 $resume_meta_info = array(

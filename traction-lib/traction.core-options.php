@@ -310,41 +310,6 @@ array(
 	'type'	=>	'checkbox'
 ),
 array(
-	'name'	=>	__('Use all JS libraries included with theme', 'trwp'),
-	'desc'	=>	__('This includes Modernizr, PrismJS, Superfish, bxSlider, hoverIntent and jQuery Easing (with compatibility)', 'trwp'),
-	'id'	=>	'use_traction_plugins',
-	'std'	=>	'',
-	'class'	=>	'half',
-	'type'	=>	'checkbox',
-	'def'	=>	true
-),
-array(
-	'name'	=>	__('Use builtin Magnific lightbox for single images and galleries', 'trwp'),
-	'desc'	=>	__('In case you don\'t use a plugin like NextGEN, or anyother lightbox plugin', 'trwp'),
-	'id'	=>	'magnific_lb',
-	'std'	=>	'',
-	'class'	=>	'half',
-	'type'	=>	'checkbox',
-	'def'	=>	true
-),
-array(
-	'name'	=>	__('Author credit in footer', 'trwp'),
-	'desc'	=>	__('Please leave this credit in the footer', 'trwp'),
-	'id'	=>	'footer_credit',
-	'std'	=>	'',
-	'class'	=>	'half',
-	'type'	=>	'checkbox',
-	'def'	=>	true
-),
-array(
-	'name'	=>	__('Copyright Text', 'trwp'),
-	'desc'	=>	__('Defaults to &copy; Copyright {SITE NAME} {CURRENT YEAR}', 'trwp'),
-	'id'	=>	'copyright_text',
-	'std'	=>	'&copy; ' . get_bloginfo('name') . ' ' . date('Y'),
-	'class'	=>	'half',
-	'type'	=>	'text'
-),
-array(
 	'name'	=>	__('Default Contact Form Email', 'trwp'),
 	'desc'	=>	__('Defaults to the admin email (under Settings > General)', 'trwp'),
 	'id'	=>	'contact_form_email',

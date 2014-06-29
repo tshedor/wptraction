@@ -18,35 +18,6 @@ function traction_enqueue_scripts_and_styles(){
 	global $a;
 	wp_enqueue_script('jquery');
 
-	if($a['use_traction_plugins']){
-		/**
-		* Plugins include
-		* bxSlider (Slider)
-		* jQuery Easing w/ compatibility (friend to many jQuery plugins)
-		* SuperFish (dropdown nav helper)
-		* hoverIntent (dependency of superfish and friend to many other jQuery plugins)
-		* Modernizr (feature detection)
-		*/
-		wp_register_script('traction-plugins', get_template_directory_uri().'/inc/traction-lib/plugins.min.js', array('jquery'), '', true);
-		wp_register_script('traction-lib', get_template_directory_uri().'/inc/traction-lib.min.js', array('jquery', 'traction-plugins'), '', true);
-
-		wp_enqueue_script('traction-plugins');
-		wp_enqueue_script('traction-lib');
-	}
-
-	//Lightbox
-	if($a['magnific_lb']){
-		wp_register_script('magnific', get_template_directory_uri().'/inc/traction-lib/libs/magnific/magnific.min.js', array('jquery'), '', true);
-		wp_register_script('magnific-traction', get_template_directory_uri().'/inc/traction-lib/libs/magnific/magnific-custom.js', array('jquery', 'magnific'), '', true);
-
-		wp_register_style('magnific-style', get_template_directory_uri().'/inc/traction-lib/libs/magnific/magnific-custom.css', array('theme-style'));
-
-		wp_enqueue_script('magnific');
-		wp_enqueue_script('magnific-traction');
-
-		wp_enqueue_style('magnific-style');
-	}
-
 	switch($a['share_icon_style']) :
 		case 'round':
 			$socialStyle = 'Circle';
@@ -59,12 +30,12 @@ function traction_enqueue_scripts_and_styles(){
 	endswitch;
 
 	//Social set
-	wp_register_style('traction-social-icons', get_template_directory_uri().'/inc/traction-lib/fonts/CGSocial' . $socialStyle . '/style.css');
+	wp_register_style('traction-social-icons', get_template_directory_uri().'/inc/traction-lib/icons/CGSocial' . $socialStyle . '/style.css');
 	//General icons
-	wp_register_style('traction-icons', get_template_directory_uri().'/inc/traction-lib/fonts/CG/style.css');
+	wp_register_style('traction-icons', get_template_directory_uri().'/inc/traction-lib/icons/CG/style.css');
 
 	//CSS reset and grid
-	wp_register_style('foundation', get_template_directory_uri().'/inc/traction-lib/foundation.min.css');
+	wp_register_style('foundation', get_template_directory_uri().'/inc/traction-lib/vendor/foundation.min.css');
 	//Theme stylesheet
 	wp_register_style('theme-style', get_template_directory_uri().'/style.css', array('foundation'));
 
@@ -81,7 +52,7 @@ function traction_admin_enqueue_scripts(){
 	global $a;
 	wp_register_script('traction-meta', get_template_directory_uri().'/inc/traction-lib/traction-meta.js', array('jquery','media-upload','thickbox'));
 
-	wp_register_script('jquery-validate', get_template_directory_uri().'/inc/traction-lib/libs/jquery.validate.js', array('jquery'));
+	wp_register_script('jquery-validate', get_template_directory_uri().'/inc/traction-lib/vendor/jquery.validate.js', array('jquery'));
 
 	wp_register_style('traction-admin-style', get_template_directory_uri().'/inc/traction-lib/traction-admin-style.css');
 
@@ -97,10 +68,10 @@ function traction_admin_enqueue_scripts(){
 	endswitch;
 
 	//General icons
-	wp_register_style('traction-icons', get_template_directory_uri().'/inc/traction-lib/fonts/CG/style.css');
+	wp_register_style('traction-icons', get_template_directory_uri().'/inc/traction-lib/icons/CG/style.css');
 
 	//Social set
-	wp_register_style('traction-social-icons', get_template_directory_uri().'/inc/traction-lib/fonts/CGSocial' . $socialStyle . '/style.css');
+	wp_register_style('traction-social-icons', get_template_directory_uri().'/inc/traction-lib/icons/CGSocial' . $socialStyle . '/style.css');
 
 	wp_enqueue_style('traction-icons');
 	wp_enqueue_style('traction-social-icons');
